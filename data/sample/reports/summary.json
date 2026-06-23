@@ -1,0 +1,58 @@
+{
+  "buckets": [
+    {
+      "avg_markout_bps": 0.33984113349636585,
+      "avg_prediction_bps": -0.5042437896633077,
+      "count": 8,
+      "prediction_bucket": "(-0.56, -0.453]"
+    },
+    {
+      "avg_markout_bps": 0.19581621094254653,
+      "avg_prediction_bps": -0.4207190505675041,
+      "count": 8,
+      "prediction_bucket": "(-0.453, -0.38]"
+    },
+    {
+      "avg_markout_bps": -0.3596394145848847,
+      "avg_prediction_bps": -0.056852445371160396,
+      "count": 8,
+      "prediction_bucket": "(-0.38, 0.28]"
+    },
+    {
+      "avg_markout_bps": -0.5957881781337766,
+      "avg_prediction_bps": 0.2952825680261958,
+      "count": 8,
+      "prediction_bucket": "(0.28, 0.303]"
+    },
+    {
+      "avg_markout_bps": -0.5392666759594995,
+      "avg_prediction_bps": 0.32655926103638444,
+      "count": 8,
+      "prediction_bucket": "(0.303, 0.367]"
+    }
+  ],
+  "cost_bps": 1.0,
+  "feature_cols": [
+    "top_imbalance",
+    "depth_imbalance",
+    "spread_bps",
+    "recent_trade_imbalance"
+  ],
+  "label_col": "markout_bps_10s",
+  "metrics": {
+    "cost_coverage": 0.0,
+    "direction_accuracy": 0.175,
+    "ic": -0.8339587242026266,
+    "mean_abs_markout_bps": 0.4335956696306337,
+    "mean_signed_markout_after_cost_bps": null,
+    "n_test": 40
+  },
+  "negative_control": {
+    "cost_coverage": 0.0,
+    "direction_accuracy": 0.325,
+    "ic": 0.401313320825516,
+    "mean_abs_markout_bps": 0.4335956696306337,
+    "mean_signed_markout_after_cost_bps": null,
+    "n_test": 40
+  }
+}

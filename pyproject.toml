@@ -1,0 +1,27 @@
+[project]
+name = "crypto-clob-markout-benchmark"
+version = "0.1.0"
+description = "Public crypto CLOB markout benchmark MVP with no-lookahead features and walk-forward evaluation."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.0",
+  "pyarrow>=15.0",
+  "duckdb>=0.10",
+  "websockets>=12.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+clob-markout = "crypto_clob_markout.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
