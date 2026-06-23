@@ -1,0 +1,18 @@
+{
+  "artifacts": [
+    "processed/features.parquet",
+    "processed/l2_replay_snapshots.parquet",
+    "processed/labels.parquet",
+    "raw/l2_events.parquet",
+    "raw/snapshots.parquet",
+    "raw/trades.parquet",
+    "reports/bucket_markouts.csv",
+    "reports/summary.json",
+    "reports/visible_depth_cost_sweep.csv"
+  ],
+  "data_rights": "software fixture only; no venue market data",
+  "generator": "cloblab.run_sample_pipeline",
+  "generator_version": "0.1.0",
+  "seed": "deterministic-no-random-seed",
+  "source": "synthetic"
+}

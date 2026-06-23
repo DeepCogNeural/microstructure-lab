@@ -5,11 +5,11 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from crypto_clob_markout.evaluation import run_baseline
-from crypto_clob_markout.features import build_features
-from crypto_clob_markout.labels import build_markout_labels
-from crypto_clob_markout.samples import make_synthetic_order_book
-from crypto_clob_markout.splits import walk_forward_splits
+from cloblab.evaluation import run_baseline
+from cloblab.features import build_features
+from cloblab.labels import build_markout_labels
+from cloblab.samples import make_synthetic_order_book
+from cloblab.splits import walk_forward_splits
 
 
 def _snapshots() -> pd.DataFrame:
@@ -117,7 +117,31 @@ class FeatureLabelSplitTests(unittest.TestCase):
         self.assertIn("direction_accuracy", result["metrics"])
         self.assertIn("ic", result["metrics"])
 
+    def test_baseline_purges_training_rows_whose_label_reaches_test_window(self) -> None:
+        local_ts = pd.date_range("2026-01-01T00:00:00Z", periods=20, freq="1s")
+        data = pd.DataFrame(
+            {
+                "local_ts": local_ts,
+                "x": np.arange(20, dtype=float),
+                "markout_bps_5s": np.arange(20, dtype=float),
+                "future_ts_5s": local_ts + pd.Timedelta(seconds=5),
+            }
+        )
+
+        result = run_baseline(
+            data,
+            feature_cols=["x"],
+            label_col="markout_bps_5s",
+            min_train_size=10,
+            test_size=5,
+            n_splits=1,
+        )
+
+        fold = result["folds"][0]
+        self.assertEqual(fold["train_n_before_label_purge"], 10)
+        self.assertEqual(fold["train_n_after_label_purge"], 5)
+        self.assertLess(pd.Timestamp(fold["max_train_label_ts"]), pd.Timestamp(fold["test_start_ts"]))
+
 
 if __name__ == "__main__":
     unittest.main()
-

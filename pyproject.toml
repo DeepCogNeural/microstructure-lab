@@ -1,7 +1,7 @@
 [project]
-name = "crypto-clob-markout-benchmark"
+name = "crypto-microstructure-lab"
 version = "0.1.0"
-description = "Public crypto CLOB markout benchmark MVP with no-lookahead features and walk-forward evaluation."
+description = "Crypto market microstructure lab for public L2 reconstruction, markouts, and cost proxies."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -16,7 +16,7 @@ dependencies = [
 dev = ["pytest>=8.0"]
 
 [project.scripts]
-clob-markout = "crypto_clob_markout.cli:main"
+cloblab = "cloblab.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]

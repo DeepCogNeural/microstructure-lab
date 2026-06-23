@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import math
+import re
 from typing import Any
 
 import numpy as np
 import pandas as pd
 
-from crypto_clob_markout.splits import walk_forward_splits
+from cloblab.splits import walk_forward_splits
 
 
 def run_baseline(
@@ -20,17 +21,29 @@ def run_baseline(
     n_splits: int = 3,
     cost_bps: float = 1.0,
     random_seed: int = 0,
+    label_time_col: str | None = None,
 ) -> dict[str, Any]:
-    """Run a simple linear walk-forward baseline plus shuffled-label control."""
+    """Run a simple linear walk-forward baseline plus shuffled-label control.
 
+    If `label_time_col` is available, training rows whose future label endpoint
+    reaches the test window are purged from each fold.
+    """
+
+    label_time_col = label_time_col or _infer_label_time_col(label_col)
     required = set(feature_cols + [label_col, time_col])
+    if label_time_col is not None:
+        required.add(label_time_col)
     missing = sorted(required.difference(data.columns))
     if missing:
         raise ValueError(f"missing required columns: {missing}")
 
     frame = data.copy()
     frame[time_col] = pd.to_datetime(frame[time_col], utc=True)
-    frame = frame.dropna(subset=feature_cols + [label_col]).sort_values(time_col)
+    dropna_cols = feature_cols + [label_col]
+    if label_time_col is not None:
+        frame[label_time_col] = pd.to_datetime(frame[label_time_col], utc=True)
+        dropna_cols.append(label_time_col)
+    frame = frame.dropna(subset=dropna_cols).sort_values(time_col)
     if len(frame) < min_train_size + test_size:
         raise ValueError("not enough rows for the requested walk-forward split")
 
@@ -48,10 +61,20 @@ def run_baseline(
     predictions: list[float] = []
     actuals: list[float] = []
     control_predictions: list[float] = []
+    folds: list[dict[str, Any]] = []
 
     for train_idx, test_idx in splits:
         train = frame.loc[train_idx]
         test = frame.loc[test_idx]
+        train_n_before_label_purge = len(train)
+        max_train_label_ts_before = None
+        if label_time_col is not None:
+            test_start_ts = test[time_col].min()
+            max_train_label_ts_before = train[label_time_col].max()
+            train = train[train[label_time_col] < test_start_ts]
+        if len(train) < max(2, len(feature_cols) + 1):
+            continue
+
         pred = _fit_predict_linear(train, test, feature_cols, label_col)
         shuffled = train.copy()
         shuffled[label_col] = rng.permutation(shuffled[label_col].to_numpy())
@@ -59,6 +82,26 @@ def run_baseline(
         predictions.extend(pred.tolist())
         control_predictions.extend(control_pred.tolist())
         actuals.extend(test[label_col].astype(float).tolist())
+        folds.append(
+            {
+                "train_n_before_label_purge": int(train_n_before_label_purge),
+                "train_n_after_label_purge": int(len(train)),
+                "test_n": int(len(test)),
+                "test_start_ts": test[time_col].min().isoformat(),
+                "test_end_ts": test[time_col].max().isoformat(),
+                "max_train_feature_ts": train[time_col].max().isoformat(),
+                "max_train_label_ts": train[label_time_col].max().isoformat()
+                if label_time_col is not None
+                else None,
+                "max_train_label_ts_before_purge": max_train_label_ts_before.isoformat()
+                if max_train_label_ts_before is not None
+                else None,
+                "label_time_col": label_time_col,
+            }
+        )
+
+    if not predictions:
+        raise ValueError("no folds had enough label-purged training rows")
 
     metrics = _score_predictions(predictions, actuals, cost_bps)
     control_metrics = _score_predictions(control_predictions, actuals, cost_bps)
@@ -69,8 +112,17 @@ def run_baseline(
         "buckets": buckets,
         "feature_cols": feature_cols,
         "label_col": label_col,
+        "label_time_col": label_time_col,
         "cost_bps": cost_bps,
+        "folds": folds,
     }
+
+
+def _infer_label_time_col(label_col: str) -> str | None:
+    match = re.match(r"^markout(?:_bps)?_(\d+)s$", label_col)
+    if not match:
+        return None
+    return f"future_ts_{match.group(1)}s"
 
 
 def _fit_predict_linear(

@@ -1,0 +1,3 @@
+side,requested_size,filled_size,average_price,midprice,spread_cost_bps,depth_cost_bps,fee_bps,total_cost_bps,assumption
+buy,2.5,2.5,50000.6,50000.0,0.1,0.019999999999708917,1.0,1.119999999999709,visible_depth_sweep_cost_proxy
+sell,2.5,2.5,49999.4,50000.0,0.1,0.019999999999708917,1.0,1.119999999999709,visible_depth_sweep_cost_proxy
