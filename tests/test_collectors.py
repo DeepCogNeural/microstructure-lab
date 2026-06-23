@@ -3,7 +3,8 @@ from __future__ import annotations
 import unittest
 from unittest.mock import patch
 
-from crypto_clob_markout.collectors import collect_coinbase_websocket_sync
+from cloblab.collectors import coinbase_match_side_to_aggressor_side
+from cloblab.collectors import collect_coinbase_websocket_sync
 
 
 class _FakeWebSocket:
@@ -23,8 +24,14 @@ class _FakeConnect:
 
 
 class CollectorTests(unittest.TestCase):
+    def test_coinbase_match_side_is_converted_from_maker_to_aggressor_side(self) -> None:
+        self.assertEqual(coinbase_match_side_to_aggressor_side("sell"), "buy")
+        self.assertEqual(coinbase_match_side_to_aggressor_side("buy"), "sell")
+        with self.assertRaisesRegex(ValueError, "unknown Coinbase match side"):
+            coinbase_match_side_to_aggressor_side("hold")
+
     def test_coinbase_collector_allows_large_l2_snapshots(self) -> None:
-        with patch("crypto_clob_markout.collectors.websockets.connect", return_value=_FakeConnect()) as connect:
+        with patch("cloblab.collectors.websockets.connect", return_value=_FakeConnect()) as connect:
             collect_coinbase_websocket_sync(
                 symbols=["BTC-USD"],
                 seconds=0.1,
@@ -36,4 +43,3 @@ class CollectorTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

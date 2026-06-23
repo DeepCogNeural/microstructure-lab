@@ -3,25 +3,28 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
 
-from crypto_clob_markout.collectors import collect_coinbase_websocket_sync
-from crypto_clob_markout.evaluation import run_baseline
-from crypto_clob_markout.features import build_features
-from crypto_clob_markout.io import write_csv, write_parquet
-from crypto_clob_markout.labels import build_markout_labels
-from crypto_clob_markout.samples import make_synthetic_order_book
-from crypto_clob_markout.schema import render_schema_markdown
+from cloblab.book import replay_l2_events
+from cloblab.collectors import collect_coinbase_websocket_sync
+from cloblab.costs import sweep_visible_depth
+from cloblab.evaluation import run_baseline
+from cloblab.features import build_features
+from cloblab.io import write_csv, write_parquet
+from cloblab.labels import build_markout_labels
+from cloblab.samples import make_synthetic_order_book
+from cloblab.schema import render_schema_markdown
 
 
 DEFAULT_FEATURES = ["top_imbalance", "depth_imbalance", "spread_bps", "recent_trade_imbalance"]
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Crypto CLOB markout benchmark MVP")
+    parser = argparse.ArgumentParser(description="Crypto market microstructure lab")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     sample = subparsers.add_parser("make-sample", help="Run deterministic sample pipeline")
@@ -30,6 +33,14 @@ def main(argv: list[str] | None = None) -> int:
     sample.add_argument("--levels", type=int, default=3)
     sample.add_argument("--horizon", type=int, default=10)
     sample.add_argument("--cost-bps", type=float, default=1.0)
+
+    demo = subparsers.add_parser("demo", help="Run the offline reproducible demo")
+    demo.add_argument("--offline", action="store_true", help="use deterministic offline fixtures")
+    demo.add_argument("--out", default="data/sample", help="output directory")
+    demo.add_argument("--rows", type=int, default=120)
+    demo.add_argument("--levels", type=int, default=3)
+    demo.add_argument("--horizon", type=int, default=10)
+    demo.add_argument("--cost-bps", type=float, default=1.0)
 
     collect = subparsers.add_parser("collect-coinbase", help="Collect public Coinbase Exchange WebSocket JSONL")
     collect.add_argument("--symbols", nargs="+", default=["BTC-USD"], help="product ids")
@@ -41,7 +52,7 @@ def main(argv: list[str] | None = None) -> int:
     schema.add_argument("--out", help="optional output markdown path")
 
     args = parser.parse_args(argv)
-    if args.command == "make-sample":
+    if args.command in {"make-sample", "demo"}:
         paths = run_sample_pipeline(
             out_dir=Path(args.out),
             rows=args.rows,
@@ -113,7 +124,54 @@ def run_sample_pipeline(
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(json.dumps(_clean_json(result), indent=2, sort_keys=True) + "\n", encoding="utf-8")
     paths["summary"] = summary_path
+
+    l2_events = _make_demo_l2_events()
+    replay = replay_l2_events(l2_events)
+    terminal_snapshot = replay.snapshots.iloc[-1]
+    cost_rows = [
+        asdict(sweep_visible_depth(terminal_snapshot, side="buy", size=2.5, fee_bps=cost_bps)),
+        asdict(sweep_visible_depth(terminal_snapshot, side="sell", size=2.5, fee_bps=cost_bps)),
+    ]
+    paths["l2_events"] = write_parquet(l2_events, raw_dir / "l2_events.parquet")
+    paths["l2_snapshots"] = write_parquet(replay.snapshots, processed_dir / "l2_replay_snapshots.parquet")
+    paths["cost_sweep"] = write_csv(pd.DataFrame(cost_rows), report_dir / "visible_depth_cost_sweep.csv")
+    manifest_path = out_dir / "MANIFEST.json"
+    manifest = {
+        "source": "synthetic",
+        "generator": "cloblab.run_sample_pipeline",
+        "generator_version": "0.1.0",
+        "seed": "deterministic-no-random-seed",
+        "data_rights": "software fixture only; no venue market data",
+        "artifacts": sorted(str(path.relative_to(out_dir)) for path in paths.values()),
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    paths["manifest"] = manifest_path
     return paths
+
+
+def _make_demo_l2_events() -> pd.DataFrame:
+    timestamp = pd.Timestamp("2026-01-01T00:00:00Z")
+    rows = [
+        ("bid", "49999.50", "2.0"),
+        ("ask", "50000.50", "2.0"),
+        ("bid", "49999.00", "3.0"),
+        ("ask", "50001.00", "3.0"),
+    ]
+    return pd.DataFrame(
+        [
+            {
+                "exchange_ts": timestamp,
+                "local_ts": timestamp + pd.Timedelta(milliseconds=sequence),
+                "symbol": "BTC-USD",
+                "sequence": sequence,
+                "side": side,
+                "price": price,
+                "size": size,
+                "source_channel": "synthetic_level2_delta",
+            }
+            for sequence, (side, price, size) in enumerate(rows, start=1)
+        ]
+    )
 
 
 def _clean_json(value: Any) -> Any:
@@ -128,4 +186,3 @@ def _clean_json(value: Any) -> Any:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

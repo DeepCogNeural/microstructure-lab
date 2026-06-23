@@ -15,6 +15,17 @@ DEFAULT_CHANNELS = ("level2_batch", "matches")
 WEBSOCKET_MAX_SIZE_BYTES = 64 * 1024 * 1024
 
 
+def coinbase_match_side_to_aggressor_side(side: str) -> str:
+    """Convert Coinbase `match.side` maker side into aggressor side."""
+
+    maker_side = side.lower()
+    if maker_side == "sell":
+        return "buy"
+    if maker_side == "buy":
+        return "sell"
+    raise ValueError(f"unknown Coinbase match side: {side}")
+
+
 async def collect_coinbase_websocket(
     *,
     symbols: Iterable[str],

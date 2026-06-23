@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this research scaffold, please cite it as below."
+title: "Crypto Market Microstructure Lab"
+authors:
+  - family-names: "Xu"
+    given-names: "Linghao"
+year: 2026
+license: MIT
