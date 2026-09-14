@@ -1,0 +1,130 @@
+{
+  "dataset": {
+    "name": "WSELOB-2017",
+    "license": "CC BY 4.0",
+    "symbols": [
+      "KGHM",
+      "PKNORLEN",
+      "PKOBP",
+      "PZU",
+      "PEKAO"
+    ],
+    "date_start": "2017-01-01",
+    "date_end": "2017-12-24",
+    "session_start_local": "10:00:00",
+    "session_end_local": "16:00:00",
+    "timezone": "Europe/Warsaw",
+    "horizons_events": [
+      10,
+      20,
+      50
+    ],
+    "book_levels": 10,
+    "prepare_full_year_all_symbols": true
+  },
+  "features": {
+    "primary_set": [
+      "spread_bps",
+      "top_imbalance",
+      "depth_imbalance",
+      "ofi_l1_norm",
+      "microprice_minus_mid_bps"
+    ],
+    "reuse_existing_causal_definitions": true,
+    "no_new_features_after_test_inspection": true
+  },
+  "evaluation": {
+    "split_unit": "calendar_month",
+    "minimum_train_trading_days": 40,
+    "expanding_train": true,
+    "fixed_test_months": [
+      "2017-04",
+      "2017-06",
+      "2017-09",
+      "2017-11"
+    ],
+    "fallback_rule": "If a fixed month is absent/ineligible for a symbol, use the next available eligible month and record the substitution before inspecting model quality.",
+    "train_must_strictly_precede_test": true,
+    "cross_symbol_pooling": false,
+    "primary_metric": "spearman_ic",
+    "secondary_metrics": [
+      "direction_accuracy_nonzero",
+      "prediction_decile_monotonicity",
+      "threshold_coverage_1bp",
+      "selected_midpoint_diagnostic_bps"
+    ],
+    "headline_aggregation": "equal_weight_symbol_month_mean",
+    "pooled_rows_secondary_only": true,
+    "overlapping_labels_are_dependent": true
+  },
+  "models": {
+    "linear": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "ridge": 1e-06,
+      "train_only_standardization": true
+    },
+    "xgboost": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "n_estimators": 800,
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "min_child_weight": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "reg_alpha": 0.1,
+      "max_bin": 256,
+      "random_state": 7,
+      "device": "runtime_override_cpu_or_cuda",
+      "hyperparameter_search": false
+    },
+    "hist_gradient_boosting": {
+      "scope": "representative_month_only_all_symbols_all_horizons",
+      "representative_month": "2017-06",
+      "max_depth": 3,
+      "min_samples_leaf": 25,
+      "n_estimators": 200,
+      "learning_rate": 0.03,
+      "random_state": 7
+    }
+  },
+  "negative_controls": {
+    "primary_scope": "xgboost_full_features_all_symbols_representative_month_all_horizons",
+    "representative_month": "2017-06",
+    "seed": 7,
+    "extra_seed_check": {
+      "symbol": "PEKAO",
+      "month": "2017-06",
+      "horizon_events": 20,
+      "seeds": [
+        7,
+        17,
+        29
+      ]
+    },
+    "shuffle_scope": "within_training_day",
+    "no_p_values_from_row_count": true
+  },
+  "experiment_name": "wselob_execution_robustness_v1",
+  "execution_labels": {
+    "latency_events": [
+      0,
+      1,
+      5
+    ],
+    "threshold_bps": 1.0,
+    "denominator": "entry_midpoint",
+    "same_rows_all_latencies": true,
+    "deciles": "within_block_prediction_qcut_ties_preserved",
+    "ordering": "all_9_long_differences_nonnegative_and_short_nonpositive",
+    "reuse_predictions": true
+  },
+  "robustness": {
+    "bootstrap_seed": 20260914,
+    "bootstrap_draws": 10000,
+    "interval": "descriptive_95_percent_paired_stock_month_block_resampling",
+    "formal_significance": false
+  }
+}

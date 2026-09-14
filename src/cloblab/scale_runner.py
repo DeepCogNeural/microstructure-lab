@@ -17,6 +17,7 @@ import pandas as pd
 
 from cloblab.evaluation import _fit_predict_linear, _score_predictions, _spearman_corr
 from cloblab.licensed_experiment import prediction_quantiles
+from cloblab.scientific_identity import scientific_config, scientific_cache, scientific_task_id
 from cloblab.scale_cache import validate_cache
 from cloblab.scale_common import atomic_json, digest, environment, file_hash, read_json, source_hash
 
@@ -46,12 +47,12 @@ def expand_tasks(config, manifest):
                         variants += [("xgboost", s) for s in extra["seeds"]]
                 for model, seed in variants:
                     task = {"symbol": symbol, "month": month, "horizon": horizon, "model": model,
-                            "control_seed": seed, "config_hash": digest(config), "cache_hash": digest(manifest),
-                            "source_hash": source_hash()}
-                    key = digest(task)
+                            "control_seed": seed, "config_hash": digest(scientific_config(config)), "cache_hash": digest(scientific_cache(manifest)),
+                            "identity_version": 2}
+                    key = scientific_task_id(config, task, manifest)
                     tasks[key] = {"task_id": key, **task}
     return {"tasks": sorted(tasks.values(), key=lambda t: (t["symbol"], t["month"], t["horizon"], t["model"], t["control_seed"] or -1)),
-            "substitutions": substitutions, "config_hash": digest(config), "cache_hash": digest(manifest)}
+            "substitutions": substitutions, "config_hash": digest(scientific_config(config)), "cache_hash": digest(scientific_cache(manifest))}
 
 
 def load_fold(cache, manifest, task, features):
