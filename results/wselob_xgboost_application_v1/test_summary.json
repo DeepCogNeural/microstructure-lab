@@ -1,0 +1,10 @@
+{
+  "pytest_passed": 34,
+  "pytest_failed": 0,
+  "warnings": 1,
+  "warning_description": "Pre-existing pandas timezone dtype deprecation in Coinbase normalization test.",
+  "xgboost": "3.0.5",
+  "benchmark_completion_ci": "success",
+  "benchmark_completion_commit": "0aa7841f5e43010f2a2aac4ff6291816debb0d15",
+  "public_note": "Private local environment paths and infrastructure details are intentionally omitted."
+}

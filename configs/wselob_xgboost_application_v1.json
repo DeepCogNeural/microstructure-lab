@@ -1,0 +1,135 @@
+{
+  "schema_version": 2,
+  "experiment_name": "wselob_xgboost_application_v1",
+  "purpose": "Public, application-grade scale/reproducibility benchmark; not an alpha search.",
+  "public_redaction_note": "Private execution infrastructure and host-specific orchestration details are intentionally omitted from the public repository. Scientific dataset, feature, model, split and control settings are preserved.",
+  "supersedes_for_execution": "configs/wselob_xgboost_scale_v1.json",
+  "dataset": {
+    "name": "WSELOB-2017",
+    "license": "CC BY 4.0",
+    "symbols": ["KGHM", "PKNORLEN", "PKOBP", "PZU", "PEKAO"],
+    "date_start": "2017-01-01",
+    "date_end": "2017-12-24",
+    "session_start_local": "10:00:00",
+    "session_end_local": "16:00:00",
+    "timezone": "Europe/Warsaw",
+    "horizons_events": [10, 20, 50],
+    "book_levels": 10,
+    "prepare_full_year_all_symbols": true
+  },
+  "features": {
+    "primary_set": ["spread_bps", "top_imbalance", "depth_imbalance", "ofi_l1_norm", "microprice_minus_mid_bps"],
+    "reuse_existing_causal_definitions": true,
+    "no_new_features_after_test_inspection": true
+  },
+  "evaluation": {
+    "split_unit": "calendar_month",
+    "minimum_train_trading_days": 40,
+    "expanding_train": true,
+    "fixed_test_months": ["2017-04", "2017-06", "2017-09", "2017-11"],
+    "fallback_rule": "If a fixed month is absent/ineligible for a symbol, use the next available eligible month and record the substitution before inspecting model quality.",
+    "train_must_strictly_precede_test": true,
+    "cross_symbol_pooling": false,
+    "primary_metric": "spearman_ic",
+    "secondary_metrics": ["direction_accuracy_nonzero", "prediction_decile_monotonicity", "threshold_coverage_1bp", "selected_midpoint_diagnostic_bps"],
+    "headline_aggregation": "equal_weight_symbol_month_mean",
+    "pooled_rows_secondary_only": true,
+    "overlapping_labels_are_dependent": true
+  },
+  "models": {
+    "linear": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "ridge": 1e-06,
+      "train_only_standardization": true
+    },
+    "xgboost": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "n_estimators": 800,
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "min_child_weight": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "reg_alpha": 0.1,
+      "max_bin": 256,
+      "random_state": 7,
+      "device": "runtime_override_cpu_or_cuda",
+      "hyperparameter_search": false
+    },
+    "hist_gradient_boosting": {
+      "scope": "representative_month_only_all_symbols_all_horizons",
+      "representative_month": "2017-06",
+      "max_depth": 3,
+      "min_samples_leaf": 25,
+      "n_estimators": 200,
+      "learning_rate": 0.03,
+      "random_state": 7
+    }
+  },
+  "negative_controls": {
+    "primary_scope": "xgboost_full_features_all_symbols_representative_month_all_horizons",
+    "representative_month": "2017-06",
+    "seed": 7,
+    "extra_seed_check": {
+      "symbol": "PEKAO",
+      "month": "2017-06",
+      "horizon_events": 20,
+      "seeds": [7, 17, 29]
+    },
+    "shuffle_scope": "within_training_day",
+    "no_p_values_from_row_count": true
+  },
+  "engineering": {
+    "processed_layout": "partitioned_parquet_symbol_day",
+    "feature_cache": true,
+    "compression": "zstd",
+    "atomic_artifact_writes": true,
+    "deterministic_task_ids": true,
+    "resume_completed_tasks": true,
+    "record_environment_manifest_locally": true,
+    "record_hashes": true,
+    "record_wall_time": true
+  },
+  "resource_policy": {
+    "bounded_execution": true,
+    "avoid_shared_resource_monopolization": true,
+    "private_infrastructure_details_must_not_be_committed": true,
+    "public_outputs_may_include_only_aggregate_performance_ratios": true
+  },
+  "performance_benchmarks": {
+    "cpu_vs_accelerator": {
+      "symbol": "PEKAO",
+      "test_month": "2017-06",
+      "horizon_events": 20,
+      "model": "xgboost"
+    },
+    "two_worker_throughput": {
+      "workers": 2,
+      "tasks": [
+        {"symbol": "PEKAO", "test_month": "2017-06", "horizon_events": 20},
+        {"symbol": "KGHM", "test_month": "2017-06", "horizon_events": 20}
+      ],
+      "compare": "serial_one_worker_vs_concurrent_two_workers"
+    },
+    "cache_reuse": true
+  },
+  "time_budget": {
+    "target_same_day_completion": true,
+    "checkpoint_after_first_full_year_preparation": true,
+    "checkpoint_after_first_representative_xgboost_task": true,
+    "stop_if_projected_runtime_becomes_disruptive": true
+  },
+  "publication": {
+    "commit_raw_data": false,
+    "commit_processed_row_level_data": false,
+    "commit_row_level_predictions": false,
+    "commit_aggregate_metrics": true,
+    "commit_resource_inventory": false,
+    "commit_hostnames_or_hardware_inventory": false,
+    "commit_small_plots": true,
+    "require_dataset_attribution": true
+  }
+}

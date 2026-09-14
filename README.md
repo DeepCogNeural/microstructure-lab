@@ -1,91 +1,115 @@
-# Crypto Market Microstructure Lab
+# Market Microstructure Lab
 
-Deterministic publicly accessible feed capture, aggregate Level 2
-reconstruction, chronological future-midpoint evaluation, and visible-depth
-crossing-cost diagnostics for crypto central limit order book research.
+A research pipeline for short-horizon price prediction from limit-order-book data. The project emphasizes deterministic book reconstruction, causal feature construction, chronological out-of-sample evaluation, negative controls, reproducible experiment artifacts, and explicit limits on trading claims.
 
-This is a research scaffold, not trading advice, not a live trading system,
-and not an alpha or profit claim. It is designed to make the hard parts of
-market microstructure research visible: timestamp causality, order-book
-invariants, feature/label separation, label-time purging, walk-forward
-validation, negative controls, and explicit cost assumptions.
+## Full-Year Five-Stock Benchmark
+
+Using the CC BY 4.0 WSELOB-2017 dataset, the pipeline reconstructed **85,846,918 order messages** into **56,887,949 causal Level-2 feature rows** across five equities and 1,250 stock/day partitions.
+
+The fixed experiment completed **152/152 preregistered tasks** with no missing real-data tasks or month substitutions. Linear and XGBoost use the same five features, horizons, and expanding monthly holdouts; XGBoost parameters were fixed before final-test inspection.
+
+| Message horizon | Linear IC | XGBoost IC |
+|---:|---:|---:|
+| 10 | 0.2283 | **0.2367** |
+| 20 | 0.2552 | **0.2616** |
+| 50 | 0.2524 | **0.2585** |
+
+The headline metric is equal-weight stock/month held-out Spearman IC across April, June, September, and November 2017. XGBoost modestly improves the point estimate at all three horizons; this is **not** a statistical-significance claim.
+
+Matched June results show no universal model winner:
+
+| Horizon | Linear | HistGB | XGBoost |
+|---:|---:|---:|---:|
+| 10 | 0.2357 | 0.2403 | **0.2422** |
+| 20 | 0.2636 | 0.2673 | **0.2684** |
+| 50 | 0.2595 | **0.2638** | 0.2635 |
+
+Seed-7 shuffled-label XGBoost controls average **0.012 / 0.034 / 0.044 IC** at 10/20/50 messages, substantially below the primary results. Overlapping labels are dependent, so row counts are not treated as IID evidence.
+
+[Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [aggregate results](results/wselob_xgboost_application_v1)
+
+## What the Model Uses
+
+The primary feature set is deliberately small and interpretable:
+
+- spread in basis points;
+- top-of-book imbalance;
+- ten-level depth imbalance;
+- normalized Level-1 order-flow imbalance (OFI);
+- microprice displacement from midpoint.
+
+Across the primary XGBoost fits, normalized gain is dominated by top imbalance (~48–50%) and microprice displacement (~25–30%), with OFI providing additional information. Feature importance is descriptive, not causal attribution.
+
+## Research Engineering
+
+The project is designed so the experiment is reproducible rather than notebook-specific:
 
 ```text
-public feed or synthetic fixture
-  -> raw events
+licensed order messages
   -> deterministic L2 replay
-  -> features known at decision time
-  -> future midpoint markout labels
-  -> walk-forward baseline + negative controls
-  -> visible-depth cost stress report
+  -> causal feature/label partitions by symbol/day
+  -> immutable Parquet cache + hashes
+  -> preregistered chronological tasks
+  -> Linear / HistGB / XGBoost / shuffled controls
+  -> resumable atomic artifacts
+  -> denominator-checked aggregation
 ```
 
-## Core Concepts
+Implemented safeguards include deterministic task IDs, source/config/cache hashes, atomic writes, completed-task resume, explicit retry after failure, duplicate detection, and aggregation against the original task manifest.
 
-CLOB means central limit order book: the visible bid and ask queues for a
-traded product. A markout is the future midpoint price change after a decision
-timestamp, for example 1s, 5s, 10s, or 60s later. In this repo, future midpoint
-data is used only as a label, never as an input feature.
+A fixed CPU-versus-accelerator XGBoost comparison measured **17.26× faster training** and **9.07× faster end-to-end task execution**, while predictions remained numerically consistent (Spearman 0.99924; absolute IC drift 0.000084). A two-worker comparison improved independent-task throughput by **1.61×**. Only aggregate performance ratios are public; private infrastructure details are intentionally excluded.
+
+## Earlier Ten-Day Benchmark
+
+The earlier PEKAO-only benchmark remains as a smaller reproducibility check: 336,602 snapshots over ten trading days with nine strictly later-day test folds.
+
+| Horizon | Linear IC | HistGB IC | Shuffled linear IC | Shuffled HistGB IC |
+|---:|---:|---:|---:|---:|
+| 10 | 0.2361 | 0.2312 | -0.0251 | -0.0104 |
+| 20 | 0.2712 | 0.2584 | -0.0087 | -0.0024 |
+| 50 | 0.2758 | 0.2606 | -0.0497 | -0.0422 |
+
+The larger five-stock benchmark supersedes this as the main application result.
 
 ## Quickstart
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[dev]"
+pip install -e ".[dev,ml,data,xgb]"
 python -m pytest -q
 cloblab demo --offline --out data/sample --rows 120
 ```
 
-The offline demo writes only deterministic synthetic fixtures:
+The offline demo is deterministic and synthetic. It validates the software path; it is not empirical alpha evidence.
 
-- `data/sample/raw/snapshots.parquet`
-- `data/sample/raw/trades.parquet`
-- `data/sample/raw/l2_events.parquet`
-- `data/sample/processed/features.parquet`
-- `data/sample/processed/labels.parquet`
-- `data/sample/processed/l2_replay_snapshots.parquet`
-- `data/sample/reports/summary.json`
-- `data/sample/reports/bucket_markouts.csv`
-- `data/sample/reports/visible_depth_cost_sweep.csv`
-- `data/sample/MANIFEST.json`
+## Licensed Data
 
-## What Is Implemented
+WSELOB-2017 attribution:
 
-- Coinbase Exchange publicly accessible WebSocket collector for raw JSONL
-  capture, subject to provider terms.
-- Deterministic synthetic ingestion path for offline reproducibility.
-- Aggregate L2 replay with integer tick/lot normalization, sequence-gap checks,
-  crossed-book rejection, and stable state hashes.
-- No-lookahead features: top-of-book imbalance, multi-level depth imbalance,
-  spread in basis points, midpoint, and recent trade-size imbalance.
-- 1s/5s/10s/60s midpoint markout labels built after feature construction.
-- Label-time-purged walk-forward linear baseline with IC, direction accuracy,
-  binned markouts, cost-threshold coverage, and shuffled-label negative
-  control.
-- Visible-depth sweep cost proxy for crossing the book. It is not a passive
-  fill, queue-position, or PnL model.
+> Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1, DOI 10.17632/3g4mhdp899.1, CC BY 4.0.
 
-## Public Collection
+Raw licensed files are not committed. Public aggregates are derived research artifacts with attribution.
 
-Collect a short Coinbase Exchange publicly accessible WebSocket JSONL sample:
+The repository also contains a Coinbase feed adapter for data-engineering demonstrations. Coinbase's Market Data Terms currently restrict AI/ML use without permission, so Coinbase captures are **not** used as empirical ML evidence in this project.
 
-```bash
-cloblab collect-coinbase \
-  --symbols BTC-USD ETH-USD \
-  --seconds 30 \
-  --out data/raw/coinbase/messages.jsonl
-```
+## Current Limits
 
-Raw collected market data can become large and may be subject to provider
-redistribution limits. The repo ignores `data/raw/` and `data/processed/` by
-default.
+The headline results rank **future midpoint moves**. They are not realized PnL and do not model:
 
-The collector accepts no API key, signature, wallet, account, or order-entry
-input.
+- bid/ask crossing at entry and exit;
+- passive queue position or fill probability;
+- hidden liquidity;
+- fees or rebates;
+- latency before entry;
+- inventory limits or market impact.
 
-## Docs
+The next research priority is therefore **execution-aware robustness**, not adding more model libraries. See [Next Research Roadmap](docs/NEXT_RESEARCH_ROADMAP.md).
 
+## Documentation
+
+- [Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md)
+- [Next research roadmap](docs/NEXT_RESEARCH_ROADMAP.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Data model](docs/DATA_MODEL.md)
 - [Methodology](docs/METHODOLOGY.md)
@@ -93,17 +117,9 @@ input.
 - [Data terms](docs/DATA_TERMS.md)
 - [Reproducibility](docs/REPRODUCIBILITY.md)
 - [Limitations](docs/LIMITATIONS.md)
-- [Schema](data/schema.md)
+- [WSELOB license evidence](docs/WSELOB_LICENSE.md)
+- [Public contribution/privacy policy](CONTRIBUTING.md)
 
-## Current Limits
+## Public Repository Policy
 
-- The shipped sample is synthetic and deterministic; it proves the pipeline,
-  not a market result.
-- Publicly accessible feed capture is forward-only. The repo does not
-  redistribute captured venue data or derived real-data reports.
-- L2 data cannot prove hidden liquidity, true queue position, or passive-fill
-  probability.
-- The baseline is intentionally simple. More complex models should wait until
-  data quality, costs, and negative controls are stronger.
-- Coinbase `match.side` is maker side; aggressor-side features must invert it
-  before using trade direction.
+Do not commit hostnames, cluster/server names, hardware inventories, device UUIDs, scheduler job IDs, absolute home paths, environment dumps, credentials, or other private infrastructure metadata. Public engineering evidence should be limited to code, scientific configuration, aggregate results, and infrastructure-neutral performance summaries.

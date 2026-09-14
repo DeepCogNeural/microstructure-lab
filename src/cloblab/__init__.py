@@ -1,4 +1,4 @@
-"""Crypto market microstructure research utilities."""
+"""Market microstructure research utilities."""
 
 __all__ = [
     "book",

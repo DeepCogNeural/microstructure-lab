@@ -1,0 +1,13 @@
+{
+  "full_source_stock_days": 1250,
+  "raw_messages": 85846918,
+  "feature_rows": 56887949,
+  "source_bytes": 1313242927,
+  "snapshots_bytes": 964616714,
+  "feature_bytes": 1187614304,
+  "preparation_seconds_total": 244.50541062932462,
+  "scientific_cache_stock_days": 1235,
+  "engineering_only_tail_stock_days": 15,
+  "max_worker_peak_rss_kib": 1729668,
+  "date_boundary_note": "Frozen scientific config ends 2017-12-24. Official files extend to 2017-12-29. Last 15 stock-days prepared separately, without changing scientific cache or tasks."
+}

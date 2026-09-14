@@ -1,0 +1,15 @@
+{
+  "attribution": "Marsza\u0142ek, Adam (2023), WSELOB-2017, Mendeley Data V1, DOI 10.17632/3g4mhdp899.1; CC BY 4.0. Replay, features and evaluation added. As-is; no endorsement.",
+  "cache_hash": "667c4b5824e8217744c9d24c04fbcffc4613e4d7efb9ef21e0bf9cf68c6ff97f",
+  "complete": true,
+  "completed": 152,
+  "config_hash": "2457a7f5f20dc552bbe9479d9c8769e38256c209ff699f00b2b4690287bc6cc7",
+  "duplicates": [
+    "7321a4467d3c62cb9c23afccca7da107bd51b5c31c27ca2c1f582631ff52d518"
+  ],
+  "limitations": "Dependent overlapping message-horizon midpoint labels; selected midpoint diagnostic is not execution PnL.",
+  "missing": [],
+  "planned": 152,
+  "source_hash": "7919375bb0b82faba250a0e1adc1c18704a494fa766591f39b5f93e9220d8ebb",
+  "substitutions": []
+}

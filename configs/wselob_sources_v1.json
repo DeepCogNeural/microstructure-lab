@@ -1,0 +1,39 @@
+{
+  "dataset": "WSELOB-2017 V1",
+  "source_url": "https://data.mendeley.com/datasets/3g4mhdp899/1",
+  "license": "CC BY 4.0",
+  "attribution": "Marsza\u0142ek, Adam (2023), WSELOB-2017, Mendeley Data V1, DOI 10.17632/3g4mhdp899.1; CC BY 4.0; order replay, causal features and evaluation added; as-is, no warranty or endorsement.",
+  "symbol_identity_source": "Depositor order_data.ipynb, ASSETS mapping; SHA256 from public-api file metadata.",
+  "files": {
+    "KGHM": {
+      "filename": "KGHM_lob_2017_zlib.h5",
+      "sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "bytes": 325838174,
+      "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/d30e1966-5bc7-492e-993d-2a1e4c5e6da0/file_downloaded"
+    },
+    "PEKAO": {
+      "filename": "PEKAO_lob_2017_zlib.h5",
+      "sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "bytes": 152759953,
+      "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/63e3f3ab-f562-4389-a740-357446266a6c/file_downloaded"
+    },
+    "PKNORLEN": {
+      "filename": "PKNORLEN_lob_2017_zlib.h5",
+      "sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "bytes": 290678577,
+      "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/337abfb0-285e-4f9b-a4ab-992417991e1d/file_downloaded"
+    },
+    "PKOBP": {
+      "filename": "PKOBP_lob_2017_zlib.h5",
+      "sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "bytes": 281092890,
+      "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/ba14a4f2-865d-4d8b-8068-4af9a2efdda6/file_downloaded"
+    },
+    "PZU": {
+      "filename": "PZU_lob_2017_zlib.h5",
+      "sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "bytes": 262873333,
+      "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/e1acaa20-c404-4cbb-bfdf-a3eab7593ca3/file_downloaded"
+    }
+  }
+}
