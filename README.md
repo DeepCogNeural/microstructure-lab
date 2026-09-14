@@ -114,12 +114,13 @@ The original benchmark ranks **future midpoint moves**; the robustness extension
 - fees or rebates;
 - inventory limits or market impact.
 
-The next research priority is therefore **execution-aware robustness**, not adding more model libraries. See [Next Research Roadmap](docs/NEXT_RESEARCH_ROADMAP.md).
+The execution-aware robustness track is complete. Further work should use a genuinely new confirmation sample or market rather than retuning these already-inspected holdout blocks. See the [completed research roadmap](docs/NEXT_RESEARCH_ROADMAP.md).
 
 ## Documentation
 
 - [Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md)
-- [Next research roadmap](docs/NEXT_RESEARCH_ROADMAP.md)
+- [Execution-aware robustness report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md)
+- [Completed research roadmap](docs/NEXT_RESEARCH_ROADMAP.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Data model](docs/DATA_MODEL.md)
 - [Methodology](docs/METHODOLOGY.md)
