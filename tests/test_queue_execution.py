@@ -110,3 +110,71 @@ def test_missing_and_unpaired_denominators():
         for m,n in [('linear',10),('xgboost',11)]])
     with pytest.raises(ValueError,match='unpaired'):paired_summary(b,['S'],['M'])
     with pytest.raises(ValueError,match='incomplete'):paired_summary(b.iloc[:1],['S'],['M'])
+
+
+def test_reset_interpretation_reorders_the_visible_queue():
+    q=QueueBook('reset')
+    a=order('A',1,priority=10);a.time=10;q.apply(a)
+    b=order('A',2,priority=20);b.time=20;q.apply(b)
+    amendment=order('M',1,volume=3);amendment.time=30;q.apply(amendment)
+    assert [key[2][1] for key,_ in q.queue(1,100)]==[2,1]
+
+
+def test_remaining_original_horizon_is_not_shifted_by_latency():
+    x=events();change(x,6,2,0,entered=0);change(x,11,5,4,entered=6,execution=1)
+    # Placement at 5, fill at 11, original decision horizon at 10: undefined.
+    r=passive_paths(x,[5],1,10,decision_latency=5)
+    assert r['fill_time'][0]==6
+    assert np.isnan(r['markout_remaining'][0])
+
+
+def test_zero_direction_remains_in_denominator():
+    r=passive_paths(events(),[0],1,10)
+    frame=pd.DataFrame(r);frame['direction']=0
+    summary=summarize(frame)
+    assert summary['eligible_decisions']==1
+    assert summary['placed_orders']==0
+    assert summary['fill_probability']==0
+    assert np.isnan(summary['markout_5'])
+
+
+def test_queue_science_identity_excludes_runtime_but_binds_assumptions():
+    from cloblab.scientific_identity import scientific_config
+    config={'execution_labels':{'virtual_size':1,'priority_interpretations':['retain'],'workers':1}}
+    base=scientific_config(config)
+    config['execution_labels']['workers']=7
+    assert scientific_config(config)==base
+    config['execution_labels']['priority_interpretations']=['reset']
+    assert scientific_config(config)!=base
+
+
+def test_published_queue_denominators_and_original_predictions():
+    import json
+    from pathlib import Path
+    root=Path('results/wselob_queue_execution_v1')
+    if not root.exists():pytest.skip('full-data aggregates are not published yet')
+    manifest=json.loads((root/'run_manifest.json').read_text())
+    assert manifest['state']=='complete'
+    assert manifest['planned_cells']==manifest['completed_cells']==822
+    assert manifest['completed_stock_months']==20
+    original=pd.read_csv('results/wselob_xgboost_application_v1/model_metrics_by_symbol_month.csv')
+    expected=set(original[original.model.isin(['linear','xgboost'])].task_id)
+    assert {r['task_id'] for r in manifest['prediction_evidence']}==expected
+    b=pd.read_csv(root/'block_metrics.csv')
+    assert len(b)==822
+    assert not b.duplicated(['symbol','month','horizon','model','control_seed','latency','interpretation']).any()
+    assert (b.eligible_decisions==b.placed_orders+b.zero_signal_decisions).all()
+    assert np.allclose(b.fill_probability,b.fills/b.eligible_decisions)
+    assert np.allclose(b.fill_before_adverse+b.adverse_before_fill+b.simultaneous+b.no_event_fraction,1)
+    assert (b.fills<=b.placed_orders).all()
+    primary=b[b.control_seed.isna()]
+    pair=primary[primary.model=='linear'].merge(primary[primary.model=='xgboost'],on=['symbol','month','horizon','latency','interpretation'],suffixes=('_l','_x'))
+    assert len(pair)==360
+    assert (pair.eligible_decisions_l==pair.eligible_decisions_x).all()
+    groups=['model','horizon','control_seed','latency','interpretation']
+    expected_mean=b.groupby(groups,dropna=False).fill_probability.mean().sort_index()
+    published=pd.read_csv(root/'fill_summary.csv').set_index(groups).fill_probability.sort_index()
+    assert np.allclose(expected_mean,published)
+    for prefix in ('markout','spread'):
+        for offset in ('1','5','10','remaining'):
+            assert (b[f'{prefix}_{offset}_observations']<=b.fills).all()
