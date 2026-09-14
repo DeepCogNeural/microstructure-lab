@@ -210,3 +210,37 @@ def test_public_execution_artifacts_are_aggregate_only():
         elif path.suffix==".csv": assert not forbidden.intersection(pd.read_csv(path,nrows=0).columns)
     manifest = read_json(root/"run_manifest.json")
     assert manifest["complete"] and manifest["prediction_tasks"]==137 and manifest["execution_blocks"]==411
+
+
+def test_transfer_artifacts_preserve_denominator_and_reproduce_summary():
+    import itertools
+    root = ROOT/"results/wselob_execution_robustness_v1"
+    config = read_json(ROOT/"configs/wselob_transfer_robustness_v1.json")
+    blocks = pd.read_csv(root/"transfer_block_metrics.csv")
+    summary = pd.read_csv(root/"transfer_summary.csv")
+    manifest = read_json(root/"transfer_manifest.json")
+    assert manifest["complete"] and manifest["planned"]==manifest["completed"]==25
+    primary = blocks[blocks.control_seed.isna()]
+    controls = blocks[blocks.control_seed.notna()]
+    expected = set(itertools.product(config["dataset"]["symbols"],config["evaluation"]["fixed_test_months"]))
+    assert len(primary)==20 and set(primary[["symbol","month"]].itertuples(index=False,name=None))==expected
+    assert len(controls)==5 and set(controls.symbol)==set(config["dataset"]["symbols"])
+    assert controls.month.eq("2017-06").all() and controls.control_seed.eq(7).all()
+    assert blocks.horizon.eq(20).all() and blocks.train_stocks.eq(4).all()
+    assert (blocks.last_training_day < blocks.first_test_day).all()
+    assert np.isfinite(blocks.ic).all() and np.isfinite(blocks.transfer_minus_within_ic).all()
+    source = pd.read_csv(ROOT/"results/wselob_xgboost_application_v1/model_metrics_by_symbol_month.csv")
+    for result in blocks.itertuples():
+        within = source[source.task_id==result.within_stock_task_id].iloc[0]
+        assert result.n_test==within.n_test
+        assert result.within_stock_ic==pytest.approx(within.ic)
+        assert result.transfer_minus_within_ic==pytest.approx(result.ic-within.ic)
+    for result in summary.itertuples():
+        subset = blocks[blocks.control_seed.isna()] if pd.isna(result.control_seed) else blocks[blocks.control_seed.eq(result.control_seed)]
+        if result.scope=="by_symbol": subset=subset[subset.symbol==result.member]
+        elif result.scope=="by_month": subset=subset[subset.month==result.member]
+        else: assert result.scope=="overall"
+        assert result.blocks==len(subset)
+        assert result.mean_transfer_ic==pytest.approx(subset.ic.mean())
+        assert result.mean_delta_ic==pytest.approx(subset.transfer_minus_within_ic.mean())
+        assert result.wins==int(subset.transfer_minus_within_ic.gt(0).sum())

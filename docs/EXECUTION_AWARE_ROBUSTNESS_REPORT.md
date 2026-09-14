@@ -125,11 +125,37 @@ python scripts/render_execution_robustness.py
 
 ## Validation
 
-The implementation passed 59 local tests. Coverage includes hand-calculated long/short formulas, exact latency indices, day/segment boundaries, execution-independent scientific IDs, changed scientific settings, matching paired blocks, incomplete denominators, and transfer chronology/held-out-stock exclusion. The public privacy check passed. The implementation CI passed on Python 3.10 and 3.12; subsequent publication commits run the same workflow. No numerical significance or real trading claim is inferred from these software checks.
+The implementation passed 60 local tests. Coverage includes hand-calculated long/short formulas, exact latency indices, day/segment boundaries, execution-independent scientific IDs, changed scientific settings, matching paired blocks, incomplete denominators, and transfer chronology/held-out-stock exclusion. The public privacy check passed. The implementation CI passed on Python 3.10 and 3.12; subsequent publication commits run the same workflow. No numerical significance or real trading claim is inferred from these software checks.
 
 ## Optional stock transfer
 
-The mandatory Phase 0–2 result is complete. The optional fixed 20-message transfer experiment is running separately and is not included in the results above.
+The pooled-other-stock model retains comparable midpoint IC: 0.262463 versus 0.261639 within-stock, a mean difference of +0.000824, with 13/20 block wins. This is a small descriptive difference, not evidence that transfer is universally better. The June shuffled transfer control averages 0.066518 IC: substantially weaker, but not zero. No significance is inferred from the row count.
+
+Phase 3 completed 20 primary tasks and five June shuffled-label controls at the fixed 20-message horizon. Each task trains on strictly earlier data from the other four stocks, using the original five features and XGBoost hyperparameters. Controls shuffle within each training stock/day with seed 7. Test row identities and labels match the original within-stock comparator exactly. No model or threshold tuning was performed.
+
+| Scope | Member | Control seed | Blocks | Transfer IC | Within-stock IC | Transfer minus within | Wins |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| overall | all | 7.000000 | 5 | 0.066518 | 0.268427 | -0.201908 | 0 |
+| by_symbol | KGHM | 7.000000 | 1 | 0.072831 | 0.271640 | -0.198809 | 0 |
+| by_symbol | PEKAO | 7.000000 | 1 | 0.083934 | 0.274121 | -0.190187 | 0 |
+| by_symbol | PKNORLEN | 7.000000 | 1 | 0.060391 | 0.309468 | -0.249077 | 0 |
+| by_symbol | PKOBP | 7.000000 | 1 | 0.063622 | 0.264954 | -0.201331 | 0 |
+| by_symbol | PZU | 7.000000 | 1 | 0.051813 | 0.221951 | -0.170138 | 0 |
+| by_month | 2017-06 | 7.000000 | 5 | 0.066518 | 0.268427 | -0.201908 | 0 |
+| overall | all | NA | 20 | 0.262463 | 0.261639 | 0.000824 | 13 |
+| by_symbol | KGHM | NA | 4 | 0.276408 | 0.275594 | 0.000814 | 3 |
+| by_symbol | PEKAO | NA | 4 | 0.261795 | 0.262476 | -0.000682 | 2 |
+| by_symbol | PKNORLEN | NA | 4 | 0.293375 | 0.293281 | 0.000094 | 2 |
+| by_symbol | PKOBP | NA | 4 | 0.254451 | 0.252760 | 0.001691 | 4 |
+| by_symbol | PZU | NA | 4 | 0.226287 | 0.224085 | 0.002201 | 2 |
+| by_month | 2017-04 | NA | 5 | 0.262408 | 0.259848 | 0.002561 | 3 |
+| by_month | 2017-06 | NA | 5 | 0.268450 | 0.268427 | 0.000023 | 3 |
+| by_month | 2017-09 | NA | 5 | 0.279793 | 0.279306 | 0.000487 | 4 |
+| by_month | 2017-11 | NA | 5 | 0.239200 | 0.238976 | 0.000224 | 3 |
+
+![Transfer versus within-stock IC](../results/wselob_execution_robustness_v1/transfer_vs_within_stock.png)
+
+Transfer is a midpoint prediction diagnostic. It does not overturn the negative crossed-book results above. Primary and shuffled transfer denominators are separate; the control comparison is descriptive.
 
 ## Limits and attribution
 

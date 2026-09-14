@@ -1,0 +1,13 @@
+{
+  "analysis_source_hash": "f18aa09091af942de4db3aec68e2ec82e148983dcf186855a9d814c75c5ed4b9",
+  "complete": true,
+  "completed": 25,
+  "control_shuffle": "within_training_symbol_day",
+  "control_tasks": 5,
+  "horizon_events": 20,
+  "input_binding": "dc693ca9c4bd06869c6e5377697b509b20ffbb610e752b80acdd85585c8a8707",
+  "model_tuning": false,
+  "planned": 25,
+  "primary_tasks": 20,
+  "scientific_config_hash": "01fb3954250109b090e292dbeb8599e52fd2828c2b6382e0ccb46d2303b42886"
+}
