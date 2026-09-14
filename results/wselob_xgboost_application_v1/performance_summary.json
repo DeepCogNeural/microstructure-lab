@@ -1,0 +1,11 @@
+{
+  "training_speedup_cpu_to_accelerator": 17.260373221697975,
+  "task_wall_speedup_cpu_to_accelerator": 9.068023155621745,
+  "prediction_spearman_between_devices": 0.9992422586241385,
+  "ic_difference_between_devices": -0.00008391676038632667,
+  "direction_accuracy_difference_between_devices": -0.001211911357340778,
+  "numerical_drift_check_passed": true,
+  "two_worker_task_throughput_speedup": 1.606374585333541,
+  "serial_parallel_max_ic_difference": 0.0,
+  "public_note": "Only aggregate performance ratios are published. Hostnames, hardware inventory, device identifiers and scheduler details are intentionally omitted."
+}

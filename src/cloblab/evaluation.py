@@ -61,9 +61,10 @@ def run_baseline(
     predictions: list[float] = []
     actuals: list[float] = []
     control_predictions: list[float] = []
+    prediction_rows: list[dict[str, Any]] = []
     folds: list[dict[str, Any]] = []
 
-    for train_idx, test_idx in splits:
+    for fold_number, (train_idx, test_idx) in enumerate(splits, start=1):
         train = frame.loc[train_idx]
         test = frame.loc[test_idx]
         train_n_before_label_purge = len(train)
@@ -82,6 +83,22 @@ def run_baseline(
         predictions.extend(pred.tolist())
         control_predictions.extend(control_pred.tolist())
         actuals.extend(test[label_col].astype(float).tolist())
+        for timestamp, prediction, control_prediction, actual in zip(
+            test[time_col],
+            pred,
+            control_pred,
+            test[label_col].astype(float),
+            strict=True,
+        ):
+            prediction_rows.append(
+                {
+                    "fold": fold_number,
+                    "local_ts": timestamp.isoformat(),
+                    "prediction_bps": float(prediction),
+                    "control_prediction_bps": float(control_prediction),
+                    "realized_markout_bps": float(actual),
+                }
+            )
         folds.append(
             {
                 "train_n_before_label_purge": int(train_n_before_label_purge),
@@ -115,6 +132,7 @@ def run_baseline(
         "label_time_col": label_time_col,
         "cost_bps": cost_bps,
         "folds": folds,
+        "predictions": prediction_rows,
     }
 
 

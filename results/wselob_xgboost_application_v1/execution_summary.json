@@ -1,0 +1,11 @@
+{
+  "unique_tasks": 152,
+  "real_data_failures": 0,
+  "ooms": 0,
+  "identical_duplicates_deduplicated": 1,
+  "missing": 0,
+  "month_substitutions": [],
+  "execution_span_seconds": 2330.0,
+  "all_compute_jobs_finished": true,
+  "public_note": "Private execution infrastructure, host identifiers, hardware inventory, scheduler IDs and environment dumps are intentionally omitted from the public repository."
+}
