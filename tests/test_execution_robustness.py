@@ -174,3 +174,39 @@ def test_v2_cache_config_ignores_device_and_workers(tmp_path):
     config["models"]["xgboost"]["device"]="cpu"
     config["engineering"]={"workers":24}
     assert validate_cache(tmp_path,config)==manifest
+
+
+def test_public_aggregates_reproduce_from_block_evidence():
+    functions = runpy.run_path(str(ROOT/"scripts/run_execution_robustness.py"))
+    root = ROOT/"results/wselob_execution_robustness_v1"
+    config = read_json(ROOT/"configs/wselob_execution_robustness_v1.json")
+    blocks = pd.read_csv(root/"block_metrics.csv")
+    deciles = pd.read_csv(root/"block_prediction_deciles.csv")
+    produced = functions["aggregate_outputs"](blocks,deciles,config)
+    for name, frame in zip(("summary","prediction_deciles","latency_summary","paired_execution_differences"),produced):
+        published = pd.read_csv(root/f"{name}.csv")
+        pd.testing.assert_frame_equal(frame,published,check_dtype=False,check_exact=False,rtol=1e-10,atol=1e-12)
+    source = pd.read_csv(ROOT/"results/wselob_xgboost_application_v1/model_metrics_by_symbol_month.csv")
+    pairs,robust = paired_robustness(source,config["dataset"]["symbols"],config["evaluation"]["fixed_test_months"],config["dataset"]["horizons_events"])
+    for name, frame in (("paired_block_deltas",pairs),("paired_model_robustness",robust)):
+        published = pd.read_csv(root/f"{name}.csv")
+        published.columns.name = frame.columns.name
+        pd.testing.assert_frame_equal(frame,published,check_dtype=False,check_exact=False,rtol=1e-10,atol=1e-12)
+
+
+def test_public_execution_artifacts_are_aggregate_only():
+    import json
+    root = ROOT/"results/wselob_execution_robustness_v1"
+    forbidden = {"hostname","host","environment","gpu_uuid","job_id","timestamp_ns","event_index","bid_px_1","ask_px_1","prediction","actual"}
+    def visit(value):
+        if isinstance(value,dict):
+            assert not forbidden.intersection(value)
+            for item in value.values(): visit(item)
+        elif isinstance(value,list):
+            for item in value: visit(item)
+    for path in root.iterdir():
+        assert path.suffix in {".csv",".json",".png"}
+        if path.suffix==".json": visit(json.loads(path.read_text()))
+        elif path.suffix==".csv": assert not forbidden.intersection(pd.read_csv(path,nrows=0).columns)
+    manifest = read_json(root/"run_manifest.json")
+    assert manifest["complete"] and manifest["prediction_tasks"]==137 and manifest["execution_blocks"]==411

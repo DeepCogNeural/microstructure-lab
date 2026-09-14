@@ -28,6 +28,16 @@ Seed-7 shuffled-label XGBoost controls average **0.012 / 0.034 / 0.044 IC** at 1
 
 [Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [aggregate results](results/wselob_xgboost_application_v1)
 
+## Execution-Aware Robustness
+
+The next fixed experiment reused all **137 Linear/XGBoost/control prediction tasks** and completed **411/411 crossed-book evaluation cells**, including latency offsets of 0, 1, and 5 original messages.
+
+XGBoost beats Linear on midpoint IC in **20/20, 18/20, and 18/20** stock/month blocks at 10/20/50 messages. All leave-one-stock and leave-one-month mean improvements remain positive; the block bootstrap is descriptive, not a significance test.
+
+**That predictive improvement does not survive as positive crossed-book performance.** At zero delay, XGBoost's fixed 1 bp threshold-selected markouts average **−5.00 / −5.36 / −7.07 bps** at 10/20/50 messages. Delay makes these aggregates worse. Neither model has fully ordered crossed-book deciles in any of the 20 primary blocks. These are visible-quote diagnostics, not realized PnL.
+
+[Execution-aware report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [aggregate evidence and figures](results/wselob_execution_robustness_v1)
+
 ## What the Model Uses
 
 The primary feature set is deliberately small and interpretable:
@@ -95,13 +105,11 @@ The repository also contains a Coinbase feed adapter for data-engineering demons
 
 ## Current Limits
 
-The headline results rank **future midpoint moves**. They are not realized PnL and do not model:
+The original benchmark ranks **future midpoint moves**; the robustness extension also measures visible bid/ask crossing and message-count entry delay. Neither is realized PnL. Neither models:
 
-- bid/ask crossing at entry and exit;
 - passive queue position or fill probability;
 - hidden liquidity;
 - fees or rebates;
-- latency before entry;
 - inventory limits or market impact.
 
 The next research priority is therefore **execution-aware robustness**, not adding more model libraries. See [Next Research Roadmap](docs/NEXT_RESEARCH_ROADMAP.md).
