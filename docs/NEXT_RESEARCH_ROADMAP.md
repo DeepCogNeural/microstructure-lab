@@ -1,5 +1,7 @@
 # Next Research Roadmap — Execution-Aware Robustness
 
+**Completed 2026-09-14: Phases 0–3.** All 411 execution cells and all 25 transfer tasks completed. See [the measured results and limitations](EXECUTION_AWARE_ROBUSTNESS_REPORT.md). The plan below is retained as the original specification; it is not pending work.
+
 ## Why this is the next step
 
 The current benchmark already establishes a reproducible five-stock, full-year microstructure workflow and a modest XGBoost improvement over a linear baseline. The largest remaining scientific weakness is not model complexity: the headline target is future **midpoint** movement rather than an execution-aware outcome.

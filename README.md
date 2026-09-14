@@ -36,6 +36,8 @@ XGBoost beats Linear on midpoint IC in **20/20, 18/20, and 18/20** stock/month b
 
 **That predictive improvement does not survive as positive crossed-book performance.** At zero delay, XGBoost's fixed 1 bp threshold-selected markouts average **−5.00 / −5.36 / −7.07 bps** at 10/20/50 messages. Delay makes these aggregates worse. Neither model has fully ordered crossed-book deciles in any of the 20 primary blocks. These are visible-quote diagnostics, not realized PnL.
 
+The optional leave-one-stock-out experiment also completed **20/20 primary tasks plus 5/5 controls**. At 20 messages, transfer IC is **0.26246** versus **0.26164** within-stock (13/20 block wins). The small difference is descriptive; shuffled transfer controls average 0.06652 IC.
+
 [Execution-aware report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [aggregate evidence and figures](results/wselob_execution_robustness_v1)
 
 ## What the Model Uses
