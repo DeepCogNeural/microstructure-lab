@@ -56,7 +56,7 @@ def environment():
     deployment = Path("SOURCE_MANIFEST.json")
     if commit is None and deployment.exists():
         commit = read_json(deployment)["git_commit"]
-    return {"hostname": platform.node(), "python": platform.python_version(),
+    return {"python": platform.python_version(),
             "platform": platform.platform(), "logical_cpus": os.cpu_count(),
             "cpu": capture(["lscpu"]), "memory": capture(["free", "-b"]),
             "gpu": capture(["nvidia-smi", "--query-gpu=index,uuid,name,memory.total,driver_version", "--format=csv"]),

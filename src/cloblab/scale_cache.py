@@ -11,6 +11,7 @@ import time
 import h5py
 import pandas as pd
 
+from cloblab.scientific_identity import scientific_config
 from cloblab.licensed_experiment import prepare
 from cloblab.scale_common import atomic_json, digest, environment, file_hash, read_json, source_hash
 from cloblab.wselob import reconstruct
@@ -83,17 +84,17 @@ def build_cache(config, sources, raw, out, workers=5, symbols=None, max_days=Non
             keys = keys[:max_days]
         if not keys:
             raise ValueError(f"no source days: {symbol}")
-        identity = {"raw_sha256": src["sha256"], "config_hash": digest(config), "source_hash": code}
+        identity = {"raw_sha256": src["sha256"], "config_hash": digest(scientific_config(config)), "source_hash": code}
         tasks.extend((str(path), str(out), symbol, key, identity, config) for key in keys)
     # Persist the full denominator before any reconstruction; failed days cannot disappear.
-    atomic_json(out / "preparation_plan.json", {"tasks": [{"symbol": t[2], "key": t[3]} for t in tasks], "sources": source_files, "config_hash": digest(config), "source_hash": code})
+    atomic_json(out / "preparation_plan.json", {"tasks": [{"symbol": t[2], "key": t[3]} for t in tasks], "sources": source_files, "config_hash": digest(scientific_config(config)), "source_hash": code})
     partitions = []
     with ProcessPoolExecutor(max_workers=workers) as pool:
         for receipt in pool.map(prepare_day, tasks, chunksize=1):
             partitions.append(receipt)
             print(f"prepared {len(partitions)}/{len(tasks)} {receipt['symbol']} {receipt['day']} rows={receipt['rows']} skipped={receipt.get('skipped', False)}", flush=True)
     # Runtime telemetry is excluded from the semantic identity, for stable cold/warm hashes.
-    manifest = {"version": 1, "config_hash": digest(config), "source_hash": code,
+    manifest = {"version": 2, "config_hash": digest(scientific_config(config)), "source_hash": code,
                 "attribution": sources["attribution"], "sources": source_files,
                 "partial": bool(max_days or set(selected) != set(config["dataset"]["symbols"])),
                 "partitions": [{k: p[k] for k in ("symbol", "day", "rows", "features_sha256", "snapshots_sha256", "schema")} for p in partitions]}
@@ -113,7 +114,8 @@ def build_cache(config, sources, raw, out, workers=5, symbols=None, max_days=Non
 def validate_cache(root, config, allow_partial=False):
     root = Path(root)
     manifest = read_json(root / "manifest.json")
-    if manifest["config_hash"] != digest(config) or manifest["source_hash"] != source_hash():
+    expected_config = digest(scientific_config(config)) if manifest.get("version", 1) >= 2 else digest(config)
+    if manifest["config_hash"] != expected_config or manifest["source_hash"] != source_hash():
         raise ValueError("stale cache config/source hash")
     if manifest["partial"] and not allow_partial:
         raise ValueError("partial cache cannot represent the full experiment")
