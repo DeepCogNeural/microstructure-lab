@@ -15,7 +15,16 @@ from cloblab.scientific_identity import scientific_config
 from run_execution_robustness import collect_receipts, load_month, expected_keys
 
 
-def replay_day(records, cached, interpretation):
+def replay_day(records, cached, interpretation, backend="python"):
+    if backend != "python":
+        from cloblab.native import replay_day as native_replay, SNAPSHOT_NAMES
+        result = native_replay(records, str(cached.symbol.iloc[0]), str(cached.day.iloc[0]), backend=backend, interpretation=interpretation)
+        indices = np.flatnonzero(result["valid"])
+        if not np.array_equal(indices, cached.event_index.to_numpy()):
+            raise ValueError("native replay differs from frozen valid indices")
+        if not np.array_equal(result["snapshots"][indices], cached[SNAPSHOT_NAMES].to_numpy()):
+            raise ValueError("native replay differs from frozen ten-level snapshots")
+        return result
     n=len(records)
     names=['bid','ask','bid_size','ask_size','bid_orders','ask_orders','tick',
            'old_side','old_price','old_quantity','old_entered','new_side','new_price','new_quantity','new_entered','execution']
@@ -95,7 +104,7 @@ def run_month(args, config, manifest, found, symbol, month, binding):
             cached=pd.read_parquet(Path(args.cache)/f'symbol={symbol}'/f'day={day}'/'snapshots.parquet')
             records=handle['d'+day.replace('-','')+'/table'][:]
             for interpretation in config['execution_labels']['priority_interpretations']:
-                events=replay_day(records,cached,interpretation)
+                events=replay_day(records,cached,interpretation,args.backend)
                 replay_rows+=len(records)
                 for h,rows in rows_by_h.items():
                     mask=(rows.day==day).to_numpy()
@@ -105,7 +114,8 @@ def run_month(args, config, manifest, found, symbol, month, binding):
                         safe=np.minimum(placements,len(records)-1)
                         eligible=(placements<len(records)) & events['valid'][safe] & (events['segment'][safe]==events['segment'][indices])
                         selected=placements[eligible]
-                        paths={side:passive_paths(events,selected,side,h,tick=events['tick'][selected],decision_latency=latency) for side in (1,2)}
+                        from cloblab.native import queue_paths
+                        paths={side:queue_paths(events,selected,side,h,backend=args.backend,tick=events['tick'][selected],decision_latency=latency) for side in (1,2)}
                         for key,pred in predictions.items():
                             if key[2]!=h:continue
                             prediction=pred[mask][eligible]
@@ -138,6 +148,7 @@ def main():
     p.add_argument('--symbol')
     p.add_argument('--month')
     p.add_argument('--aggregate-only',action='store_true')
+    p.add_argument('--backend',choices=['python','native','auto'],default='python')
     args=p.parse_args()
     config,manifest=read_json(args.config),read_json(Path(args.cache)/'manifest.json')
     found=collect_receipts(args.prediction_roots,config)
