@@ -1,60 +1,4 @@
-"""Render only public queue aggregates; never read licensed rows."""
-from pathlib import Path
-import argparse
-import json
-from cloblab.scale_common import digest, atomic_json, file_hash
-import pandas as pd
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-
-
-def main():
-    parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--results',default='results/wselob_queue_execution_v1')
-    args=parser.parse_args();root=Path(args.results)
-    manifest=json.loads((root/'run_manifest.json').read_text())
-    sources=json.loads(Path('configs/wselob_sources_v1.json').read_text())
-    science_id=digest({'science':manifest['scientific_config'],
-        'raw_sources':{k:v['sha256'] for k,v in sources['files'].items()},
-        'predictions':sorted(r['prediction_sha256'] for r in manifest['prediction_evidence'])})
-    blocks=pd.read_csv(root/'block_metrics.csv')
-    identity_keys=['symbol','month','horizon','model','control_seed','latency','interpretation']
-    identities=json.loads(blocks[identity_keys].to_json(orient='records'))
-    manifest['scientific_experiment_id']=science_id
-    manifest['scientific_tasks']=[{**r,'task_id':digest({'experiment':science_id,'task':r})} for r in identities]
-    manifest['public_aggregate_hashes']={p.name:file_hash(p) for p in sorted(root.glob('*.csv'))}
-    atomic_json(root/'run_manifest.json',manifest)
-    summary=pd.read_csv(root/'fill_summary.csv')
-    prediction=pd.read_csv(root/'fill_by_prediction_decile.csv')
-    queue=pd.read_csv(root/'fill_by_queue_decile.csv')
-    for data,metric,title,name in [
-      (prediction,'fill_probability','Conditional fill probability','fill_prediction_decile'),
-      (prediction,'markout_5','Post-fill midpoint movement\n(bp, +5 messages)','adverse_prediction_decile'),
-      (queue,'fill_before_adverse','P(fill before adverse move)','race_queue_decile')]:
-        fig,axes=plt.subplots(1,3,figsize=(12,3.5),sharey=True)
-        for ax,h in zip(axes,(10,20,50)):
-            for model in ('linear','xgboost'):
-                for interpretation,style in [('retain','-'),('reset','--')]:
-                    d=data[(data.horizon==h)&(data.model==model)&data.control_seed.isna()&(data.latency==0)&(data.interpretation==interpretation)]
-                    ax.plot(d.decile,d[metric],style,label=f'{model}, {interpretation}')
-            ax.set_title(f'{h}-message lifetime');ax.set_xlabel('Decile');ax.grid(alpha=.2)
-        axes[0].set_ylabel(title);axes[-1].legend(fontsize=7)
-        fig.suptitle('Conditional depletion scenario; equal-weight stock/month blocks',fontsize=11)
-        fig.tight_layout();fig.savefig(root/(name+'.png'),dpi=150);plt.close(fig)
-    fig,axes=plt.subplots(1,2,figsize=(9,3.5))
-    for ax,metric in zip(axes,('fill_probability','spread_5')):
-        for model in ('linear','xgboost'):
-            d=summary[(summary.horizon==20)&(summary.model==model)&summary.control_seed.isna()&(summary.interpretation=='retain')]
-            ax.plot(d.latency,d[metric],'o-',label=model)
-        ax.set_xlabel('Placement latency (messages)');ax.set_title('Fill probability' if metric=='fill_probability' else 'Realized-spread diagnostic (+5, bp)');ax.grid(alpha=.2);ax.legend()
-    fig.suptitle('20-message lifetime; conditional scenario, not trading PnL')
-    fig.tight_layout();fig.savefig(root/'model_comparison.png',dpi=150);plt.close(fig)
-    table=summary[(summary.latency==0)&summary.control_seed.isna()][['interpretation','model','horizon','fill_probability','mean_fill_time','markout_5','spread_5','fill_before_adverse']]
-    lines=['| '+' | '.join(table.columns)+' |','| '+' | '.join(['---']*len(table.columns))+' |']
-    for row in table.itertuples(index=False,name=None):
-        lines.append('| '+' | '.join(f'{v:.6f}' if isinstance(v,float) else str(v) for v in row)+' |')
-    report='''# Queue-aware passive execution report
+# Queue-aware passive execution report
 
 The order feed does not uniquely identify historical executions. **Y is retransmission**, and D does not distinguish cancellation from complete execution. Consequently, this experiment reports conditional depletion diagnostics and a zero identified lower fill bound. It does not establish an executable strategy.
 
@@ -86,7 +30,20 @@ Post-fill side-adjusted midpoint changes use offsets 1, 5 and 10 messages. The r
 
 ## Zero-latency results
 
-'''+ '\n'.join(lines)+'''
+| interpretation | model | horizon | fill_probability | mean_fill_time | markout_5 | spread_5 | fill_before_adverse |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| reset | linear | 10 | 0.005445 | 7.722464 | -0.097903 | 4.473961 | 0.004249 |
+| retain | linear | 10 | 0.005445 | 7.722464 | -0.097903 | 4.473961 | 0.004249 |
+| reset | linear | 20 | 0.023626 | 14.053638 | -0.332525 | 4.357799 | 0.018396 |
+| retain | linear | 20 | 0.023626 | 14.053638 | -0.332525 | 4.357799 | 0.018396 |
+| reset | linear | 50 | 0.102338 | 30.962096 | -0.520131 | 4.848749 | 0.079011 |
+| retain | linear | 50 | 0.102338 | 30.962096 | -0.520131 | 4.848749 | 0.079011 |
+| reset | xgboost | 10 | 0.005232 | 7.749577 | -0.097450 | 4.548502 | 0.004103 |
+| retain | xgboost | 10 | 0.005232 | 7.749577 | -0.097450 | 4.548502 | 0.004103 |
+| reset | xgboost | 20 | 0.023365 | 14.095897 | -0.333498 | 4.455874 | 0.018258 |
+| retain | xgboost | 20 | 0.023365 | 14.095897 | -0.333498 | 4.455874 | 0.018258 |
+| reset | xgboost | 50 | 0.103166 | 31.021042 | -0.514289 | 4.955204 | 0.079849 |
+| retain | xgboost | 50 | 0.103166 | 31.021042 | -0.514289 | 4.955204 | 0.079849 |
 
 All headline means weight stock/month blocks equally. Tables expose eligible decisions, placed orders, fills, observable post-fill outcomes and the number of defined blocks. An undefined block prevents a strict headline mean; it is never silently assigned zero. Prediction and queue deciles preserve tied values and report the actual contributing block count. The identified zero-fill lower bound has undefined conditional markouts.
 
@@ -115,7 +72,3 @@ The optional C++ kernel is not implemented. Python remains the reference impleme
 ## Attribution
 
 Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1, DOI 10.17632/3g4mhdp899.1, [dataset](https://data.mendeley.com/datasets/3g4mhdp899/1), CC BY 4.0. Added queue reconstruction, conditional virtual-order diagnostics and aggregate figures. As-is; no warranty or endorsement.
-'''
-    Path('docs/QUEUE_AWARE_EXECUTION_REPORT.md').write_text(report)
-
-if __name__=='__main__':main()

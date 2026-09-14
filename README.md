@@ -134,3 +134,7 @@ The execution-aware robustness track is complete. Further work should use a genu
 ## Public Repository Policy
 
 Do not commit hostnames, cluster/server names, hardware inventories, device UUIDs, scheduler job IDs, absolute home paths, environment dumps, credentials, or other private infrastructure metadata. Public engineering evidence should be limited to code, scientific configuration, aggregate results, and infrastructure-neutral performance summaries.
+
+## Queue-aware passive execution
+
+The final [queue study](docs/QUEUE_AWARE_EXECUTION_REPORT.md) completed 822 conditional execution cells. Zero-latency XGBoost fill probabilities were 0.52%, 2.34% and 10.32% at 10/20/50-message lifetimes, with adverse average five-message post-fill midpoint changes. Exact historical fills remain unidentified because order deletion does not distinguish cancellation from execution; positive passive-price diagnostics are not realized trading profit. See the [source semantics](docs/WSELOB_QUEUE_SEMANTICS.md).
