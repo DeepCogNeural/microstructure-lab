@@ -21,3 +21,7 @@ results/dv_real_data/
 **/performance_receipts.json
 **/resume_receipts.json
 **/cache_transfer_metrics.csv
+
+build/
+*.so
+*.pyd
