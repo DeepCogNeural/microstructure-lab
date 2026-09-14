@@ -1,140 +1,85 @@
 # Market Microstructure Lab
 
-A research pipeline for short-horizon price prediction from limit-order-book data. The project emphasizes deterministic book reconstruction, causal feature construction, chronological out-of-sample evaluation, negative controls, reproducible experiment artifacts, and explicit limits on trading claims.
+A reproducible Level-2 (L2, depth-by-price) order-book research pipeline for short-horizon prediction, model comparison and execution-aware validation.
 
-## Full-Year Five-Stock Benchmark
+## At a glance
 
-Using the CC BY 4.0 WSELOB-2017 dataset, the pipeline reconstructed **85,846,918 order messages** into **56,887,949 causal Level-2 feature rows** across five equities and 1,250 stock/day partitions.
-
-The fixed experiment completed **152/152 preregistered tasks** with no missing real-data tasks or month substitutions. Linear and XGBoost use the same five features, horizons, and expanding monthly holdouts; XGBoost parameters were fixed before final-test inspection.
-
-| Message horizon | Linear IC | XGBoost IC |
-|---:|---:|---:|
-| 10 | 0.2283 | **0.2367** |
-| 20 | 0.2552 | **0.2616** |
-| 50 | 0.2524 | **0.2585** |
-
-The headline metric is equal-weight stock/month held-out Spearman IC across April, June, September, and November 2017. XGBoost modestly improves the point estimate at all three horizons; this is **not** a statistical-significance claim.
-
-Matched June results show no universal model winner:
-
-| Horizon | Linear | HistGB | XGBoost |
-|---:|---:|---:|---:|
-| 10 | 0.2357 | 0.2403 | **0.2422** |
-| 20 | 0.2636 | 0.2673 | **0.2684** |
-| 50 | 0.2595 | **0.2638** | 0.2635 |
-
-Seed-7 shuffled-label XGBoost controls average **0.012 / 0.034 / 0.044 IC** at 10/20/50 messages, substantially below the primary results. Overlapping labels are dependent, so row counts are not treated as IID evidence.
-
-[Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [aggregate results](results/wselob_xgboost_application_v1)
-
-## Execution-Aware Robustness
-
-The next fixed experiment reused all **137 Linear/XGBoost/control prediction tasks** and completed **411/411 crossed-book evaluation cells**, including latency offsets of 0, 1, and 5 original messages.
-
-XGBoost beats Linear on midpoint IC in **20/20, 18/20, and 18/20** stock/month blocks at 10/20/50 messages. All leave-one-stock and leave-one-month mean improvements remain positive; the block bootstrap is descriptive, not a significance test.
-
-**That predictive improvement does not survive as positive crossed-book performance.** At zero delay, XGBoost's fixed 1 bp threshold-selected markouts average **−5.00 / −5.36 / −7.07 bps** at 10/20/50 messages. Delay makes these aggregates worse. Neither model has fully ordered crossed-book deciles in any of the 20 primary blocks. These are visible-quote diagnostics, not realized PnL.
-
-The optional leave-one-stock-out experiment also completed **20/20 primary tasks plus 5/5 controls**. At 20 messages, transfer IC is **0.26246** versus **0.26164** within-stock (13/20 block wins). The small difference is descriptive; shuffled transfer controls average 0.06652 IC.
-
-[Execution-aware report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [aggregate evidence and figures](results/wselob_execution_robustness_v1)
-
-## What the Model Uses
-
-The primary feature set is deliberately small and interpretable:
-
-- spread in basis points;
-- top-of-book imbalance;
-- ten-level depth imbalance;
-- normalized Level-1 order-flow imbalance (OFI);
-- microprice displacement from midpoint.
-
-Across the primary XGBoost fits, normalized gain is dominated by top imbalance (~48–50%) and microprice displacement (~25–30%), with OFI providing additional information. Feature importance is descriptive, not causal attribution.
-
-## Research Engineering
-
-The project is designed so the experiment is reproducible rather than notebook-specific:
+| Area | Measured result |
+| --- | --- |
+| Data scale | 85.8M licensed order messages → 56.9M causal L2 rows; five equities; 1,250 stock/day partitions |
+| Research design | Frozen chronological holdouts; 10/20/50-message horizons; shuffled-label controls |
+| Models | Linear, HistGradientBoosting and XGBoost, with matched comparison scopes |
+| Held-out result | Modest XGBoost uplift over Linear at all three horizons; positive leave-one-stock/month mean differences |
+| Engineering | Partitioned Parquet cache, deterministic task IDs, content hashes, atomic writes and resumable tasks |
+| Fixed-workload timing | 17.26× training / 9.07× end-to-end accelerator speedup; 1.606× two-worker throughput |
+| Execution lesson | Predictive midpoint ranking did not yield positive crossed-book outcomes after spread and latency |
 
 ```text
-licensed order messages
-  -> deterministic L2 replay
-  -> causal feature/label partitions by symbol/day
-  -> immutable Parquet cache + hashes
-  -> preregistered chronological tasks
-  -> Linear / HistGB / XGBoost / shuffled controls
-  -> resumable atomic artifacts
-  -> denominator-checked aggregation
+licensed order messages → deterministic book replay → causal feature cache
+  → chronological Linear / HistGB / XGBoost tasks → controls + paired robustness
+  → spread / latency diagnostics → conditional passive-queue diagnostics
 ```
 
-Implemented safeguards include deterministic task IDs, source/config/cache hashes, atomic writes, completed-task resume, explicit retry after failure, duplicate detection, and aggregation against the original task manifest.
+[Scientific + engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [Execution-aware robustness](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [Documentation index](docs/README.md)
 
-A fixed CPU-versus-accelerator XGBoost comparison measured **17.26× faster training** and **9.07× faster end-to-end task execution**, while predictions remained numerically consistent (Spearman 0.99924; absolute IC drift 0.000084). A two-worker comparison improved independent-task throughput by **1.61×**. Only aggregate performance ratios are public; private infrastructure details are intentionally excluded.
+## Held-out prediction result
 
-## Earlier Ten-Day Benchmark
+IC means Spearman rank correlation between predictions and future midpoint changes. These are **equal-weight stock/month held-out** correlations over April, June, September and November 2017.
 
-The earlier PEKAO-only benchmark remains as a smaller reproducibility check: 336,602 snapshots over ten trading days with nine strictly later-day test folds.
+| Horizon | Linear IC | XGBoost IC | Paired XGBoost wins |
+| --- | ---: | ---: | ---: |
+| 10 messages | 0.228319 | 0.236688 | 20/20 |
+| 20 messages | 0.255193 | 0.261639 | 18/20 |
+| 50 messages | 0.252353 | 0.258527 | 18/20 |
 
-| Horizon | Linear IC | HistGB IC | Shuffled linear IC | Shuffled HistGB IC |
-|---:|---:|---:|---:|---:|
-| 10 | 0.2361 | 0.2312 | -0.0251 | -0.0104 |
-| 20 | 0.2712 | 0.2584 | -0.0087 | -0.0024 |
-| 50 | 0.2758 | 0.2606 | -0.0497 | -0.0422 |
+The differences are modest. Leave-one-stock/month checks remain positive, but the block-bootstrap intervals are descriptive, not formal significance tests. HistGradientBoosting was evaluated on the matched June subset; these results do not establish a universal model winner.
 
-The larger five-stock benchmark supersedes this as the main application result.
+![Paired held-out IC differences](results/wselob_execution_robustness_v1/paired_ic_delta.png)
 
-## Quickstart
+XGBoost's midpoint-ranking uplift is broadly positive across the fixed stock/month blocks.
+
+## Execution changes the interpretation
+
+All 411 crossed-book cells reuse the original predictions. At zero delay, XGBoost's fixed 1 bp threshold-selected outcomes average **−5.00 / −5.36 / −7.07 bp** at 10/20/50 messages; 1- and 5-message delays worsen them. These are visible-quote diagnostics, not realized trading profit.
+
+![Crossed-book prediction deciles](results/wselob_execution_robustness_v1/crossed_markout_deciles.png)
+
+Paying the visible spread produces negative headline outcomes despite predictive midpoint rankings.
+
+The completed [passive-queue study](docs/QUEUE_AWARE_EXECUTION_REPORT.md) adds 822 conditional execution cells. Stronger signal tails are harder to fill under the stated depletion scenario, and average five-message post-fill midpoint changes are adverse. Order deletions do not identify cancellation versus execution, so this is a **conditional diagnostic, not an exact historical fill simulator**. The separate 25-task held-out-stock transfer study retains comparable midpoint IC without overturning these execution limits.
+
+## What this demonstrates
+
+- Deterministic order replay and causal spread, imbalance, order-flow imbalance (OFI) and microprice features.
+- Chronological model comparison with fixed parameters, negative controls and explicit task denominators.
+- Restartable research over tens of millions of rows using hashes, caching and atomic artifacts.
+- Measured fixed-workload CPU/accelerator comparisons, with numerical-drift checks.
+- Research judgment about the difference between predictive ranking and executable returns.
+
+## What this does not claim
+
+- No live-trading, realized-profit or formal-significance claim.
+- No identified exact passive fills, hidden-liquidity, inventory or market-impact model.
+- A historical five-stock WSE sample, not universal cross-market evidence.
+
+## Reproduce the software demo
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -e ".[dev,ml,data,xgb]"
 python -m pytest -q
-cloblab demo --offline --out data/sample --rows 120
+cloblab demo --offline --out /tmp/microstructure-demo --rows 120
 ```
 
-The offline demo is deterministic and synthetic. It validates the software path; it is not empirical alpha evidence.
+This quickstart runs a deterministic **synthetic** demo; it does not reproduce the 85.8M-message study. Licensed-file preparation, fixed experiment commands and receipt requirements are described in [reproducibility](docs/REPRODUCIBILITY.md) and the linked research reports. Raw data and row-level predictions are not committed.
 
-## Licensed Data
+## Data and scope
 
-WSELOB-2017 attribution:
+Source: [Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1](https://data.mendeley.com/datasets/3g4mhdp899/1), DOI 10.17632/3g4mhdp899.1, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Modifications: order replay, causal features, model evaluation and aggregate execution diagnostics. As-is; no warranty or endorsement.
 
-> Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1, DOI 10.17632/3g4mhdp899.1, CC BY 4.0.
+The full-source engineering preparation covers all 250 available days per stock. The fixed scientific cache contains 1,235 stock/day partitions through December 24; 15 later partitions complete engineering coverage only. All 152 original scientific tasks completed without missing tasks or month substitutions.
 
-Raw licensed files are not committed. Public aggregates are derived research artifacts with attribution.
+The Coinbase adapter is retained for engineering demonstrations only. Its captures are not the empirical ML benchmark; see [data terms](docs/DATA_TERMS.md). The earlier single-stock study remains under [background/provenance](docs/README.md#background--provenance).
 
-The repository also contains a Coinbase feed adapter for data-engineering demonstrations. Coinbase's Market Data Terms currently restrict AI/ML use without permission, so Coinbase captures are **not** used as empirical ML evidence in this project.
-
-## Current Limits
-
-The original benchmark ranks **future midpoint moves**; the robustness extension also measures visible bid/ask crossing and message-count entry delay. Neither is realized PnL. Neither models:
-
-- passive queue position or fill probability;
-- hidden liquidity;
-- fees or rebates;
-- inventory limits or market impact.
-
-The execution-aware robustness track is complete. Further work should use a genuinely new confirmation sample or market rather than retuning these already-inspected holdout blocks. See the [completed research roadmap](docs/NEXT_RESEARCH_ROADMAP.md).
-
-## Documentation
-
-- [Scientific and engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md)
-- [Execution-aware robustness report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md)
-- [Completed research roadmap](docs/NEXT_RESEARCH_ROADMAP.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Data model](docs/DATA_MODEL.md)
-- [Methodology](docs/METHODOLOGY.md)
-- [Data sources](docs/DATA_SOURCES.md)
-- [Data terms](docs/DATA_TERMS.md)
-- [Reproducibility](docs/REPRODUCIBILITY.md)
-- [Limitations](docs/LIMITATIONS.md)
-- [WSELOB license evidence](docs/WSELOB_LICENSE.md)
-- [Public contribution/privacy policy](CONTRIBUTING.md)
-
-## Public Repository Policy
-
-Do not commit hostnames, cluster/server names, hardware inventories, device UUIDs, scheduler job IDs, absolute home paths, environment dumps, credentials, or other private infrastructure metadata. Public engineering evidence should be limited to code, scientific configuration, aggregate results, and infrastructure-neutral performance summaries.
-
-## Queue-aware passive execution
-
-The final [queue study](docs/QUEUE_AWARE_EXECUTION_REPORT.md) completed 822 conditional execution cells. Zero-latency XGBoost fill probabilities were 0.52%, 2.34% and 10.32% at 10/20/50-message lifetimes, with adverse average five-message post-fill midpoint changes. Exact historical fills remain unidentified because order deletion does not distinguish cancellation from execution; positive passive-price diagnostics are not realized trading profit. See the [source semantics](docs/WSELOB_QUEUE_SEMANTICS.md).
+See [public contribution and privacy policy](CONTRIBUTING.md). Further scientific work requires new data or a materially new preregistered question, rather than tuning these inspected holdouts.

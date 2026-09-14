@@ -1,89 +1,29 @@
 # Methodology
 
-The benchmark asks one narrow question: given only information available at a decision timestamp, how does the future midpoint move over fixed horizons?
+## Current WSELOB benchmark
 
-## Features
+The question is whether current visible order-book state ranks future midpoint changes under fixed chronological evaluation. The primary evidence concerns five WSE equities in 2017, not the synthetic demo or Coinbase captures.
 
-The base features are intentionally interpretable:
+Order identities and action messages reconstruct ten visible price levels. Valid rows must lie in the 10:00–16:00 Warsaw window and an uninterrupted uncrossed, priced, sufficiently deep book segment. Invalid states and day boundaries prevent feature/label paths from continuing across gaps.
 
-- `spread_bps`: current best ask minus best bid, divided by midpoint.
-- `top_imbalance`: best-level bid size minus ask size, divided by total top size.
-- `depth_imbalance`: the same imbalance over the first N displayed levels.
-- `recent_trade_imbalance`: past-window buy/sell trade-size imbalance.
+The five frozen causal features are spread in basis points, top imbalance, ten-level depth imbalance, normalized Level-1 order-flow imbalance (OFI), and microprice displacement from midpoint. OFI uses current and previous visible state; no future quote enters a decision feature. The primary experiment does not add trade-flow features or select a feature set after inspecting held-out outcomes.
 
-The extended microstructure set adds:
+Labels are midpoint changes at **exactly 10, 20 or 50 original messages** after the decision, inside the same valid segment. They are not seconds and not the next available valid row after a gap.
 
-- `microprice_minus_mid_bps`: queue-size-weighted microprice displacement from midpoint;
-- `ofi_l1`: event-style Level-1 order-flow imbalance from current and lagged top-of-book states;
-- `ofi_l1_norm`: OFI normalized by current displayed top-level size;
-- rolling signed trade-flow imbalance;
-- rolling trade/event intensity.
+Training uses expanding strictly earlier days, with at least 40 prior trading days. The four fixed test months are April, June, September and November. Linear and XGBoost share features, horizons and test rows; HistGradientBoosting uses the matched June subset. Model parameters are fixed, and negative controls shuffle training labels within each training day. No hyperparameter search was performed on the final holdouts.
 
-All rolling features are backward-looking. No future midpoint, future book state, or future trade is available to the feature builder.
+The primary metric is held-out Spearman information coefficient (IC): rank correlation between predicted and observed midpoint changes. Headline means weight stock/month blocks equally. Paired model differences, leave-one-stock/month means and block-bootstrap intervals describe robustness, not formal significance. Overlapping labels and shared stocks/months prevent interpreting millions of rows as independent evidence.
 
-## Labels
+## Execution and transfer extensions
 
-For each feature row and horizon, the label builder finds the first midpoint timestamp at or after `local_ts + horizon`. It records:
+The [crossed-book study](EXECUTION_AWARE_ROBUSTNESS_REPORT.md) reuses frozen predictions and evaluates opposite bid/ask entry and exit quotes with 0/1/5-message placement delay. Exact source indices and a shared eligible-row intersection protect model and latency comparisons. A fixed absolute prediction threshold of 1 bp is not retuned.
 
-- `future_ts_{horizon}s`
-- `future_midprice_{horizon}s`
-- `markout_{horizon}s`
-- `markout_bps_{horizon}s`
-- `direction_{horizon}s`
+The held-out-stock study trains only on strictly earlier rows from the other four stocks, using the same five features and XGBoost parameters. It is a midpoint-transfer diagnostic, not new execution evidence.
 
-Future midpoint columns are labels only. They are not available to feature construction.
+The [queue study](QUEUE_AWARE_EXECUTION_REPORT.md) joins the back of visible best-price queues for one dataset-native unit. Order identities track queue ahead. Ambiguous removal and modification semantics require conditional diagnostics; a decline in aggregate depth alone never proves a fill. See [audited source semantics](WSELOB_QUEUE_SEMANTICS.md).
 
-## Evaluation
+## Earlier synthetic/collector scaffold
 
-The default evaluation uses anchored walk-forward splits:
+The generic `labels` module supports clock-time midpoint labels at the first timestamp at or after an offset, and the generic walk-forward evaluator purges training labels reaching the test window. This is distinct from the WSELOB exact-message protocol above.
 
-- train on older rows;
-- purge training rows whose future label timestamp reaches the test window;
-- test on the next block of newer rows;
-- never train on or after the test period.
-
-Two model families are supported:
-
-1. a standardized linear/ridge baseline for interpretability and sanity checking;
-2. a histogram gradient-boosted tree baseline for nonlinear interactions.
-
-The tree model is not allowed different data, features, or chronology than the linear model. Model comparisons should use the same horizon, folds, cost assumption, and test observations.
-
-Reported metrics:
-
-- IC: Spearman correlation between prediction and realized markout;
-- direction accuracy: sign agreement for non-zero markouts;
-- bucketed average markout: realized markout by prediction bucket;
-- cost coverage: share of predictions whose absolute value clears the chosen cost threshold;
-- mean signed markout after the simple cost threshold;
-- shuffled-label negative control using the same model family.
-
-## Signal Diagnostics
-
-A real-data experiment should include at least two diagnostics beyond aggregate metrics:
-
-### Prediction monotonicity
-
-Rank out-of-sample predictions into quantiles and report realized future markout by quantile. A useful signal should show economically coherent ordering rather than a result driven by a few observations.
-
-### Feature ablation
-
-Add feature groups sequentially, for example:
-
-1. spread;
-2. + book imbalance;
-3. + OFI;
-4. + microprice displacement;
-5. + trade-flow/activity.
-
-This identifies where incremental predictive information actually enters the model.
-
-## Cost Stress
-
-`visible_depth_cost_sweep.csv` estimates the cost of crossing displayed depth. It uses visible L2 levels only. It does not model hidden liquidity, passive fills, queue priority, maker rebates, cancellations, latency races, or realized PnL.
-
-Cost-aware markout metrics are therefore screening diagnostics rather than a claim of executable strategy PnL.
-
-## Real-Data Reporting Rule
-
-The committed deterministic sample is synthetic. No empirical market-performance number should be added to the README or resume until the experiment has been run on real captured data with the chronology, purging, and controls above. Raw venue data remain local; only provider-compliant derived results should be published.
+The scaffold also supports backward-looking trade-flow/activity features and visible-depth cost sweeps. They are software capabilities, not additional features or results in the frozen five-stock benchmark. The deterministic offline demo does not establish empirical market performance.

@@ -1,32 +1,11 @@
 # Limitations
 
-This repo is a public research scaffold. Its limits are deliberate and should
-be stated plainly.
+The measured evidence is historical research over five WSE equities in 2017. Its 56.9M rows overlap in time and do not constitute independent statistical observations. The final holdouts have been inspected; further tuning would require a new declared experiment and new confirmation data.
 
-## Data Limits
+Linear and XGBoost were compared over four fixed months; HistGradientBoosting used June only. Modest positive midpoint IC differences and descriptive block intervals do not establish significance or a universal model winner. Accelerator ratios describe fixed measured workloads, not a hardware-independent speed guarantee.
 
-- The committed demo data is synthetic.
-- Publicly accessible forward collection starts only when the collector runs.
-- The repo does not redistribute captured venue data or derived real-data
-  reports.
-- Exchange feeds can have reconnects, gaps, dropped messages, and same
-  timestamp events.
-- Coinbase `match.side` is documented as maker side. Aggressor-side features
-  must invert that field before using trade direction.
+Crossed-book outcomes remain negative after the visible spread, and the headline worsens with message latency. These calculations exclude fees, rebates, impact, inventory constraints and actual order fills.
 
-## Market-Microstructure Limits
+The conditional queue study tracks visible orders but cannot identify exact executions from ambiguous deletion messages. Retransmission is not a trade. Matching phase, hidden liquidity and modification priority have limits; positive passive-price diagnostics are not realized profit. Zero identified fills imply undefined conditional markouts, not zero markouts.
 
-- Aggregate L2 does not reveal hidden liquidity.
-- Aggregate L2 does not prove queue position or passive fill probability.
-- Visible-depth sweep cost is a crossing-cost proxy, not an execution simulator.
-- Midpoint markout is not PnL.
-- A positive in-sample metric is not evidence of a tradable strategy.
-
-## Modeling Limits
-
-- The default model is intentionally linear.
-- Overlapping markout horizons create dependent labels.
-- Results can change with symbol, venue, clock quality, market regime, and fee
-  assumptions.
-- More complex models need stronger out-of-sample tests and additional
-  negative controls.
+The offline demo is synthetic. Coinbase feed code is engineering-only, and its captures are not empirical ML evidence. Raw licensed data, row-level predictions and private compute information are not redistributed. See [data terms](DATA_TERMS.md) and [source semantics](WSELOB_QUEUE_SEMANTICS.md).

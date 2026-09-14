@@ -1,7 +1,7 @@
 [project]
 name = "crypto-microstructure-lab"
 version = "0.2.0"
-description = "Crypto market microstructure lab for public L2 reconstruction, short-horizon markouts, and cost-aware evaluation."
+description = "Market Microstructure Lab: reproducible order-book prediction, chronological model comparison, and execution-aware research."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
