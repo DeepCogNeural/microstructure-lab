@@ -1,6 +1,6 @@
 # Queue-Aware Passive Execution — Final Research Track
 
-Status: **preregistered work plan**. This track starts from the completed midpoint, crossed-book, latency, and leave-one-stock-out results already published in this repository. Do not alter those results.
+Status: **Sections 0–8 completed on 2026-09-14 as conditional diagnostics under the documented data-identification limit**. All 822 cells completed; see [results and limitations](QUEUE_AWARE_EXECUTION_REPORT.md). The optional C++20 port remains unimplemented. Original preregistration follows. This track starts from the completed midpoint, crossed-book, latency, and leave-one-stock-out results already published in this repository. Do not alter those results.
 
 ## Research question
 

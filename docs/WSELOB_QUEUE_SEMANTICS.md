@@ -1,6 +1,6 @@
 # WSELOB queue semantics and identification limits
 
-Status: source audit completed; no passive fill results yet.
+Status: source audit completed; conditional diagnostics are published in [the execution report](QUEUE_AWARE_EXECUTION_REPORT.md).
 
 ## Public evidence
 
