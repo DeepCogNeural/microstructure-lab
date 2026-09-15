@@ -2,6 +2,8 @@
 
 ## Status
 
+**Completed on 2026-09-14.** Full-domain byte parity passed for 85,846,918 messages and 604,837,896 virtual-order evaluations. Measured replay and queue speedups are 8.98× and 3.57×; see the [final engineering report](CXX20_REPLAY_QUEUE_REPORT.md) for workload and timing limits. Original specification follows.
+
 This is the final engineering track for the project. The scientific work is frozen. The goal is to move only the performance-critical deterministic market-data replay and queue-state kernel from Python into modern C++20 while keeping Python as the research/orchestration layer.
 
 **Do not change any published scientific result, feature definition, model, holdout, threshold, latency grid, queue assumption, or interpretation in order to improve a number.**

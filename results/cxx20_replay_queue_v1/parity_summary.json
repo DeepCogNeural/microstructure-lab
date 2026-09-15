@@ -1,0 +1,27 @@
+{
+  "binding": "5bdc0c65dd78cfa964245c127ee401352b194afd740bb2d0fc4754686e57c309",
+  "complete": true,
+  "exact_bytes": true,
+  "fields": [
+    "all event arrays",
+    "live order counts",
+    "old/new priority timestamps",
+    "dense ten-level snapshots",
+    "validity and segment IDs",
+    "final ordered queues",
+    "all 16 passive-path fields"
+  ],
+  "floating_tolerance": 0,
+  "peak_memory": "not isolated; no comparative memory claim",
+  "queue_days": 405,
+  "queue_output_hash": "b854cc92bc51fdec10ff5bc49aaa5b63d6cdb4edf1741919ace50d69de49ffde",
+  "queue_virtual_orders": 604837896,
+  "replay_interpretations": [
+    "retain",
+    "reset"
+  ],
+  "replay_output_hash": "442d76a1b431ec03773ae649e3382371b83b75391fcdba8630c964d4ee9d1fac",
+  "scientific_results_changed": false,
+  "source_days": 1250,
+  "source_messages": 85846918
+}

@@ -40,6 +40,14 @@ The optional leave-one-stock-out experiment also completed **20/20 primary tasks
 
 [Execution-aware report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [aggregate evidence and figures](results/wselob_execution_robustness_v1)
 
+## C++20 Replay and Queue Backend
+
+The optional C++20 backend reproduces Python outputs byte-for-byte across **85,846,918 messages in 1,250 partitions** and **604,837,896 virtual-order evaluations**. Python remains the reference and the default backend.
+
+On identical inputs, measured replay speedup is **8.98×** and queue speedup is **3.57×**. These are medians of three summed per-day kernel timings, not end-to-end parallel pipeline speedups. Queue timing uses the fixed PEKAO June subset: 21 days, a 20-message horizon, all three delays, both sides and both priority interpretations.
+
+[Parity evidence, timing scope and build instructions](docs/CXX20_REPLAY_QUEUE_REPORT.md). Scientific results and the conditional-fill identification limits remain unchanged.
+
 ## What the Model Uses
 
 The primary feature set is deliberately small and interpretable:
