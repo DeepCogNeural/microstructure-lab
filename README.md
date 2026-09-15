@@ -21,7 +21,7 @@ licensed order messages → deterministic book replay → causal feature cache
   → spread / latency diagnostics → conditional passive-queue diagnostics
 ```
 
-[Scientific + engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [Execution-aware robustness](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [C++20 parity and performance](docs/CXX20_REPLAY_QUEUE_REPORT.md)
+[Scientific + engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [Execution-aware robustness](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [C++20 parity and performance](docs/CXX20_REPLAY_QUEUE_REPORT.md) · [Documentation index](docs/README.md)
 
 ## Held-out prediction result
 
@@ -81,6 +81,6 @@ Source: [Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1](https://data.me
 
 The full-source engineering preparation covers all 250 available days per stock. The fixed scientific cache contains 1,235 stock/day partitions through December 24; 15 later partitions complete engineering coverage only. All 152 original scientific tasks completed without missing tasks or month substitutions.
 
-The Coinbase adapter is retained for engineering demonstrations only. Its captures are not the empirical ML benchmark; see [data terms](docs/DATA_TERMS.md). The earlier single-stock study remains under [methodology](docs/METHODOLOGY.md).
+The Coinbase adapter is retained for engineering demonstrations only. Its captures are not the empirical ML benchmark; see [data terms](docs/DATA_TERMS.md). The earlier single-stock study remains under [background/provenance](docs/README.md#background--provenance).
 
 See [public contribution and privacy policy](CONTRIBUTING.md). Further scientific work requires new data or a materially new preregistered question, rather than tuning these inspected holdouts.
