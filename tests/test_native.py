@@ -104,3 +104,28 @@ def test_malformed_inputs(fault):
     if fault=='time':r['time'][2]=r['time'][0]-1
     if fault=='action':r['action_type'][2]=b'Q'
     with pytest.raises(ValueError):native.replay_day(r,'PEKAO',DAY)
+
+
+def test_published_native_denominators_and_rates():
+    import json
+    from pathlib import Path
+    root=Path('results/cxx20_replay_queue_v1')
+    if not root.exists():pytest.skip('full-domain native aggregates not yet published')
+    p=json.loads((root/'parity_summary.json').read_text())
+    prep=json.loads(Path('results/wselob_xgboost_application_v1/preparation_summary.json').read_text())
+    assert p['complete'] and p['exact_bytes'] and p['floating_tolerance']==0
+    assert p['source_days']==prep['full_source_stock_days']==1250
+    assert p['source_messages']==prep['raw_messages']==85846918
+    blocks=pd.read_csv('results/wselob_queue_execution_v1/block_metrics.csv')
+    primary=blocks[(blocks.model=='linear')&blocks.control_seed.isna()]
+    assert p['queue_virtual_orders']==int(primary.eligible_decisions.sum())*2
+    timed=primary[(primary.symbol=='PEKAO')&(primary.month=='2017-06')&(primary.horizon==20)]
+    b=pd.read_csv(root/'benchmark_summary.csv')
+    assert len(b)==4 and not b.duplicated(['scope','backend']).any()
+    assert b.repetitions.eq(3).all()
+    assert b[b.scope=='replay'].units.eq(85846918).all()
+    assert b[b.scope=='queue'].units.eq(int(timed.eligible_decisions.sum())*2).all()
+    assert np.allclose(b.units_per_second,b.units/b.median_seconds)
+    for _,g in b.groupby('scope'):
+        g=g.set_index('backend')
+        assert np.allclose(g.native_speedup,g.loc['python','median_seconds']/g.loc['native','median_seconds'])

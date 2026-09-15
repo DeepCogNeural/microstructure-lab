@@ -67,7 +67,7 @@ Run `scripts/run_queue_execution.py` with the frozen config, original private ra
 
 The manifest binds source code, scientific configuration, original cache and all prediction hashes. Its separate scientific experiment/task IDs depend on scientific settings, raw-source and prediction hashes and task coordinates; they exclude runtime paths, hardware and checkpoint placement. Public CSV hashes bind the published tables. Original prediction timestamps, indices and outcomes must match cached rows. Source-file and partition hashes must match. Queue-derived ten-level snapshots are compared with every retained cached event; independent order/aggregate queue parity is checked every 1,000 original messages. Previous benchmark artifacts remain unchanged.
 
-The optional C++ kernel is not implemented. Python remains the reference implementation; no C++ parity or acceleration claim is made.
+Python remains the reference implementation. The subsequent C++20 engineering track completed full-domain byte parity and measured acceleration; see the [C++20 report](CXX20_REPLAY_QUEUE_REPORT.md). The scientific outputs and conditional queue assumptions in this report are unchanged.
 
 ## Attribution
 
