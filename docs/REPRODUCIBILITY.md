@@ -3,12 +3,18 @@
 The default demo is offline and deterministic. It does not require exchange
 credentials or network access.
 
+## Licensed benchmark reproduction
+
+The default demo below is synthetic. For the five-stock experiment, follow the preparation and task commands in the [scientific/engineering report](XGBOOST_SCALE_ENGINEERING_REPORT.md), then the receipt-reuse instructions in the [execution report](EXECUTION_AWARE_ROBUSTNESS_REPORT.md) and [queue report](QUEUE_AWARE_EXECUTION_REPORT.md). These require separately obtained licensed raw files and private caches/predictions; cloning this repository alone does not reproduce the full research run.
+
+The optional C++20 build, backend selection and full-domain parity/performance reproduction are documented in the [native report](CXX20_REPLAY_QUEUE_REPORT.md). Python remains the default; compiled binaries are not committed.
+
 ## Environment
 
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[dev]"
+pip install -e ".[dev,ml,data,xgb]"
 ```
 
 ## Tests
@@ -30,15 +36,15 @@ The tests cover:
 ## Offline Demo
 
 ```bash
-cloblab demo --offline --out data/sample --rows 120
+cloblab demo --offline --out /tmp/microstructure-demo --rows 120
 ```
 
 Expected report files:
 
-- `data/sample/reports/summary.json`
-- `data/sample/reports/bucket_markouts.csv`
-- `data/sample/reports/visible_depth_cost_sweep.csv`
-- `data/sample/MANIFEST.json`
+- `/tmp/microstructure-demo/reports/summary.json`
+- `/tmp/microstructure-demo/reports/bucket_markouts.csv`
+- `/tmp/microstructure-demo/reports/visible_depth_cost_sweep.csv`
+- `/tmp/microstructure-demo/MANIFEST.json`
 
 ## Regenerate Schema
 

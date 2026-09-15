@@ -1,5 +1,11 @@
 # Data Sources
 
+## Headline licensed research
+
+The empirical benchmark uses [WSELOB-2017 V1](https://data.mendeley.com/datasets/3g4mhdp899/1), covering five WSE equities in 2017. Its CC BY 4.0 attribution and file identities are documented in [license evidence](WSELOB_LICENSE.md) and `configs/wselob_sources_v1.json`. Public results are aggregate research artifacts; raw files and predictions remain uncommitted.
+
+The sections below describe the separate engineering-only Coinbase scaffold.
+
 ## Default Publicly Accessible Source
 
 The forward collector targets Coinbase Exchange WebSocket market data that is
@@ -19,13 +25,13 @@ raw message payload.
 - Common USD crypto pairs such as `BTC-USD` and `ETH-USD`.
 - Good enough for a small reproducible forward-collection scaffold.
 
-## What Is Not Included
+## Coinbase scaffold scope
 
 - No paid data.
 - No private account data.
-- No licensed historical dataset.
+- No licensed Coinbase historical dataset.
 - No live trading endpoint.
-- No redistribution of captured venue data or derived real-data reports.
+- No redistribution of Coinbase captures or their derived real-data reports.
 
 The committed demo uses deterministic synthetic data so the repository remains
 safe to clone, test, and publish.

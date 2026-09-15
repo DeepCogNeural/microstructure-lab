@@ -54,7 +54,7 @@ Four fixed test months are averaged equally within each stock.
 | PKOBP | 0.250009 | **0.252760** |
 | PZU | 0.219183 | **0.224085** |
 
-The XGBoost point estimate is higher for all five stocks at the 20-message horizon, but the paired stock/month uncertainty analysis is intentionally left as the next robustness step rather than inferred from row count.
+The XGBoost point estimate is higher for all five stocks at the 20-message horizon, and the completed [paired stock/month robustness study](EXECUTION_AWARE_ROBUSTNESS_REPORT.md) reports descriptive uncertainty without inferring significance from row count.
 
 ## Negative controls
 
@@ -134,7 +134,7 @@ In particular, the current headline does not model:
 - inventory constraints;
 - market impact.
 
-The next research track is therefore execution-aware robustness rather than further model-library expansion. See [`NEXT_RESEARCH_ROADMAP.md`](NEXT_RESEARCH_ROADMAP.md).
+The subsequent [execution-aware robustness study](EXECUTION_AWARE_ROBUSTNESS_REPORT.md) and [conditional queue study](QUEUE_AWARE_EXECUTION_REPORT.md) are complete. The exclusions above describe this original midpoint benchmark, not a list of unstarted work. See the [completed roadmap](NEXT_RESEARCH_ROADMAP.md).
 
 ## Reproduction
 

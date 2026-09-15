@@ -1,45 +1,35 @@
 # Architecture
 
-This project is built as a small event-driven research pipeline.
+The current research path keeps scientific definitions separate from execution placement and public aggregate reporting.
 
 ```text
-collector or fixture
-  -> raw event storage
-  -> normalized L2 events and trades
-  -> deterministic book replay
-  -> feature builder
-  -> markout label builder
-  -> walk-forward evaluation
-  -> cost stress reports
+licensed WSE order messages
+  → order-level replay + valid ten-level snapshots
+  → causal features / exact-message labels
+  → immutable symbol/day Parquet partitions
+  → fixed chronological model tasks
+  → private predictions + hashed completion receipts
+  → paired / crossed-book / transfer / conditional queue diagnostics
+  → denominator-checked public tables and figures
 ```
 
-## Design Rules
+## Main components
 
-- Raw data is written before transformation.
-- `exchange_ts` records the source event time when available.
-- `local_ts` records local receipt or decision time.
-- Features use only the current row and past rows.
-- Future midpoint data is used only for labels.
-- Evaluation uses walk-forward splits with label-time training purge, not
-  random splits.
-- Negative controls are part of the default benchmark.
+- `cloblab.wselob`: order-event replay and valid book segments.
+- `cloblab.scale_cache`: compressed feature partitions and source/content manifests.
+- `cloblab.scientific_identity`: scientific settings and input identity, excluding runtime device/path settings.
+- `cloblab.scale_runner`: fixed task expansion, fitting, locks, atomic artifacts, resume/retry and complete aggregation.
+- `cloblab.execution_labels` and `cloblab.robustness`: exact crossed quotes and paired block summaries.
+- `cloblab.transfer`: held-out-stock training chronology.
+- `cloblab.queue_book`, `passive_execution` and `queue_metrics`: visible order queues and conditional passive diagnostics.
+- `scripts/run_*` and `scripts/render_*`: bounded research entrypoints and aggregate-only figures.
 
-## Modules
+A completed task is reused only when its artifacts and identity match. Missing or conflicting tasks prevent complete aggregation. Raw files, predictions and compute metadata stay outside public Git; small aggregate artifacts retain the full planned denominator. The system uses local processes and partitioned files, not Dask/Ray or a production trading cluster.
 
-- `cloblab.collectors`: publicly accessible Coinbase Exchange WebSocket JSONL
-  capture and side-semantics helpers.
-- `cloblab.book`: deterministic aggregate L2 replay and book invariants.
-- `cloblab.features`: no-lookahead feature construction.
-- `cloblab.labels`: 1s/5s/10s/60s midpoint markout labels.
-- `cloblab.splits`: anchored walk-forward split logic.
-- `cloblab.evaluation`: simple linear baseline, label-time purge, and
-  shuffled-label control.
-- `cloblab.costs`: visible-depth sweep cost proxy.
-- `cloblab.cli`: reproducible demo, schema rendering, and collection entrypoints.
+The optional C++20/pybind11 batch backend in cloblab.native and cpp/ implements replay and conditional queue transitions, releasing the GIL during native loops. It has byte-exact parity across 85.8M messages and 604.8M virtual-order evaluations, with measured 8.98× replay and 3.57× queue kernel speedups. See the [native report](CXX20_REPLAY_QUEUE_REPORT.md) for timing scope and build instructions.
 
-## Non-Goals
+## Engineering-only scaffold
 
-- No private keys, wallets, exchange accounts, or live order entry.
-- No live trading or production automation.
-- No claim that a signal is tradable or profitable.
-- No passive fill or queue-position claim from aggregate L2 data.
+`collectors` and `coinbase_normalize` support feed capture and normalization; `book` supports aggregate L2 replay. `features`, `labels`, `splits`, `evaluation`, `costs` and `cli` support the synthetic demo and clock-time research scaffold. Coinbase captures are not used for the licensed ML benchmark.
+
+There is no live order-entry system, account integration or production execution claim. Python remains the default reference.
