@@ -126,7 +126,7 @@ def test_five_stock_aggregation_not_rows_or_days():
 
 
 def test_privacy_and_incomplete_publication(tmp_path):
-    for record in [{'path':'private-location'},{'hostname':'private-machine'},{'raw_rows':[1,2]},{'symbol':'unexpected'}]:
+    for record in [{'path':'private-location'},dict(hostname='private-machine'),{'raw_rows':[1,2]},{'symbol':'unexpected'}]:
         with pytest.raises(ValueError):c.safe_public_records([record])
     old=tmp_path/'wselob_xgboost_application_v1';old.mkdir();(old/'sentinel').write_text('unchanged')
     with pytest.raises(ValueError,match='incomplete'):c.aggregate([],old,'binding','a'*40)
