@@ -2,7 +2,19 @@
 
 **Completed 2026-09-14: Phases 0–3.** All 411 execution cells and all 25 transfer tasks completed. See [the measured results and limitations](EXECUTION_AWARE_ROBUSTNESS_REPORT.md). The plan below is retained as the original specification; it is not pending work.
 
-## Why this is the next step
+## Current status and remaining priorities
+
+**Completed 2026-09-21: preregistered later-period confirmation.** All 35 fits and the planned prediction, crossed-book and conditional queue cells completed across five stocks on December 27–29, 2017. See the [pre-confirmation audit](LATER_PARTITIONS_UNTOUCHED_AUDIT.md), [frozen protocol](LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md) and [final report](LATER_PARTITIONS_CONFIRMATION_REPORT.md). This task is complete and is not next work.
+
+The narrow confirmation replicated positive prediction ranking and the XGBoost advantage, the negative primary aggressive spread-crossing conclusion, and lower conditional fill probability in stronger signal tails. Average five-message post-fill midpoint markouts remained adverse, but stronger-tail adverse-selection ordering did not consistently replicate. Three shared dates are not broad temporal evidence, and the queue outputs remain conditional diagnostics.
+
+The project is scientifically mature for application/portfolio purposes within these limits. Additional model-zoo comparisons or tuning on the same inspected WSELOB sample are low priority. No new research task is scheduled here; further confirmation should await genuinely new independent data, with provenance and a protocol established before outcome inspection.
+
+## Archived execution-aware plan
+
+Everything below is the completed original plan, retained for provenance rather than as pending instructions.
+
+### Original motivation
 
 The current benchmark already establishes a reproducible five-stock, full-year microstructure workflow and a modest XGBoost improvement over a linear baseline. The largest remaining scientific weakness is not model complexity: the headline target is future **midpoint** movement rather than an execution-aware outcome.
 

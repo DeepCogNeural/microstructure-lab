@@ -1,5 +1,7 @@
 # Execution-Aware Robustness — WSELOB 2017
 
+This report preserves the earlier April/June/September/November 2017 experiment. The separate completed [preregistered later-period confirmation](LATER_PARTITIONS_CONFIRMATION_REPORT.md) used a frozen full-history refit and three December dates. It confirmed the positive prediction ranking and negative primary crossed-book conclusion (20-message, zero-delay XGBoost: −4.52 bp under the fixed strict 1 bp rule). Its numbers and stock-period aggregation are separate from the historical tables below.
+
 ## Result
 
 The small XGBoost improvement in midpoint IC survives the paired stock/month checks. It does **not** establish an executable trading edge: all primary model/horizon/latency headline top-decile long, bottom-decile short, and fixed-threshold crossed-book markouts are negative. Delay worsens the primary headline markouts. No primary block has the full expected ten-decile ordering after crossing.
