@@ -1,0 +1,7 @@
+Finding,Previous study,Later confirmation,Interpretation
+Midpoint prediction,20-message Linear 0.255193; XGBoost 0.261639,Linear 0.261720; XGBoost 0.274159,Replicated positive ranking; different training and block aggregation
+XGBoost vs Linear,Mean delta 0.006446; 18/20 monthly-block wins,Mean delta 0.012440; 5/5 stock-period wins,Positive modest advantage replicated; no formal significance
+Aggressive crossing,XGBoost selected -5.363776300 bp at h20/d0,XGBoost selected -4.519463 bp at h20/d0,Negative headline replicated; magnitude less negative
+Passive fill pattern,Stronger prediction tails had lower conditional fill probability,Both tails lower than bins 5/6 in every stock for both models,Replicated within these three dates
+Post-fill adverse selection,XGBoost five-message markout -0.333498 bp,XGBoost five-message markout -0.456027 bp,Adverse headline replicated; tail-center contrasts heterogeneous
+XGBoost passive-price advantage,Five-message spread diagnostic about 0.0981 bp above Linear,Five-message spread diagnostic 0.021522 bp below Linear,Relative advantage reversed; not causal execution or P&L
