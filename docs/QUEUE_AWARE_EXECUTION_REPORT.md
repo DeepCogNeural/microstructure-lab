@@ -2,6 +2,10 @@
 
 The order feed does not uniquely identify historical executions. **Y is retransmission**, and D does not distinguish cancellation from complete execution. Consequently, this experiment reports conditional depletion diagnostics and a zero identified lower fill bound. It does not establish an executable strategy.
 
+## Later confirmation cross-reference
+
+The results below belong to the original four-month study. The separate completed [preregistered later-period confirmation](LATER_PARTITIONS_CONFIRMATION_REPORT.md), using a frozen full-history refit on three shared December dates, again found lower conditional fill probability in stronger signal tails and adverse average five-message post-fill midpoint markouts. Stronger-tail adverse-selection ordering did **not** consistently replicate; stronger signals do not necessarily imply worse post-fill markouts. The later passive spread diagnostic also did not decline monotonically with latency. These remain conditional queue-depletion diagnostics, with separate samples and aggregation; the original results below are unchanged.
+
 ## Measured conclusion
 
 The full run replayed 25,598,356 original test-window source messages per priority interpretation (51,196,712 including both interpretations), completed all 822 cells and reused every planned prediction task. All 83 tests passed, including published denominators, original prediction identities and aggregate recomputation; the public privacy check passed.

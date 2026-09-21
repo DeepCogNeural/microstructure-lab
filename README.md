@@ -10,20 +10,32 @@ A reproducible Level-2 (L2, depth-by-price) order-book research pipeline for sho
 | Research design | Frozen chronological holdouts; 10/20/50-message horizons; shuffled-label controls |
 | Models | Linear, HistGradientBoosting and XGBoost, with matched comparison scopes |
 | Held-out result | Modest XGBoost uplift over Linear at all three horizons; positive leave-one-stock/month mean differences |
+| Later-period confirmation | Preregistered 20-message IC: XGBoost 0.274 vs. Linear 0.262; XGBoost led on all 5 stocks |
 | Engineering | Partitioned Parquet cache, deterministic task IDs, content hashes, atomic writes and resumable tasks |
 | **Native engineering** | C++20/pybind11 backend with byte-exact Python parity across 85.8M messages and 604.8M virtual-order evaluations; 8.98× replay / 3.57× queue kernel speedups |
 | Fixed-workload timing | 17.26× training / 9.07× end-to-end accelerator speedup; 1.606× two-worker throughput |
 | Execution lesson | Predictive midpoint ranking did not yield positive crossed-book outcomes after spread and latency |
 
+**Research arc: prediction → validation → monetization test → execution friction → later-period confirmation.**
+
 ```text
 licensed order messages → deterministic book replay → causal feature cache
   → chronological Linear / HistGB / XGBoost tasks → controls + paired robustness
   → spread / latency diagnostics → conditional passive-queue diagnostics
+  → preregistered later-period confirmation
 ```
 
 [Scientific + engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [Execution-aware robustness](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [C++20 parity and performance](docs/CXX20_REPLAY_QUEUE_REPORT.md) · [Documentation index](docs/README.md)
 
-## Held-out prediction result
+## Current status — later-period confirmation completed
+
+The preregistered December 27–29, 2017 confirmation used one frozen full-history fit per stock/model/horizon through December 22. At the primary 20-message horizon, equal-weight stock-period IC was **XGBoost 0.274 vs. Linear 0.262**, with XGBoost leading on **all 5 stocks**. The negative aggressive spread-crossing conclusion also replicated: XGBoost's historical visible-quote markout averaged **−4.52 bp** at zero delay with the fixed strict |prediction| > 1 bp rule.
+
+Under conditional queue-depletion diagnostics, stronger signal tails remained harder to fill, and conditional fills had adverse average five-message post-fill midpoint markouts. **Stronger-tail adverse-selection ordering did not consistently replicate**: stronger signals do not necessarily produce worse post-fill markouts.
+
+This is only **3 shared dates × 5 stocks**, not 15 independent time periods. Non-exposure partly relies on operator attestation; the frozen full-history refit differs from the older monthly expanding-window study below. It establishes neither current-market alpha nor actual historical fills or trading profit. See the [pre-confirmation audit](docs/LATER_PARTITIONS_UNTOUCHED_AUDIT.md), [frozen preregistration](docs/LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md), [final confirmation report](docs/LATER_PARTITIONS_CONFIRMATION_REPORT.md) and [limitations](docs/LIMITATIONS.md).
+
+## Earlier monthly held-out prediction result
 
 IC means Spearman rank correlation between predictions and future midpoint changes. These are **equal-weight stock/month held-out** correlations over April, June, September and November 2017.
 
@@ -41,7 +53,7 @@ XGBoost's midpoint-ranking uplift is broadly positive across the fixed stock/mon
 
 ## Execution changes the interpretation
 
-All 411 crossed-book cells reuse the original predictions. At zero delay, XGBoost's fixed 1 bp threshold-selected outcomes average **−5.00 / −5.36 / −7.07 bp** at 10/20/50 messages; 1- and 5-message delays worsen them. These are visible-quote diagnostics, not realized trading profit.
+In the earlier four-month study, all 411 crossed-book cells reuse the original predictions. At zero delay, XGBoost's fixed 1 bp threshold-selected outcomes average **−5.00 / −5.36 / −7.07 bp** at 10/20/50 messages; 1- and 5-message delays worsen them. These are visible-quote diagnostics, not realized trading profit.
 
 ![Crossed-book prediction deciles](results/wselob_execution_robustness_v1/crossed_markout_deciles.png)
 
@@ -79,8 +91,8 @@ This quickstart runs a deterministic **synthetic** demo; it does not reproduce t
 
 Source: [Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1](https://data.mendeley.com/datasets/3g4mhdp899/1), DOI 10.17632/3g4mhdp899.1, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Modifications: order replay, causal features, model evaluation and aggregate execution diagnostics. As-is; no warranty or endorsement.
 
-The full-source engineering preparation covers all 250 available days per stock. The fixed scientific cache contains 1,235 stock/day partitions through December 24; 15 later partitions complete engineering coverage only. All 152 original scientific tasks completed without missing tasks or month substitutions.
+The full-source engineering preparation covers all 250 available days per stock. The fixed scientific cache contains 1,235 stock/day partitions through December 24; the remaining 15 partitions initially completed engineering coverage only and subsequently formed the separate preregistered later-period confirmation. All 152 original scientific tasks completed without missing tasks or month substitutions.
 
 The Coinbase adapter is retained for engineering demonstrations only. Its captures are not the empirical ML benchmark; see [data terms](docs/DATA_TERMS.md). The earlier single-stock study remains under [background/provenance](docs/README.md#background--provenance).
 
-See [public contribution and privacy policy](CONTRIBUTING.md). Further scientific work requires new data or a materially new preregistered question, rather than tuning these inspected holdouts.
+See [public contribution and privacy policy](CONTRIBUTING.md). The project is scientifically mature for portfolio purposes within its stated limits. Additional model-zoo work on the inspected WSELOB sample is low priority; further confirmation should await genuinely new independent data.
