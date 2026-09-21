@@ -1,0 +1,344 @@
+{
+  "schema_version": 1,
+  "experiment_name": "wselob_later_confirmation_v1",
+  "phase": "preregistration_only_run_requires_review",
+  "audit_commit": "e82a75de2ed02d8bf6f3f84fd602dc9b13ddcc81",
+  "reference_commit": "e82a75de2ed02d8bf6f3f84fd602dc9b13ddcc81",
+  "evidence_boundary": "pre-registered later-period confirmation set; operator attestation supports non-exposure; label-bearing caches existed; not cryptographically blinded or independently proven never-seen",
+  "dataset": {
+    "name": "WSELOB-2017 V1",
+    "source_registry": "configs/wselob_sources_v1.json",
+    "sources": {
+      "KGHM": {
+        "filename": "KGHM_lob_2017_zlib.h5",
+        "sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+        "bytes": 325838174,
+        "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/d30e1966-5bc7-492e-993d-2a1e4c5e6da0/file_downloaded"
+      },
+      "PEKAO": {
+        "filename": "PEKAO_lob_2017_zlib.h5",
+        "sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+        "bytes": 152759953,
+        "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/63e3f3ab-f562-4389-a740-357446266a6c/file_downloaded"
+      },
+      "PKNORLEN": {
+        "filename": "PKNORLEN_lob_2017_zlib.h5",
+        "sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+        "bytes": 290678577,
+        "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/337abfb0-285e-4f9b-a4ab-992417991e1d/file_downloaded"
+      },
+      "PKOBP": {
+        "filename": "PKOBP_lob_2017_zlib.h5",
+        "sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+        "bytes": 281092890,
+        "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/ba14a4f2-865d-4d8b-8068-4af9a2efdda6/file_downloaded"
+      },
+      "PZU": {
+        "filename": "PZU_lob_2017_zlib.h5",
+        "sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+        "bytes": 262873333,
+        "url": "https://data.mendeley.com/public-files/datasets/3g4mhdp899/files/e1acaa20-c404-4cbb-bfdf-a3eab7593ca3/file_downloaded"
+      }
+    },
+    "symbols": [
+      "KGHM",
+      "PEKAO",
+      "PKNORLEN",
+      "PKOBP",
+      "PZU"
+    ],
+    "confirmation_dates": [
+      "2017-12-27",
+      "2017-12-28",
+      "2017-12-29"
+    ],
+    "confirmation_partitions": [
+      {
+        "symbol": "KGHM",
+        "day": "2017-12-27"
+      },
+      {
+        "symbol": "KGHM",
+        "day": "2017-12-28"
+      },
+      {
+        "symbol": "KGHM",
+        "day": "2017-12-29"
+      },
+      {
+        "symbol": "PEKAO",
+        "day": "2017-12-27"
+      },
+      {
+        "symbol": "PEKAO",
+        "day": "2017-12-28"
+      },
+      {
+        "symbol": "PEKAO",
+        "day": "2017-12-29"
+      },
+      {
+        "symbol": "PKNORLEN",
+        "day": "2017-12-27"
+      },
+      {
+        "symbol": "PKNORLEN",
+        "day": "2017-12-28"
+      },
+      {
+        "symbol": "PKNORLEN",
+        "day": "2017-12-29"
+      },
+      {
+        "symbol": "PKOBP",
+        "day": "2017-12-27"
+      },
+      {
+        "symbol": "PKOBP",
+        "day": "2017-12-28"
+      },
+      {
+        "symbol": "PKOBP",
+        "day": "2017-12-29"
+      },
+      {
+        "symbol": "PZU",
+        "day": "2017-12-27"
+      },
+      {
+        "symbol": "PZU",
+        "day": "2017-12-28"
+      },
+      {
+        "symbol": "PZU",
+        "day": "2017-12-29"
+      }
+    ],
+    "keep_all_partitions": true,
+    "session_start_local": "10:00:00",
+    "session_end_local": "16:00:00",
+    "timezone": "Europe/Warsaw",
+    "book_levels": 10,
+    "original_event_horizons": [
+      10,
+      20,
+      50
+    ]
+  },
+  "training": {
+    "date_start": "2017-01-01",
+    "date_end_inclusive": "2017-12-22",
+    "minimum_train_trading_days": 40,
+    "rule": "one_fit_per_symbol_horizon_model_control_seed_before_confirmation",
+    "use_all_eligible_rows": true,
+    "cross_symbol_pooling": false,
+    "refit_during_confirmation": false,
+    "standardization_fit_on_training_only": true,
+    "row_order": [
+      "day",
+      "event_index"
+    ],
+    "label_boundary": "same_stock_day_uninterrupted_valid_segment"
+  },
+  "features": [
+    "spread_bps",
+    "top_imbalance",
+    "depth_imbalance",
+    "ofi_l1_norm",
+    "microprice_minus_mid_bps"
+  ],
+  "models": {
+    "linear": {
+      "ridge": 1e-06,
+      "train_only_standardization": true,
+      "implementation": "cloblab.evaluation._fit_predict_linear"
+    },
+    "xgboost": {
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "n_estimators": 800,
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "min_child_weight": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "reg_alpha": 0.1,
+      "max_bin": 256,
+      "random_state": 7,
+      "hyperparameter_search": false
+    }
+  },
+  "runtime_policy": {
+    "xgboost_device": "cpu",
+    "no_device_selection_from_outcomes": true,
+    "threads": "bounded_runtime_setting",
+    "queue_backend": "python_reference_or_byte_exact_native",
+    "record_versions_and_code_hashes": true
+  },
+  "prediction": {
+    "primary_horizon": 20,
+    "secondary_horizons": [
+      10,
+      50
+    ],
+    "metric": "cloblab.evaluation._spearman_corr",
+    "block": "symbol_all_three_confirmation_days_concatenated_in_date_event_order",
+    "same_rows_linear_xgboost_control_per_horizon": true,
+    "eligibility": "existing_finite_five_features_and_horizon_label_in_same_day_segment",
+    "threshold_bps": 1.0,
+    "threshold_operator": "strict_absolute_greater_than",
+    "secondary_metrics": [
+      "direction_accuracy_nonzero",
+      "threshold_coverage",
+      "selected_midpoint_diagnostic_bps"
+    ]
+  },
+  "negative_control": {
+    "model": "xgboost",
+    "horizon": 20,
+    "seed": 7,
+    "scope": "all_five_symbols",
+    "shuffle": "existing_numpy_default_rng_7_within_training_day_labels_only_in_sorted_day_order",
+    "apply_to": [
+      "prediction",
+      "aggressive_execution",
+      "passive_queue"
+    ],
+    "changes_primary_design": false
+  },
+  "aggressive_execution": {
+    "primary_horizon": 20,
+    "primary_latency": 0,
+    "primary_selection": "abs(prediction)>1.0",
+    "horizons": [
+      10,
+      20,
+      50
+    ],
+    "latencies": [
+      0,
+      1,
+      5
+    ],
+    "long": "10000*(bid[t+d+h]-ask[t+d])/mid[t+d]",
+    "short": "10000*(bid[t+d]-ask[t+d+h])/mid[t+d]",
+    "eligibility": "intersection_across_all_latencies_within_same_stock_day_segment_and_models_control_per_horizon",
+    "deciles": "cloblab.robustness.summarize_predictions; per_symbol_three_day_block; qcut_10_duplicates_drop; fixed_across_latencies",
+    "report": [
+      "selected_crossed_bps",
+      "threshold_coverage",
+      "top_decile_long_bps",
+      "bottom_decile_short_bps",
+      "decile_curves",
+      "ordered_deciles"
+    ],
+    "interpretation": "historical_visible_quote_diagnostics_not_realized_PnL"
+  },
+  "passive_queue": {
+    "latency_events": [
+      0,
+      1,
+      5
+    ],
+    "reuse_predictions": true,
+    "virtual_size": 1,
+    "unit": "dataset_native_displayed_quantity",
+    "placement": "positive_bid_negative_ask_zero_no_order",
+    "lifetime": "prediction_horizon_from_placement",
+    "adverse_move": "one_tick_against_placement_midpoint",
+    "tick_rule": "running_minimum_positive_adjacent_visible_price_difference_through_placement_within_day",
+    "priority_interpretations": [
+      "retain",
+      "reset"
+    ],
+    "fill_scenario": "all_D_and_same_price_M_reductions_are_executions_conditional_diagnostic",
+    "identified_lower_fill_probability": 0,
+    "placement_queue": "back_of_all_current_visible_orders",
+    "reprice": false,
+    "post_fill_offsets": [
+      1,
+      5,
+      10,
+      "remaining"
+    ],
+    "deciles": "within_symbol_three_day_block_qcut_10_duplicates_drop_ties_preserved; per_latency_and_priority",
+    "same_rows_all_models": true,
+    "eligibility": "existing_prediction_eligible_rows_and_valid_same_segment_placement_per_latency; shared_models_control; no_cross_latency_intersection",
+    "primary_reporting_horizon": 20,
+    "primary_reporting_latency": 0,
+    "report_both_priorities": true,
+    "headline_metrics": [
+      "fill_probability",
+      "fill_before_adverse",
+      "mean_fill_time",
+      "markout_5",
+      "spread_5"
+    ],
+    "probability_denominator": "eligible_decisions_including_zero_predictions",
+    "qualitative_test": "full_prediction_decile_fill_probability_and_post_fill_markout_curves; compare_each_outer_tail_to_central_bins_5_6_if_10_bins_exist; otherwise_no_forced_tail_contrast",
+    "queue_deciles": "nonzero_directions_only; existing_queue_metrics.deciles",
+    "zero_fills": "conditional_markouts_and_fill_time_undefined",
+    "remaining_offset": "decision_event_plus_horizon",
+    "secondary_day_deciles": "reuse_symbol_three_day_bin_assignments_for_day_slices"
+  },
+  "aggregation": {
+    "primary_blocks": 5,
+    "primary": "equal_weight_mean_of_five_symbol_three_day_metrics",
+    "paired_delta": "xgboost_minus_linear_per_symbol",
+    "paired_summary": [
+      "mean_delta",
+      "median_delta",
+      "strict_positive_win_count_out_of_five"
+    ],
+    "secondary_symbol_day_blocks": 15,
+    "date_summaries": "equal_weight_mean_across_five_symbol_day_metrics_per_date",
+    "symbol_summary": "metric_recomputed_on_concatenated_three_day_rows_not_mean_daily_IC",
+    "confidence_intervals": false,
+    "p_values": false,
+    "dependence": "5_symbols_x_3_shared_dates_not_15_independent_periods; overlapping_rows_dependent",
+    "undefined": "publish_null_and_defined_block_count; strict_headline_null_if_any_required_block_undefined; never_silently_drop_or_zero_fill"
+  },
+  "denominators": {
+    "model_fits": 35,
+    "primary_model_fits": 30,
+    "control_fits": 5,
+    "prediction_stock_blocks": 35,
+    "prediction_symbol_day_blocks": 105,
+    "aggressive_stock_cells": 105,
+    "aggressive_symbol_day_cells": 315,
+    "passive_stock_cells": 210,
+    "passive_symbol_day_cells": 630,
+    "required_counts": [
+      "raw_messages",
+      "snapshot_rows",
+      "feature_rows",
+      "training_eligible_rows",
+      "prediction_eligible_rows",
+      "each_mechanical_exclusion_reason",
+      "execution_common_rows",
+      "threshold_selected_rows",
+      "queue_eligible_decisions",
+      "placed_orders",
+      "zero_signal_decisions",
+      "fills",
+      "post_fill_observations",
+      "defined_blocks"
+    ],
+    "missing_partition_or_task": "stop_and_report_incomplete; no_substitution"
+  },
+  "publication": {
+    "future_output_root": "results/wselob_later_confirmation_v1",
+    "aggregate_only": true,
+    "forbidden": [
+      "raw_data",
+      "row_level_predictions",
+      "private_paths",
+      "hostnames",
+      "hardware_identifiers",
+      "scheduler_information"
+    ],
+    "old_results_immutable": true,
+    "report_negative_null_and_reversed_results": true
+  }
+}
