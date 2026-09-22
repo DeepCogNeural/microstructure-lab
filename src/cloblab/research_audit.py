@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import fcntl
 import itertools
+import importlib.metadata
 import os
 from pathlib import Path
 import time
@@ -14,6 +15,31 @@ from cloblab.scale_common import atomic_json, digest, file_hash, read_json
 from cloblab.scale_runner import model_parameters
 
 CONFIG = 'configs/wselob_research_audit_v1.json'
+
+
+def numerical_contract(args):
+    """A private, explicitly attested producer profile; not a parity certificate."""
+    profile_path = getattr(args, 'numerical_profile', None)
+    if not profile_path:
+        raise ValueError('run/resume requires --numerical-profile; legacy receipts are artifact-only evidence')
+    profile = read_json(profile_path)
+    required = {'schema', 'device', 'threads', 'packages', 'numerical_environment_sha256'}
+    if set(profile) != required or profile['schema'] != 1:
+        raise ValueError('invalid numerical profile schema')
+    environment = profile['numerical_environment_sha256']
+    if not isinstance(environment, str) or len(environment) != 64 or any(c not in '0123456789abcdef' for c in environment):
+        raise ValueError('numerical environment must have a SHA256 attestation')
+    packages = {name: importlib.metadata.version(name) for name in ['numpy', 'pandas', 'xgboost']}
+    if profile['device'] != args.device or profile['threads'] != args.threads or profile['packages'] != packages:
+        raise ValueError('requested runtime/packages do not match the numerical profile')
+    return dict(schema=1, profile_sha256=digest(profile), device=args.device,
+                threads=args.threads, packages=packages,
+                numerical_environment_sha256=environment)
+
+
+def require_compatible_receipt(receipt, contract):
+    if receipt.get('numerical_contract') != contract:
+        raise ValueError('missing or incompatible numerical contract; do not resume in this evidence namespace')
 
 
 def task_plan(c):
@@ -131,6 +157,7 @@ def reusable_prediction(task,test,roots,c):
 
 
 def run_task(task,c,manifests,args,implementation):
+    contract = numerical_contract(args)
     parts=fold_parts(c,manifests,task)
     inputs=[[{k:p[k] for k in ['symbol','day','features_sha256']} for _,p in x] for x in parts]
     tid=task_id(c,task,inputs,implementation);folder=Path(args.work)/tid;folder.mkdir(parents=True,exist_ok=True)
@@ -140,6 +167,7 @@ def run_task(task,c,manifests,args,implementation):
         if receipt.exists():
             r=read_json(receipt)
             if r['task_id']!=tid:raise ValueError('stale receipt')
+            require_compatible_receipt(r, contract)
             for name,h in r['artifacts'].items():
                 if file_hash(folder/name)!=h:raise ValueError('corrupt completed artifact')
             return 'reused_checkpoint'
@@ -169,7 +197,9 @@ def run_task(task,c,manifests,args,implementation):
         atomic_json(folder/'metrics.json',clean(dict(block=r,daily=daily,states=state_scores(train,test,pred) if task['kind']=='ablation' else [])))
         # Private row predictions permit later paired diagnostics; never published.
         temp=folder/'predictions.tmp.npz';np.savez_compressed(temp,prediction=pred,actual=y,event_index=test.event_index.to_numpy(),timestamp_ns=test.timestamp_ns.to_numpy());os.replace(temp,folder/'predictions.npz')
-        atomic_json(folder/'receipt.json',dict(task_id=tid,task=task,artifacts={n:file_hash(folder/n) for n in ['metrics.json','predictions.npz']},runtime=dict(device=args.device,threads=args.threads,fit_seconds=fit_seconds,wall_seconds=time.monotonic()-started)))
+        atomic_json(folder/'receipt.json',dict(task_id=tid,task=task,numerical_contract=contract,
+            prediction_evidence=dict(origin=origin,profile_role='fit_producer' if origin=='new_fit' else 'archive_import_runtime_not_original_producer',sha256=file_hash(folder/'predictions.npz'),archived_source_sha256=oldhash),
+            artifacts={n:file_hash(folder/n) for n in ['metrics.json','predictions.npz']},runtime=dict(device=args.device,threads=args.threads,fit_seconds=fit_seconds,wall_seconds=time.monotonic()-started)))
         print(f"{task['kind']} {task['scope']} {task['symbol']} {task['period']} {task['model']} {task['feature_group']} {task['shuffle']} {task['seed']} {origin} seconds={time.monotonic()-started:.1f}",flush=True)
         return origin
 
@@ -179,16 +209,22 @@ def implementation_hash():
 
 
 def aggregate(c,manifests,args,implementation):
-    blocks=[];days=[];states=[]
+    blocks=[];days=[];states=[];evidence=[]
     for task in task_plan(c):
         parts=fold_parts(c,manifests,task)
         inputs=[[{k:p[k] for k in ['symbol','day','features_sha256']} for _,p in x] for x in parts]
         tid=task_id(c,task,inputs,implementation);folder=Path(args.work)/tid
         receipt=read_json(folder/'receipt.json')
         if receipt['task_id']!=tid:raise ValueError('identity mismatch')
+        if 'numerical_contract' not in receipt or 'prediction_evidence' not in receipt:
+            raise ValueError('legacy receipt: aggregate the completed v1 with its archived implementation')
         for n,h in receipt['artifacts'].items():
             if file_hash(folder/n)!=h:raise ValueError('artifact mismatch')
         data=read_json(folder/'metrics.json');blocks.append(data['block'])
+        if receipt['prediction_evidence']['sha256'] != receipt['artifacts']['predictions.npz'] or receipt['prediction_evidence']['origin'] != data['block']['origin']:
+            raise ValueError('prediction evidence binding mismatch')
+        evidence.append(dict(task_id=tid,profile_sha256=receipt['numerical_contract']['profile_sha256'],
+                             **receipt['prediction_evidence']))
         days.extend({**task,'task_id':tid,**r} for r in data['daily']);states.extend({**task,'task_id':tid,**r} for r in data['states'])
     frame=pd.DataFrame(blocks);out=Path(args.out);out.mkdir(parents=True,exist_ok=True)
     for kind in ['control','ablation']:
@@ -211,11 +247,11 @@ def aggregate(c,manifests,args,implementation):
     cf=pd.DataFrame(contrasts);cf.to_csv(out/'ablation_paired.csv',index=False)
     sums=[dict(model=m,contrast=f,**strict_stats(g.delta_ic,20)) for (m,f),g in cf.groupby(['model','contrast'])]
     pd.DataFrame(sums).to_csv(out/'ablation_summary.csv',index=False)
-    atomic_json(out/'model_manifest.json',dict(complete=True,config_hash=digest(c),implementation_hash=implementation,control_cells=len(control),ablation_cells=len(ab),new_fits=int((frame.origin=='new_fit').sum()),verified_original_predictions=int((frame.origin=='verified_original_prediction').sum()),task_ids=sorted(frame.task_id),csv_hashes={p.name:file_hash(p) for p in out.glob('*.csv')}))
+    atomic_json(out/'model_manifest.json',dict(complete=True,numerical_compatibility='explicit producer profile; artifact hash identifies evidence, not backend parity',prediction_evidence=evidence,config_hash=digest(c),implementation_hash=implementation,control_cells=len(control),ablation_cells=len(ab),new_fits=int((frame.origin=='new_fit').sum()),verified_original_predictions=int((frame.origin=='verified_original_prediction').sum()),task_ids=sorted(frame.task_id),csv_hashes={p.name:file_hash(p) for p in out.glob('*.csv')}))
 
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['plan','run','resume','aggregate']);p.add_argument('--config',default=CONFIG);p.add_argument('--history',required=True);p.add_argument('--tail',required=True);p.add_argument('--work',required=True);p.add_argument('--out',default='results/wselob_research_audit_v1');p.add_argument('--prediction-roots',nargs='*',default=[]);p.add_argument('--device',default='cpu');p.add_argument('--threads',type=int,default=4);p.add_argument('--shard',type=int,default=0);p.add_argument('--shards',type=int,default=1);p.add_argument('--limit',type=int);p.add_argument('--scopes',nargs='+');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('command',choices=['plan','run','resume','aggregate']);p.add_argument('--config',default=CONFIG);p.add_argument('--history',required=True);p.add_argument('--tail',required=True);p.add_argument('--work',required=True);p.add_argument('--out',default='results/wselob_research_audit_v1');p.add_argument('--prediction-roots',nargs='*',default=[]);p.add_argument('--numerical-profile');p.add_argument('--device',default='cpu');p.add_argument('--threads',type=int,default=4);p.add_argument('--shard',type=int,default=0);p.add_argument('--shards',type=int,default=1);p.add_argument('--limit',type=int);p.add_argument('--scopes',nargs='+');a=p.parse_args()
     if not 1<=a.threads<=24 or not 0<=a.shard<a.shards:raise ValueError('invalid bounded runtime')
     c=read_json(a.config);manifests=[read_json(Path(root)/'manifest.json') for root in [a.history,a.tail]];code=implementation_hash();tasks=task_plan(c)
     if a.command=='plan':

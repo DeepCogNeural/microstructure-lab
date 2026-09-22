@@ -39,15 +39,7 @@
     "visible_costs.png": "827a0ecfd3096dc3fe91f921a41f748f658763729ae153152fe12bb6e4590004"
   },
   "base_commit": "925c63d79944913dd318899d75de34f3ac300b51",
-  "data_source": "WSELOB-2017, DOI 10.17632/3g4mhdp899.1, CC BY 4.0",
-  "diagnostic_manifest": "diagnostics_manifest.json",
-  "experiment": "wselob_research_audit_v1",
-  "new_fits": 298,
-  "no_row_level_data": true,
-  "original_result_artifacts_unchanged": 72,
-  "scientific_model_manifest": "model_manifest.json",
-  "software_validation": "software_validation.json",
-  "source_sha256": {
+  "completed_run_source_sha256": {
     "configs/wselob_research_audit_v1.json": "a3c292376d12b356fd102bc1bda7deac5bc1d123da69ffc45e1f3fcce1d73160",
     "docs/RESEARCH_AUDIT_PROTOCOL.md": "73c66a66a6e2762241a67109b0315d4c9b35f68a268c81b570b1dc287e200b19",
     "docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md": "f7960a967d8aa215d092f1795a30ba1bfb14d4fd9d42b6f91ddbdb342ef630e1",
@@ -60,6 +52,44 @@
     "src/cloblab/research_diagnostics.py": "1e21db27b5e91ce90d6677814997b7f8c24b46db929564cec69cd8a9c02cda12",
     "src/cloblab/scale_runner.py": "e63559e287e22df292eb4ac8f8b20383a42c492786c8220ed5fa812770f28975",
     "tests/test_research_audit.py": "31365acd7abdf551bd5bef5f188f70a086b77a98196129f5dddcc22336e62cb7"
+  },
+  "data_source": "WSELOB-2017, DOI 10.17632/3g4mhdp899.1, CC BY 4.0",
+  "diagnostic_manifest": "diagnostics_manifest.json",
+  "experiment": "wselob_research_audit_v1",
+  "new_fits": 298,
+  "no_row_level_data": true,
+  "original_result_artifacts_unchanged": 72,
+  "receipt_compatibility": {
+    "archived_prediction_profile_role": "import runtime is not the original producer",
+    "completed_cells_rerun": 0,
+    "completed_run_commit": "55c346fe1559db52a5f15c3bf9b74ffe7d851a73",
+    "completed_v1": "legacy_artifact_bound_no_certified_backend_equivalence",
+    "contract_document": "docs/RESEARCH_AUDIT_PROTOCOL.md#numerical-backend-and-evidence-compatibility--correction-after-v1",
+    "corrected_source_changes_implementation_hash": true,
+    "correction_test": {
+      "name": "test_numerical_receipt_compatibility_fails_closed",
+      "passed": 1
+    },
+    "environment_attestation": "operator supplied private numerical-environment digest; not automatic hardware verification",
+    "new_resume_policy": "require exact attested numerical profile; missing or mismatched contract rejected",
+    "prediction_identity": "artifact SHA256 plus origin; profile equality alone is not prediction parity",
+    "scientific_task_id_is_numerical_equivalence": false
+  },
+  "scientific_model_manifest": "model_manifest.json",
+  "software_validation": "software_validation.json",
+  "source_sha256": {
+    "configs/wselob_research_audit_v1.json": "a3c292376d12b356fd102bc1bda7deac5bc1d123da69ffc45e1f3fcce1d73160",
+    "docs/RESEARCH_AUDIT_PROTOCOL.md": "a40b698b4fc55946e82fba1f668537aad6098f1c2bd43cdb6cc73ee4a94495f7",
+    "docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md": "2e7b576e9b935b0775843a1b1e3b02f63c8e745c5094d04f0fe8414b7c52e0de",
+    "scripts/audit_event_clock.py": "cdae40dd77ea2058a4aeb9abc95c950baef4526cd4e6bca804a130d5a513eb46",
+    "scripts/render_research_audit.py": "7a842a0a70c62b457038c034af9a769c22e72facd0cd8f922be46cbcd11e61b6",
+    "scripts/verify_research_audit.py": "eb75d95346893f220c02e4e720b295aa546eae35795c23aba332fb675a315776",
+    "src/cloblab/evaluation.py": "2d3eefd80bc8056d21e38cd1aa166bdbc5ec0421c82117a3959b041be07985b3",
+    "src/cloblab/later_confirmation.py": "c39af765a72a56518d8c2932b78f15e2a284d982aa92c198ece91b7bcd6304bd",
+    "src/cloblab/research_audit.py": "c8d3479795722134edbf18e7f9c70d8244c49890c348b57654e480b9e5fd9ee3",
+    "src/cloblab/research_diagnostics.py": "1e21db27b5e91ce90d6677814997b7f8c24b46db929564cec69cd8a9c02cda12",
+    "src/cloblab/scale_runner.py": "e63559e287e22df292eb4ac8f8b20383a42c492786c8220ed5fa812770f28975",
+    "tests/test_research_audit.py": "cf2e9e2d1fefb80e8f33e57e6294892917398c79902cf68420eea4b64196f127"
   },
   "status": "complete_post_inspection_explanatory_audit",
   "verified_original_predictions": 52
