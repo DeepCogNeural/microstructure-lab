@@ -116,3 +116,28 @@ def test_aggregate_rejects_missing_receipt_instead_of_dropping(tmp_path):
  args=SimpleNamespace(work=tmp_path,out=tmp_path/'out')
  with pytest.raises(FileNotFoundError):aggregate(c,[dict(partitions=parts),dict(partitions=[])],args,'code')
  assert not (tmp_path/'out').exists()
+
+
+def test_numerical_receipt_compatibility_fails_closed(tmp_path, monkeypatch):
+ from cloblab import research_audit as audit
+ import json
+ monkeypatch.setattr(audit.importlib.metadata, 'version', lambda name: 'test-version')
+ args=SimpleNamespace(device='cpu',threads=4,numerical_profile=None)
+ with pytest.raises(ValueError,match='numerical-profile'):
+  audit.run_task({}, {}, [], args, 'unused')
+ profile=dict(schema=1,device='cpu',threads=4,packages={k:'test-version' for k in ['numpy','pandas','xgboost']},numerical_environment_sha256='a'*64)
+ path=tmp_path/'profile.json';path.write_text(json.dumps(profile));args.numerical_profile=path
+ contract=audit.numerical_contract(args)
+ audit.require_compatible_receipt({'numerical_contract':contract},contract)
+ with pytest.raises(ValueError,match='missing or incompatible'):
+  audit.require_compatible_receipt({'runtime':{'device':'cpu'}},contract)
+ for key,value in [('device','cuda:0'),('threads',8),('numerical_environment_sha256','b'*64),('packages',{})]:
+  changed={**contract,key:value}
+  with pytest.raises(ValueError,match='missing or incompatible'):
+   audit.require_compatible_receipt({'numerical_contract':changed},contract)
+ args.device='cuda:0'
+ with pytest.raises(ValueError,match='do not match'):
+  audit.numerical_contract(args)
+ args.device='cpu';monkeypatch.setattr(audit.importlib.metadata,'version',lambda name:'changed-version')
+ with pytest.raises(ValueError,match='do not match'):
+  audit.numerical_contract(args)

@@ -127,7 +127,7 @@ For F5, mean XGBoost-minus-Linear IC within each state is:
 
 The within-state advantage is larger in the lower-spread bins and is not confined to one isolated positive state. These correlations re-rank observations within restricted populations; their weighted average need not equal the whole-block ΔIC. Larger conditional differences do not quantify how much of the global advantage comes from each bin, and no bin is promoted to a validated strategy.
 
-**Plain-language interpretation:** the balance of displayed buying and selling interest near the best quotes already predicts much of the short-term direction. Telling Linear how that imbalance combines with the spread helps a little. Recent changes in the best-quote queues help the tree model more than simply adding deeper resting volume. The extra predictive improvement is real in these fixed descriptive comparisons but small; it does not pay the visible crossing costs below.
+**Plain-language interpretation:** the balance of displayed buying and selling interest near the best quotes already predicts much of the short-term direction. Telling Linear how that imbalance combines with the spread helps a little. Recent changes in the best-quote queues help the tree model more than simply adding deeper resting volume. The extra predictive improvement is small and consistently observed in these fixed descriptive comparisons; it does not pay the visible crossing costs below.
 
 
 ## Prediction, visible cost and the event clock
@@ -219,7 +219,7 @@ Stronger tails have lower conditional fill probabilities, and average post-fill 
 
 ## Software and reproduction boundaries
 
-The initial suite had 162 passes and two environment failures because the installed XGBoost lacked an OpenMP runtime in its search path. Reusing an existing compatible runtime resolved those failures without changing scientific code: the modification-before baseline then passed **164 tests**. After the new audit implementation, the full suite passed **185 tests**. A fresh C++20 build and explicit native test run passed **68 tests**. With the extension actually disabled, the full fallback suite passed **123 tests**, with **62 native-only tests skipped**. Two existing warnings concern a pandas deprecation and physical-core detection.
+The initial suite had 162 passes and two environment failures because the installed XGBoost lacked an OpenMP runtime in its search path. Reusing an existing compatible runtime resolved those failures without changing scientific code: the modification-before baseline then passed **164 tests**. For the completed audit implementation at `55c346f`, the full suite passed **185 tests**. A fresh C++20 build and explicit native test run passed **68 tests**. With the extension actually disabled, the full fallback suite passed **123 tests**, with **62 native-only tests skipped**. Two existing warnings concern a pandas deprecation and physical-core detection.
 
 The new tests cover label-only group permutations with nontrivial DataFrame indices, deterministic/different seeds, held-out-stock chronology, training-only scaling, constant-score undefined IC, full-feature sample intersection, empty tied state bins, strict NaN denominators, scientific versus runtime identity, exact event-time precision and gaps, both sides of the cost identity, delay/exit rules and strict threshold boundaries. An incomplete aggregate raises instead of silently publishing a reduced denominator.
 
@@ -236,6 +236,8 @@ The [verification summary](../results/wselob_research_audit_v1/verification.json
 
 
 ## Reproduce from the licensed inputs
+
+For the completed v1 receipt aggregation, use the archived implementation at `55c346fe1559db52a5f15c3bf9b74ffe7d851a73`. The commands below record its historical execution, not instructions to rerun the completed audit. The corrected runner has a new implementation hash and requires an attested `--numerical-profile` for any future run/resume. See the [numerical compatibility contract](RESEARCH_AUDIT_PROTOCOL.md#numerical-backend-and-evidence-compatibility--correction-after-v1).
 
 Install the project and optional dependencies as described in [reproducibility](REPRODUCIBILITY.md). Prepare the original licensed feature caches and retain the original private prediction receipts. Environment variables below identify caller-owned data and output directories, not published inputs. The complete fixed model plan contains 350 cells; runtime sharding does not change scientific task identity.
 
@@ -262,7 +264,9 @@ python scripts/verify_research_audit.py \
   --old-hashes results/wselob_research_audit_v1/old_result_hashes.json
 ```
 
-The public aggregate CSVs suffice for `render_research_audit.py`; private data are needed for fitting and row-level accounting. Devices can change numerical output without changing the scientific experiment: record fresh predictions and drift, never relabel them as archived predictions. Runtime settings remain in private receipts. Task IDs bind scientific configuration, source implementation and every input feature-partition hash. The v1 runner implements the fixed protocol; changing its scientific constants requires a new configuration/implementation identity and affected tasks, not reusing old receipt directories.
+The final compatibility correction passed one targeted receipt-contract test (no fitting or market-data access); the original full-suite counts above describe the completed audit, not a rerun after this correction.
+
+The public aggregate CSVs suffice for `render_research_audit.py`; private data are needed for fitting and row-level accounting. Devices can change numerical output without changing the scientific experiment: record fresh predictions and drift, never relabel them as archived predictions. The completed v1 receipts record runtime settings but did not enforce backend compatibility on resume. Task IDs bind scientific configuration, source implementation and every input feature-partition hash; they do not establish numerical equivalence. The completed predictions remain artifact-bound historical evidence, not a CPU/CUDA parity claim. The correction adds fail-closed profile matching for subsequent receipts without changing the 350 completed cells. Full private numerical-environment attestation remains the operator's responsibility; matching profiles alone do not prove identical new predictions. The v1 runner implements the fixed protocol; changing its scientific constants requires a new configuration/implementation identity and affected tasks, not reusing old receipt directories.
 
 ## Remaining scientific boundary and next question
 

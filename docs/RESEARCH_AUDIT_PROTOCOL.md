@@ -57,3 +57,51 @@ workers and device. Interrupted incomplete tasks are restarted explicitly;
 completed hashed receipts resume without fitting. Aggregate-only execution
 rejects an incomplete or duplicate task denominator. Row data and operational
 records remain private; only stock/day or coarser aggregates are public.
+
+## Numerical backend and evidence compatibility — correction after v1
+
+A scientific task ID identifies the question, configuration, input rows and
+implementation. It is **not a numerical-equivalence certificate**. CPU/CUDA,
+library/build changes, accelerator architecture and numerical-library settings
+can change predictions even when that scientific question is unchanged.
+
+The completed v1 run at `55c346fe1559db52a5f15c3bf9b74ffe7d851a73`
+recorded device/threads privately but did not enforce a numerical compatibility
+check on resume. Its 350 task IDs and aggregate results remain frozen. The
+manifest identifies that evidence as legacy, artifact-bound, with no certified
+cross-backend equivalence. Do not infer prediction identity from equal IC,
+matching task IDs or a requested device. No missing backend attestation is
+retroactively fabricated. Original artifact aggregation uses that archived
+implementation and the original hash-verified receipts; it is not a new fit.
+
+The corrected runner requires `--numerical-profile PRIVATE_PROFILE.json` for
+run/resume. Its exact JSON schema has five keys: `schema` (1), `device` (the
+requested device string), `threads` (the requested integer), `packages` (exact
+installed versions for `numpy`, `pandas`, `xgboost`), and
+`numerical_environment_sha256` (a lowercase SHA256 of a privately retained
+numerical-environment record). The operator must capture and attest the actual
+library/build identities, CPU/accelerator architecture, compiler/driver/runtime,
+BLAS/OpenMP implementation and numerical/precision/thread settings in that
+private record. It is an explicit attestation, not automatic hardware discovery;
+do not reuse its digest after those properties change. Worker count, data paths
+and scheduler identifiers alone do not define numerical compatibility.
+
+The runner checks device, threads and installed package versions, binds the
+entire profile into each new receipt, and rejects missing or unequal contracts
+before reading a completed prediction. A changed environment requires a separate
+private work directory/evidence realization; never overwrite old receipts or
+edit their contract to bypass rejection. The source correction changes the
+implementation hash, so the corrected runner intentionally cannot masquerade
+as the completed v1 implementation. It does not invalidate the archived results
+or require those 350 cells to be rerun.
+
+A matching profile is a necessary resume condition, **not proof that another
+fit will be byte-identical**. The prediction artifact SHA256 identifies the
+actual saved evidence. New manifests retain that hash, the profile hash and
+origin per task. Verified archived predictions remain explicitly archived
+artifact references, not fresh fits on the requested backend; their source hash
+is retained and their producer profile is not inferred from the reuse runtime.
+Aggregation may combine declared producer profiles for the fixed experiment,
+but must retain those evidence identities rather than claiming backend parity.
+Only an explicit matched-output comparison could establish a stated numerical
+agreement scope. No such new comparison or experiment is performed here.
