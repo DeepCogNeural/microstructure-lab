@@ -1,0 +1,4507 @@
+{
+  "binding": "4f3027790e73d8f3d13fff8c7da5e5bf8052d2cd79aa80bf3b4383a795cf1a98",
+  "complete": true,
+  "cost_cells": 516,
+  "csv_hashes": {
+    "event_clock_precision.csv": "4f57b9b1ffe44fbdc40a15aa1d3edf756f9cfab382c7655b82269de4c8ba6d28",
+    "event_time_summary.csv": "1b8928392f03d4b35d8ff2830c12e9331a8aedb71b75aec11149622e12ebc947",
+    "execution_decomposition.csv": "dc05d9a9e30c507c297f6c2ad4c68e8f8aadd2d9c72ea5776f631a492cd0648f",
+    "feature_algebra.csv": "5a114b53f29817303825b0b5746b51e4a61b02632fbdf979901ae55e4c5568f7",
+    "fixed_exit_latency.csv": "6a7ef001d4711ed9956ce202da8e3704e898caa7969896d09d428662ada77746",
+    "passive_accounting.csv": "e965935cfc001a3006d61dc93dca8198c609eea8101184a827ae1759c41d6099"
+  },
+  "fixed_exit_cells": 186,
+  "input_bindings": [
+    {
+      "cohort": "monthly",
+      "day": "2017-04-03",
+      "features_sha256": "47e2c9771be0e88986720fc7235c99a5d5db9fc7d293b8f978e37a16a6bf7cc5",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-04",
+      "features_sha256": "880515e0492623ac9da4ff78daa73452941fab3f6113beb23bfd082cfe301470",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-05",
+      "features_sha256": "5eda032333da3acb665476ac1217056d2a06859897d2e8a32b5bf552a5d294ff",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-06",
+      "features_sha256": "28faa201cbb644e981c14561e311530031b7e5e4fa90af744adb7433d3f4f513",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-07",
+      "features_sha256": "7d8fc95bbf85ea77a92dfd2894857bbd55d1d9f259492c07c591d106932b3fa9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-10",
+      "features_sha256": "d99a3f9c73150f9841453b25f55da63d70479e39c92c087349b8e715ba7ddddf",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-11",
+      "features_sha256": "006f491b96f9331fb2c1ef4296b51e6413a74572372a9db83e94020eff78a9d1",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-12",
+      "features_sha256": "64b71291bceeffe8e0e7bfb0341a678ca9043b639bbce56a0887109f1cfb01d9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-13",
+      "features_sha256": "df22587ce7c287096e44fbfad5e980e29756dcd8bae1bbc0a7f7692e64c94a8f",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-18",
+      "features_sha256": "f680826773d1606749e706eab74c69025f9d684614d84f44a4a21d69f3d2caaa",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-19",
+      "features_sha256": "0d7e64d67e275c4dbad779d21151d034daaf700e835d31409405036974b549c6",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-20",
+      "features_sha256": "8248c447aaf313035e56920203b0c456a07dcfd9548daad65b51010aa43ca8b9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-21",
+      "features_sha256": "05d5ba70c6a0cec21938193abf8c619121ff90fb02b3086a3d312be93f7a3558",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-24",
+      "features_sha256": "bb2f38d6ed02c0e65563f22e429102730beb11aa53c52a0eee710cf75266952a",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-25",
+      "features_sha256": "6c13bf3feda0fa01d5a5faebb1876b8a7019ba3098d0789f13ac68cf6040f784",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-26",
+      "features_sha256": "2353225092588630cc9a75198b6a5dac5c3063b6aaa56427ae4554c166fdc4e9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-27",
+      "features_sha256": "2b2a1a90b2ad8115cf3be4aacadb3f1fe018aaf93c67f1d596047bfda790c4ce",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-28",
+      "features_sha256": "87dfbf4a9171ea9b3a5ab196a3de9dc3c9e0ee81f7d032dd87beba460326771a",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-01",
+      "features_sha256": "92ce75e018b0587f4e75148dc2d868e5235cd9aa536d6872402a894099aee464",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-02",
+      "features_sha256": "0fad4e5bd8d6e9d290ce5ef38e759e0cb45300b69c136bb02b487f45018eb73b",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-05",
+      "features_sha256": "cccba6a830b054c5f4e04a8065f29cb37b108a0e6490536fb81a63df11c562d1",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-06",
+      "features_sha256": "c4c67b1d94deca5779b63831dae35a9d316766aa9336ef41ecdc8346c507c04c",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-07",
+      "features_sha256": "f3c8bd406cbb239662a11ca5f2a3eefe6f803dfac8ff4d83df1aed4251f1b7b0",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-08",
+      "features_sha256": "734db1b838b5adf6dd4a28b58c5bb68e09fcad9d268c3fefcfc7b4e156f7f668",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-09",
+      "features_sha256": "5c3a5e30f379a1b7bbe7f46f414d542d5fa72814d09e4115e86fc82452310192",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-12",
+      "features_sha256": "ebc26b770de367ba26ddcb57179bb53e1c351b8d9ae8af2434a3d0d736ced7cf",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-13",
+      "features_sha256": "351ce64df49c3fb07113795327fa8a3f0ef0354c599df49f5cacbdd09352dc8e",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-14",
+      "features_sha256": "4ce30916821a0e952e9f4c902d76274352e2482eedac004e6ad18bbbd628336d",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-16",
+      "features_sha256": "0efa784247c76681e25c65386d2a9da43820ab2cef95e26cc188774f05a9d3fb",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-19",
+      "features_sha256": "ee26e85cfc4cc67e51d7eb0ec2c15f2ae55fc59d510ae70bdfcf731b9df3e50a",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-20",
+      "features_sha256": "5679a17d1f314297ed094bf1dc698d65eee0275cf55f8547cc2a93d896623503",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-21",
+      "features_sha256": "71ab6b00b04638fe34e54ea64f37bf04e9d135deab73ced4a0fa5d374ba188ae",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-22",
+      "features_sha256": "9c9b1923a3930777967517798eea020b90e9a00f2c080c43a78f5a8713a17d8e",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-23",
+      "features_sha256": "6e7882033619028afc08ad13f5a71e3ef20b190815e3b306af493f9ee2234959",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-26",
+      "features_sha256": "47b7c33b195a7ee30f7d879cd7f131556d85ee8421d1890a49b5027ea869e599",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-27",
+      "features_sha256": "e758cfd9e13ad7f2002011b4b2b9ade13ba9ee2d9a1d848a94b111ec96316624",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-28",
+      "features_sha256": "fd140eaab747fb6225865843a84e400baa183034f665cf16651dd1d68589a843",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-29",
+      "features_sha256": "fb201035a5c5aa396dbdd1e5d426cff9f147faaeb23a287f9359f072fd9d0568",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-30",
+      "features_sha256": "80aa939342e1cd7ffcd8a699ddc6c3d4ac764887601a5ac59922961a222d35e6",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-01",
+      "features_sha256": "8a676a1f13843468a8c7e4a604a88d3b1f98ab00064d90c6a8120b526a3c4285",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-04",
+      "features_sha256": "b14e82cbc93588f998909bfbed9be4bce0ba28e518a5e63304d59dc8f86afef1",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-05",
+      "features_sha256": "07d783780295638cd119011135d25d3fa29c5c0398dcff261e72e11b7a963325",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-06",
+      "features_sha256": "21f9fe774da1690e544f8e626d1ed8d90e34d5ed8a1f4d0c499f8e3cbc2d1ea8",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-07",
+      "features_sha256": "109ce9328f612ce65e7f7d098f464caa27df1692a3884f16841d1d8590834ba3",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-08",
+      "features_sha256": "4b63577c74ae3e7f5cbc03ff8932df3081b0e69ca3a58c05084444bb3d594b6d",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-11",
+      "features_sha256": "60c729c55b26b41616120a28ded9baac1b86f7405e13eee110869ba3e81abb5f",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-12",
+      "features_sha256": "003b2989f881430a3df4f06d70f21a8b09da94bb2d922b6b02400657f306399d",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-13",
+      "features_sha256": "222de5495e3a93976e4659317dba7c9ff6538cd1b7158cc7aa72430ff6412252",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-14",
+      "features_sha256": "479203ecb7cdf89337a04ef44bac52ca889366fcbf2a72e72fa6b1cb99faca28",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-15",
+      "features_sha256": "842a6936694d0606b98ba922d2bc15cd4e2b3234128731f10468e940f6c8d8da",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-18",
+      "features_sha256": "33752613ab37f0e040f20a5cdc2ecc631e7e3637a410854b7b0f2eae651f685a",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-19",
+      "features_sha256": "150699cbd91e207cc6e38d2fd52b9ca404f2dfe46015b616280a39beee11e180",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-20",
+      "features_sha256": "8666f8d169d78854a52831c4489c19e27461ebaccffd5a8b1c41f21a4c3ddccc",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-21",
+      "features_sha256": "09e3308da0ed3e0f02fe3410ecdab18ff0dea9e6ccdbfc18c65b3b9643cd3030",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-22",
+      "features_sha256": "57c6025c54f5292e0be48c151103f30ea890b4c29d491df7bf1513d1627ddf60",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-25",
+      "features_sha256": "60a8bf88d72fd5ff48fd67bb6f9a4db52091fb7258a8a93c1a3a470a92e085a1",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-26",
+      "features_sha256": "9ca39f5df4844b3fa15f8e502bd43c1c55bb8b1805d1d61e046ea69698f298a6",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-27",
+      "features_sha256": "629105e50d036773d716d13d822147cd3fc8ff67906d57bad7ef4bab4fa99e37",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-28",
+      "features_sha256": "526026e871e38bdc8e3a04d569b7ad98b851d5ead409f84b3a4cdd794554b886",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-29",
+      "features_sha256": "949d29a664eed6a8237d5e82650d790c432f8216996145d8688d4b9251c01e48",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-02",
+      "features_sha256": "0a3ee5bc1cdfc678a4e6d30e8b6e1be5f4e4f65a269f329baaa6f10cbe175095",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-03",
+      "features_sha256": "80f21d10c457483b0b3a5d8b312c72e2e776e2fa3f00fdf106cc5b0a95dd2399",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-06",
+      "features_sha256": "7cf42b408f0bf4790942039d886036670539bee618f19dd43549ba392e61332e",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-07",
+      "features_sha256": "d34993ae3a06cd62ec208d151052836303cce0411381a6182eb70d49b58be208",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-08",
+      "features_sha256": "15224098e31a487d7d25207be1949bf485c03c54c54dba4a3651a36ba5d039a1",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-09",
+      "features_sha256": "c891640281c1829271c321aad8cc4fa4d45067344578f664dc5b58cec95375cb",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-10",
+      "features_sha256": "ad9c6723f4fcfea8c32d54d18e6ed942fed0bc45acfeddf3a310d77af204e916",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-13",
+      "features_sha256": "071ab9c5567f3752fe3aa81b212a1f55494e004581c076c1c7c09b80cf262c23",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-14",
+      "features_sha256": "4d6459fb8e01ec9d22f8d2aa4140fe945ab6279c5a7fc69374fa2b207f76982c",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-15",
+      "features_sha256": "f99ba29fea1af4fd99c517c9fae2fbac6f8083d85567eb1953ef7f0a1cf40001",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-16",
+      "features_sha256": "fe6f0d53dc965445f90896d4f88901dc705fddc22b120a9bcb658990d84d8c6b",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-17",
+      "features_sha256": "200484d38ab963da2ed49f3338ccd96c45dbdcd62b76e1773b0af07a13c346e2",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-20",
+      "features_sha256": "6b362537450818bb60e970b831ceaafd9039d8a6f56a416ede0184407949ea89",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-21",
+      "features_sha256": "a6261fc64d0af220fba896080d5fa05edbff085bbdcea16f39443382c15106b8",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-22",
+      "features_sha256": "02f30adca0b079f13e239f949fb7225b23cd9ca7477a0d8e21569fb9fe168b26",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-23",
+      "features_sha256": "b81a55ca834129a91eaec47d16f8d524424bbd7e9d7cb85acedd3606d1128f91",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-24",
+      "features_sha256": "8b9e216293714c01e68a41ce55cebb11ce625fb444bfac4419f1c8d703668a20",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-27",
+      "features_sha256": "1e1b3eae0da6d737043d3aa0e941110ab1b2416a3488828c2bb7f7814eef6507",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-28",
+      "features_sha256": "f20210e44ff6047f8a5d4af67717dfc860a3b79e45c57622431ca34e04baccb9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-29",
+      "features_sha256": "7162a4d890b70d6b810458d93f0bc255e2277baa67a84c0a29f18bfc406b16a2",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-30",
+      "features_sha256": "2cbb0e9a6c2f26498f6ad2abe794c0bebef23a39d94c7e636ffcb01728eba5ed",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-03",
+      "features_sha256": "d27cd6445352562aa140825436e7605f4debffdcb92f08f99571a14218270722",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-04",
+      "features_sha256": "d6d827a71e5b53fd5db15f164725c2295583e752ecc02f46d86ea60a695ca137",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-05",
+      "features_sha256": "57f162b86cc70802f01ae6e10ed1132c1eeb7b94ee1269fc039c679c3de16e46",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-06",
+      "features_sha256": "ca315d8b145b01c664eb129933ae5837f3c9746ec51c7711a553e26ca38116b7",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-07",
+      "features_sha256": "6d07a756e48f5f82e8e5dd92236c2f3a522c15cd20b7a2554ab854a3a4c1d97b",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-10",
+      "features_sha256": "0527dbd510acaeb07f4dab9ca88f3ccef5bc24fdc730e4bc24cc6dc9f6a978a3",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-11",
+      "features_sha256": "8af9ac1c642df7649774f16d7b0d50a7758057234295e1078c0ee0c48718bd5b",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-12",
+      "features_sha256": "e406079b79d3535ea42b50f7c707ae6d9d1c168bdf18151a3d32fbd0c9e20205",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-13",
+      "features_sha256": "5d4712656efe1479085953c09827c2e567a8657e7ed8fd43ab6a22596d87ab44",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-18",
+      "features_sha256": "39fe9b85fd25479e37129286644867bb72959c3f59784895d8271397bee5af9c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-19",
+      "features_sha256": "8f46d6c355f57780b2b395a2a9b39cdb0e9605932460fcefdbdbba624756e987",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-20",
+      "features_sha256": "9c9f05547592021f964781e5f73aafc6221d1883512fd7cb83c5989cfdc4c7e2",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-21",
+      "features_sha256": "0c8bd0be8f3a20445471d2b3edce0ab55c837817696a2450617c71e71ed59bf2",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-24",
+      "features_sha256": "903dfa02733d5b604e0a15abf4ac6a7b511e2b8956304d905dbee96c271847a5",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-25",
+      "features_sha256": "50643779934fe447fab6a33007d0812b48b0151bd32393a781aa84b59166d8eb",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-26",
+      "features_sha256": "8ccd3524ac5d50c44f64f5be122dd290825d4638b0fa9afeaf4d6f4e581b5593",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-27",
+      "features_sha256": "c16bdb19cb1e83ad5352798bb90fdf7e6c41b0bcb02d09c08c0cc0b1da740b9e",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-28",
+      "features_sha256": "7808cab3b3892193b2d2c83056e1a58c1cdce46b1dea364cc69a26bd02ee719d",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-01",
+      "features_sha256": "4736837ef58cea87922723f8feb57f3b1395abfd72b9986507acd9eac99a80b6",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-02",
+      "features_sha256": "fa678547609ca4c810182df7ef9b61d85c094f915c34d304dceb653240f536b0",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-05",
+      "features_sha256": "87a0a9ea722fd965137900c3f37aa40ef9ef962f52a2fe23fdb3f70903912241",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-06",
+      "features_sha256": "e47639c17c935585315b41dff16291aeb2fdad9e8c69fc50813cc8353b5fe779",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-07",
+      "features_sha256": "b1c128c7779a97934a2e17dac3f0ed97d8ebf940e8b9a9cc4a9a37bc1a1a6439",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-08",
+      "features_sha256": "b63842cea5e61fdcbbfd490c6a126989425063e73d42cae07c705c2262e88271",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-09",
+      "features_sha256": "bb519d1f94aaec5f2d526977f19cccd0068473379fc3509fc2ddae5972e06590",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-12",
+      "features_sha256": "cbd96a94935d601d91ca3771d34025a9ca08d06702513e2eb331e0c929a403db",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-13",
+      "features_sha256": "323dd5109cb41494124ca8760ffb3b674508819a8eb273ea23901d50b4047091",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-14",
+      "features_sha256": "98c84cabd8ca81db61b0876fc11d9800e8e51781f44b001ad121f63a22a6060e",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-16",
+      "features_sha256": "013ce4dc444882f902ddf9730d632cf5d34f5c16646ea75e74da1cf0aaeb4b3d",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-19",
+      "features_sha256": "449230b502176e8dec2075d3dd64dc7a07d71597595c6af52c3ff79bec73c984",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-20",
+      "features_sha256": "80431d74cebf196a4ff694f1fe182c7c943b1915b2894b0be481d43fe109d129",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-21",
+      "features_sha256": "2013302a13e2277556dd588afb5e948923575b68f40fa107aa371ff1baceef1a",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-22",
+      "features_sha256": "920fde6348b55cbbbf7126d4ece2212bc9afc20d0f6b7d5b20e52573b9a38ecf",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-23",
+      "features_sha256": "d0e956cedbb32689f7af331c4aad28b90ba9c430d11f1b50a14283c68fcfe4e7",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-26",
+      "features_sha256": "bd4e5b8f6293f8b379993fa54317a76a88799ae2678273c372b0407fbcc0ef0c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-27",
+      "features_sha256": "9c82e3bbfd46f84767216def78b7b57a642d405df1afb5a353dbe9a2b2c0b3bc",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-28",
+      "features_sha256": "7eda6d4fc2867bfedc89cd6d80f06d691c4a6e6bbdba0d78724fcecede8fe1d1",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-29",
+      "features_sha256": "0ddd10cb2f55f179560ba626d453a7d5080b0aa361b55edcb09d6e04384d86ec",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-30",
+      "features_sha256": "2a11aea3ef83c18919396e973d4e4cb4a17a455a755b8657197596fe2d435bbe",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-01",
+      "features_sha256": "ed626e98188e1391eca9a1e573041f43f60833448d4b1d899018d8787bf0ca94",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-04",
+      "features_sha256": "c85518e25d7407ede62786384dfec35c653b497345618e1bcdaf023eda513d28",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-05",
+      "features_sha256": "e70a5c236ca985d422874e4e4607e5fb4464c53026674a03f1aed7990065a991",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-06",
+      "features_sha256": "0cbd28d415bbb24e58054b12f61251e7fc68307f8ec5c5964760cdb098b124f3",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-07",
+      "features_sha256": "bba604f68948c88ca14db5e81b786ede1b38fbcede4e940da8fb3ed5725e0483",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-08",
+      "features_sha256": "944071d54cd404510f34422e7167436e27203d600186c83b1e049cc20a4b458c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-11",
+      "features_sha256": "535337e817b7654b24e768c9154c262a79a1c43ad66e9466af26e3a2e3e1f8f4",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-12",
+      "features_sha256": "85fd9a1e120a381f61c2cdb955cb12aa93f81e8e430e19452f941b3415ae2df0",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-13",
+      "features_sha256": "6a946d97dad7c1cc70b91c1bba3d0bcd4c05344b8f8b983f630311f8e592ab8c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-14",
+      "features_sha256": "1c4797d0e47240f5282ecfe545045db51d965e5b5accf263940894c16c8d6563",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-15",
+      "features_sha256": "953389cbc4c85b6c0a3b0360147f745041f6288b2e42d3f20b3bd45e22682438",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-18",
+      "features_sha256": "68b736e18970d0206e3642729492678ac8dc99f6da5762cc469564fa7c894d59",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-19",
+      "features_sha256": "1cbb08aec8793cd06f0e94adce9bfb139bc6732137e76b68f6efb6dea2e63c35",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-20",
+      "features_sha256": "05b7f1276a688f1f1a4c6c540db3d5e1d10ac64c5a7fa6e82461e2648b433628",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-21",
+      "features_sha256": "3928d35926635d4a127b607a03ff82c1b8ef585b49f66795b2d82a3354a0c954",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-22",
+      "features_sha256": "416ab0c0a70d9dc243e4b7eee5bda7d1f9b79a81438671f745f8fc8e9b248fae",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-25",
+      "features_sha256": "26c2574fa8a6aa5c1f7f956b428b543148a800835234acd2012111c8b71da217",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-26",
+      "features_sha256": "9497de142fd4b9f39818e486ad3938e7dbf973dfdf23505b19f3480fe8a54d9b",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-27",
+      "features_sha256": "7938dcfda6894d179612fdbcf9bb5fe0ba248cb158db79c7bbc261010fb64a84",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-28",
+      "features_sha256": "40ae1174a8590895de3fad8adf3b1285517bb03dc306d5771558f07fe97e3994",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-29",
+      "features_sha256": "b8776df93635242f94e872d2400cd01e0a843ff06f2d48ae1dbd11e238f755b3",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-02",
+      "features_sha256": "2e3639817954f949e6518f945c4e913259cec1d9bc8565d8126115d0f8e9d9b5",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-03",
+      "features_sha256": "185622f43d05627396503dc2c82d86fe05757a0f65ce7b5603231592b295e9c0",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-06",
+      "features_sha256": "8047e218fc9949288a8011b33a6f6045ff45018b673cd71f4163c43166c4ad27",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-07",
+      "features_sha256": "5da3f32bf4cfa6d679245cb3b6208f2298e366f3cd289d8c2a310ea22579bb4e",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-08",
+      "features_sha256": "bd84a7ebf509ab9b718e51a4461cff037b7666fa406daec4dd717c524e5e44a3",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-09",
+      "features_sha256": "e2a3275dc2566ed132285a6f3c73d38e1cf346e9a6207a24edd3af7c713d8921",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-10",
+      "features_sha256": "7ad261a1ce85f6c1ce688a613b89082f847debcd658c5838d09c3ea3526c9385",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-13",
+      "features_sha256": "78a3781441d38d5d4ee20cc0fc1954159c7d12406f8d23619dcb0bef0bfdbf59",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-14",
+      "features_sha256": "415fdf4f941ea9ba11d7222f5405536b6c346d103e278d69ea65cc3c904612c0",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-15",
+      "features_sha256": "aec483deda9242baf4b5f66744b423eb47a62d59e2a01a51ee2676eaa9dc8931",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-16",
+      "features_sha256": "3e0ce09a03b12d7e719f93b632607788b64610c634bc1810451939fa950b97ed",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-17",
+      "features_sha256": "ae52756d15135ee7b7cfb0aa55b894604b45ade71a6379e7e4dde43dc0f94ec8",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-20",
+      "features_sha256": "3141cea52b1c49278d40c98318340929e6170b4aed80fd689c191264de05bf42",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-21",
+      "features_sha256": "e34149257365330a3f4a2ac2df3b5ca30c2c2c87026621ce62f2e50dd1cf3455",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-22",
+      "features_sha256": "0ed59cde205f3732371e0b00d0d97011f11bd9ee03704eeeaae15cdee34aef9c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-23",
+      "features_sha256": "ec7f90fb8b36cc70561c21ad9a682791744637ac806b160a2d052f228b6576b9",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-24",
+      "features_sha256": "b794605382432651b5fe422778278bdb313a465b9d2ef6c4a7614e7266ae02c7",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-27",
+      "features_sha256": "15edbfd7931d7d1ae2c3c06870e6a2581ada6bb1027dfdf13b0335c28589a926",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-28",
+      "features_sha256": "243ad4a00110fd1b4ed64b208d9fb933ec2f02c41e7cc5b43808df4688453894",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-29",
+      "features_sha256": "f6ed7c4cdcafaa37f8aa097ffae397d243faa098bd22c13cb036a761e1e59fb2",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-30",
+      "features_sha256": "68edad3b1dff49b1f4447672f23725d36d4a708bbb53cb03b5ebfad444798443",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-03",
+      "features_sha256": "307834752463e122ced71b5853dc361a671c147f921dbe852db0c1e7ab1d4e68",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-04",
+      "features_sha256": "fb10a49f435481527b606fd83fba983cf6d5cde0c58c4d19c61902e43fa69fab",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-05",
+      "features_sha256": "d992901f66e56609c8231bde5d9db8e29785274ef13c9800d4e028d72416800f",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-06",
+      "features_sha256": "85361dd4fec5a09cd88059418ec480ca2c85a7061efb5ee09a811aed4a9037b0",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-07",
+      "features_sha256": "8f126c036aa7bf61232facbd88a8ca66d71dfac8bac9a6a91332c5c765dd92e1",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-10",
+      "features_sha256": "0366399a1a24df8947e6d2b326f78b12315f9fd4d0d55d6a288c891c3f322b9a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-11",
+      "features_sha256": "f8c58121024e223964cfd98651e78f13c6085d71ee5101285c37ad7f6d59f732",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-12",
+      "features_sha256": "af391ac2b78791b45ea923df90d6809d000b93ad78ce9c4dd5f4fe56e9536283",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-13",
+      "features_sha256": "cbed426766cf9f7121e8244e27a77c31fb7b3f2e5727b62d6d26dbbb4252b3f5",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-18",
+      "features_sha256": "80124b2f2eb1b30894c9c4e0f2218dea565dbd353268da48b5199844132ee478",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-19",
+      "features_sha256": "972f7749befce341ec7a9bfe3dd717240c6ffaab957c12512013adaf86ed8faf",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-20",
+      "features_sha256": "2002934dc413b54067aa85b34ded6cc72d97f7899f37edce34c3abaefa12125a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-21",
+      "features_sha256": "d0386b41d45e7089e33e64a03c764e3523f24981d12daaeca9c6058c49ce0eb8",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-24",
+      "features_sha256": "d28be305612dec90724050040424cb608e20dabbe77ee2681c2d426577f74e69",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-25",
+      "features_sha256": "147ce494ee99736cb4be791ae781d732e412dcde48c99a46ee4a48d956485b1e",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-26",
+      "features_sha256": "c84b1288701adf6114ccd9f0797aca30338b08074b2313a04568901f32eed4e1",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-27",
+      "features_sha256": "6540d96f1a9161dc7227170d43cdfcaab96722058c8fc6b13c00914e30908e03",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-28",
+      "features_sha256": "862e4d5261dcd8edeaa97d0adba35be222b052d30a286e2b0c9f2fcd706b946c",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-01",
+      "features_sha256": "aef5d625394a05e2eb389b8ff81e23a25d3d3d1e8650ae92dec1d5a0e6f9c28b",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-02",
+      "features_sha256": "65a8defaabdb1ecd68e9575f4c9ba9f6e3155a9d303b93c2ebf9b689ec20082b",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-05",
+      "features_sha256": "2edb8d2f879c593538b0d219ccb97a1b5c2f41cbbdd33cdf93f5888a829ae186",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-06",
+      "features_sha256": "2ee6c157ac4bb9942353c5fdb5e9e3df51f597e5d06fcec95809aee7f7897b70",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-07",
+      "features_sha256": "38d131bdc833c2d2d10d81824190d146dc1615d713d757c9b6be0a83964c57c7",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-08",
+      "features_sha256": "d7881cc467b079d71bb08fa5173c5d8a2a445591416dbbbf813bfa37293cafb8",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-09",
+      "features_sha256": "95b60b279e8b95a1a4f2ab1da251a6376aa3f81c2a8bbfac6886a518dcb7d519",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-12",
+      "features_sha256": "2a65b7b2cd1538711165bb90577a6f80fc2e53634c2e421643ae731e868b1847",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-13",
+      "features_sha256": "db1fcb9217da6562da04d0cdf0993c255b56062c5df10ad319854da51ea49369",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-14",
+      "features_sha256": "f172b48f70338a67413434263ce52d3104ceeb1d11a5b3ebcc4bc4836f733ad9",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-16",
+      "features_sha256": "5b0f41b288235eac825306eaf71ca05422f76e0597677cceb0b6ea054472c045",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-19",
+      "features_sha256": "d58fd115082704a5fffb61efa80521ed087baf39c97b62cc1594499336738229",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-20",
+      "features_sha256": "a5bc12f7482a901547a20cae9aaab0ae6e5ef57991e6ebf030fb181bf5534de5",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-21",
+      "features_sha256": "6da0c3be8e88e882b628ade1cf162e15a45473a01df82413854b941680dbacd6",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-22",
+      "features_sha256": "3f485f19cf3446cbfdbfafbca118b59f9d642ea6faba5a680321bcb40d54d3fa",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-23",
+      "features_sha256": "6b0466d4927ecc054f34e751e4d925cd28b7fb2dfe7d5d4ef99c11411079eb16",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-26",
+      "features_sha256": "3b64d251eb61481030aab9a21333ae95abd4c72fd34a37e3826bec2fe7be2367",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-27",
+      "features_sha256": "ca94c8a21c4641d26f5bfe27f0ca4176643e9ebaab7fa35322116a6821687607",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-28",
+      "features_sha256": "439fab19db64ef6542aa1b6e306606a59ca60ac221b72feb5aea868fe7e3f8d3",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-29",
+      "features_sha256": "0561477c1c9c98e043fb0e23eba64a895fd2e4f8208c505385100ed7184163e7",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-30",
+      "features_sha256": "0face213e93d32c1a4a779dd0e0396990831939fa12394b1f0d6dfe5f341bfd6",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-01",
+      "features_sha256": "ceae1928a44c362c1621a0d33c0ef651daa7d3a7c75af47dcd9b93b1b2df1675",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-04",
+      "features_sha256": "22cbfb8ebdbfbe8848992b3c03f1eb324fa7b24f644736376ecb1a54170c0f6a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-05",
+      "features_sha256": "ba86a25d885e2928786bc17dc6acca7347596581d1887fc547dd68ce0001ae49",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-06",
+      "features_sha256": "0b12999f7fa36fd39d54b96bc487911118803c9425d8b29f4b5411dccd5dbd51",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-07",
+      "features_sha256": "387a89e4b07869ce1bbfa6b3cdc6e350e35f34d0f42ff8876cc213d00a41e16a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-08",
+      "features_sha256": "49c7b55a87728329cdd228c6965d12e766ae566c05b9db30158b2593b6cdc99d",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-11",
+      "features_sha256": "6e13bc0f9967d8dd20aa54e1ee08b03b4bc1bb7996bb6557ed14f3f7df43cfc2",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-12",
+      "features_sha256": "554ddc0c80f202ec82149d04acc173cdf85d27a1d31e37faea8c405da40c70f6",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-13",
+      "features_sha256": "00b84388dcfd0f9d00f0569949d0a00c748373b0be7464dcad8adb36df4bf207",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-14",
+      "features_sha256": "af19fe6db057a9ad7f8cd33758ba735084d0d0daa5ffa6f3ebc3da3ec19b6ffd",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-15",
+      "features_sha256": "e733ea1014c393a7324a22112d89053af50acf0686a6c3c9b870010bb03bf18c",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-18",
+      "features_sha256": "74734e41fea35e2dcfbac38c7ef0df7461a360c6c80cb0de9bd3e0c26bc03fff",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-19",
+      "features_sha256": "a7e4176a5f4468b282552be06705f2b8f07f3a5823191c680267bfcc60af8aad",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-20",
+      "features_sha256": "4a8f0fe69277ff9c2d6c1e2bdcd208b26a6916e20d19e9cb251749fdfb3d4d8d",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-21",
+      "features_sha256": "d9a6db34d5aaa7557926ba03f01aa52269b57302d93dad8d790bf6cdc57092af",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-22",
+      "features_sha256": "42c0abf0ec185c35fa31a1d1c484374704faebb81836d66bcf10d1e392dd314d",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-25",
+      "features_sha256": "17d6ae85532909baf98545727a5610a132a29949fe83d0a060b56a360b2acdcd",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-26",
+      "features_sha256": "f922469b263fd93947b24e78cde3cd4a8eadcc89dbe4a6a7c59839013b369cd3",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-27",
+      "features_sha256": "841dd7d96317d06829252c32df9d94a01e2221beb2e81a459f449867eab0af03",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-28",
+      "features_sha256": "ccb1d021212ee60b01cd80fa8142eb46dca666bb98cde3dbb13171cae481c7a2",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-29",
+      "features_sha256": "f617c36f5398bcb74558ebb1c69c1b719ccd7d856a671bf4a5aa86d9e1366540",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-02",
+      "features_sha256": "06ff12b8c0755af0ed43d98f7759e94893d645e9c03e5634ae03412cc68b71f1",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-03",
+      "features_sha256": "840e892ba7704ac13f88ab108ad4b625f0a46927e6b3d19f32ec6ee5d1f4e7ea",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-06",
+      "features_sha256": "a63f83f9e83856bac066f96f722827d3a9cba1a3e14d56b83a0a2f6f6c5bf25f",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-07",
+      "features_sha256": "a41cb6e66364dc3c71ee90600cd52e9297d16d143aa433b0924e909700ef9ec7",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-08",
+      "features_sha256": "c8aae4c1d332639778b64019d7fbcdbf3754190c3a32bc996fbe3c4837adc349",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-09",
+      "features_sha256": "93dc419c053f45191045275de823d3a47686088fb47b0e77d8b940f1c6091c19",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-10",
+      "features_sha256": "f4d9e16cb8eaf08a3efedfb3735c9dad16e47e1bbb1a346a475eaf67faf1874e",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-13",
+      "features_sha256": "40df96a6edf1b815d67af886fa4a10fee82624348ff65b368d782d44dd12e687",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-14",
+      "features_sha256": "0951f324c8909e85b74107eea6c1a12e737247bf29768d9462846bb3e2c46955",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-15",
+      "features_sha256": "671c803e4a2753eaaf0983e6bae5271a306edb171b2fdc3b16b8221d57b3773c",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-16",
+      "features_sha256": "2248866c0adcbb8d7af25a0e0f774bd87fb9442f8d0b9819e8d57ec10c38348f",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-17",
+      "features_sha256": "81286396cd9f46d4a55acc3a5d361235b0d040ede11c87445b3c62a84f804252",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-20",
+      "features_sha256": "b83dfadb29189fe09a14bde02222d8fc141ac03e4f92704ea0c8ecf186502fce",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-21",
+      "features_sha256": "470aff42fc3043f2c654f3aca9943f5fa7623176f35eafb058d1a324ff07709f",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-22",
+      "features_sha256": "b80f9222bded83ca4a82304b222cd50a8928cf926598f0c000de05b7b6834aaa",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-23",
+      "features_sha256": "dde549d7dfdd2f5f8524e866c6f0f5b75fbd24b52310833aa0c9204f27f56014",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-24",
+      "features_sha256": "fc446a8359aefe1729a4ac124e64431caed6bbff76adcd4fb9ca1ce97049e66a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-27",
+      "features_sha256": "d62381958170bbdd6d23c9a214ceab14643f37d043d51ef4d260ee00ed58cc4a",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-28",
+      "features_sha256": "a4730b589e56b80404a4e2df6e92928f04985cc8653e80be9ad71173acbe4063",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-29",
+      "features_sha256": "1a51959e126512ee5811ffebee13bf2cf5ac5594244e4ac72409a0de94351c89",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-30",
+      "features_sha256": "988e55967cdd4c4a31ec87f8147aab041be7985defc1e0d3d5b36f63d4f7b17f",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-03",
+      "features_sha256": "2254d6576a0e9fc6b5e518a982224d0e509ea526cdbb3e470e948fee5a6ffee0",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-04",
+      "features_sha256": "28a5d7cd53abb5529727bd3065750c4ac6622814b896d380142c34edad7c392c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-05",
+      "features_sha256": "cf7849f9299cf6b933286fe4f59b89d15e10cea018356e4537b83d5493b80c74",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-06",
+      "features_sha256": "3612795fc5bc71382433328d04544e720f7b5b0cfa5cf9081a75224917855492",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-07",
+      "features_sha256": "92f359bcb984ff42052bd559fad516c0f12ec3815fb04a991472931cec634a23",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-10",
+      "features_sha256": "7560c9973d2be1039ac970f5503d20e2219e1e93d27cc2677071cdf260d23160",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-11",
+      "features_sha256": "a8890fa3cdd53da1fe30e448dae1947d9bbf6d48aa991eea797ece6fc750e35d",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-12",
+      "features_sha256": "6a81e2e897e5a4dd97c0d72ee0592b0b68511d8d9c91fc6e537407917012f134",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-13",
+      "features_sha256": "dbcd73b78413d6f9060ea3f15abada505226d0a3d0859d60c6410ca60f7a3012",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-18",
+      "features_sha256": "e695f7568ce0c3072e785a903babddfcf7c203e7607eec9031d7695889e329d5",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-19",
+      "features_sha256": "ed4af5c8022f863d9324625d8a659cb297b4810aab288cdc193fee8e9521a066",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-20",
+      "features_sha256": "22e78cd119a8a068f16c4c68042c596dbae46e8cedbb6fa2f1072ce3d077f9c4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-21",
+      "features_sha256": "dc1388d123324d8b48f3a4b1681f00b686aa9e78421aa98a3680309a31e74de9",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-24",
+      "features_sha256": "80fe9d4c30c64495ed7e3619648b8455940834ffa6347f1ea25187c3c64d54a2",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-25",
+      "features_sha256": "5fe3830e5bab987e086409e07ebcd52db80221f23a9c4dc81909f20b755b690b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-26",
+      "features_sha256": "ca96e75e0e2a84fa337c481ea186199be862f250251035cced67964e677fbfd9",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-27",
+      "features_sha256": "45daa8816d8952044d4c93603e66c3a16ec8e2804558f8bf797921568aceb5a5",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-28",
+      "features_sha256": "c968a15428f1f8ab6c8cc67339e8faf835aa9634d6793606bbbd808e972b97f4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-01",
+      "features_sha256": "d3c3f18d4d74621b4f3e6cce7bb230979fdcd26eb077a97c7bf0dd8699a63b7b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-02",
+      "features_sha256": "80b4e1bbc810cd801f916c2dcf84ae794495e0c9649c61fab6d5521947b1d14a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-05",
+      "features_sha256": "2e31e4a7ac28b30f28f7b34bf9dca0549c8e98624fe2a6e8cbed42b6c7f92d0a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-06",
+      "features_sha256": "9fac4bbdbf1c17981b210367c394d53094d776785ce9dcea25c28224995777e5",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-07",
+      "features_sha256": "a87a00a37385ee5103f555ba0fbd334916a77313a71e5bd34208e3dc12eaad06",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-08",
+      "features_sha256": "0b8abba11bba84fda2ed8d23965d9f46a2d4a905e5d235a90ee7a5105c8712da",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-09",
+      "features_sha256": "0153d56e282cef4eaf1cc21125964c4926da808a56b7b57030bc5ac44b94010e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-12",
+      "features_sha256": "40e202e0aa029ccc77e34c79aa0a3d98fe351601215d5b7765a42bc32102ee3e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-13",
+      "features_sha256": "a3f8f591ea9178486d76680f554ee59a9f8e4c5db6397ebedb577bb0f12add4e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-14",
+      "features_sha256": "a66bbeae4d6279ef8f779071e1855b28cf3179d12a417cdf7c4435da50a41c47",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-16",
+      "features_sha256": "b6e671585c256376823cdd891cc621627be557f44522149e7a309d6b1b51a807",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-19",
+      "features_sha256": "dce3d1501ca6d6a586f404549b72627a600ba8e6478247b6daea1cf298745031",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-20",
+      "features_sha256": "e13ffad5c58803036d56054647efe8954dbe46ad7828e431dd050310b833875c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-21",
+      "features_sha256": "beea0619224bf0943d4a3e73ef2f90fac928f630eca29e39fd4175d1d11a751e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-22",
+      "features_sha256": "2b75457cf88ada623d0f27d866910c087ab67ba68246660aa5253f1374bf67b4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-23",
+      "features_sha256": "2db9719ec5c18492baf2f2a583c99f6967f2c755102b5faad6ece7c32c461fe6",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-26",
+      "features_sha256": "cd0fc36462b148f15eca4c9bf2e94a040ed78940aaae267f2db510b887b11130",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-27",
+      "features_sha256": "e14e91d5d0a927b880e2cc5cd5a23716d1e8afd461c7f61d0eff882df29d70a4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-28",
+      "features_sha256": "5fb26c152fca39cdfa77c005a54e82b675a57e452b2cceb2cfd5abe1a31f861c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-29",
+      "features_sha256": "861ed97222073981c1953f14324f1c7cdd6e88bcb8f3ba610c4eec8ff254a65e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-30",
+      "features_sha256": "3a9e3ca7f620bfe0f6f1f8fb9ed55fd6025ee6bd67c934ae6642ad633908bcc4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-01",
+      "features_sha256": "47bd7e1c3279cc3ab021c835e24517be230d51cc4c38fbcf46178d6ac2aa49da",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-04",
+      "features_sha256": "f3d268faa503353f172e0158b336f2b68a213138300b2b089359fb3fac9b2ff5",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-05",
+      "features_sha256": "c416a5f1adf48fbb8bf286b225e126b64dbaacce112531dbe5b7217ffa0ae708",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-06",
+      "features_sha256": "448de30e6a54355c6fa20f770211d9bcb1a0e920a019e36619ad326273cae63c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-07",
+      "features_sha256": "e39393965e7d77ca857c22d9c0e69a90d7acad321e97d1d6f4f7fd31ccf9af98",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-08",
+      "features_sha256": "7caca2f1e060765a50caf56a2c6125a1ac1ce31ed8c8fdb64ddac74871c9fc46",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-11",
+      "features_sha256": "582fe02936ae41b320e5aec994915e6e5ab93b58b475ddf1f7b6ec0cdffd3934",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-12",
+      "features_sha256": "677aaa2c3771ee8ce59fced80c2d5d2efcb8b6c295d9a12b1686bea5925358f6",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-13",
+      "features_sha256": "233bb1b41719458f39578c2974c5049b640041743b32a39584cafbdae230e296",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-14",
+      "features_sha256": "4ae436a89d2ab2f2298ed0d87a7e742b2a2e8aee44442965224de6e209b1cc50",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-15",
+      "features_sha256": "e743c6b5558c7c7a9b22384c3acde1616aae850dc77f3dbf6be74941d29d7119",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-18",
+      "features_sha256": "180e2453b9f71dd7bdc161632a763f5fec75214acf2a6dd55e82b68166bf7828",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-19",
+      "features_sha256": "6218946532bdcfb845a8d23cd20791c0e71d385d42b671103e0d3918e9a4e52b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-20",
+      "features_sha256": "140e9dbc28009e27b2e6623e304f9487d4bddbca437c3b2dc6e9f6c102dcf24b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-21",
+      "features_sha256": "c4b006210211898f988771b3f0781660077681e2d25682b4832f43ac15ccf667",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-22",
+      "features_sha256": "8b689ec0f001f8348bee77947b4634aff80bc4b1b90c0bc9e2a3403b8882b2cf",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-25",
+      "features_sha256": "ee5f238905fddea7430d329492e342d2d7a0b49aaa36da73fd23897b2b93c52c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-26",
+      "features_sha256": "fb4d19fff438ddfe1d0e4c390c5d6bccb47c0835ee31c0179a3c827fabfa03f0",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-27",
+      "features_sha256": "53920bc0e9a7e88df2d7c4867d6fc18524eff8d8cbda188d6ac480d88e3947d4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-28",
+      "features_sha256": "1c543520eeb423c7322a88bf8e7b045d50bc2fcb7aed0eb11552b6990cbbfcb1",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-29",
+      "features_sha256": "5d419acd490cad6c8d73e4f7030d7031efb5eb9f07aaea410d396b6c1392944a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-02",
+      "features_sha256": "52b546d044c98d2b942c8e8948c578eadffae968d555e0e3446729b96e583c85",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-03",
+      "features_sha256": "f94c2f7315e9e4dda0fa3ca1883d048312f56b46fbb62dc40f9b81d9971db944",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-06",
+      "features_sha256": "48cafc5b4fd670dc563d4ff54a77b55fb4580ad42d588efd162291f1f6c50f77",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-07",
+      "features_sha256": "a7a23ecf5fec6b1389aa0a6a064f3f60188886e931e74c0476e7e2c87891be25",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-08",
+      "features_sha256": "54f8a98239e4be96d4e125104ae7503b39f9b66b16902aed1c83983d7db2fabb",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-09",
+      "features_sha256": "467b8ae2637d5af63fc32b23bb0dc6f2b6dc6953ffaa8c16cb5c5d85e915af5e",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-10",
+      "features_sha256": "26aa80cf00d05701dcde3a4b54206f7a2094c1e3ec074be4e20a34b0ceffa3f4",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-13",
+      "features_sha256": "d4ccb9dc8b0e8d5cf94de833a0edcf79c195ce6e6ab264003e9c327b0bf852e5",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-14",
+      "features_sha256": "bf774a56d7e882c7f14dbe40c3cab5dc5bc72bb11d6e4de26c5cb30b2aeb0408",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-15",
+      "features_sha256": "8678603a9e44cf397ede09ce323c08d3f229ab755e9b74badc5b899c502d99bb",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-16",
+      "features_sha256": "eb9601bec0f9793f10d51d7a67bb1d1da4985e7aa13cade2d5902c2a0e4fd02a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-17",
+      "features_sha256": "358446f8916ff5bd934a4d6ef167c0169969c5c0c93b0a07698c7daf3695094a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-20",
+      "features_sha256": "b24a9371df4b04e0df393ff1c6515aa690e9a5bf4e33c890c6dcdecb699f7b2b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-21",
+      "features_sha256": "4fffe5839d263ab4887501af4a590a5c759a98465bd0ea7c7cc88fa79407e273",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-22",
+      "features_sha256": "0d1839a403bc73228b6d9f48e5ee94120502308c365cf91d10615d4c14c83be0",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-23",
+      "features_sha256": "9650c57afacfc3b4938db9863f59c99ae12e925906ef5d3714cdf35bf9a036ea",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-24",
+      "features_sha256": "b8e7a00c4ff1badb2e164bb1bd0dbcd175637553f6b1146f102f7f8b77d0fc1c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-27",
+      "features_sha256": "83dad058cbbad0ecc701f826975e7f29285d98c705a6fc62a2fe4f45513d9d5c",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-28",
+      "features_sha256": "77419ce28ca6389667a0f887447751b80ac8459d3a8478ec18117fee42dcbaa7",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-29",
+      "features_sha256": "cd4542c4c90183a67dbb1d0a4cb5d83d4240d7dd887299d37cb6b5c4e879778b",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-30",
+      "features_sha256": "cda5b9757ca2fe5b782b6fa356a37d4efec5ff5f63f45d58ad4245428d7873a9",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-03",
+      "features_sha256": "e4f50ff3a9a4e704c0b952d9bbf8d0f6b04cad76935cd97dfe0149825b935718",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-04",
+      "features_sha256": "8442fc911a9a57b369840a301b46b41250d9ceb1c43406d5b2911eb7832ddaca",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-05",
+      "features_sha256": "0cc6a78fc334413470b7f77571938cf0ff69a64cca2d0060c9def124e929f2c5",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-06",
+      "features_sha256": "23cf855a6d6811a05baa3bee157445ad036bd1e4fe0e0624ac56cebaa8eb44d9",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-07",
+      "features_sha256": "8e15b292f28e82ce1a72eb812d723af569cf8c7b005cdf94fb3561c9e7234d8b",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-10",
+      "features_sha256": "30f3237cb7cd5cdfa8f60c2138fe8768aa4131c485fc3a1be8d8299650130cd8",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-11",
+      "features_sha256": "5e1971db024a4fb84e2c5c98e533a4669e84e863fe036031bbfd6a9853d8f5f0",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-12",
+      "features_sha256": "cd829475d4747174a87fedf7a4c92a2edc278f727bf2d1d82965ebddc26c1d2e",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-13",
+      "features_sha256": "68fc0f2750c3f114a278727818083cceae674b03d6ee2364eff31a148b30955f",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-18",
+      "features_sha256": "766be05d88e4844174d0c4e5379886036e03a2646767a9b923da0b6aa90d98da",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-19",
+      "features_sha256": "7f4843a2d78707173d3238b4ff304f9f94457868feab0f73efbde39578ccb32b",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-20",
+      "features_sha256": "ec2acc8dcc1842db3e44d007fcd30628e96d539df26aea0066f0646a48eb69d3",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-21",
+      "features_sha256": "9d08314a4402bd9289cf08aaa78a8bafb0f219e2e55aedadd7a0476490de2b06",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-24",
+      "features_sha256": "0810084547107e634b6098faecc8313d99dbe23b88f4136b7bfc027b87943f14",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-25",
+      "features_sha256": "58b50ca5abc422941ccf54da08dba5ac551f22199799e2b9c38bb55b6a3930c5",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-26",
+      "features_sha256": "fecfd5ef4f674afc2da3dc4ab3c896390e01d06d050a784d43d3ac3b30f67aad",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-27",
+      "features_sha256": "e51cb97ae2d55f231d663fdcca5ba1bedef625b517aecf8e9e921f28622ded67",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-04-28",
+      "features_sha256": "b4229cd490bc6bf9fabb550bfc6c1d13a663397f5c9b422338ed250f0029e6a9",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-01",
+      "features_sha256": "695e67ac319933399dda1f5f1ecfef0c11253e14ea8120446fdf7e4a51a18630",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-02",
+      "features_sha256": "5d96f9e3dda571d714865a9eab7eca5923267bb266b8f95543ab0ea2d11bba75",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-05",
+      "features_sha256": "018c83e253eebe7d39f1ed23b894969a3e0f2e21986ba3d168ad70bcc0dfa205",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-06",
+      "features_sha256": "d141216c4e4da4b36a2a0a12116afb18e620b5b123b7ddfd07045cfe78ed0dd1",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-07",
+      "features_sha256": "47b6cde3b94e1805082de981ffd55bd89444f965ffba646543495a4454754140",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-08",
+      "features_sha256": "3a2587f1bb4f952a2fcadf5c51579b72d688f7ed3be5f83b53962ee8e5b32d07",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-09",
+      "features_sha256": "ce99a04036754cecbb90d0e12badb186849d2233696d430f0f165c45645b0f26",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-12",
+      "features_sha256": "1332fead17f0c7d7cbc8d5d4c09ecd0fbcf3bd5377fb2f2f7155db9105e7ae7d",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-13",
+      "features_sha256": "8c76c05caa7337c8734968b932858fdfb804ccbb8c8ceb7b9e461bbf32e3aa78",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-14",
+      "features_sha256": "69688ab187a5e619563c73a9d9a413e73b6a10ebc80882e4bad6be895cc092d0",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-16",
+      "features_sha256": "6f24c595d801b0e0ac64c919112943b5ca725dcb0e2cd04a5e5d0e3303c245e3",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-19",
+      "features_sha256": "0408eca32c77d479772e3528d4557b7262a1f32c04bd0483f9062a4f60e67f44",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-20",
+      "features_sha256": "52db40ba80af784f3c535d275e6526c55128fe01997d39a90e2a47cd70c018d7",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-21",
+      "features_sha256": "70bfe47807c59ac0bb322f8e79f273155f058988b76637b7be92bda9bc991be8",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-22",
+      "features_sha256": "0d4603db735c6ba1086f6046791e4da97381ed99d346b8a0e120260664942ced",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-23",
+      "features_sha256": "eced4e24321cbd41f3ef47e91bb600d245f48ac1d9b0eed8b391a9e000a851b2",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-26",
+      "features_sha256": "b0ad502e949d06a3ef7a5e566a3df4a778f44907147986cdbd23515ef7c1f1da",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-27",
+      "features_sha256": "184de5061be6912565571dbbafde8709379b433fe5ac5eb9e5dbf4b8ab814ef1",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-28",
+      "features_sha256": "519315660e71ef34510b051eab66a4ff50efc7e14f33a3d38af23d2e03fafaf9",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-29",
+      "features_sha256": "c42d00a61f6ed05a3390bf3c76732d7b5cc566c3370fbd09caac4272490249ec",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-06-30",
+      "features_sha256": "bd5ed88712f9e2238e10ca172d61e15651cd5ef20411f1a353384068b59fa5d7",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-01",
+      "features_sha256": "214336822d9a53791bab50d082213a5b82bf485ad7304a3739558f5b84404576",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-04",
+      "features_sha256": "4542025243c0dc82c9ad724d7478ffc658cf99bc1101a06254bfa8a179c17038",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-05",
+      "features_sha256": "578842e7450e47584754e585077abc71b6466f5d37c3a48e657cdefaeb71bd85",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-06",
+      "features_sha256": "5c571e6d9033a405c5f952d74a4d51c2b9db767492ceb88c05d984806ea41a80",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-07",
+      "features_sha256": "3997519f8e3ef51c42824d5090385e1e41209f38837d3a8c220581d83cb1516d",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-08",
+      "features_sha256": "90d86b69120af7ef60d5cbcafacf895545752bec7c098c66a250bf234b9585e7",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-11",
+      "features_sha256": "7cadfc94d2f06954aaad8ebd4454b5de844b4caca3911e9fce467a1c79370eb5",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-12",
+      "features_sha256": "6c7d354fb32e6cc1e237b783f43173855a012e76c8c3162fbf658242d582f6ce",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-13",
+      "features_sha256": "f47fdb185ceb603f4cd972ce1a8c67579fba780f37d97f10c6fbd05b0f2b1065",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-14",
+      "features_sha256": "ee727ddb25deba86f881de87b6b51ce148adc6bd91203a343f351b2ab8333b06",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-15",
+      "features_sha256": "d897eac8504d869527911dcc79dbada76a6766016366e4fa47b18dee9a2572e2",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-18",
+      "features_sha256": "cae0873a7b566930cb5ea9cc831831d90ac34820bee3d0442dc4fc8b1e9ef03e",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-19",
+      "features_sha256": "b853d858d3065b37e634d78a6c5cb54f1677ef08d62cdd1749ee56cb7c7d9d6e",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-20",
+      "features_sha256": "60b9f3e133d5f6fc6057feef04b10dca31b612b93ca7009e75de4b4e17c8a381",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-21",
+      "features_sha256": "280701a7b1b38f4a86f9ba91d9ce0cb3fda047931cfc9c1491bf6fd3f2c030b7",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-22",
+      "features_sha256": "4103884fce55a9c7c14166408296b434ff884354e8e247cf2cdc9eb99b0061fc",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-25",
+      "features_sha256": "22f8ccade49f9544e7d30781ccd8ded1fa0af0013c0ed059632db719488b260f",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-26",
+      "features_sha256": "7c69a1d5b2a885db248c6a3eb0613017e94a6d34eb367c6e930041dc572eebfe",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-27",
+      "features_sha256": "6b7edc0831900559e4d4a4aff0d0f23532c2617cb3abf407751d0b5333c3458e",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-28",
+      "features_sha256": "45b56a6e4994ba83fd7a77b36d769069909fc687508c2563892a661ca4b94d6d",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-09-29",
+      "features_sha256": "08b7c63343399bcf5416366d9f200659d2ec49491a85e78e0a6ae1449d567379",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-02",
+      "features_sha256": "e39eb1e14f8b14adbc714f857027ad07e36790ad89f2503e654932e2ca2d4b8d",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-03",
+      "features_sha256": "bf76406cfab9da2c10affde96a6fed5389b14875e660281603f20f84e3b7d9f0",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-06",
+      "features_sha256": "f24518e50027ef97b07c3422e9258fd8a005d565b1556d1755be2e5added172f",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-07",
+      "features_sha256": "1bc4bf3eaa38dc7ca53668a65965d0295c809630491df51a8f8fc0ac317cc437",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-08",
+      "features_sha256": "cf8899e16c29ec0c98d9cec6701dedd20684a9ee68561a241ef049fe2ae5e904",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-09",
+      "features_sha256": "3e76a1e0770a1096ba84237de4ff8c0d63dc92d7f4a6a0561fce03e50ab248ae",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-10",
+      "features_sha256": "6e803c25f86b30092e918f4d41986e2b9d667b1f13e60b0f6613c037b73c18ac",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-13",
+      "features_sha256": "c6acec847b1587a0ac8aa9ca8da9e426cbf132126a0001cd56fe24f9f416eb85",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-14",
+      "features_sha256": "5accaa3c12a2f6bd33ec7d536cbca8c75b05cedb7d9f0aa30ae6dbcbf1d43f93",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-15",
+      "features_sha256": "d5095eb9bb2f3bd34d0a112f54317e4fe0bc7ecd856e5f74ac336f3326a45f27",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-16",
+      "features_sha256": "d44f1a79f3ca2e73f545ea7204e468e3afa3474655d0cd1f4574eb63402c42d4",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-17",
+      "features_sha256": "b6ee2f3c04ed4f6c538fb15b4f71a59654ac93bb274076c43d99c955e2eeb7f0",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-20",
+      "features_sha256": "1733d3c6d37cd0a36a60190e5d54145b61690dd66644beece479217e8386dc52",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-21",
+      "features_sha256": "133e203166533631d8e8e6de8a7b53fd2c09eb0bdce3cdabc1374149c23c78ac",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-22",
+      "features_sha256": "2851a5dbbd204fbb09fdd03ef5cd0834267bc9846a55e639024901db0ef2d92c",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-23",
+      "features_sha256": "75755319d1a084c78dc23e60e660536691e41fb30fbcd2545660129820a9b680",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-24",
+      "features_sha256": "163de4adc6212d3f3acbbab26516aebc875ebbd2f1ef33711c5b6e47d50b8543",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-27",
+      "features_sha256": "f037b66eeb403f4b32fee06a377d336a37505e3a376b0683fbd91e583ada63d5",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-28",
+      "features_sha256": "09d99b8e9b32a7039b4c74710a0411eeb6f4bdef61bc8ba2a8fa71d3d4ff7386",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-29",
+      "features_sha256": "e13ade584f7e63e5c98e6a2a0135a13201b1860bc296f23651003f6afbc057cd",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "day": "2017-11-30",
+      "features_sha256": "e1bf19098c72921c8f94b399d27b1ff9e77f9a423544b7c67dbae12dbdaffd38",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-27",
+      "features_sha256": "75fd8a1337911dc8fba3c842cdbce2d59bdc84b33c033323a45a86eeccb81d72",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-28",
+      "features_sha256": "c3accd4bc84351ccf9c238b88f87ab2aa4782949f3494172f3f2749320f40090",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-29",
+      "features_sha256": "222d5eaefac4706bfc14ea6d3f59c24707b820195367ce3fbc61b0a5381f9fe9",
+      "raw_sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-27",
+      "features_sha256": "54fd3a6560856de6e1b4f9ae0c7cc3b0ddb21b03330b161a4a9ae704d26aa310",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-28",
+      "features_sha256": "f782090ee0d6830a42f0ffffe8eecb478e1883195e17a9ee99e7fa029018c94f",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-29",
+      "features_sha256": "b431caea386d3820d78f5b0ae28cffd0b0f48b2ba421fc4c9f7604b91c840c9c",
+      "raw_sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-27",
+      "features_sha256": "492bcaf5b52132d951f338db8e98b8ba0892bf09a646dd42d5ac3145c113a8fd",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-28",
+      "features_sha256": "04c68e6b1e56b4b82e0471efa8aea51e082b9bc476f970700e438ee730853893",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-29",
+      "features_sha256": "7066393c42f32d8da1c5d8d43f35b7be22f6263d04042339361e1e8dbde37cc6",
+      "raw_sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-27",
+      "features_sha256": "19e93b0f4d41653a9a1a7da0e3dee2a7c365b7456635001c15b09777e0f9496a",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-28",
+      "features_sha256": "904f4196cb17ce1cb97b41a21c3b8d328e67142e7e0743d4b04404d20fb36104",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-29",
+      "features_sha256": "c216610b46058669fe9967516639a20c509bc7d1d4a8e635e61f46fe0b391da8",
+      "raw_sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-27",
+      "features_sha256": "151eff5068aaa3120e42e2fa17dec176ca116e89f744cee7584467081baa013a",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-28",
+      "features_sha256": "31a28dbc08e172516f4bbb6aedb00306dcc19e577decb88aacde334d895a7a34",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "day": "2017-12-29",
+      "features_sha256": "da03a9c54a4557beed0a3877f5796b7bd8a68887462610bd588010daa65f5137",
+      "raw_sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c",
+      "symbol": "PZU"
+    }
+  ],
+  "original_prediction_tasks": 172,
+  "prediction_reuse": [
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "2a7e8ae757872085fb0f40387a1ba5e407c4ad4b3a10f28615c382c166b9abf6",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "b0b6e8ca56f2061d75d5a0e0d23226f935a3591844ef74a873249f6d4e601666",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "23075b20475b522848315ac7b5b8cd3f3bffb78f9c705f1d4b2d392c7be5faa4",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "ace9e7e12d6fc323d2c0feb8163852802bd4d47051420d6ab3ca3f9a7077953b",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "35d313f08b595b9013d60f2228b1c089e5cd0612a2bbbe9d03dc6cce791c7868",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "50260b86c50c7ee06d60039c47cf946ef0ba0c5457f459364f248e1b0dfa8dbe",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "e92fe00ffcab0a46528374f205621dcd79356ad0839e1ae2b82b0de0ee81e479",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "8127cdfba87060b96213f4734b5188eebf48008275b4cd23184f40734b636e32",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "4c4142f75e1d352633f6ef795989943e8de3454bd7617161748bbaf5b44bb9f9",
+      "seed": 7,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "e134ebcc76991faf55169cb71fca8622764318fcdaa565f79c492afe99a8dac2",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "6f57ba93dffe284e64152307c6941124d01ee7ce7940f5ce601c435d12373a05",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "8009afc32ac1f1a82ba7b89df50e1094f7ce8bc419dd76cd71202a3cc7576502",
+      "seed": 7,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "771efdb9b63ce553bfe12d3ed7879b2d86ff283766ebc7ed7586c9f72fc98902",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "88a8c80adf13118d8d01b1bd619bb61d34a7cd328fa191f3f43103a0e316c3bf",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "5108643691d7cd5b60df4724e3c1942ea2ff1a909fa5f927afa32f10a38f5eb9",
+      "seed": 7,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "25150f6eb7db78a8b702114e21e42ba73f048d4b6c4b637b5763c0d5f72212c4",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "78d7cf63cf5e80c02a62176227f09c88959f1e23d1558f599979c3a7830ca6b5",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "6de2e4a77e41d1ae57f36e3b683d60038e5443b8994adc22063133952594de0d",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "fe4a042247159af6c5386e7681ae6ca703aa7a71580f11f51ad169d47e043050",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "3d81a8f28ea4c376fac8356b08d53936a8f9342bc46f3788daa3db7b29ff7726",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "24a34cd7108add5090a0c21fa85fdf1844e3c8010fc913e89329c7570298bf4e",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "72dd5420850f8c60ae3495bd72dd33e09fa55ed58009947b9d27c9f2a208a2b2",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "e99db8839883766356360f9b64a2b8b6e5f852b4b704b03d870239ce74c65bcd",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "4bfa2fe0489894b4a43be1d85badcceca107cfd47e31799c6cddefe1e65d86db",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "ce28d7fe9310beca841981a1fcb2de18d29e3f0e7d451df0409813dffb5ee2ab",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "37f1cf170737d3988418373bc573ff2b6c03efb63fc01a4f0ce64969520dc825",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "9cdce8eaf379b9d25592143c55eddb372241be52dcc3827c2c9c526ee2f8911c",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "eebb739ae69cfe5d047de76f2be8101e110fc969b482f7b8d2d943cdc911d1a0",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "013c843c08e90e22962558f349990b6249516258c275cb8f7250a012ddf3f959",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "4f542b0743ec9023a07ef2ac6116079787cf9b55c74051a1c66459857def63a2",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "cedfcc7b118463f80d947626333bef0c1df559bcbee71e585d34139f4012a947",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "b6139a34f419560ff049b883101709f1bf2270adb6935a0d0f17f0ac5acc97ed",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "d89a0ae609bc20b62e25a5924e51df466949ea1e5a28bbb2c2883f34541cd635",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "a790fa361fcda2dfaa88a1e4a05cc01d09c72adc559f12f2c2c43d5d32dacff0",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "d019fddd68e204933fd0ad87a576f3f44e916ec23560922eab75e48279c792d9",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "6fb0ef042ca9d60f9d74ee7f21c657bdfa3da99fd276c61dd83573c335d119d9",
+      "seed": 7,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "9684213f6f74b52fddb68b6c879595d93eb838b36415bb312f010e5830ba4c11",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "c5e6d0e2e527cc3535572ce263455eb05a982e83090928301e231826050a660d",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "7cfa4652d30390c3b01cbc5e022c92d3e2924db21c5d6c87a9cbc186a990b479",
+      "seed": 7,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "cdeb57d75697f985019f3475ae4ada0c207fed3407dc4d9bb233f7ecf5ca0f69",
+      "seed": 17,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "7bb30b17d26b0e7f562e34daac6349145115b85de5d96cd22a93cbdd4281da75",
+      "seed": 29,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "c04e6454a40988b01613f4ed00bb939f990920c5c402299b41904a49d02883a3",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "9faed4c4d365bd049a25c9536b6b7bd714bd914d75aac62a3a7011390e2879c1",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "52ea42ddd048d8d005900047adf7410c36bbe10c3009cee852a18ca0e8ffaa67",
+      "seed": 7,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "75a9c068b47f85442ffbae23d36c05a28f005969aa43505412caad3c92c8631e",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "ed127bf1907aff7be3cd71a2a594ef022d21763175c19e0e2e5e37d3edc0d04f",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "51222b41f58e0de9b46620bb78a6ed4f3190a5150a592f1a7ed55aa32f389d6f",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "095f2dce34af38861f3e40d3bf038c3d2073c0a1ae26b8313b8c6d74718fdeed",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "a3c52c2fa20d7fd654763ca72bb97afc0ae37e297bd1707e5fc0c3fb7c684984",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "9e12d37595267a39dc7f3fe84d0e59a1ba32efe50dd798a1ba59097e754ff2bf",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "c3f292708f23ddfbe2079fa514b386d164209798fdfd3eaa9bc4a87466c94b52",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "bd3095e7ed34e8fb595e3b5fbdcca1bd7f30fa44a1cb91de8edbecd0cadbb941",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "f7da8f0e8df67de26a7612bb1ca20e19cf267b25bc5bad46718d79d175a1f3cb",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "90b22ac60457ba3b61a97a171d18d11560167302eb64af95a323f5e4cdc2e525",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "4ce5628e0164a74f5b3c7f8ae71720bcc96a315fe311e68130e7c74c79dff2c0",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "ae517a56ac04a78d22db9868fea30f407bef97d6c00aba45f021947a0a3c1321",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "90bcda4803c51ceba6e6575a304dad688d290812332c29786fc6c109197e3a27",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "9beca21fa94de5087f54ab615d73fda1d369f4e6204cfd4e1ca7ac44557c0ec5",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "b3c76bfe539dae18ae3dd63a4bcd34c61fa265f7139aabb14ab22549cd97afd1",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "7fa533195589c861969ee80d03458ab6ea9b276b8b034eaea09746fc1ce19fef",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "0b27ad8336fb7857e5ac174489459142fe734b97fde15ab72e6ee1275f0f8b60",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "4907b3487ff5d8b87e092bf34c211a8580163e0642c2af240a730aae3b5d5a28",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "1ef414b8b78b4fcabca0b3b79108cf33ab87b20bfe2f43b58db1fd9244902aa3",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "e026d2618b24168aa96f5bdd07f89d32027eebea58a1c6f70dc96d3d0348f806",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "0720a732a48606eff59b1981be8944df0828e2663dd4a944b1f2ca0460cf6f7b",
+      "seed": 7,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "1171c326b793cbb869c00e1e541a979c3b3aa805aa17a25a6c0a91bfdac48861",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "68d9f96355ba158cfc3c3ceba69263863eb22298b1a5710eef1ebb2fa978af93",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "aac0b2e2f73e5430d60109f5e85cb9a3b23b398b1cde81e7a090912cfd6234f3",
+      "seed": 7,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "38a2b675aece5f4e79b1d69bd1ef5623f36f9d6f7a3c5392992148ec40e3798a",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "cb7bd2c40a8f7d7215d53c0e4ef1f50928fad64718db3d7937bb5a9ef9294d2d",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "9d6ff48cfd36c3105779444968735e793f8b1d74814c6af7f1345ba27b87e18a",
+      "seed": 7,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "4c21949e1af12f28e2b963ea8108aaade95d9775bb1a1ee59d408827719f9c03",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "da8da41c21bde157b918249184fd25d1ab4e864a4456c038ece9b348ea3bd7ee",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "586f58e2dfeb85912ef820ecc2f298a92cd2b7eb4b4b1c5fa9026c8df7fb35da",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "63bda3b8da1c750ff616f11a1cb42b3ff560e1ec6004fb5e70c4c936aa630418",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "2f02bbb3c671414335021aca4f0f296f9cc41fd7f6ef4a8ea5224c9f1b0c4800",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "f5092d3dc9db5ef85a5959bdcc65f2647b7f0c6e0093c83401517161aba48a8d",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "6c96774352c8a08f39578bf664a0193943523721f7f13fb015e165526d9b9728",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "0a1d6739f03d873a71b009aecfb726a9f7d3c4e467f03267b175ea9bc6ce0c0f",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "71a195e2ba330ca8fb5cc22c122c10e2760de17e37be9a527f2154f046a1c405",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "32362cd42020c0820cad4f0ff08ad5237572955872a1925d15c5edc554a51b8e",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "ec504c9a5b8b04d7ff357514ab6fe3e2ce0037f9febc8765c1f08d92ea907041",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "1d5c305ebc1ca60833b088cc36911469bc1709469b2399e704ccc1c23f03cb61",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "59dafb2d697a2246199f8b3b0146b462bc86592b541a6f078d40b94078957499",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "3d7527b33aa84e4c13b324078c9f549419a0ea45b4716426d92ec8ea93587f8f",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "462f1f70edba5af8c6b644c4a7b1109479692ad81c744e78174afc8660c038e7",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "83725c364c1c4b512ed49fe013ce7eed39f3f1fd4b9d723efe0f3b523d1e08bb",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "ec5237c122379cb4a1a5d18570c3e598e3d5c5f73dafb041852f61713edcc53f",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "ab03086a85aa213b391da03fb5367de91b1d471082690589ad14fae438698209",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "00d78d747a29658cedd5cc2c1edd7ea08986c72f7db9e48240a78e930c08290d",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "1fe61c712efba233fece59710892c3e9a56a9183ca921d468fdc9416b0a5b551",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "e93fb6add9879b2949bab888b053bcdb09a45ed3ecf8e84c7afa83b968485d1c",
+      "seed": 7,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "087215187282769c69f4fdafe23b8d31fa84b73b0c0739fa1fce3754cb56f218",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "38076ad5835e6af225f3becda1cc3ba6d7b2902094f2fa6446f65688f2765e17",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "65489416f969d3ba4656051758724eb2a99c5fe87a306ae1afbd84efe01293ac",
+      "seed": 7,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "53ada908a95197fd04ff3c497f5147aed8bb7905a3a8593c7e2596469e595a39",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "b694d66f9777fa082b95c9c0ff71a9185fa70e18ee29fbbe8beb2a272b543980",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "a47acfc8ccd7e6c2ad0a4491eb4921a703bb57f73d69434d3a4dc6596dc4f295",
+      "seed": 7,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "1181dffe1b3d4f84df4c7fe4c32eeaccd252afebcfc4edd12da7b24c00b28e63",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "3e5e4a399d2cc50676810388b05f3dc218bb3dab62ee9eb6785736d38651be7b",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "5858d900b332449a67a52c2c29ead51ff94517c03d2dfb23e95207dfbee75893",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "19f6e719395c2318435d6e895f7c27175758c455e4c2ff9274eaf77fd6d84f3e",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "5ab9dcd79f9d97b0ecbf206f6aa37cafeb56d4fc09a7f40f9e055923f6e0be9b",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "8184b17782b7a6069a8d66326c1601a818b51ed1815e25e2e87e2c9c641ad68a",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "69a2c3c117dab79dfc739f7f374b5d9797d1b203c9968efd08d93a76a2d5d4f0",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "8c00bb4ac1c614bb723d738b12c395e6452a950749e00502c5b58653a794e472",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "02f14cc3588d4788dd55e0a3c25d52bfaabccb7708df3a1230d1ea3e99e26026",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "20046a73fee15800dd391ca0dbbdcba436c514a2d47d49cde5701739aac1125a",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "fd0c88a3ab7fd00eaeb86b28a9344d98f1373669b263b3e6448b408f91acd9bd",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "3aa87080aa13ae3a3c40ba8db55146dcd82d8788179ff4d40c1bea76727625e6",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "86da75d31ced0bdf52ccbb6b5992b5ab89ca469882a483139edac7a2a3c396ee",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "b176e2f9d99df863fee4a9896d9319ef555e3cf46e9ffe213b174758d9d7a93d",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "7b268ef75c91418f7dafb8fcf96ee11e1ea989c046a10ba20f79b06a041d00ec",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "0bf9bb11760833b0029857f45d604302628181a080ecbce1d4e6929fd3e910e6",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-04",
+      "prediction_sha256": "22789a909d15aacd188fa97c912bf07cd0f5d516749f82528437ece750bc5c1e",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-04",
+      "prediction_sha256": "58c8d667d834dccb12e4a899a30ea1b932f2832014a71a3677ed835704b56337",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "ee41d065fe1669b668ac6c8cc83aa7ff78fe80f7000b3768fd504f0e44df8ff9",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "512c6975efda1e06792b5c8abccd0ebb58d8fee943825440e22e1f9adf4d3113",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "da4d2dbe01c9aac4d5113afb80ce61ff165737516bf1054d15a887a509a7e75d",
+      "seed": 7,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "2a957617a3e4303d5c24dbad65b6e65d7e7523c7f7b950b18dcef0ec1a7429eb",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "7909c893dfb059762fa94e1a4c82ad052bf95e974e643279d695de852e54161b",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "0a7aa1ba148335c4bdb7c001b66e37f6aede1ecf3be8ba815096ff5216a95769",
+      "seed": 7,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-06",
+      "prediction_sha256": "f674ceb6dc4c66084c5b8cd9c23694f74db061a4cbd7154b15c92303429c1421",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "6b09b77cb23a84979ce3cbb0a5bb528bc0bfbc2701e6a09951b679328edb27c7",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-06",
+      "prediction_sha256": "7cc7f7c81c32ee22794dedeb9c946e3e558c8de63374934b4643c0d8d743c021",
+      "seed": 7,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "1f1fe527adeb30b21607062d226454501dc65d11e59de6b609d052451bb245de",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "f1a34caa027dc98815a677915833411587690d7d7b6730f4b3cdfa755f907c53",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "93cd46bc518013406fae5db6d575ec2b82bf7ca342ba8a67184bb72d2a2ab54e",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "6533ebf246430a34b2a3b542436a2688959f85dc9008332394d243c70f870346",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-09",
+      "prediction_sha256": "5d7eb501ccf5dd0e7b5d1959000c99590f5fd696b626bae412fd610bb485e2b1",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-09",
+      "prediction_sha256": "a51dc3f0d88d1cabc2c837ba1f4ecddcfc031f34803de9e14ef865aa05f310cf",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "ad4e0df439810260dda7aa1e1285dc89da4f648ea048a208eceaeda3edd6c2d6",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "9b3c801c29c44e4740232be09402ec96c7f0141e0d3178476d40f1ba876352b2",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "fd343f431b9bf3f515ccefa59e410a1fa4273beca6f9f8ece416504c92124da2",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "ff9f3d3585083f57f204699513296976af5d1736a1d652b45d410bafdd361dfc",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "linear",
+      "period": "2017-11",
+      "prediction_sha256": "0af7da2afeb91985b1e724946241cafdae3eda00c88ec885e741a2fe5dc13042",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "monthly",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "2017-11",
+      "prediction_sha256": "23f8b6c53af6b395e7985ac70b97d4b52852d5be52498c04499df56964b2a039",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "20da1d6e30495995d70fa7ceb43db3df739bcf2a9d48c8a52bb22243e6503287",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "eb22279309434eb2fecc374153d53941c8b42042d36fc15049574aaa857c977e",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "7cee1613772aebcd0006a21035c308983354901c6812524109f43d8f7e754f2e",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "0a63baf351a3265f0c5542399e0cb662163239789b42608ccb830bb3c41800f5",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "d4582ab4a4406234af247d67daf79827081a2dcd4be6e53b225a5860eb7be9b9",
+      "seed": 7,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "b663537a9c249b4a8d231985052983f8fe4af090273293d50e7c49a82f355900",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "e9d88d685a90d5df3588a2b9f6445dca1e823fc98fb5b7d1331c2bc00eafa51a",
+      "seed": null,
+      "symbol": "KGHM"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "dbbae82b468eaa0027f62cee44c5c9ee6e5f1fad4e608fe212b1e7a82a129a4d",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "60b5a5da834c082e558b2766b0d1efee40482496531df204e55b8e0eb15b08f0",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "9eb6a2662f74fb9b3009533a6e1cb5d35008092e75432741a8cb6efd3512d15a",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "2fb86cb47e5745ffa11d441ae5fd31bd4f7b0c70e58eb7a707a051d74616f370",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "f393424a313e3901cde6c3e4a0c5f2b082a3913689c19767dc38c9292c534997",
+      "seed": 7,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "bfae6533442eaa2bbc17a8b6ffb0d89e02d51f1248824d41d36d102560f536ec",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "aaaa806e4174ad9caca1a12f538bde19bee6234cf6b438660ef98bec08976fce",
+      "seed": null,
+      "symbol": "PEKAO"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "279de23eb179ad29968eb9bce06074e3632339c423c9b17d2ab74984e9a38af7",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "f3afcb7b1a68fd57bfd8faa2f78b15b124f5447a097d34db8489135364177d8b",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "16a2a687a4865e5fc786d5d52ac7c3411d4373ca371ae4e37997202e33879829",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "5c3a3714c2b7cf192d43873fbc22b7bd46e8d3179df59faaa625d095b49ffd02",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "bce6d5861519515f046aaac513fe2150be3932c204591d9b10a9101e62733154",
+      "seed": 7,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "bf52b1c3a8702b503ad91c244ab644301fad2ff50f91fa9a1394cb3c28addd65",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "f1862380303f417667a1c32941693476bf7637a8cbe1543b04a5caebece76231",
+      "seed": null,
+      "symbol": "PKNORLEN"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "99e16e89ae0a3cde9b6f4f62bfc9e5976709cdce446cd33269b8cc817027622e",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "4fcaefff44b65ae6084eed56afa9114e257e7f07882ade35a5fcf169d1b259d3",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "d451e11b6c90425c794d8f58bffa7fe7225cdccfad8f3799ed66ed479c1bcedf",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "4e26bd69890a49aa19f611846ec7a87c83dae9e6809af3823b88e93e9d61a6f5",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "eb8408462241129f7df30564d014fdf52bbad60c79ea6549f3c35009473665a2",
+      "seed": 7,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "97787d2a3b2f4b34cd74276f5ff55b94cd5c4ae86aeb2bd96584040af9cf51e5",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "602e65d78a8f62af95f4e3d1ed0e8ea925ae51801b8d4f7165ef0a98b2dc39bb",
+      "seed": null,
+      "symbol": "PKOBP"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "68f51fe556cfe2caa731b20a5386e5548480d746e7b065eaceafbba56ec657b3",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 10,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "7d46314994879bca257f4c670c97edaa74d0d269e6bde636c4faf8fc465a1d01",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "f3cd880c752ba1b6652bf93792db8f2ea54d62f3b005e0c105e447333a2fd356",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "06937fefa77e4d112232994ebb09d19eef8613565312c618e4301829733e3d0e",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 20,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "d69a5c76756a2bddc768be5577af4348cd5bcd0c7aee8151ab23e388e9ca5330",
+      "seed": 7,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "linear",
+      "period": "later",
+      "prediction_sha256": "0738225dc96c78690a2f8ff5b2efc6a4d35a3ce05f4c07ba09fdc051d22647fe",
+      "seed": null,
+      "symbol": "PZU"
+    },
+    {
+      "cohort": "later",
+      "horizon": 50,
+      "model": "xgboost",
+      "period": "later",
+      "prediction_sha256": "b32d1781e9a2143583236832f601b10e2be5fd9c1563abf266734de8b7662332",
+      "seed": null,
+      "symbol": "PZU"
+    }
+  ]
+}

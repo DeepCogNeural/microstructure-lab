@@ -1,0 +1,38 @@
+{
+  "figures": {
+    "conditional_execution.png": "6a4545df70b1adcc9e471123907389f549b814c43922a5391dd481b7ce71aee3",
+    "event_time.png": "4f31c898e179ba6f4a1f220c9c58a9c14142d1ea3446f66935858c3d07b6ce0c",
+    "shuffle_controls.png": "8818a9f1a05c1daa8f24a6edc28f9df0246e572cce21efdcf65ef0077f226816",
+    "signal_sources.png": "eeaea052ab378dccd1211fb130b6419ab40cbaa267946777f01eed234ec744f6",
+    "visible_costs.png": "827a0ecfd3096dc3fe91f921a41f748f658763729ae153152fe12bb6e4590004"
+  },
+  "input_csv_hashes": {
+    "ablation_blocks.csv": "584fc0c1a6ed2366acc32ae86af294c1539df5d156e56aa50af6fa81eba4f0da",
+    "ablation_daily.csv": "21b018376d0c2df3d6b55ec6f359ee03c2a08c21885875f9f852e5bc3dacb1ea",
+    "ablation_level_summary.csv": "b118e77155bfaf651d78df983615902fbf76656ec3959fe5800446087bb0f058",
+    "ablation_paired.csv": "df1b455e170c2de3c4cdd2ea0281ebc6d4610ba760d9c726b615f0d5b0f68a44",
+    "ablation_summary.csv": "3c0be0a86792eae737efaf5c73cd461fc3b9a1def2ec257ef378eb8d43bd9201",
+    "baseline_reuse_check.csv": "2b4f08ad308c795d81d955fb085f9dc45e561fb188fa291e2a52aff7398a5789",
+    "control_blocks.csv": "5574bdddda57c8e00ea45a1c232b1f98b157f19b21e80394c56e0d41910c1a89",
+    "control_cohort_summary.csv": "4139fecb34c385323ed7adfe5a6ba3205635785416e177df1de88e22c82cd674",
+    "control_daily.csv": "13169cdc0d798f4b61d85ce3aa56ac8a90473881370bd72ef9f7b3410928555c",
+    "control_daily_mean_diagnostics.csv": "a885b13784903899b043e54c370cdc920ff9fc19ff6d0f4f1611cee5b9de5e13",
+    "control_main_reference.csv": "3c2b187ed0c4ee150d51cf97f8ec8347eeb16768f00724a394ea53c5aac946e1",
+    "control_stock_seed_distribution.csv": "c41490ef5ee1997d0322b68a5fa4425d5e5ffa2271e88b67a8281d9036f6f842",
+    "control_summary.csv": "74ddcb213e497654c2464379b6e716665684aa7f5b3c3b885edcac9a4ecab1cb",
+    "event_clock_precision.csv": "4f57b9b1ffe44fbdc40a15aa1d3edf756f9cfab382c7655b82269de4c8ba6d28",
+    "event_time_summary.csv": "1b8928392f03d4b35d8ff2830c12e9331a8aedb71b75aec11149622e12ebc947",
+    "execution_decomposition.csv": "dc05d9a9e30c507c297f6c2ad4c68e8f8aadd2d9c72ea5776f631a492cd0648f",
+    "execution_summary.csv": "cb550f96c1646d9e4bad8ed7cada4b2d90f43e13b4f7c7817fa789be1cbec3ab",
+    "feature_algebra.csv": "5a114b53f29817303825b0b5746b51e4a61b02632fbdf979901ae55e4c5568f7",
+    "fixed_exit_latency.csv": "6a7ef001d4711ed9956ce202da8e3704e898caa7969896d09d428662ada77746",
+    "passive_accounting.csv": "e965935cfc001a3006d61dc93dca8198c609eea8101184a827ae1759c41d6099",
+    "passive_accounting_summary.csv": "f2b00ff8b57244c37e35a3d80f068bd432cde386dd2e81ea90b418b08704a86b",
+    "passive_matched_controls.csv": "9c2e3713c515e803b3ae8d135feb7c87e1577c9a05b2d990e1a4c9a9a167f029",
+    "state_diagnostics.csv": "ae1b2aaa547a1fe877c9a4afde819be37f09e0b0a9a7c7016f4bfe0429dc1e47",
+    "state_metric_validity.csv": "47298d9b792bfb4b4ad9be7ef5953bc1cb3cab2e420c7685bdcea8b5b64b6d1f",
+    "state_paired_summary.csv": "ea5b8f32152578799e4e3ac6d37e93df93b106e0cf16c930102231a62b2f165e",
+    "transfer_seed7_drift.csv": "26b8d5bcd461ee5cd4ed540b2d26057b42658a3a4b2c2732c38247cf7ad30934"
+  },
+  "source": "aggregate CSVs only"
+}

@@ -1,5 +1,7 @@
 # WSELOB application benchmark: scientific and engineering results
 
+**Subsequent explanatory audit (2026-09-22):** [Signal and execution diagnostics](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) adds matched controls/features and clarifies execution accounting. This report retains its original experiment and results.
+
 ## Scope
 
 This benchmark asks whether causal limit-order-book features rank short-horizon future midpoint moves out of sample, and whether the research workflow remains reproducible at full-year scale.

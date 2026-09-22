@@ -1,8 +1,10 @@
 # Documentation
 
-Start with the first report for the measured five-stock result, then read how execution changes its interpretation.
+Start with the [signal and execution audit](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) for the complete explanation of controls, feature increments, visible costs and event time. The historical reports below preserve the original experiments.
 
 ## Current research and engineering
+
+The completed [post-inspection audit protocol](RESEARCH_AUDIT_PROTOCOL.md) defines 150 fixed control and 200 matched-feature cells. Its [aggregate evidence and figures](../results/wselob_research_audit_v1/) explain existing results; they are not another independent confirmation.
 
 1. [Scientific and engineering benchmark](XGBOOST_SCALE_ENGINEERING_REPORT.md): 85.8M messages, 152 tasks, model comparisons and fixed-workload performance ratios.
 2. [Execution-aware robustness](EXECUTION_AWARE_ROBUSTNESS_REPORT.md): paired block evidence, 411 spread/latency cells and 25 transfer tasks.

@@ -1,81 +1,37 @@
 # Market Microstructure Lab
 
-A reproducible Level-2 (L2, depth-by-price) order-book research pipeline for short-horizon prediction, model comparison and execution-aware validation.
+**Can an order-book forecast survive the cost of acting on it?** This reproducible research engine reconstructs 85.8M order messages from five **2017 Warsaw Stock Exchange equities**, compares causal midpoint forecasts, then tests visible crossing costs and conditional queue behavior.
+
+**Prediction → validation → monetization test → execution friction → later-period confirmation.** A subsequent explanatory audit examines controls, feature increments and event timing on the already inspected sample.
 
 ## At a glance
 
-| Area | Measured result |
+| Evidence | Measured result and scope |
 | --- | --- |
-| Data scale | 85.8M licensed order messages → 56.9M causal L2 rows; five equities; 1,250 stock/day partitions |
-| Research design | Frozen chronological holdouts; 10/20/50-message horizons; shuffled-label controls |
-| Models | Linear, HistGradientBoosting and XGBoost, with matched comparison scopes |
-| Held-out result | Modest XGBoost uplift over Linear at all three horizons; positive leave-one-stock/month mean differences |
-| Later-period confirmation | Preregistered 20-message IC: XGBoost 0.274 vs. Linear 0.262; XGBoost led on all 5 stocks |
-| Engineering | Partitioned Parquet cache, deterministic task IDs, content hashes, atomic writes and resumable tasks |
-| **Native engineering** | C++20/pybind11 backend with byte-exact Python parity across 85.8M messages and 604.8M virtual-order evaluations; 8.98× replay / 3.57× queue kernel speedups |
-| Fixed-workload timing | 17.26× training / 9.07× end-to-end accelerator speedup; 1.606× two-worker throughput |
-| Execution lesson | Predictive midpoint ranking did not yield positive crossed-book outcomes after spread and latency |
+| Data | 85.8M licensed messages → 56.9M feature rows; five stocks, 1,250 stock/day partitions |
+| Prediction | 20-message mean stock/month IC: XGBoost **0.262**, Linear **0.255** across four fixed months; modest uplift, 18/20 paired wins |
+| Later-period confirmation | Preregistered Dec 27–29 check: XGBoost **0.274** vs. Linear **0.262**, leading on all five stocks |
+| Visible execution cost | Strict \|prediction\| > 1 bp, 20 messages, zero delay: XGBoost crossed markout **−5.36 bp** in the original months and **−4.52 bp** in the later check |
+| Conditional passive execution | Stronger signal tails were harder to fill; average five-message post-fill midpoint markouts were adverse |
+| Explanatory audit | 150 fixed shuffled-label controls and 200 matched-feature cells; exact cost decomposition and original-message timing |
+| **Native engineering** | C++20/pybind11 backend with byte-exact Python parity across 85.8M messages and 604.8M virtual-order evaluations; **8.98× replay / 3.57× queue kernel speedups** on fixed workloads |
+| Reproducibility | Content hashes, scientific task IDs, exact row matching, resumable checkpoints and strict task denominators |
 
-**Research arc: prediction → validation → monetization test → execution friction → later-period confirmation.**
+IC is Spearman rank correlation, not a return. The later confirmation consists of only **three shared dates × five stocks**, with non-exposure partly supported by operator attestation. Its frozen full-history fit differs from the older monthly expanding-window study. These findings establish neither current-market alpha nor actual historical fills or trading profit. **Stronger-tail adverse-selection ordering did not consistently replicate**; stronger signals do not necessarily have worse post-fill markouts.
 
-```text
-licensed order messages → deterministic book replay → causal feature cache
-  → chronological Linear / HistGB / XGBoost tasks → controls + paired robustness
-  → spread / latency diagnostics → conditional passive-queue diagnostics
-  → preregistered later-period confirmation
-```
+## Three views of the result
 
-[Scientific + engineering report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md) · [Execution-aware robustness](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md) · [C++20 parity and performance](docs/CXX20_REPLAY_QUEUE_REPORT.md) · [Documentation index](docs/README.md)
+| Question | Figure |
+| --- | --- |
+| How much do simple features explain, and what do extra features/models add? | [Signal sources](results/wselob_research_audit_v1/signal_sources.png) |
+| Why does positive midpoint prediction fail the fixed crossing rule? | [Gross movement and visible spread costs](results/wselob_research_audit_v1/visible_costs.png) |
+| How do prediction strength, conditional fills and post-fill value relate? | [Conditional execution](results/wselob_research_audit_v1/conditional_execution.png) |
 
-## Current status — later-period confirmation completed
+Read the **[signal and execution diagnostics report](docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md)** for the completed explanatory audit. It preserves negative results and undefined metrics; it is not another unseen confirmation. Twenty messages span variable event seconds, not a fixed millisecond horizon. Passive spread diagnostics and conditional fills are not realized returns.
 
-The preregistered December 27–29, 2017 confirmation used one frozen full-history fit per stock/model/horizon through December 22. At the primary 20-message horizon, equal-weight stock-period IC was **XGBoost 0.274 vs. Linear 0.262**, with XGBoost leading on **all 5 stocks**. The negative aggressive spread-crossing conclusion also replicated: XGBoost's historical visible-quote markout averaged **−4.52 bp** at zero delay with the fixed strict |prediction| > 1 bp rule.
+The original confirmation has separate [exposure audit](docs/LATER_PARTITIONS_UNTOUCHED_AUDIT.md), [preregistration](docs/LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md) and [final report](docs/LATER_PARTITIONS_CONFIRMATION_REPORT.md). Earlier [prediction/engineering](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md), [crossing](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md), [queue](docs/QUEUE_AWARE_EXECUTION_REPORT.md) and [C++20](docs/CXX20_REPLAY_QUEUE_REPORT.md) reports retain their original experiments. See the [documentation index](docs/README.md) and [limitations](docs/LIMITATIONS.md).
 
-Under conditional queue-depletion diagnostics, stronger signal tails remained harder to fill, and conditional fills had adverse average five-message post-fill midpoint markouts. **Stronger-tail adverse-selection ordering did not consistently replicate**: stronger signals do not necessarily produce worse post-fill markouts.
-
-This is only **3 shared dates × 5 stocks**, not 15 independent time periods. Non-exposure partly relies on operator attestation; the frozen full-history refit differs from the older monthly expanding-window study below. It establishes neither current-market alpha nor actual historical fills or trading profit. See the [pre-confirmation audit](docs/LATER_PARTITIONS_UNTOUCHED_AUDIT.md), [frozen preregistration](docs/LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md), [final confirmation report](docs/LATER_PARTITIONS_CONFIRMATION_REPORT.md) and [limitations](docs/LIMITATIONS.md).
-
-## Earlier monthly held-out prediction result
-
-IC means Spearman rank correlation between predictions and future midpoint changes. These are **equal-weight stock/month held-out** correlations over April, June, September and November 2017.
-
-| Horizon | Linear IC | XGBoost IC | Paired XGBoost wins |
-| --- | ---: | ---: | ---: |
-| 10 messages | 0.228319 | 0.236688 | 20/20 |
-| 20 messages | 0.255193 | 0.261639 | 18/20 |
-| 50 messages | 0.252353 | 0.258527 | 18/20 |
-
-The differences are modest. Leave-one-stock/month checks remain positive, but the block-bootstrap intervals are descriptive, not formal significance tests. HistGradientBoosting was evaluated on the matched June subset; these results do not establish a universal model winner.
-
-![Paired held-out IC differences](results/wselob_execution_robustness_v1/paired_ic_delta.png)
-
-XGBoost's midpoint-ranking uplift is broadly positive across the fixed stock/month blocks.
-
-## Execution changes the interpretation
-
-In the earlier four-month study, all 411 crossed-book cells reuse the original predictions. At zero delay, XGBoost's fixed 1 bp threshold-selected outcomes average **−5.00 / −5.36 / −7.07 bp** at 10/20/50 messages; 1- and 5-message delays worsen them. These are visible-quote diagnostics, not realized trading profit.
-
-![Crossed-book prediction deciles](results/wselob_execution_robustness_v1/crossed_markout_deciles.png)
-
-Paying the visible spread produces negative headline outcomes despite predictive midpoint rankings.
-
-The completed [passive-queue study](docs/QUEUE_AWARE_EXECUTION_REPORT.md) adds 822 conditional execution cells. Stronger signal tails are harder to fill under the stated depletion scenario, and average five-message post-fill midpoint changes are adverse. Order deletions do not identify cancellation versus execution, so this is a **conditional diagnostic, not an exact historical fill simulator**. The separate 25-task held-out-stock transfer study retains comparable midpoint IC without overturning these execution limits.
-
-## What this demonstrates
-
-- Deterministic order replay and causal spread, imbalance, order-flow imbalance (OFI) and microprice features.
-- Chronological model comparison with fixed parameters, negative controls and explicit task denominators.
-- Restartable research over tens of millions of rows using hashes, caching and atomic artifacts.
-- Measured fixed-workload CPU/accelerator comparisons, with numerical-drift checks.
-- Research judgment about the difference between predictive ranking and executable returns.
-
-## What this does not claim
-
-- No live-trading, realized-profit or formal-significance claim.
-- No identified exact passive fills, hidden-liquidity, inventory or market-impact model.
-- A historical five-stock WSE sample, not universal cross-market evidence.
-
-## Reproduce the software demo
+## Reproduce
 
 ```bash
 python3 -m venv .venv
@@ -83,16 +39,16 @@ python3 -m venv .venv
 pip install -e ".[dev,ml,data,xgb]"
 python -m pytest -q
 cloblab demo --offline --out /tmp/microstructure-demo --rows 120
+# Recreate the new tables and five figures from committed aggregates:
+python scripts/render_research_audit.py
+python scripts/verify_research_audit.py \
+  --old-hashes results/wselob_research_audit_v1/old_result_hashes.json
 ```
 
-This quickstart runs a deterministic **synthetic** demo; it does not reproduce the 85.8M-message study. Licensed-file preparation, fixed experiment commands and receipt requirements are described in [reproducibility](docs/REPRODUCIBILITY.md) and the linked research reports. Raw data and row-level predictions are not committed.
+The offline demo is **synthetic**. It does not reproduce the licensed study. Licensed preparation and actual plan/run/resume/aggregate commands are in [reproducibility](docs/REPRODUCIBILITY.md) and the [audit report](docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md#reproduce-from-the-licensed-inputs). Raw events, row predictions and models remain private. Native speed ratios reuse the unchanged, verified core and measure kernels rather than end-to-end or live latency.
 
-## Data and scope
+## Data and current status
 
-Source: [Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1](https://data.mendeley.com/datasets/3g4mhdp899/1), DOI 10.17632/3g4mhdp899.1, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Modifications: order replay, causal features, model evaluation and aggregate execution diagnostics. As-is; no warranty or endorsement.
+Source: [Marszałek, Adam (2023), WSELOB-2017, Mendeley Data V1](https://data.mendeley.com/datasets/3g4mhdp899/1), DOI 10.17632/3g4mhdp899.1, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Modifications include replay, causal features and aggregate research diagnostics. As-is; no warranty or endorsement. The retained Coinbase adapter is engineering-only, not the empirical benchmark. See [data terms](docs/DATA_TERMS.md) and [contribution/privacy policy](CONTRIBUTING.md).
 
-The full-source engineering preparation covers all 250 available days per stock. The fixed scientific cache contains 1,235 stock/day partitions through December 24; the remaining 15 partitions initially completed engineering coverage only and subsequently formed the separate preregistered later-period confirmation. All 152 original scientific tasks completed without missing tasks or month substitutions.
-
-The Coinbase adapter is retained for engineering demonstrations only. Its captures are not the empirical ML benchmark; see [data terms](docs/DATA_TERMS.md). The earlier single-stock study remains under [background/provenance](docs/README.md#background--provenance).
-
-See [public contribution and privacy policy](CONTRIBUTING.md). The project is scientifically mature for portfolio purposes within its stated limits. Additional model-zoo work on the inspected WSELOB sample is low priority; further confirmation should await genuinely new independent data.
+The prediction, narrow later-period confirmation and explanatory audit are complete. The project is scientifically mature within its stated limits. Further model-zoo work on this inspected sample is low priority; empirical expansion should await longer genuinely uninspected data with clearer execution/cancellation information.
