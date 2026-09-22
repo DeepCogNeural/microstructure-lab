@@ -1,0 +1,45 @@
+{
+  "actual_extension_disabled_fallback": {
+    "extension_restored": true,
+    "failed": 0,
+    "log_sha256": "ab981cf7916984c1644b4160fb599ade0e2e3bb53d84b38021909ffe1aa50eba",
+    "passed": 123,
+    "skipped_native_only": 62,
+    "warnings": 2
+  },
+  "baseline_pytest": {
+    "failed": 0,
+    "initial_environment_failures": 2,
+    "passed": 164,
+    "resolution": "existing compatible OpenMP runtime in search path; no scientific source change"
+  },
+  "diagnostic_aggregate_values_identical": true,
+  "diagnostic_repeated_checkpoint_rebuild_byte_identical": true,
+  "explicit_native_tests": {
+    "failed": 0,
+    "passed": 68
+  },
+  "fresh_cpp_build": "passed",
+  "initial_csv_column_order_changed": [
+    "event_time_summary.csv",
+    "fixed_exit_latency.csv",
+    "execution_decomposition.csv",
+    "feature_algebra.csv"
+  ],
+  "model_aggregate_rebuild_identical": true,
+  "modified_native_full_pytest": {
+    "failed": 0,
+    "log_sha256": "b9b7b4cec6a553eb560390680c1c6348e77c1f24bace0515a49f467295c9d178",
+    "passed": 185,
+    "warnings": 2
+  },
+  "native_core_unchanged_commit": "3a62939ba8c3e2329605620eba500c90a37bd66f",
+  "new_audit_tests": 21,
+  "parity_and_speed_evidence": "reused original unchanged-core receipts; not rerun",
+  "recovery": {
+    "completed_artifacts_preserved": true,
+    "completed_before_interruption": 10,
+    "incomplete_tasks_recovered": 2,
+    "unique_complete_receipts": 350
+  }
+}

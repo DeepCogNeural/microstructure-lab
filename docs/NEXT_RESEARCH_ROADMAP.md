@@ -4,6 +4,8 @@
 
 ## Current status and remaining priorities
 
+**Completed 2026-09-22: explanatory research audit.** The [signal/execution report](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) adds fixed shuffle controls, matched feature comparisons, exact visible-cost decomposition, fixed-exit diagnostics and event-clock mapping. All periods were already inspected; this is explanatory work, not a new holdout. No further tuning on this sample is scheduled. The next scientific question is a simple cross/join/abstain comparison on longer uninspected data with clearer execution/cancellation information; empirical work is paused until access, license and sample provenance satisfy that requirement.
+
 **Completed 2026-09-21: preregistered later-period confirmation.** All 35 fits and the planned prediction, crossed-book and conditional queue cells completed across five stocks on December 27–29, 2017. See the [pre-confirmation audit](LATER_PARTITIONS_UNTOUCHED_AUDIT.md), [frozen protocol](LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md) and [final report](LATER_PARTITIONS_CONFIRMATION_REPORT.md). This task is complete and is not next work.
 
 The narrow confirmation replicated positive prediction ranking and the XGBoost advantage, the negative primary aggressive spread-crossing conclusion, and lower conditional fill probability in stronger signal tails. Average five-message post-fill midpoint markouts remained adverse, but stronger-tail adverse-selection ordering did not consistently replicate. Three shared dates are not broad temporal evidence, and the queue outputs remain conditional diagnostics.

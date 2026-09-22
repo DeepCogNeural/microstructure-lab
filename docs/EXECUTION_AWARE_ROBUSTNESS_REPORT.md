@@ -1,5 +1,7 @@
 # Execution-Aware Robustness — WSELOB 2017
 
+**Subsequent explanatory audit (2026-09-22):** [Signal and execution diagnostics](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) adds matched controls/features and clarifies execution accounting. This report retains its original experiment and results.
+
 This report preserves the earlier April/June/September/November 2017 experiment. The separate completed [preregistered later-period confirmation](LATER_PARTITIONS_CONFIRMATION_REPORT.md) used a frozen full-history refit and three December dates. It confirmed the positive prediction ranking and negative primary crossed-book conclusion (20-message, zero-delay XGBoost: −4.52 bp under the fixed strict 1 bp rule). Its numbers and stock-period aggregation are separate from the historical tables below.
 
 ## Result

@@ -1,5 +1,7 @@
 # Queue-aware passive execution report
 
+**Subsequent explanatory audit (2026-09-22):** [Signal and execution diagnostics](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) adds matched controls/features and clarifies execution accounting. This report retains its original experiment and results.
+
 The order feed does not uniquely identify historical executions. **Y is retransmission**, and D does not distinguish cancellation from complete execution. Consequently, this experiment reports conditional depletion diagnostics and a zero identified lower fill bound. It does not establish an executable strategy.
 
 ## Later confirmation cross-reference

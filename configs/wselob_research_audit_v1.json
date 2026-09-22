@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "experiment": "wselob_research_audit_v1",
+  "status": "post_inspection_explanatory_audit_not_new_holdout",
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ],
+  "months": [
+    "2017-04",
+    "2017-06",
+    "2017-09",
+    "2017-11"
+  ],
+  "horizon": 20,
+  "seeds": [
+    7,
+    17,
+    29,
+    43,
+    71
+  ],
+  "control_scopes": [
+    "own_june",
+    "transfer_june",
+    "later"
+  ],
+  "shuffle_methods": [
+    "S0",
+    "S1"
+  ],
+  "full_features": [
+    "spread_bps",
+    "top_imbalance",
+    "depth_imbalance",
+    "ofi_l1_norm",
+    "microprice_minus_mid_bps"
+  ],
+  "feature_groups": {
+    "F1": [
+      "spread_bps",
+      "top_imbalance"
+    ],
+    "F2": [
+      "spread_bps",
+      "top_imbalance",
+      "microprice_minus_mid_bps"
+    ],
+    "F3": [
+      "spread_bps",
+      "top_imbalance",
+      "microprice_minus_mid_bps",
+      "ofi_l1_norm"
+    ],
+    "F4": [
+      "spread_bps",
+      "top_imbalance",
+      "microprice_minus_mid_bps",
+      "depth_imbalance"
+    ],
+    "F5": [
+      "spread_bps",
+      "top_imbalance",
+      "depth_imbalance",
+      "ofi_l1_norm",
+      "microprice_minus_mid_bps"
+    ]
+  },
+  "models": {
+    "linear": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "ridge": 1e-06,
+      "train_only_standardization": true
+    },
+    "xgboost": {
+      "scope": "all_symbols_all_fixed_months_all_horizons",
+      "objective": "reg:squarederror",
+      "tree_method": "hist",
+      "n_estimators": 800,
+      "max_depth": 4,
+      "learning_rate": 0.03,
+      "min_child_weight": 50,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "reg_lambda": 10.0,
+      "reg_alpha": 0.1,
+      "max_bin": 256,
+      "random_state": 7,
+      "device": "runtime_override_cpu_or_cuda",
+      "hyperparameter_search": false
+    }
+  },
+  "later_dates": [
+    "2017-12-27",
+    "2017-12-28",
+    "2017-12-29"
+  ],
+  "later_train_end": "2017-12-22",
+  "expected": {
+    "control": 150,
+    "ablation": 200
+  },
+  "eligibility": "finite full five features and target on identical rows for all feature groups",
+  "state_bins": {
+    "features": [
+      "spread_bps",
+      "top_imbalance"
+    ],
+    "quantiles": [
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "method": "numpy quantile linear on full training eligible rows",
+    "ties": "searchsorted side left; keep all 3x3 bins including empty"
+  },
+  "aggregation": "strict equal block/day mean; undefined propagated; available-case separately named with denominator",
+  "execution": {
+    "horizons": [
+      10,
+      20,
+      50
+    ],
+    "latencies": [
+      0,
+      1,
+      5
+    ],
+    "threshold": 1.0,
+    "selection": "strict abs prediction > threshold",
+    "common": "all latencies and models per horizon",
+    "denominator": "entry midpoint",
+    "fixed_exit_horizon": 20
+  },
+  "clock": {
+    "field": "time",
+    "unit": "nanosecond since epoch",
+    "timezone": "Europe/Warsaw",
+    "offsets": [
+      1,
+      5,
+      10,
+      20,
+      50
+    ],
+    "pairing": "exact original event index within same valid segment and day"
+  },
+  "reuse": "verify artifact hashes and exact row identity and actual labels; regenerated predictions explicitly marked; original results immutable"
+}

@@ -1,0 +1,28 @@
+{
+  "ablation_daily_rows": 4050,
+  "ablations": 200,
+  "complete": true,
+  "control_daily_rows": 2250,
+  "controls": 150,
+  "cost_cells": 516,
+  "event_time_rows": 2225,
+  "feature_partitions": 1250,
+  "feature_rows": 56887949,
+  "fixed_exit_cells": 186,
+  "fresh_transfer_seed7_ic_max_abs_drift": 0.0,
+  "full_feature_ic_max_abs_drift": 0.0,
+  "matched_ablation_blocks": 20,
+  "max_algebra_error_bps": 4.209216308836972e-12,
+  "max_cost_identity_error_bps": 2.220446049250313e-12,
+  "no_new_independent_test_set": true,
+  "old_artifacts_unchanged": 72,
+  "origin_counts": {
+    "new_fit": 298,
+    "verified_original_prediction": 52
+  },
+  "original_cost_match": true,
+  "paired_contrasts": 300,
+  "passive_cells": 1032,
+  "source_clock_days": 420,
+  "state_rows": 1800
+}

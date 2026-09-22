@@ -1,0 +1,16 @@
+scope,symbol,ic,origin,expected
+own_june,KGHM,0.2716398454731455,archived_primary,5
+own_june,PEKAO,0.2741207864834555,archived_primary,5
+own_june,PKNORLEN,0.3094683549051213,archived_primary,5
+own_june,PKOBP,0.2649535861432602,archived_primary,5
+own_june,PZU,0.2219506402338974,archived_primary,5
+transfer_june,KGHM,0.2723767359015587,archived_primary,5
+transfer_june,PKNORLEN,0.3099997484153959,archived_primary,5
+transfer_june,PKOBP,0.2671919856579897,archived_primary,5
+transfer_june,PZU,0.219538445480078,archived_primary,5
+transfer_june,PEKAO,0.2731436977161602,archived_primary,5
+later,KGHM,0.2769704204548919,archived_primary,5
+later,PEKAO,0.2538934060549584,archived_primary,5
+later,PKNORLEN,0.3086282156031371,archived_primary,5
+later,PKOBP,0.2729089670771231,archived_primary,5
+later,PZU,0.2583964017270357,archived_primary,5
