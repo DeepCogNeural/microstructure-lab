@@ -1,0 +1,116 @@
+{
+  "allocated_gpu_hours": 0.9566666666666667,
+  "limits": "One GPU allocated per completed task. Start-to-completion wall duration includes data load and B1; it is not GPU compute utilization. Original private scheduler logs retain host/job details outside Git.",
+  "missing_explicit_exit_count": 1,
+  "nonempty_stderr_count": 0,
+  "receipt": "infrastructure_neutral_allocation",
+  "stage": "FQ2",
+  "task_count": 15,
+  "tasks": {
+    "fq2_100000_KGHM_a1": {
+      "allocated_gpu_seconds": 232.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_100000_PEKAO_a1": {
+      "allocated_gpu_seconds": 205.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_100000_PKNORLEN_a1": {
+      "allocated_gpu_seconds": 210.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_100000_PKOBP_a1": {
+      "allocated_gpu_seconds": 207.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_100000_PZU_a1": {
+      "allocated_gpu_seconds": 224.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_200000_KGHM_a1": {
+      "allocated_gpu_seconds": 406.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_200000_PEKAO_a1": {
+      "allocated_gpu_seconds": 312.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_200000_PKNORLEN_a1": {
+      "allocated_gpu_seconds": 393.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_200000_PKOBP_a1": {
+      "allocated_gpu_seconds": 349.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_200000_PZU_a1": {
+      "allocated_gpu_seconds": 279.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_50000_KGHM_a1": {
+      "allocated_gpu_seconds": 127.0,
+      "completion_marker": true,
+      "explicit_exit_zero": false,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_50000_PEKAO_a1": {
+      "allocated_gpu_seconds": 126.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_50000_PKNORLEN_a1": {
+      "allocated_gpu_seconds": 119.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_50000_PKOBP_a1": {
+      "allocated_gpu_seconds": 127.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "fq2_50000_PZU_a1": {
+      "allocated_gpu_seconds": 128.0,
+      "completion_marker": true,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    }
+  }
+}
