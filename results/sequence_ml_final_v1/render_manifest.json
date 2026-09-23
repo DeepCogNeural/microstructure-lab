@@ -1,0 +1,20 @@
+{
+  "cost_table_sha256": "325aee8524222ec951f6bac735cc508c0463102e83a3e2d4efc14e9b067381bd",
+  "figure_sha256": {
+    "01_history_and_sample_scale.png": "209556c17ff8d8946ffe1eb2c278fb03a07e1b02532eec0a1bd1757d0256d038",
+    "02_time_and_update.png": "4c9a41714ec519fbef78f5631cd689785ca4c375dd3c87a23d5ec8f6560e2eb4",
+    "03_stock_and_state.png": "d658b47d1afc67079c51317e09385252a9405eaf6b39c07eed86ee8a50a917b5",
+    "04_prediction_and_visible_execution.png": "c3817f80b11e39c64f642d5584c090b39358d1b4e3ba778f414ccc96e27dae7d"
+  },
+  "input_aggregate_sha256": {
+    "FQ2": "1d2ae71efe63f41055c2767788d7c6fd5548ba11bcac0967f7fd80b7d366e180",
+    "FQ3": "4f606388b8d7c0b10942acfb97665b92c5994678822466f01081ca913417d52a",
+    "FQ4": "4b5c0543f36ca17f1eed4d8ffd6b74cb6341dee40ec58f27f4497de26b74d2dc",
+    "Q10": "cfd6202b426bcc0dd21f2cf7593fb9f1df2baaf7ff5d81f8f5ea239ed04c7957",
+    "Q11": "a91f7b82bf814c67cda78a5374e359426a1c3ed15f27c1e5c749ab1c96cdc435",
+    "Q8": "c76e14660e517658c6e1b21f355d4f9b3467eefd8a5cb069497c2fe3362d3fcc"
+  },
+  "limits": "2017 historical/exposed evaluation only; no independent confirmation, actual fills or realized PnL.",
+  "retrospective_only": true,
+  "stage": "FINAL_WSE_RETROSPECTIVE"
+}

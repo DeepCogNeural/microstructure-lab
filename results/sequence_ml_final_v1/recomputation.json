@@ -1,0 +1,31 @@
+{
+  "limits": "Uses public run receipts and deterministic aggregate code; does not rehash private model weights or original licensed rows.",
+  "result": "ALL_SIX_BYTE_IDENTICAL",
+  "stage": "FINAL_WSE_AGGREGATE_RECOMPUTATION",
+  "stages": {
+    "FQ2": {
+      "aggregate_sha256": "1d2ae71efe63f41055c2767788d7c6fd5548ba11bcac0967f7fd80b7d366e180",
+      "byte_identical": true
+    },
+    "FQ3": {
+      "aggregate_sha256": "4f606388b8d7c0b10942acfb97665b92c5994678822466f01081ca913417d52a",
+      "byte_identical": true
+    },
+    "FQ4": {
+      "aggregate_sha256": "4b5c0543f36ca17f1eed4d8ffd6b74cb6341dee40ec58f27f4497de26b74d2dc",
+      "byte_identical": true
+    },
+    "Q10": {
+      "aggregate_sha256": "cfd6202b426bcc0dd21f2cf7593fb9f1df2baaf7ff5d81f8f5ea239ed04c7957",
+      "byte_identical": true
+    },
+    "Q11": {
+      "aggregate_sha256": "a91f7b82bf814c67cda78a5374e359426a1c3ed15f27c1e5c749ab1c96cdc435",
+      "byte_identical": true
+    },
+    "Q8": {
+      "aggregate_sha256": "c76e14660e517658c6e1b21f355d4f9b3467eefd8a5cb069497c2fe3362d3fcc",
+      "byte_identical": true
+    }
+  }
+}

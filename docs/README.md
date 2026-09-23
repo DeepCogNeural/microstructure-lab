@@ -4,6 +4,8 @@ Start with the [signal and execution audit](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.
 
 ## Current research and engineering
 
+The [formal historical sequence-ML package](SEQUENCE_ML_FINAL_PACKAGE.md) links its four figures, cost table, five-minute brief and hashed FQ2–FQ4/Q8/Q10/Q11 aggregate receipts. It is retrospective; independent confirmation of its ML gains remains pending.
+
 The completed [post-inspection audit protocol](RESEARCH_AUDIT_PROTOCOL.md) defines 150 fixed control and 200 matched-feature cells. Its [aggregate evidence and figures](../results/wselob_research_audit_v1/) explain existing results; they are not another independent confirmation.
 
 1. [Scientific and engineering benchmark](XGBOOST_SCALE_ENGINEERING_REPORT.md): 85.8M messages, 152 tasks, model comparisons and fixed-workload performance ratios.

@@ -1,0 +1,8 @@
+stage,tasks,allocated_gpu_hours,allocated_cpu_core_hours,allocated_cpu_wall_hours,interpretation
+FQ2,15,0.956667,,,Allocation wall time including data/load; not GPU utilization
+FQ3,15,1.391111,,,Allocation wall time including data/load; not GPU utilization
+FQ4,5,1.926111,,,Allocation wall time including data/load; not GPU utilization
+Q8,15,1.520556,,,Allocation wall time including data/load; not GPU utilization
+Q10,5,2.117222,,,Allocation wall time including data/load; not GPU utilization
+FQ3_CPU_DIAGNOSTIC,5,,,0.016111,Core count not recorded; wall time is not core-hours
+Q11,5,,1.264444,0.316111,Four allocated CPU cores per task; not CPU utilization
