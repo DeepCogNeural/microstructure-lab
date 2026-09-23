@@ -1,0 +1,18 @@
+{
+  "stage": "Q8 context-length sensitivity on formal 200k data",
+  "parent_formal_FQ2_config_sha256": "7f8015ac6161f306b0b3633dac1cab97a021a02aa85859973dfab861775ab669",
+  "source_cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "symbols": ["KGHM", "PEKAO", "PKNORLEN", "PKOBP", "PZU"],
+  "contexts": [8, 32, 128],
+  "common_eligibility_context": 128,
+  "train_endpoints_per_stock": 200000,
+  "common_identity": "Construct the 128-state causal eligible cohort once per stock, then take the trailing 8, 32 or 128 states of exactly the same selected windows. B1 and GRU within each context, and all contexts, use identical train/dev/evaluation endpoint IDs and h20 labels. This Q8 cohort is not numerically pooled with FQ2's 32-state cohort.",
+  "features": ["spread_bps", "top_imbalance", "depth_imbalance", "ofi_l1_norm", "microprice_minus_mid_bps"],
+  "target": "original-event markout_20",
+  "arms": ["B1_history_xgboost", "S0_history_gru"],
+  "gru_seeds": [7, 17, 29],
+  "model_hyperparameters": "unchanged from formal FQ2: B1 XGBoost and one-layer hidden-64 GRU, max 60 epochs, patience 8, batch 256, AdamW 0.001/0.0001",
+  "selection": "On April dev only, choose context with highest equal-stock/date mean of the three S0 seed ICs; ties within 1e-6 choose the shorter context. Report B1 and S0 at every context, each seed and full retrospective June/Sep/Nov breakdown regardless of selected context.",
+  "exposure": "All evaluation periods/stocks previously viewed; context selection only uses April dev; no independent confirmation or trading profit claim.",
+  "budget": "15 single-GPU stock/context tasks, no silent sample shrink. Record allocated GPU-hours, model fit/inference, memory and failures. Stop only at genuine resource/correctness hard stop."
+}
