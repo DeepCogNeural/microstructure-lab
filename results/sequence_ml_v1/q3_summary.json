@@ -1,0 +1,406 @@
+{
+  "common_selected": {
+    "baseline_equal_stock_day_crossed": {
+      "declared_cells": 315,
+      "defined_cells": 315,
+      "defined_cells_mean_descriptive": -6.2042291573267745,
+      "full_denominator_mean": -6.2042291573267745
+    },
+    "baseline_pooled_selected_crossed": -5.990748027373059,
+    "declared_stock_day_cells": 315,
+    "gru_seed_mean_equal_stock_day_crossed": {
+      "declared_cells": 315,
+      "defined_cells": 315,
+      "defined_cells_mean_descriptive": -6.210429434057389,
+      "full_denominator_mean": -6.210429434057389
+    },
+    "gru_seed_mean_pooled_selected_crossed": -5.9937497761347505,
+    "selected_opportunities": 14989,
+    "zero_selected_cells": 0
+  },
+  "dates": [
+    "2017-06-01",
+    "2017-06-02",
+    "2017-06-05",
+    "2017-06-06",
+    "2017-06-07",
+    "2017-06-08",
+    "2017-06-09",
+    "2017-06-12",
+    "2017-06-13",
+    "2017-06-14",
+    "2017-06-16",
+    "2017-06-19",
+    "2017-06-20",
+    "2017-06-21",
+    "2017-06-22",
+    "2017-06-23",
+    "2017-06-26",
+    "2017-06-27",
+    "2017-06-28",
+    "2017-06-29",
+    "2017-06-30",
+    "2017-09-01",
+    "2017-09-04",
+    "2017-09-05",
+    "2017-09-06",
+    "2017-09-07",
+    "2017-09-08",
+    "2017-09-11",
+    "2017-09-12",
+    "2017-09-13",
+    "2017-09-14",
+    "2017-09-15",
+    "2017-09-18",
+    "2017-09-19",
+    "2017-09-20",
+    "2017-09-21",
+    "2017-09-22",
+    "2017-09-25",
+    "2017-09-26",
+    "2017-09-27",
+    "2017-09-28",
+    "2017-09-29",
+    "2017-11-02",
+    "2017-11-03",
+    "2017-11-06",
+    "2017-11-07",
+    "2017-11-08",
+    "2017-11-09",
+    "2017-11-10",
+    "2017-11-13",
+    "2017-11-14",
+    "2017-11-15",
+    "2017-11-16",
+    "2017-11-17",
+    "2017-11-20",
+    "2017-11-21",
+    "2017-11-22",
+    "2017-11-23",
+    "2017-11-24",
+    "2017-11-27",
+    "2017-11-28",
+    "2017-11-29",
+    "2017-11-30"
+  ],
+  "execution": {
+    "B1_history_xgboost": {
+      "common_opportunities": 625118,
+      "equal_stock_day_crossed": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": -7.818314642730108,
+        "full_denominator_mean": -7.818314642730108
+      },
+      "pooled_coverage": 0.06898217616514002,
+      "pooled_selected_crossed_descriptive": -7.777614282387935,
+      "selected": 43122,
+      "stock_day_cells": 315,
+      "undefined_cells": []
+    },
+    "S0_history_gru_seed17": {
+      "common_opportunities": 625118,
+      "equal_stock_day_crossed": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": -6.5132057220705155,
+        "full_denominator_mean": -6.5132057220705155
+      },
+      "pooled_coverage": 0.05800504864681548,
+      "pooled_selected_crossed_descriptive": -6.406115501440283,
+      "selected": 36260,
+      "stock_day_cells": 315,
+      "undefined_cells": []
+    },
+    "S0_history_gru_seed29": {
+      "common_opportunities": 625118,
+      "equal_stock_day_crossed": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": -6.418310175873493,
+        "full_denominator_mean": -6.418310175873493
+      },
+      "pooled_coverage": 0.05130231412309356,
+      "pooled_selected_crossed_descriptive": -6.131185637557086,
+      "selected": 32070,
+      "stock_day_cells": 315,
+      "undefined_cells": []
+    },
+    "S0_history_gru_seed7": {
+      "common_opportunities": 625118,
+      "equal_stock_day_crossed": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": -6.380381325790837,
+        "full_denominator_mean": -6.380381325790837
+      },
+      "pooled_coverage": 0.044529192888382675,
+      "pooled_selected_crossed_descriptive": -6.349193483645456,
+      "selected": 27836,
+      "stock_day_cells": 315,
+      "undefined_cells": []
+    },
+    "S0_seed_mean": {
+      "common_opportunities": 625118,
+      "equal_stock_day_crossed": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": -6.3515947336783345,
+        "full_denominator_mean": -6.3515947336783345
+      },
+      "pooled_coverage": 0.04893476111710109,
+      "pooled_selected_crossed_descriptive": -6.209888202289366,
+      "selected": 30590,
+      "stock_day_cells": 315,
+      "undefined_cells": []
+    }
+  },
+  "fixed_runner_commit": "1f26e52d1d6ee09939de2f243f4f30a5b042d230",
+  "input_diagnostic_hashes": {
+    "KGHM": "11298741cf4eca8f83066613a671c8a3165c350ee4b47ff741364173e960e564",
+    "PEKAO": "709f9a2c9f02ecd496d94e6ce2a4c7fb00444e42bae4fb65cca92bd8a734a6a3",
+    "PKNORLEN": "5b9815e16bc86076351502bb9895c270f6e1f7cfbf5070ee56de19a581adfa2b",
+    "PKOBP": "0a0f771bd4cc41d282e6d1e5791393a2baa4987539fed230bcffb0a040928f26",
+    "PZU": "3623c6841ad14b96e13c0f8a615e33f3f5daa6baa714a21046b63c25b2a838a9"
+  },
+  "input_update_hashes": {
+    "2017-06/KGHM": "cb45b5a612c1f66818f4b62835098d9c44edbd114d26a862059e324f11010b82",
+    "2017-06/PEKAO": "61f95cf6c7431621ae1ec35ce4ab0367294bf6ab8df1e0180c69112f0b248956",
+    "2017-06/PKNORLEN": "35a1e8d22a903dd6ba0714e8e0e7da179201b552275656490dd5d79777a06d1f",
+    "2017-06/PKOBP": "756eea16e4c9b2ca14f9378d5c9c4c2572da9cfef576ce204da79323191b7478",
+    "2017-06/PZU": "93f3e63d41c63701f11721b9299dc4b4e172453b58f67ba944b7ec8565043613",
+    "2017-09/KGHM": "7a724739f5227a09659a468128fd45ec1dfb459ab6bb9f6bba9b6df8cc8512e2",
+    "2017-09/PEKAO": "6e57f2075da1c856fe9225f4602ff9e84953ae37ba1837b4c3b3540b7a7f8c28",
+    "2017-09/PKNORLEN": "f68408546d9d68590906d6922f0f311dfc3719cfc71e981853d8fb8722ba7678",
+    "2017-09/PKOBP": "5739e180af17d7c6d6353ef10de3efacf94944d6826ec376f8908c2048a9d36f",
+    "2017-09/PZU": "a10d49fa4642b604592e8a66487c1d0d1c404121a2f3f8372f1aac2680c4fe9e",
+    "2017-11/KGHM": "ccc0ac420cefb314ae27e4c988ccfaf74e7caa3c59b88973bff524599bcba597",
+    "2017-11/PEKAO": "ea6ef48f6f00214ca6adf25b9ab2f94aacc8a59ad320bd84deba2ea8b9ee8752",
+    "2017-11/PKNORLEN": "cebff77940bd5d3a25b101ba22976127f11b0bcfa95c58779b5205dbd734b499",
+    "2017-11/PKOBP": "4406f7339e09c1403560cce83f99322de51645309afa5324a084f11baf75f844",
+    "2017-11/PZU": "eacad8bcf1c58e7e472fcf5d78f846ae8a23a23238d1faf9702e5eab6aa95ea4"
+  },
+  "limitations": "All dates exposed; time refits add newer training information; state strata are descriptive; crossing uses visible quotes without actual fills, fees, impact or inventory. Undefined cells are explicit, never silently dropped.",
+  "q3_config_sha256": "d9c1cd9d846c2d3ddfe607514a9500794029b57a817fd811b89c8aa12fc17b10",
+  "retrospective_only": true,
+  "stage": "Q3 bounded retrospective robustness and visible crossing",
+  "state": {
+    "high_activity": {
+      "baseline_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.23915604100093713,
+        "full_denominator_mean": 0.23915604100093713
+      },
+      "gru_seed_mean_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.2528485641355616,
+        "full_denominator_mean": 0.2528485641355616
+      },
+      "paired_delta_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.013692523134624442,
+        "full_denominator_mean": 0.013692523134624442
+      },
+      "rows_total": 297926,
+      "undefined_reasons": []
+    },
+    "low_activity": {
+      "baseline_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.29023705790329285,
+        "full_denominator_mean": 0.29023705790329285
+      },
+      "gru_seed_mean_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.293519141913441,
+        "full_denominator_mean": 0.293519141913441
+      },
+      "paired_delta_ic": {
+        "declared_cells": 315,
+        "defined_cells": 315,
+        "defined_cells_mean_descriptive": 0.003282084010148153,
+        "full_denominator_mean": 0.003282084010148153
+      },
+      "rows_total": 327192,
+      "undefined_reasons": []
+    }
+  },
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ],
+  "time_fixed_vs_updated": {
+    "2017-06": {
+      "B1_history_xgboost": {
+        "cells": 105,
+        "fixed_ic": 0.27372479074441913,
+        "updated_ic": 0.27525778770086506,
+        "updated_minus_fixed_ic": 0.001532996956445989
+      },
+      "S0_history_gru_seed17": {
+        "cells": 105,
+        "fixed_ic": 0.2820397631629202,
+        "updated_ic": 0.2785374318747077,
+        "updated_minus_fixed_ic": -0.0035023312882124964
+      },
+      "S0_history_gru_seed29": {
+        "cells": 105,
+        "fixed_ic": 0.28241372994631925,
+        "updated_ic": 0.2795254867699642,
+        "updated_minus_fixed_ic": -0.002888243176355085
+      },
+      "S0_history_gru_seed7": {
+        "cells": 105,
+        "fixed_ic": 0.28097958889585256,
+        "updated_ic": 0.28227901772489394,
+        "updated_minus_fixed_ic": 0.001299428829041432
+      }
+    },
+    "2017-09": {
+      "B1_history_xgboost": {
+        "cells": 105,
+        "fixed_ic": 0.28758416148055016,
+        "updated_ic": 0.29058593363176033,
+        "updated_minus_fixed_ic": 0.0030017721512101306
+      },
+      "S0_history_gru_seed17": {
+        "cells": 105,
+        "fixed_ic": 0.29318497455339904,
+        "updated_ic": 0.2925391380284691,
+        "updated_minus_fixed_ic": -0.0006458365249299072
+      },
+      "S0_history_gru_seed29": {
+        "cells": 105,
+        "fixed_ic": 0.29008239325237173,
+        "updated_ic": 0.2934470994283801,
+        "updated_minus_fixed_ic": 0.0033647061760083623
+      },
+      "S0_history_gru_seed7": {
+        "cells": 105,
+        "fixed_ic": 0.29053040145518333,
+        "updated_ic": 0.29408902846124496,
+        "updated_minus_fixed_ic": 0.0035586270060616472
+      }
+    },
+    "2017-11": {
+      "B1_history_xgboost": {
+        "cells": 105,
+        "fixed_ic": 0.24184769224547395,
+        "updated_ic": 0.25105587618171615,
+        "updated_minus_fixed_ic": 0.009208183936242181
+      },
+      "S0_history_gru_seed17": {
+        "cells": 105,
+        "fixed_ic": 0.2492091939564276,
+        "updated_ic": 0.25551669629103285,
+        "updated_minus_fixed_ic": 0.006307502334605348
+      },
+      "S0_history_gru_seed29": {
+        "cells": 105,
+        "fixed_ic": 0.24899031902906046,
+        "updated_ic": 0.2578950203424574,
+        "updated_minus_fixed_ic": 0.008904701313396922
+      },
+      "S0_history_gru_seed7": {
+        "cells": 105,
+        "fixed_ic": 0.24702599103841247,
+        "updated_ic": 0.2539373573171,
+        "updated_minus_fixed_ic": 0.006911366278687479
+      }
+    }
+  },
+  "updated_fit_cells": 15,
+  "updated_fit_seconds": {
+    "B1_history_xgboost": 9.62126308272127,
+    "S0_history_gru_seed17": 266.1815119154053,
+    "S0_history_gru_seed29": 295.7602399571333,
+    "S0_history_gru_seed7": 331.555868498981
+  },
+  "updated_runner_commit": "0f17ab665eaf11280efde3ac8a57a7b0a2bbe51b",
+  "updated_training_limited": {
+    "2017-06/KGHM": {
+      "S0_history_gru_seed17": true,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": true
+    },
+    "2017-06/PEKAO": {
+      "S0_history_gru_seed17": true,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": true
+    },
+    "2017-06/PKNORLEN": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-06/PKOBP": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-06/PZU": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-09/KGHM": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-09/PEKAO": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": true,
+      "S0_history_gru_seed7": false
+    },
+    "2017-09/PKNORLEN": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": true
+    },
+    "2017-09/PKOBP": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-09/PZU": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-11/KGHM": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": true,
+      "S0_history_gru_seed7": true
+    },
+    "2017-11/PEKAO": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-11/PKNORLEN": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-11/PKOBP": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    },
+    "2017-11/PZU": {
+      "S0_history_gru_seed17": false,
+      "S0_history_gru_seed29": false,
+      "S0_history_gru_seed7": false
+    }
+  },
+  "updated_wall_seconds": 1040.094238543301
+}

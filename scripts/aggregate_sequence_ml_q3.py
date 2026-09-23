@@ -129,6 +129,18 @@ def main():
                                                         for r in rows if r["crossed_bps"] is None]}
     if len(common_selected) != len(dates)*len(symbols):
         raise ValueError("incomplete common-selected denominator")
+    common_n = sum(r["both_selected"] for r in common_selected)
+    common_selected_summary = {
+        "declared_stock_day_cells": len(common_selected),
+        "selected_opportunities": common_n,
+        "zero_selected_cells": sum(r["both_selected"] == 0 for r in common_selected),
+        "baseline_equal_stock_day_crossed": strict([r["baseline"]["crossed_bps"] for r in common_selected]),
+        "gru_seed_mean_equal_stock_day_crossed": strict([r["gru_seed_mean"]["crossed_bps"] for r in common_selected]),
+        "baseline_pooled_selected_crossed":
+            sum(r["baseline"]["crossed_bps"]*r["both_selected"] for r in common_selected if r["both_selected"])/common_n if common_n else None,
+        "gru_seed_mean_pooled_selected_crossed":
+            sum(r["gru_seed_mean"]["crossed_bps"]*r["both_selected"] for r in common_selected if r["both_selected"])/common_n if common_n else None,
+    }
     summary = {"stage": q3["stage"], "retrospective_only": True,
                "q3_config_sha256": sha(q3_path), "fixed_runner_commit": json.loads((args.reports/"q2_summary.json").read_text())["scientific_commit"],
                "updated_runner_commit": next(iter(update_reports.values()))["source_commit"],
@@ -140,7 +152,7 @@ def main():
                                             for (month,symbol),r in update_reports.items()},
                "time_fixed_vs_updated": time_summary, "state": state_summary,
                "execution": execution_summary,
-               "common_selected_count": sum(r["both_selected"] for r in common_selected),
+               "common_selected": common_selected_summary,
                "input_update_hashes": {f"{month}/{symbol}": sha(args.reports/f"q3_update_{month}_{symbol}.json") for month,symbol in update_reports},
                "input_diagnostic_hashes": {symbol: sha(args.reports/f"q3_diagnostic_{symbol}.json") for symbol in symbols},
                "limitations": "All dates exposed; time refits add newer training information; state strata are descriptive; crossing uses visible quotes without actual fills, fees, impact or inventory. Undefined cells are explicit, never silently dropped."}
