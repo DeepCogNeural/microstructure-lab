@@ -1,0 +1,31 @@
+{
+  "stage": "PM1A",
+  "status": "pre_fit_frozen",
+  "source_version_doi": "10.5281/zenodo.22084977",
+  "audit_manifest": "results/polymarket_pm0_v1/polyorderbooks_audit.json",
+  "market_split": "results/polymarket_pm0_v1/pm1a_split_v1.json",
+  "token": "Up",
+  "target": "terminal Up outcome",
+  "decision_cadence_seconds": 30,
+  "cadence_anchor": "scheduled market end, backward in fixed 30-second steps",
+  "minimum_seconds_to_close": 60,
+  "maximum_snapshot_age_seconds": 15,
+  "snapshot_rule": "At each decision time use the latest same-token capture at or before that time, never after; require valid two-sided uncrossed/unlocked book and nonnegative age no greater than 15 seconds.",
+  "history": {
+    "length": 8,
+    "unit": "distinct preceding captured books for same token, including decision book",
+    "maximum_lookback_seconds": 120,
+    "common_endpoint_rule": "All P0-P4 arms score identical opportunities with complete eligible history"
+  },
+  "features": {
+    "market_probability": "midpoint of best bid and ask",
+    "current_state": ["logit_midpoint", "spread", "best_bid_size", "best_ask_size", "top_level_imbalance", "five_level_bid_depth", "five_level_ask_depth", "five_level_imbalance", "log_total_visible_depth", "log_seconds_to_close"],
+    "history": "the same ten current-state features at eight causally preceding captures, with age-in-seconds per history element; flatten the identical array for P3, preserve sequence for P4"
+  },
+  "arms": ["P0_raw_midpoint", "P1_logistic_calibration", "P2_current_state_XGBoost", "P3_history_XGBoost", "P4_GRU_seeds_7_17_29"],
+  "primary_scores": ["market_mean_log_loss", "market_mean_Brier"],
+  "primary_contrast": "P3_history_XGBoost versus P4_GRU on final markets; both also versus P0",
+  "uncertainty_unit": "market, with date/block sensitivity",
+  "selection_rule": "Tune within train/dev only; no final outcomes or final model scores before code, features, cadence, hyperparameters and comparison are frozen",
+  "limits": "Four UTC dates and partial final day; any result remains a narrow pilot."
+}

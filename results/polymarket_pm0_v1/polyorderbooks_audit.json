@@ -1,0 +1,168 @@
+{
+  "dataset": {
+    "concept_doi": "10.5281/zenodo.22084114",
+    "license": "CC BY 4.0",
+    "record_json_sha256": "184da22f1e647af52eafe32d5fa6b1ea0a8d6e7ffd7c200c56a38ae073bb1178",
+    "source_files": {
+      "updown_15m.parquet": {
+        "bytes": 16533699,
+        "rows": 239310,
+        "schema": "market_slug: string\ncoin: string\ncontract_length: string\ntoken_id: string\noutcome: string\nwinner: string\nis_winning_outcome: bool\nmarket_end_at: timestamp[us, tz=UTC]\ncaptured_at: timestamp[us, tz=UTC]\nseconds_to_close: double\nbid_prices: list<element: double>\n  child 0, element: double\nbid_sizes: list<element: double>\n  child 0, element: double\nask_prices: list<element: double>\n  child 0, element: double\nask_sizes: list<element: double>\n  child 0, element: double\nbest_bid: double\nbest_ask: double\ncrossed: bool",
+        "sha256": "d86191506e416026f460338b1b238c628b3fcee37f468e646b3a2256bd0be959",
+        "zenodo_md5": "61b5d660444bbadd26aa558073b38516"
+      },
+      "updown_4h.parquet": {
+        "bytes": 14648764,
+        "rows": 489941,
+        "schema": "market_slug: string\ncoin: string\ncontract_length: string\ntoken_id: string\noutcome: string\nwinner: string\nis_winning_outcome: bool\nmarket_end_at: timestamp[us, tz=UTC]\ncaptured_at: timestamp[us, tz=UTC]\nseconds_to_close: double\nbid_prices: list<element: double>\n  child 0, element: double\nbid_sizes: list<element: double>\n  child 0, element: double\nask_prices: list<element: double>\n  child 0, element: double\nask_sizes: list<element: double>\n  child 0, element: double\nbest_bid: double\nbest_ask: double\ncrossed: bool",
+        "sha256": "b31a73e7e738b7db0d5a650a8795cd17bc79fcf8aeed74e25b4760eadc50e342",
+        "zenodo_md5": "5a70070f0eda9257d78d5903092fbd34"
+      },
+      "updown_5m.parquet": {
+        "bytes": 14249234,
+        "rows": 167941,
+        "schema": "market_slug: string\ncoin: string\ncontract_length: string\ntoken_id: string\noutcome: string\nwinner: string\nis_winning_outcome: bool\nmarket_end_at: timestamp[us, tz=UTC]\ncaptured_at: timestamp[us, tz=UTC]\nseconds_to_close: double\nbid_prices: list<element: double>\n  child 0, element: double\nbid_sizes: list<element: double>\n  child 0, element: double\nask_prices: list<element: double>\n  child 0, element: double\nask_sizes: list<element: double>\n  child 0, element: double\nbest_bid: double\nbest_ask: double\ncrossed: bool",
+        "sha256": "166822b28caa160bb8321c548a8d2ef02b15ae0f06975dd05fced7f4ae118d11",
+        "zenodo_md5": "29e4653a5b88d3a4d839f187ddaa0771"
+      }
+    },
+    "version": "1.0.1",
+    "version_doi": "10.5281/zenodo.22084977",
+    "zenodo_record_id": 22084977
+  },
+  "identity": {
+    "coins": [
+      "bnb",
+      "btc",
+      "doge",
+      "eth",
+      "hype",
+      "sol",
+      "xrp",
+      "zec"
+    ],
+    "contract_lengths": [
+      "15m",
+      "4h",
+      "5m"
+    ],
+    "first_capture_utc": "2026-08-21T00:14:09+00:00",
+    "last_capture_utc": "2026-08-24T12:29:59+00:00",
+    "market_token_count": {
+      "2": 805
+    },
+    "markets_by_coin": {
+      "bnb": 100,
+      "btc": 104,
+      "doge": 104,
+      "eth": 99,
+      "hype": 91,
+      "sol": 112,
+      "xrp": 100,
+      "zec": 95
+    },
+    "markets_by_contract_length": {
+      "15m": 265,
+      "4h": 69,
+      "5m": 471
+    },
+    "markets_by_end_date_utc": {
+      "2026-08-21": 214,
+      "2026-08-22": 212,
+      "2026-08-23": 247,
+      "2026-08-24": 132
+    },
+    "markets_by_first_capture_date_utc": {
+      "2026-08-21": 225,
+      "2026-08-22": 212,
+      "2026-08-23": 246,
+      "2026-08-24": 122
+    },
+    "unique_markets": 805,
+    "unique_tokens": 1610
+  },
+  "integrity": {
+    "by_file": {
+      "updown_15m.parquet": {
+        "at_or_after_market_end": 238,
+        "crossed": 5689,
+        "empty_ask": 11093,
+        "empty_bid": 11099,
+        "locked": 1688,
+        "rows": 239310,
+        "valid_midpoint": 209741,
+        "valid_preclose_midpoint": 209741
+      },
+      "updown_4h.parquet": {
+        "at_or_after_market_end": 46,
+        "crossed": 5318,
+        "empty_ask": 1183,
+        "empty_bid": 1209,
+        "locked": 2048,
+        "rows": 489941,
+        "valid_midpoint": 480183,
+        "valid_preclose_midpoint": 480177
+      },
+      "updown_5m.parquet": {
+        "at_or_after_market_end": 464,
+        "crossed": 4482,
+        "empty_ask": 14171,
+        "empty_bid": 14157,
+        "locked": 964,
+        "rows": 167941,
+        "valid_midpoint": 134167,
+        "valid_preclose_midpoint": 134157
+      }
+    },
+    "cadence_gap_counts": {
+      "exactly_1s_gap": 515920,
+      "gap_gt_1s": 379662
+    },
+    "overall": {
+      "at_or_after_market_end": 748,
+      "crossed": 15489,
+      "empty_ask": 26447,
+      "empty_bid": 26465,
+      "locked": 4700,
+      "rows": 897192,
+      "valid_midpoint": 824091,
+      "valid_preclose_midpoint": 824075
+    },
+    "same_capture_abs_mid_sum_minus_1_quantiles": {
+      "p50": 0.0,
+      "p95": 1.1102230246251565e-16
+    },
+    "same_capture_complement_quote_checks": {
+      "same_capture_clean_pairs": 407738,
+      "sum_asks_lt_1": 35,
+      "sum_bids_gt_1": 38
+    },
+    "seconds_to_close_quantiles_by_length": {
+      "15m": {
+        "p00": 0.0,
+        "p10": 114.0,
+        "p100": 960.0,
+        "p50": 486.0,
+        "p90": 847.0
+      },
+      "4h": {
+        "p00": 0.0,
+        "p10": 2229.0,
+        "p100": 14699.0,
+        "p50": 8231.0,
+        "p90": 13214.0
+      },
+      "5m": {
+        "p00": 0.0,
+        "p10": 37.0,
+        "p100": 360.0,
+        "p50": 175.0,
+        "p90": 308.0
+      }
+    }
+  },
+  "limits": "No terminal outcome values read. Captured markets are sampled over a short Aug 2026 window; 1-second/sparse snapshots cannot prove exact passive fills or queue position.",
+  "outcome_blind": true,
+  "stage": "PM0",
+  "timestamp_semantics": "captured_at is collector snapshot time in UTC, not exchange event time; sparse changed-book rows may have >1s gaps without proving missing capture. market_end_at is scheduled resolution time."
+}
