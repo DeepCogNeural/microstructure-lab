@@ -1,0 +1,133 @@
+{
+  "allocated_gpu_hours": 1.3911111111111112,
+  "cpu_diagnostic_allocated_wall_hours": 0.01611111111111111,
+  "cpu_diagnostic_tasks": 5,
+  "gpu_update_tasks": 15,
+  "limits": "Start-to-completion allocation wall time is not SM or CPU utilization. Private scheduler logs with host/job details stay outside Git.",
+  "nonempty_stderr_count": 0,
+  "receipt": "infrastructure_neutral_allocation",
+  "stage": "FQ3",
+  "task_count": 20,
+  "tasks": {
+    "fq3_diagnostic_KGHM": {
+      "allocated_gpu_count": 0,
+      "allocated_wall_seconds": 14.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_diagnostic_PEKAO": {
+      "allocated_gpu_count": 0,
+      "allocated_wall_seconds": 8.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_diagnostic_PKNORLEN": {
+      "allocated_gpu_count": 0,
+      "allocated_wall_seconds": 14.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_diagnostic_PKOBP": {
+      "allocated_gpu_count": 0,
+      "allocated_wall_seconds": 12.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_diagnostic_PZU": {
+      "allocated_gpu_count": 0,
+      "allocated_wall_seconds": 10.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-06_KGHM": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 342.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-06_PEKAO": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 296.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-06_PKNORLEN": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 352.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-06_PKOBP": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 368.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-06_PZU": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 311.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-09_KGHM": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 321.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-09_PEKAO": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 310.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-09_PKNORLEN": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 337.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-09_PKOBP": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 315.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-09_PZU": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 347.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-11_KGHM": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 336.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-11_PEKAO": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 268.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-11_PKNORLEN": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 422.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-11_PKOBP": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 341.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "fq3_update_2017-11_PZU": {
+      "allocated_gpu_count": 1,
+      "allocated_wall_seconds": 342.0,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    }
+  }
+}
