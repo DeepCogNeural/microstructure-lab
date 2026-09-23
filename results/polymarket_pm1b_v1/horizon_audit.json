@@ -1,0 +1,309 @@
+{
+  "coverage": {
+    "dev": {
+      "15": {
+        "declared_markets": 241,
+        "future_invalid_book": 181,
+        "future_stale": 768,
+        "markets_with_usable_opportunity": 234,
+        "no_strictly_future_capture": 324,
+        "primary_opportunities": 8749,
+        "usable_by_coin": {
+          "bnb": 409,
+          "btc": 1107,
+          "doge": 1467,
+          "eth": 991,
+          "hype": 697,
+          "sol": 1873,
+          "xrp": 720,
+          "zec": 212
+        },
+        "usable_by_contract_length": {
+          "15m": 1692,
+          "4h": 4788,
+          "5m": 996
+        },
+        "usable_opportunities": 7476
+      },
+      "30": {
+        "declared_markets": 241,
+        "future_invalid_book": 303,
+        "future_stale": 828,
+        "markets_with_usable_opportunity": 234,
+        "no_strictly_future_capture": 130,
+        "primary_opportunities": 8749,
+        "usable_by_coin": {
+          "bnb": 400,
+          "btc": 1085,
+          "doge": 1486,
+          "eth": 1005,
+          "hype": 688,
+          "sol": 1899,
+          "xrp": 707,
+          "zec": 218
+        },
+        "usable_by_contract_length": {
+          "15m": 1642,
+          "4h": 4898,
+          "5m": 948
+        },
+        "usable_opportunities": 7488
+      },
+      "5": {
+        "declared_markets": 241,
+        "future_invalid_book": 91,
+        "markets_with_usable_opportunity": 235,
+        "no_strictly_future_capture": 929,
+        "primary_opportunities": 8749,
+        "usable_by_coin": {
+          "bnb": 413,
+          "btc": 1124,
+          "doge": 1548,
+          "eth": 1052,
+          "hype": 689,
+          "sol": 1949,
+          "xrp": 734,
+          "zec": 220
+        },
+        "usable_by_contract_length": {
+          "15m": 1720,
+          "4h": 4986,
+          "5m": 1023
+        },
+        "usable_opportunities": 7729
+      }
+    },
+    "final": {
+      "15": {
+        "declared_markets": 122,
+        "future_invalid_book": 93,
+        "future_stale": 331,
+        "markets_with_usable_opportunity": 120,
+        "no_strictly_future_capture": 93,
+        "primary_opportunities": 4621,
+        "usable_by_coin": {
+          "bnb": 523,
+          "btc": 961,
+          "doge": 625,
+          "eth": 533,
+          "hype": 564,
+          "sol": 234,
+          "xrp": 575,
+          "zec": 89
+        },
+        "usable_by_contract_length": {
+          "15m": 846,
+          "4h": 2736,
+          "5m": 522
+        },
+        "usable_opportunities": 4104
+      },
+      "30": {
+        "declared_markets": 122,
+        "future_invalid_book": 160,
+        "future_stale": 356,
+        "markets_with_usable_opportunity": 121,
+        "no_strictly_future_capture": 38,
+        "primary_opportunities": 4621,
+        "usable_by_coin": {
+          "bnb": 517,
+          "btc": 966,
+          "doge": 619,
+          "eth": 556,
+          "hype": 549,
+          "sol": 224,
+          "xrp": 559,
+          "zec": 77
+        },
+        "usable_by_contract_length": {
+          "15m": 822,
+          "4h": 2754,
+          "5m": 491
+        },
+        "usable_opportunities": 4067
+      },
+      "5": {
+        "declared_markets": 122,
+        "future_invalid_book": 35,
+        "markets_with_usable_opportunity": 122,
+        "no_strictly_future_capture": 432,
+        "primary_opportunities": 4621,
+        "usable_by_coin": {
+          "bnb": 531,
+          "btc": 975,
+          "doge": 635,
+          "eth": 563,
+          "hype": 559,
+          "sol": 228,
+          "xrp": 572,
+          "zec": 91
+        },
+        "usable_by_contract_length": {
+          "15m": 847,
+          "4h": 2768,
+          "5m": 539
+        },
+        "usable_opportunities": 4154
+      }
+    },
+    "purged_boundary": {
+      "15": {
+        "declared_markets": 11,
+        "future_invalid_book": 10,
+        "future_stale": 382,
+        "markets_with_usable_opportunity": 11,
+        "no_strictly_future_capture": 113,
+        "primary_opportunities": 3119,
+        "usable_by_coin": {
+          "bnb": 376,
+          "btc": 883,
+          "doge": 677,
+          "eth": 27,
+          "hype": 232,
+          "sol": 400,
+          "xrp": 9,
+          "zec": 10
+        },
+        "usable_by_contract_length": {
+          "15m": 27,
+          "4h": 2568,
+          "5m": 19
+        },
+        "usable_opportunities": 2614
+      },
+      "30": {
+        "declared_markets": 11,
+        "future_invalid_book": 13,
+        "future_stale": 359,
+        "markets_with_usable_opportunity": 11,
+        "no_strictly_future_capture": 40,
+        "primary_opportunities": 3119,
+        "usable_by_coin": {
+          "bnb": 419,
+          "btc": 873,
+          "doge": 737,
+          "eth": 27,
+          "hype": 220,
+          "sol": 413,
+          "xrp": 9,
+          "zec": 9
+        },
+        "usable_by_contract_length": {
+          "15m": 27,
+          "4h": 2662,
+          "5m": 18
+        },
+        "usable_opportunities": 2707
+      },
+      "5": {
+        "declared_markets": 11,
+        "future_invalid_book": 5,
+        "markets_with_usable_opportunity": 11,
+        "no_strictly_future_capture": 382,
+        "primary_opportunities": 3119,
+        "usable_by_coin": {
+          "bnb": 410,
+          "btc": 883,
+          "doge": 754,
+          "eth": 28,
+          "hype": 238,
+          "sol": 402,
+          "xrp": 9,
+          "zec": 8
+        },
+        "usable_by_contract_length": {
+          "15m": 28,
+          "4h": 2685,
+          "5m": 19
+        },
+        "usable_opportunities": 2732
+      }
+    },
+    "train": {
+      "15": {
+        "declared_markets": 431,
+        "future_invalid_book": 240,
+        "future_stale": 3336,
+        "markets_with_usable_opportunity": 392,
+        "no_strictly_future_capture": 892,
+        "primary_opportunities": 16947,
+        "usable_by_coin": {
+          "bnb": 1399,
+          "btc": 1447,
+          "doge": 1878,
+          "eth": 2424,
+          "hype": 1255,
+          "sol": 2165,
+          "xrp": 1696,
+          "zec": 215
+        },
+        "usable_by_contract_length": {
+          "15m": 2462,
+          "4h": 8872,
+          "5m": 1145
+        },
+        "usable_opportunities": 12479
+      },
+      "30": {
+        "declared_markets": 431,
+        "future_invalid_book": 348,
+        "future_stale": 3951,
+        "markets_with_usable_opportunity": 384,
+        "no_strictly_future_capture": 213,
+        "primary_opportunities": 16947,
+        "usable_by_coin": {
+          "bnb": 1372,
+          "btc": 1470,
+          "doge": 1921,
+          "eth": 2405,
+          "hype": 1190,
+          "sol": 2171,
+          "xrp": 1697,
+          "zec": 209
+        },
+        "usable_by_contract_length": {
+          "15m": 2420,
+          "4h": 8933,
+          "5m": 1082
+        },
+        "usable_opportunities": 12435
+      },
+      "5": {
+        "declared_markets": 431,
+        "future_invalid_book": 121,
+        "markets_with_usable_opportunity": 394,
+        "no_strictly_future_capture": 5589,
+        "primary_opportunities": 16947,
+        "usable_by_coin": {
+          "bnb": 1202,
+          "btc": 1261,
+          "doge": 1790,
+          "eth": 2137,
+          "hype": 1127,
+          "sol": 2054,
+          "xrp": 1458,
+          "zec": 208
+        },
+        "usable_by_contract_length": {
+          "15m": 2162,
+          "4h": 7989,
+          "5m": 1086
+        },
+        "usable_opportunities": 11237
+      }
+    }
+  },
+  "future_lookup_rule": "latest Up book captured strictly after decision and at/before decision+h; target capture age <=5 seconds; valid two-sided unlocked/uncrossed book. Count only; no future-price change or terminal labels inspected.",
+  "horizons_seconds": [
+    5,
+    15,
+    30
+  ],
+  "kind": "outcome_blind_horizon_coverage",
+  "limits": "Denominators alone choose primary horizon. Future quote as-of capture is collector time, not exchange event time. No repricing model or target values were inspected.",
+  "market_split_sha256": "5fb3f66288048c1f2eb19a924a16211255d4de87f000d13343bf8355ddaae0ea",
+  "pm1a_config_sha256": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+  "source_audit_sha256": "71d778c83edbcf6143e525bcf22f2ce32517cc40c7559468988111731e8d3925",
+  "source_version_doi": "10.5281/zenodo.22084977",
+  "stage": "PM1B"
+}
