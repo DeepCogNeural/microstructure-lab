@@ -1,0 +1,22 @@
+{
+  "dev_result_sha256": "b337f9d6f4535914e441d007fda5e585e67dfe69250fc3da428c08a434d47e40",
+  "dev_target_manifest_sha256": "5e50de6b778dc4455a41ecf42b16f24f54c52d48625c706843e23fd7038af740",
+  "final_outcomes_viewed": false,
+  "final_target_built": false,
+  "fitted_model_sha256_from_dev_receipt": {
+    "B1_current_state": "2a7860ef9d5ba2e30177248f8950bcc3d3f9ba54cb3ea2d1e5c3bbeba1ffb703",
+    "B2_same_history": "a55cbab9575469326dc05425c2adcb97300e1094c394853ba36b689a50cd2151",
+    "B3_gru_seed17": "aad5bc3b2bddaee92da46161256a2e4bbee12dced8716100fdbfb4e448ae5224",
+    "B3_gru_seed29": "c1c0e60be0877d215aee50ea47df31ce6c1fcf24ce695b033bdef97b8d12163f",
+    "B3_gru_seed7": "2a300a2af1c37f02b572a91a06d1ed610cba5d0ef0218d3142c69ec468e12442"
+  },
+  "frozen_runner_commit": "067f6db5219361be4a6df5d95c9abff33befa4ef",
+  "limits": "Hashes bind private train/dev inputs, fitted models and dev predictions without publishing row arrays or per-market scores.",
+  "model_config_sha256": "9a1c1f23e1d6bdf3552606370ae860930c9cbf16dd2cad8c02ecdf1e6e881bca",
+  "private_dev_predictions_sha256": "20bc08bc0d4d0b7d533a37327ff94a0a8a80d83b1ad39ea1c39000bb5ccdda49",
+  "private_dev_target_sha256": "bef41a8f6dab93f9153a570c16ecd3c8b138926f8ca85c57900228e1ee194988",
+  "private_train_target_sha256": "fc8f5692d4b9803aa101849134df131413e1e8b214bb3516c92dccd3ba18dc59",
+  "stage": "PM1B",
+  "status": "DEV_ONLY_FINAL_CLOSED",
+  "train_target_manifest_sha256": "c74e18dc5c2b24169a0c645b189f5307a5c75eb2bf97532e4cbfedc8b92c1a40"
+}
