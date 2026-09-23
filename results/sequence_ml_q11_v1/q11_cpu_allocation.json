@@ -1,0 +1,41 @@
+{
+  "allocated_cpu_core_hours": 1.2644444444444445,
+  "explicit_zero_exit_count": 5,
+  "limits": "Four CPU cores allocated per task; allocation wall time includes data load and is not compute utilization. Private scheduler logs remain outside Git.",
+  "nonempty_stderr_count": 0,
+  "receipt": "infrastructure_neutral_allocation",
+  "stage": "Q11",
+  "task_count": 5,
+  "tasks": {
+    "q11_execution_KGHM": {
+      "allocated_cpu_seconds": 239.0,
+      "cpu_count": 4,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "q11_execution_PEKAO": {
+      "allocated_cpu_seconds": 161.0,
+      "cpu_count": 4,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "q11_execution_PKNORLEN": {
+      "allocated_cpu_seconds": 233.0,
+      "cpu_count": 4,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "q11_execution_PKOBP": {
+      "allocated_cpu_seconds": 285.0,
+      "cpu_count": 4,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    },
+    "q11_execution_PZU": {
+      "allocated_cpu_seconds": 220.0,
+      "cpu_count": 4,
+      "explicit_exit_zero": true,
+      "stderr_bytes": 0
+    }
+  }
+}

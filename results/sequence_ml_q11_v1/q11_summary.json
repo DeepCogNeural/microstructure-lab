@@ -1,0 +1,333 @@
+{
+  "both_selected": {
+    "Q10_source_only_transfer": {
+      "B1_history_xgboost": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -6.351473861460326,
+          "equal_stock_day_crossed_bps": -6.351473861460326,
+          "pooled_selected_crossed_bps_descriptive": -6.038508967913625,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.121486225314381,
+          "equal_stock_day_crossed_bps": -7.121486225314381,
+          "pooled_selected_crossed_bps_descriptive": -6.809258548969388,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.950577888141885,
+          "equal_stock_day_crossed_bps": -7.950577888141885,
+          "pooled_selected_crossed_bps_descriptive": -7.677174013956909,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        }
+      },
+      "S0_seed_mean": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -6.300428736937231,
+          "equal_stock_day_crossed_bps": -6.300428736937231,
+          "pooled_selected_crossed_bps_descriptive": -5.991045752107709,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.078169545574565,
+          "equal_stock_day_crossed_bps": -7.078169545574565,
+          "pooled_selected_crossed_bps_descriptive": -6.767823181959783,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.923027820973959,
+          "equal_stock_day_crossed_bps": -7.923027820973959,
+          "pooled_selected_crossed_bps_descriptive": -7.649566398291853,
+          "selected_sum_across_cells": 19043,
+          "undefined_cells": []
+        }
+      }
+    },
+    "Q8_within_stock": {
+      "B1_history_xgboost": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -6.302543111877534,
+          "equal_stock_day_crossed_bps": -6.302543111877534,
+          "pooled_selected_crossed_bps_descriptive": -6.070243399417274,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.1171174736373315,
+          "equal_stock_day_crossed_bps": -7.1171174736373315,
+          "pooled_selected_crossed_bps_descriptive": -6.829207335223775,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.969242735898947,
+          "equal_stock_day_crossed_bps": -7.969242735898947,
+          "pooled_selected_crossed_bps_descriptive": -7.676794909940908,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        }
+      },
+      "S0_seed_mean": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -6.2705219165629416,
+          "equal_stock_day_crossed_bps": -6.2705219165629416,
+          "pooled_selected_crossed_bps_descriptive": -6.0457325611019135,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.09703585316155,
+          "equal_stock_day_crossed_bps": -7.09703585316155,
+          "pooled_selected_crossed_bps_descriptive": -6.813069026541037,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.956493689922907,
+          "equal_stock_day_crossed_bps": -7.956493689922907,
+          "pooled_selected_crossed_bps_descriptive": -7.66665940280636,
+          "selected_sum_across_cells": 19992,
+          "undefined_cells": []
+        }
+      }
+    }
+  },
+  "cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "common_opportunities": 615488,
+  "config_sha256": "1cf15e13c44a5173e9efa98f85dc4527881155e656294c593044a52257c44577",
+  "dates": [
+    "2017-06-01",
+    "2017-06-02",
+    "2017-06-05",
+    "2017-06-06",
+    "2017-06-07",
+    "2017-06-08",
+    "2017-06-09",
+    "2017-06-12",
+    "2017-06-13",
+    "2017-06-14",
+    "2017-06-16",
+    "2017-06-19",
+    "2017-06-20",
+    "2017-06-21",
+    "2017-06-22",
+    "2017-06-23",
+    "2017-06-26",
+    "2017-06-27",
+    "2017-06-28",
+    "2017-06-29",
+    "2017-06-30",
+    "2017-09-01",
+    "2017-09-04",
+    "2017-09-05",
+    "2017-09-06",
+    "2017-09-07",
+    "2017-09-08",
+    "2017-09-11",
+    "2017-09-12",
+    "2017-09-13",
+    "2017-09-14",
+    "2017-09-15",
+    "2017-09-18",
+    "2017-09-19",
+    "2017-09-20",
+    "2017-09-21",
+    "2017-09-22",
+    "2017-09-25",
+    "2017-09-26",
+    "2017-09-27",
+    "2017-09-28",
+    "2017-09-29",
+    "2017-11-02",
+    "2017-11-03",
+    "2017-11-06",
+    "2017-11-07",
+    "2017-11-08",
+    "2017-11-09",
+    "2017-11-10",
+    "2017-11-13",
+    "2017-11-14",
+    "2017-11-15",
+    "2017-11-16",
+    "2017-11-17",
+    "2017-11-20",
+    "2017-11-21",
+    "2017-11-22",
+    "2017-11-23",
+    "2017-11-24",
+    "2017-11-27",
+    "2017-11-28",
+    "2017-11-29",
+    "2017-11-30"
+  ],
+  "execution": {
+    "Q10_source_only_transfer": {
+      "B1_history_xgboost": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -6.781427335177466,
+          "equal_stock_day_crossed_bps": -6.781427335177466,
+          "pooled_selected_crossed_bps_descriptive": -6.462747997075805,
+          "selected_sum_across_cells": 27080,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.331866781198972,
+          "equal_stock_day_crossed_bps": -7.331866781198972,
+          "pooled_selected_crossed_bps_descriptive": -7.01399151381113,
+          "selected_sum_across_cells": 27080,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -8.011832466813743,
+          "equal_stock_day_crossed_bps": -8.011832466813743,
+          "pooled_selected_crossed_bps_descriptive": -7.721316254601147,
+          "selected_sum_across_cells": 27080,
+          "undefined_cells": []
+        }
+      },
+      "S0_seed_mean": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.353693527350492,
+          "equal_stock_day_crossed_bps": -7.353693527350492,
+          "pooled_selected_crossed_bps_descriptive": -7.55582197465694,
+          "selected_sum_across_cells": 83363,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.818661471724564,
+          "equal_stock_day_crossed_bps": -7.818661471724564,
+          "pooled_selected_crossed_bps_descriptive": -8.035733502936981,
+          "selected_sum_across_cells": 83363,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -8.568341578919313,
+          "equal_stock_day_crossed_bps": -8.568341578919313,
+          "pooled_selected_crossed_bps_descriptive": -8.807586700340064,
+          "selected_sum_across_cells": 83363,
+          "undefined_cells": []
+        }
+      }
+    },
+    "Q8_within_stock": {
+      "B1_history_xgboost": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.019218221583154,
+          "equal_stock_day_crossed_bps": -7.019218221583154,
+          "pooled_selected_crossed_bps_descriptive": -6.830325142739901,
+          "selected_sum_across_cells": 31634,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.540934879190424,
+          "equal_stock_day_crossed_bps": -7.540934879190424,
+          "pooled_selected_crossed_bps_descriptive": -7.328329949024952,
+          "selected_sum_across_cells": 31634,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -8.189451860094241,
+          "equal_stock_day_crossed_bps": -8.189451860094241,
+          "pooled_selected_crossed_bps_descriptive": -7.987414508307054,
+          "selected_sum_across_cells": 31634,
+          "undefined_cells": []
+        }
+      },
+      "S0_seed_mean": {
+        "0": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.164535789524627,
+          "equal_stock_day_crossed_bps": -7.164535789524627,
+          "pooled_selected_crossed_bps_descriptive": -7.286793428758206,
+          "selected_sum_across_cells": 75562,
+          "undefined_cells": []
+        },
+        "1": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -7.6341082442713715,
+          "equal_stock_day_crossed_bps": -7.6341082442713715,
+          "pooled_selected_crossed_bps_descriptive": -7.760506987729301,
+          "selected_sum_across_cells": 75562,
+          "undefined_cells": []
+        },
+        "5": {
+          "cells": 315,
+          "common_opportunities_sum_across_cells": 615488,
+          "defined_cell_mean_descriptive": -8.391678830230466,
+          "equal_stock_day_crossed_bps": -8.391678830230466,
+          "pooled_selected_crossed_bps_descriptive": -8.531359828112565,
+          "selected_sum_across_cells": 75562,
+          "undefined_cells": []
+        }
+      }
+    }
+  },
+  "input_receipt_sha256": {
+    "KGHM": "77458f5c1c7bdc9227a84c130c42212d7e3a0d8f1ee87b689cfc3b2f25b38f5a",
+    "PEKAO": "74596e0f2824adb4c7d15724d60edccf11615f495ff2c812db32d842ca60fdec",
+    "PKNORLEN": "4ace60bde378d7a71b81a04491dd33b8370cf57cfd5b7594b11e6c03fea22ab4",
+    "PKOBP": "2a519a979ceacb9b01efb77e5c457efb49e67fdda735ae91e064ba1a249eb7b4",
+    "PZU": "d50fc795bce80067f46791f5b4ebcd15f380496e15ef5b0a461dc2b38acff8a7"
+  },
+  "limits": "Visible crossing at original t+20 exit and 0/1/5 delayed entries on same rows. Selected opportunity sets differ by model. No actual fills, fees, queue, impact, inventory or realized PnL.",
+  "retrospective_only": true,
+  "source_commit": "b1e1f6e63fca9d5e5b6613f14beb38a048110206",
+  "stage": "Q11",
+  "stock_day_cells": 315,
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ]
+}
