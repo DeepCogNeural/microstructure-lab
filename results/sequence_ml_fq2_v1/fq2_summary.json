@@ -1,0 +1,843 @@
+{
+  "config_sha256": "7f8015ac6161f306b0b3633dac1cab97a021a02aa85859973dfab861775ab669",
+  "finalists_for_FQ3": "If all sizes complete, carry 200k B1 and all three 200k S0 seeds into FQ3; no June/Sep/Nov-driven size or seed selection. If training limited, retain flag and do not make adequate-training claim.",
+  "input_run_sha256": {
+    "100000": {
+      "KGHM": "131a7eb20bb7376195342ac7cb2fa05ebdf8db964e7943434de81447b7dfe597",
+      "PEKAO": "fc4457216cadbbce87d9177648d6e5569a650a6898350912a40d2183d08a12b3",
+      "PKNORLEN": "f804c3a3e6f7698ba3c7bcfb74d6fa2abc873dc6037642796c396908346daf4a",
+      "PKOBP": "0f31585917ea7e593d89fe421659fd430c37f7e2ee022c97f4cdaecd0e7fc847",
+      "PZU": "4773fdccce7778210071dd9bda04f72e315962b6d08cda0461fb3ce36ed765d9"
+    },
+    "200000": {
+      "KGHM": "5f23c50c32cee3f54de8ed2a2b8a4be443ea7b7554f39dc9ddf92b6571b93959",
+      "PEKAO": "8cbae1fa5bc8d9c77206187cc3d0471dfb27548d4c6f0f4510bbbfc3431f7e57",
+      "PKNORLEN": "f9c3811a481d2d08321c3e0e868c4bd1036541f2f5ed2808f899441d9e2d9eca",
+      "PKOBP": "03dac5f35c360440437952e1f1e30a52d002ca9ffd25e390692015fca05052c3",
+      "PZU": "15e589bf43a2c49b444773b3ed7858d6ec4171fa858ba2e0ba7c7f34319e2293"
+    },
+    "50000": {
+      "KGHM": "5036246597c4b2442a661c4a831411cb0c7c558279532ee9ea0a8028533292f7",
+      "PEKAO": "ce4ec609f88ecba01d9d9f395d2891b19788aecf8ad078be0a51d42e2219afa7",
+      "PKNORLEN": "a086a408ee6b87dc08d934477376d2939b4b23a41317fb7de4bdba9253cea2a0",
+      "PKOBP": "f86b42ca9a8857c54403e671b3fe4707226e27a757518624b8f20bf15519f5eb",
+      "PZU": "d5871cd4107cfb8be40239b9f0b15297e717bdb1ecbb9f70db102ce38dccfee7"
+    }
+  },
+  "levels": {
+    "100000": {
+      "dev_cells_per_arm": 90,
+      "dev_dates": [
+        "2017-04-03",
+        "2017-04-04",
+        "2017-04-05",
+        "2017-04-06",
+        "2017-04-07",
+        "2017-04-10",
+        "2017-04-11",
+        "2017-04-12",
+        "2017-04-13",
+        "2017-04-18",
+        "2017-04-19",
+        "2017-04-20",
+        "2017-04-21",
+        "2017-04-24",
+        "2017-04-25",
+        "2017-04-26",
+        "2017-04-27",
+        "2017-04-28"
+      ],
+      "dev_rows_per_arm": 210290,
+      "evaluation_cells_per_arm": 315,
+      "evaluation_dates": [
+        "2017-06-01",
+        "2017-06-02",
+        "2017-06-05",
+        "2017-06-06",
+        "2017-06-07",
+        "2017-06-08",
+        "2017-06-09",
+        "2017-06-12",
+        "2017-06-13",
+        "2017-06-14",
+        "2017-06-16",
+        "2017-06-19",
+        "2017-06-20",
+        "2017-06-21",
+        "2017-06-22",
+        "2017-06-23",
+        "2017-06-26",
+        "2017-06-27",
+        "2017-06-28",
+        "2017-06-29",
+        "2017-06-30",
+        "2017-09-01",
+        "2017-09-04",
+        "2017-09-05",
+        "2017-09-06",
+        "2017-09-07",
+        "2017-09-08",
+        "2017-09-11",
+        "2017-09-12",
+        "2017-09-13",
+        "2017-09-14",
+        "2017-09-15",
+        "2017-09-18",
+        "2017-09-19",
+        "2017-09-20",
+        "2017-09-21",
+        "2017-09-22",
+        "2017-09-25",
+        "2017-09-26",
+        "2017-09-27",
+        "2017-09-28",
+        "2017-09-29",
+        "2017-11-02",
+        "2017-11-03",
+        "2017-11-06",
+        "2017-11-07",
+        "2017-11-08",
+        "2017-11-09",
+        "2017-11-10",
+        "2017-11-13",
+        "2017-11-14",
+        "2017-11-15",
+        "2017-11-16",
+        "2017-11-17",
+        "2017-11-20",
+        "2017-11-21",
+        "2017-11-22",
+        "2017-11-23",
+        "2017-11-24",
+        "2017-11-27",
+        "2017-11-28",
+        "2017-11-29",
+        "2017-11-30"
+      ],
+      "evaluation_rows_per_arm": 625118,
+      "fit_seconds_by_arm": {
+        "B1_history_xgboost": 28.122871017083526,
+        "S0_history_gru_seed17": 320.0165269635618,
+        "S0_history_gru_seed29": 315.3965818490833,
+        "S0_history_gru_seed7": 307.8088287226856
+      },
+      "full_denominator_result": {
+        "dev_mean_ic": {
+          "B1_history_xgboost": 0.2810189982403004,
+          "S0_history_gru_seed17": 0.28399721898790586,
+          "S0_history_gru_seed29": 0.2833010080824919,
+          "S0_history_gru_seed7": 0.28337714049854174
+        },
+        "evaluation_mean_ic": {
+          "B1_history_xgboost": 0.2852397740452971,
+          "S0_history_gru_seed17": 0.29238114733365406,
+          "S0_history_gru_seed29": 0.289585319924818,
+          "S0_history_gru_seed7": 0.2917898160681931
+        },
+        "paired_vs_B1": {
+          "S0_history_gru_seed17": {
+            "ci95_block5": [
+              0.005182627432157005,
+              0.009169062036678055
+            ],
+            "mean_delta_ic": 0.007141373288356888,
+            "month_delta": {
+              "2017-06": 0.006219418589595637,
+              "2017-09": 0.004209550004222902,
+              "2017-11": 0.010995151271252128
+            },
+            "stock_delta": {
+              "KGHM": 0.005017992770282366,
+              "PEKAO": 0.011519192240900571,
+              "PKNORLEN": -0.001543451892149026,
+              "PKOBP": 0.006177033760923469,
+              "PZU": 0.014536099561827063
+            }
+          },
+          "S0_history_gru_seed29": {
+            "ci95_block5": [
+              0.002543293900956692,
+              0.006244685001057542
+            ],
+            "mean_delta_ic": 0.004345545879520873,
+            "month_delta": {
+              "2017-06": 0.007167791246772411,
+              "2017-09": -0.00035442714847132544,
+              "2017-11": 0.006223273540261533
+            },
+            "stock_delta": {
+              "KGHM": 0.0028502027457550944,
+              "PEKAO": 0.006321687636935627,
+              "PKNORLEN": -0.013021571762788486,
+              "PKOBP": 0.007839684492446413,
+              "PZU": 0.017737726285255714
+            }
+          },
+          "S0_history_gru_seed7": {
+            "ci95_block5": [
+              0.004536081231661173,
+              0.008594171536872516
+            ],
+            "mean_delta_ic": 0.00655004202289594,
+            "month_delta": {
+              "2017-06": 0.007096398474793842,
+              "2017-09": 0.002071849124718231,
+              "2017-11": 0.010481878469175745
+            },
+            "stock_delta": {
+              "KGHM": 0.00032180866798214505,
+              "PEKAO": 0.00605381543834719,
+              "PKNORLEN": -0.0027353308981516097,
+              "PKOBP": 0.009025639069431107,
+              "PZU": 0.020084277836870862
+            }
+          },
+          "S0_seed_mean": {
+            "ci95_block5": [
+              0.004159672300295821,
+              0.007915919713332404
+            ],
+            "leave_one_stock_out_delta": {
+              "KGHM": 0.006832900147487405,
+              "PEKAO": 0.005524175886473758,
+              "PKNORLEN": 0.008957096708913133,
+              "PKOBP": 0.005595204052588957,
+              "PZU": 0.003152225189159571
+            },
+            "mean_delta_ic": 0.006012320396924566,
+            "month_delta": {
+              "2017-06": 0.006827869437053961,
+              "2017-09": 0.001975657326823267,
+              "2017-11": 0.009233434426896468
+            },
+            "stock_delta": {
+              "KGHM": 0.0027300013946731988,
+              "PEKAO": 0.007964898438727797,
+              "PKNORLEN": -0.005766784851029709,
+              "PKOBP": 0.007680785774266999,
+              "PZU": 0.017452701227984542
+            }
+          }
+        }
+      },
+      "gpu_device_occupancy_seconds": 953.5809915997088,
+      "inference_seconds_by_arm": {
+        "B1_history_xgboost": 0.876537287607789,
+        "S0_history_gru_seed17": 3.4066249672323465,
+        "S0_history_gru_seed29": 3.497367637231946,
+        "S0_history_gru_seed7": 3.45506145991385
+      },
+      "peak_gpu_allocated_bytes": 133907456,
+      "peak_process_rss_bytes": 1722486784,
+      "per_stock": {
+        "KGHM": {
+          "dev_rows": 54921,
+          "eval_rows": 138072
+        },
+        "PEKAO": {
+          "dev_rows": 28941,
+          "eval_rows": 77051
+        },
+        "PKNORLEN": {
+          "dev_rows": 33768,
+          "eval_rows": 145813
+        },
+        "PKOBP": {
+          "dev_rows": 46358,
+          "eval_rows": 133051
+        },
+        "PZU": {
+          "dev_rows": 46302,
+          "eval_rows": 131131
+        }
+      },
+      "total_task_wall_seconds": 1061.888983918354,
+      "training_endpoint_identity_sha256": {
+        "KGHM": "1560db6b9bd421d41871067abe58c5b4db5113715f1eef867da237d003dded31",
+        "PEKAO": "8c95885e12e5ae010602907176fea4da160380c96719e1dc9d1d07c63121b7ce",
+        "PKNORLEN": "424ff04c4b4a73b7cacbeea5112478b8836d50c7152977254c1b73981f1c0153",
+        "PKOBP": "3e94f927e7ead95ec7fc1ebaafdc0641a7283ed3959818ac841518511212067e",
+        "PZU": "c66c2ffb4d8b6c04f4c00ac3766af8867deb81ea1ca6f6d4180ba6be402a6278"
+      },
+      "training_limited": {
+        "KGHM": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PEKAO": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKNORLEN": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKOBP": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PZU": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        }
+      },
+      "training_size_per_stock": 100000,
+      "undefined_cells": {
+        "dev": [],
+        "evaluation": []
+      }
+    },
+    "200000": {
+      "dev_cells_per_arm": 90,
+      "dev_dates": [
+        "2017-04-03",
+        "2017-04-04",
+        "2017-04-05",
+        "2017-04-06",
+        "2017-04-07",
+        "2017-04-10",
+        "2017-04-11",
+        "2017-04-12",
+        "2017-04-13",
+        "2017-04-18",
+        "2017-04-19",
+        "2017-04-20",
+        "2017-04-21",
+        "2017-04-24",
+        "2017-04-25",
+        "2017-04-26",
+        "2017-04-27",
+        "2017-04-28"
+      ],
+      "dev_rows_per_arm": 210290,
+      "evaluation_cells_per_arm": 315,
+      "evaluation_dates": [
+        "2017-06-01",
+        "2017-06-02",
+        "2017-06-05",
+        "2017-06-06",
+        "2017-06-07",
+        "2017-06-08",
+        "2017-06-09",
+        "2017-06-12",
+        "2017-06-13",
+        "2017-06-14",
+        "2017-06-16",
+        "2017-06-19",
+        "2017-06-20",
+        "2017-06-21",
+        "2017-06-22",
+        "2017-06-23",
+        "2017-06-26",
+        "2017-06-27",
+        "2017-06-28",
+        "2017-06-29",
+        "2017-06-30",
+        "2017-09-01",
+        "2017-09-04",
+        "2017-09-05",
+        "2017-09-06",
+        "2017-09-07",
+        "2017-09-08",
+        "2017-09-11",
+        "2017-09-12",
+        "2017-09-13",
+        "2017-09-14",
+        "2017-09-15",
+        "2017-09-18",
+        "2017-09-19",
+        "2017-09-20",
+        "2017-09-21",
+        "2017-09-22",
+        "2017-09-25",
+        "2017-09-26",
+        "2017-09-27",
+        "2017-09-28",
+        "2017-09-29",
+        "2017-11-02",
+        "2017-11-03",
+        "2017-11-06",
+        "2017-11-07",
+        "2017-11-08",
+        "2017-11-09",
+        "2017-11-10",
+        "2017-11-13",
+        "2017-11-14",
+        "2017-11-15",
+        "2017-11-16",
+        "2017-11-17",
+        "2017-11-20",
+        "2017-11-21",
+        "2017-11-22",
+        "2017-11-23",
+        "2017-11-24",
+        "2017-11-27",
+        "2017-11-28",
+        "2017-11-29",
+        "2017-11-30"
+      ],
+      "evaluation_rows_per_arm": 625118,
+      "fit_seconds_by_arm": {
+        "B1_history_xgboost": 46.264332661405206,
+        "S0_history_gru_seed17": 515.9793545734137,
+        "S0_history_gru_seed29": 517.9797765053809,
+        "S0_history_gru_seed7": 540.4732728730887
+      },
+      "full_denominator_result": {
+        "dev_mean_ic": {
+          "B1_history_xgboost": 0.2828999344739635,
+          "S0_history_gru_seed17": 0.28925576128259556,
+          "S0_history_gru_seed29": 0.2904315047251562,
+          "S0_history_gru_seed7": 0.2890997957049849
+        },
+        "evaluation_mean_ic": {
+          "B1_history_xgboost": 0.28643744708270286,
+          "S0_history_gru_seed17": 0.2963176790074829,
+          "S0_history_gru_seed29": 0.2973585118006209,
+          "S0_history_gru_seed7": 0.298842872609709
+        },
+        "paired_vs_B1": {
+          "S0_history_gru_seed17": {
+            "ci95_block5": [
+              0.007805391787124807,
+              0.012135981924521573
+            ],
+            "mean_delta_ic": 0.009880231924780115,
+            "month_delta": {
+              "2017-06": 0.012077002475883352,
+              "2017-09": 0.006486941162657217,
+              "2017-11": 0.011076752135799776
+            },
+            "stock_delta": {
+              "KGHM": 0.0064941680962118786,
+              "PEKAO": 0.009506104997712561,
+              "PKNORLEN": 0.00033915026182652664,
+              "PKOBP": 0.009838996792726803,
+              "PZU": 0.023222739475422815
+            }
+          },
+          "S0_history_gru_seed29": {
+            "ci95_block5": [
+              0.008535416166824215,
+              0.013181806887147016
+            ],
+            "mean_delta_ic": 0.010921064717918118,
+            "month_delta": {
+              "2017-06": 0.01306452378588891,
+              "2017-09": 0.007063493972543109,
+              "2017-11": 0.012635176395322337
+            },
+            "stock_delta": {
+              "KGHM": 0.0030084832956189782,
+              "PEKAO": 0.015508378066899095,
+              "PKNORLEN": -0.001784120504866301,
+              "PKOBP": 0.015174330381132787,
+              "PZU": 0.022698252350806036
+            }
+          },
+          "S0_history_gru_seed7": {
+            "ci95_block5": [
+              0.009904479146455553,
+              0.015016620351974312
+            ],
+            "mean_delta_ic": 0.012405425527006146,
+            "month_delta": {
+              "2017-06": 0.01458617077999613,
+              "2017-09": 0.008077585381220085,
+              "2017-11": 0.014552520419802227
+            },
+            "stock_delta": {
+              "KGHM": 0.008260748503598389,
+              "PEKAO": 0.016829347520810087,
+              "PKNORLEN": -0.00270576591829594,
+              "PKOBP": 0.014844838040763135,
+              "PZU": 0.024797959488155056
+            }
+          },
+          "S0_seed_mean": {
+            "ci95_block5": [
+              0.008849792668498281,
+              0.013380564270218125
+            ],
+            "leave_one_stock_out_delta": {
+              "KGHM": 0.012355850912757725,
+              "PEKAO": 0.01034914835525835,
+              "PKNORLEN": 0.014182028917488137,
+              "PKOBP": 0.010514620469491599,
+              "PZU": 0.007942888294511502
+            },
+            "mean_delta_ic": 0.011068907389901463,
+            "month_delta": {
+              "2017-06": 0.013242565680589468,
+              "2017-09": 0.007209340172140139,
+              "2017-11": 0.012754816316974782
+            },
+            "stock_delta": {
+              "KGHM": 0.005921133298476414,
+              "PEKAO": 0.01394794352847392,
+              "PKNORLEN": -0.0013835787204452383,
+              "PKOBP": 0.013286055071540914,
+              "PZU": 0.0235729837714613
+            }
+          }
+        }
+      },
+      "gpu_device_occupancy_seconds": 1584.5686745699495,
+      "inference_seconds_by_arm": {
+        "B1_history_xgboost": 0.8826483711600304,
+        "S0_history_gru_seed17": 3.4502720944583416,
+        "S0_history_gru_seed29": 3.2721534967422485,
+        "S0_history_gru_seed7": 3.4138450268656015
+      },
+      "peak_gpu_allocated_bytes": 133907456,
+      "peak_process_rss_bytes": 1894772736,
+      "per_stock": {
+        "KGHM": {
+          "dev_rows": 54921,
+          "eval_rows": 138072
+        },
+        "PEKAO": {
+          "dev_rows": 28941,
+          "eval_rows": 77051
+        },
+        "PKNORLEN": {
+          "dev_rows": 33768,
+          "eval_rows": 145813
+        },
+        "PKOBP": {
+          "dev_rows": 46358,
+          "eval_rows": 133051
+        },
+        "PZU": {
+          "dev_rows": 46302,
+          "eval_rows": 131131
+        }
+      },
+      "total_task_wall_seconds": 1720.4538478497416,
+      "training_endpoint_identity_sha256": {
+        "KGHM": "9d361d90dc438de89add714eaf2325704607bb77c607cedb16c6376d866ba7da",
+        "PEKAO": "eeb7de743725b3394690d28c159a1a07c76e65bf40d749f93f07c77b680bd53b",
+        "PKNORLEN": "59bb7fc1e846ca662b9180130cc47440644886949b25e11e656cf0942526035b",
+        "PKOBP": "ac16826797556fbca0109715a720134c06df518be6d84de47270bc50b28ccb26",
+        "PZU": "fc8477b3c026f5c3ad8ab971ef2cd4e545fd94767497a307d05d6ba6051a459b"
+      },
+      "training_limited": {
+        "KGHM": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PEKAO": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKNORLEN": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKOBP": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PZU": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        }
+      },
+      "training_size_per_stock": 200000,
+      "undefined_cells": {
+        "dev": [],
+        "evaluation": []
+      }
+    },
+    "50000": {
+      "dev_cells_per_arm": 90,
+      "dev_dates": [
+        "2017-04-03",
+        "2017-04-04",
+        "2017-04-05",
+        "2017-04-06",
+        "2017-04-07",
+        "2017-04-10",
+        "2017-04-11",
+        "2017-04-12",
+        "2017-04-13",
+        "2017-04-18",
+        "2017-04-19",
+        "2017-04-20",
+        "2017-04-21",
+        "2017-04-24",
+        "2017-04-25",
+        "2017-04-26",
+        "2017-04-27",
+        "2017-04-28"
+      ],
+      "dev_rows_per_arm": 210290,
+      "evaluation_cells_per_arm": 315,
+      "evaluation_dates": [
+        "2017-06-01",
+        "2017-06-02",
+        "2017-06-05",
+        "2017-06-06",
+        "2017-06-07",
+        "2017-06-08",
+        "2017-06-09",
+        "2017-06-12",
+        "2017-06-13",
+        "2017-06-14",
+        "2017-06-16",
+        "2017-06-19",
+        "2017-06-20",
+        "2017-06-21",
+        "2017-06-22",
+        "2017-06-23",
+        "2017-06-26",
+        "2017-06-27",
+        "2017-06-28",
+        "2017-06-29",
+        "2017-06-30",
+        "2017-09-01",
+        "2017-09-04",
+        "2017-09-05",
+        "2017-09-06",
+        "2017-09-07",
+        "2017-09-08",
+        "2017-09-11",
+        "2017-09-12",
+        "2017-09-13",
+        "2017-09-14",
+        "2017-09-15",
+        "2017-09-18",
+        "2017-09-19",
+        "2017-09-20",
+        "2017-09-21",
+        "2017-09-22",
+        "2017-09-25",
+        "2017-09-26",
+        "2017-09-27",
+        "2017-09-28",
+        "2017-09-29",
+        "2017-11-02",
+        "2017-11-03",
+        "2017-11-06",
+        "2017-11-07",
+        "2017-11-08",
+        "2017-11-09",
+        "2017-11-10",
+        "2017-11-13",
+        "2017-11-14",
+        "2017-11-15",
+        "2017-11-16",
+        "2017-11-17",
+        "2017-11-20",
+        "2017-11-21",
+        "2017-11-22",
+        "2017-11-23",
+        "2017-11-24",
+        "2017-11-27",
+        "2017-11-28",
+        "2017-11-29",
+        "2017-11-30"
+      ],
+      "evaluation_rows_per_arm": 625118,
+      "fit_seconds_by_arm": {
+        "B1_history_xgboost": 14.229497147724032,
+        "S0_history_gru_seed17": 169.03072315827012,
+        "S0_history_gru_seed29": 164.6432299874723,
+        "S0_history_gru_seed7": 175.0947605408728
+      },
+      "full_denominator_result": {
+        "dev_mean_ic": {
+          "B1_history_xgboost": 0.2761969519662479,
+          "S0_history_gru_seed17": 0.28150614174994076,
+          "S0_history_gru_seed29": 0.28025454971255714,
+          "S0_history_gru_seed7": 0.27899845775198795
+        },
+        "evaluation_mean_ic": {
+          "B1_history_xgboost": 0.2795594749927089,
+          "S0_history_gru_seed17": 0.28741448914038137,
+          "S0_history_gru_seed29": 0.2852391927493203,
+          "S0_history_gru_seed7": 0.2830156592995974
+        },
+        "paired_vs_B1": {
+          "S0_history_gru_seed17": {
+            "ci95_block5": [
+              0.006234703840705171,
+              0.009625089883682401
+            ],
+            "mean_delta_ic": 0.007855014147672524,
+            "month_delta": {
+              "2017-06": 0.01200616139250005,
+              "2017-09": 0.005710779993532766,
+              "2017-11": 0.005848101056984759
+            },
+            "stock_delta": {
+              "KGHM": 0.010402412324744257,
+              "PEKAO": 0.008069099847834552,
+              "PKNORLEN": -0.0046850088483953185,
+              "PKOBP": 0.01073375166699389,
+              "PZU": 0.014754815747185245
+            }
+          },
+          "S0_history_gru_seed29": {
+            "ci95_block5": [
+              0.003993153834167258,
+              0.007114048253495351
+            ],
+            "mean_delta_ic": 0.005679717756611454,
+            "month_delta": {
+              "2017-06": 0.009760572644029887,
+              "2017-09": 0.003965314313275829,
+              "2017-11": 0.003313266312528648
+            },
+            "stock_delta": {
+              "KGHM": 0.007233969517802506,
+              "PEKAO": 0.007966587539151675,
+              "PKNORLEN": -0.008362315895121368,
+              "PKOBP": 0.008560738173467978,
+              "PZU": 0.012999609447756477
+            }
+          },
+          "S0_history_gru_seed7": {
+            "ci95_block5": [
+              0.001343051391559902,
+              0.005168033002368538
+            ],
+            "mean_delta_ic": 0.003456184306888478,
+            "month_delta": {
+              "2017-06": 0.008030943894980795,
+              "2017-09": 0.00033372337025898224,
+              "2017-11": 0.0020038856554256555
+            },
+            "stock_delta": {
+              "KGHM": 0.005526744893414586,
+              "PEKAO": 0.008043197478145764,
+              "PKNORLEN": -0.011642766867505,
+              "PKOBP": 0.0072693408584517056,
+              "PZU": 0.008084405171935332
+            }
+          },
+          "S0_seed_mean": {
+            "ci95_block5": [
+              0.003888742100314339,
+              0.007231228474639629
+            ],
+            "leave_one_stock_out_delta": {
+              "KGHM": 0.005149287859991743,
+              "PEKAO": 0.005072974682560856,
+              "PKNORLEN": 0.009137056055573661,
+              "PKOBP": 0.004865895863079057,
+              "PZU": 0.0040929792240821
+            },
+            "mean_delta_ic": 0.005663638737057483,
+            "month_delta": {
+              "2017-06": 0.009932559310503575,
+              "2017-09": 0.0033366058923558575,
+              "2017-11": 0.0037217510083130192
+            },
+            "stock_delta": {
+              "KGHM": 0.007721042245320444,
+              "PEKAO": 0.008026294955043995,
+              "PKNORLEN": -0.008230030537007228,
+              "PKOBP": 0.00885461023297119,
+              "PZU": 0.011946276788959017
+            }
+          }
+        }
+      },
+      "gpu_device_occupancy_seconds": 518.6623569447547,
+      "inference_seconds_by_arm": {
+        "B1_history_xgboost": 0.8514814544469118,
+        "S0_history_gru_seed17": 3.2800692953169346,
+        "S0_history_gru_seed29": 3.299889013171196,
+        "S0_history_gru_seed7": 3.3136849496513605
+      },
+      "peak_gpu_allocated_bytes": 133907456,
+      "peak_process_rss_bytes": 1667903488,
+      "per_stock": {
+        "KGHM": {
+          "dev_rows": 54921,
+          "eval_rows": 138072
+        },
+        "PEKAO": {
+          "dev_rows": 28941,
+          "eval_rows": 77051
+        },
+        "PKNORLEN": {
+          "dev_rows": 33768,
+          "eval_rows": 145813
+        },
+        "PKOBP": {
+          "dev_rows": 46358,
+          "eval_rows": 133051
+        },
+        "PZU": {
+          "dev_rows": 46302,
+          "eval_rows": 131131
+        }
+      },
+      "total_task_wall_seconds": 609.2833940926939,
+      "training_endpoint_identity_sha256": {
+        "KGHM": "08e8e2faa5048dd9634e8f4a5cf5de18e7d28bff844b9754211f006337a822e9",
+        "PEKAO": "4204c24c99b755d83ec69d7a764f0e8ec8c91bc0d01bf655140607a6678b3e66",
+        "PKNORLEN": "f85868256f25393d9d9dae73743afae6c709fc089ca7de9cb509fdd16024b9c9",
+        "PKOBP": "de51020f43339ebb911c7ef5f717e9c868da7b305547aefea42ff0844d7c77c8",
+        "PZU": "b4f3593a05f5f5897268f87e4523d7d19b0bd247856808bd864c470eeaf4229c"
+      },
+      "training_limited": {
+        "KGHM": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PEKAO": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKNORLEN": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PKOBP": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        },
+        "PZU": {
+          "S0_history_gru_seed17": false,
+          "S0_history_gru_seed29": false,
+          "S0_history_gru_seed7": false
+        }
+      },
+      "training_size_per_stock": 50000,
+      "undefined_cells": {
+        "dev": [],
+        "evaluation": []
+      }
+    }
+  },
+  "limits": "All 2017 evaluation dates previously exposed; 20k/15-epoch Q2 remains pilot. Date-block intervals condition on fitted models. Device occupancy excludes data-load/B1 allocation time; Slurm accounting is separate.",
+  "retrospective_only": true,
+  "source_cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "source_commit": "0da90c97a753a09f94c7b30724a6e76bf992e9a6",
+  "stage": "FQ2",
+  "study": "WSELOB-2017 formal sequence training-scale v1",
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ]
+}
