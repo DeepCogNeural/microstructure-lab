@@ -1,0 +1,36 @@
+{
+  "criteria": {
+    "all_three_seed_means_positive": true,
+    "at_least_two_retrospective_months_positive": true,
+    "formal_200k_complete": true,
+    "fq3_formal_robustness_complete": true,
+    "gru_not_training_limited": true,
+    "no_single_stock_determines_aggregate_sign": true,
+    "paired_delta_at_least_0_005": true
+  },
+  "fq2_summary_sha256": "1d2ae71efe63f41055c2767788d7c6fd5548ba11bcac0967f7fd80b7d366e180",
+  "fq3_summary_sha256": "4f606388b8d7c0b10942acfb97665b92c5994678822466f01081ca913417d52a",
+  "gate_triggered": true,
+  "leave_one_stock_out_delta_ic": {
+    "KGHM": 0.012355850912757725,
+    "PEKAO": 0.01034914835525835,
+    "PKNORLEN": 0.014182028917488137,
+    "PKOBP": 0.010514620469491599,
+    "PZU": 0.007942888294511502
+  },
+  "limits": "Gate applies only to exposed 2017 dates and does not by itself prove unseen gain, economic value, or authorize architecture claims. Sequence correctness tests are a separate required pre-fit check.",
+  "month_paired_delta_ic": {
+    "2017-06": 0.013242565680589468,
+    "2017-09": 0.007209340172140139,
+    "2017-11": 0.012754816316974782
+  },
+  "paired_200k_delta_ic": 0.011068907389901463,
+  "retrospective_only": true,
+  "seed_paired_delta_ic": {
+    "17": 0.009880231924780115,
+    "29": 0.010921064717918118,
+    "7": 0.012405425527006146
+  },
+  "stage": "FQ4",
+  "training_limited_stock_arms": []
+}
