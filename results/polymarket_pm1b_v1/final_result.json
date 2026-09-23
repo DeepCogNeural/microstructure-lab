@@ -1,0 +1,295 @@
+{
+  "dev_prefers_B3_over_B2_at_1pct": true,
+  "dev_report_sha256": "b337f9d6f4535914e441d007fda5e585e67dfe69250fc3da428c08a434d47e40",
+  "external_domain_narrow_pilot": true,
+  "final_build_manifest_sha256": "6ef4e96fc71fa4920a86f2617e68fddaf51024a6adc653d7b163b71f0ebcd08e",
+  "final_markets": 120,
+  "final_opportunities": 4104,
+  "final_private_target_sha256": "6759f649c565f170af684bad677b46c5dbb3a4d89a1a534754b1fca8b17e2057",
+  "inference_wall_seconds": 0.24042258400004357,
+  "limits": "One partial final UTC date of sampled sparse books; market bootstrap conditions on that date. Snapshot repricing only, not terminal information, exact fills/PnL or WSE independent confirmation.",
+  "model_config_sha256": "9a1c1f23e1d6bdf3552606370ae860930c9cbf16dd2cad8c02ecdf1e6e881bca",
+  "paired_market_mse": {
+    "B1_current_state_minus_B0": {
+      "market_bootstrap_ci95": [
+        7.771737827399091e-06,
+        0.001810510345648077
+      ],
+      "market_mean_delta": 0.0008679636310007472,
+      "negative_market_differences": 48,
+      "paired_markets": 120,
+      "positive_market_differences": 72,
+      "zero_market_differences": 0
+    },
+    "B2_minus_B1": {
+      "market_bootstrap_ci95": [
+        -0.0018053838260013362,
+        0.0004224270493800837
+      ],
+      "market_mean_delta": -0.000635334656078238,
+      "negative_market_differences": 60,
+      "paired_markets": 120,
+      "positive_market_differences": 60,
+      "zero_market_differences": 0
+    },
+    "B2_same_history_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.00037002977491219156,
+        0.0007797062799264602
+      ],
+      "market_mean_delta": 0.00023262897492250944,
+      "negative_market_differences": 52,
+      "paired_markets": 120,
+      "positive_market_differences": 68,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed17_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.00016848176291157753,
+        0.000223296738090861
+      ],
+      "market_mean_delta": 4.105038321640857e-05,
+      "negative_market_differences": 53,
+      "paired_markets": 120,
+      "positive_market_differences": 67,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed29_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.0001950622875722973,
+        0.0001529386898496519
+      ],
+      "market_mean_delta": 1.53814982681919e-06,
+      "negative_market_differences": 52,
+      "paired_markets": 120,
+      "positive_market_differences": 68,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed7_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.00018740541543451245,
+        8.329366287976401e-05
+      ],
+      "market_mean_delta": -4.226499447567005e-05,
+      "negative_market_differences": 54,
+      "paired_markets": 120,
+      "positive_market_differences": 66,
+      "zero_market_differences": 0
+    },
+    "B3_seed_mean_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.0001863237301387996,
+        0.00012459064227573257
+      ],
+      "market_mean_delta": -1.5810521140653546e-05,
+      "negative_market_differences": 58,
+      "paired_markets": 120,
+      "positive_market_differences": 62,
+      "zero_market_differences": 0
+    },
+    "B3_seed_mean_minus_B2": {
+      "market_bootstrap_ci95": [
+        -0.0007664546809020503,
+        0.00025191407570235573
+      ],
+      "market_mean_delta": -0.00024843949606316297,
+      "negative_market_differences": 67,
+      "paired_markets": 120,
+      "positive_market_differences": 53,
+      "zero_market_differences": 0
+    }
+  },
+  "scores": {
+    "B0_zero_repricing": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.009133754032503124,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.00032786367538982953,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.011834629481060422,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.010189727239901263,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.010189727239901263,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.003170489096734806
+    },
+    "B1_current_state": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008770740869320873,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.00043065569326729264,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.01344409267203546,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.011057690870902009,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.011057690870902009,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.0034670050931858857
+    },
+    "B2_same_history": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008714217129924632,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.0009188659532315866,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.01237640205597177,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.010422356214823769,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.010422356214823769,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.0033499753091531205
+    },
+    "B3_gru_seed17": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008845373262234684,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.0003956313181913509,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.012048749410978587,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.01023077762311767,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.01023077762311767,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.003217938429520545
+    },
+    "B3_gru_seed29": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008835746942572597,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.00036983915575944674,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.011991767161109078,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.010191265389728081,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.010191265389728081,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.003199671814111227
+    },
+    "B3_gru_seed7": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008909273024253836,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.0004094075189747992,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.011876144676073602,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.010147462245425592,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.010147462245425592,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.0031993550631381853
+    },
+    "B3_seed_mean": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.008850473979498242,
+          "markets": 39
+        },
+        "4h": {
+          "market_mean_mse": 0.0003716978739870732,
+          "markets": 8
+        },
+        "5m": {
+          "market_mean_mse": 0.011955177233684177,
+          "markets": 73
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-24": {
+          "market_mean_mse": 0.010173916718760608,
+          "markets": 120
+        }
+      },
+      "market_mean_mse": 0.010173916718760608,
+      "markets": 120,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 4104,
+      "row_mean_mse_descriptive": 0.003192665887423583
+    }
+  },
+  "stage": "PM1B",
+  "status": "FINAL_SCORED_ONCE"
+}

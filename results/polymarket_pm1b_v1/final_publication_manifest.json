@@ -1,0 +1,12 @@
+{
+  "dev_result_sha256": "b337f9d6f4535914e441d007fda5e585e67dfe69250fc3da428c08a434d47e40",
+  "final_build_manifest_sha256": "6ef4e96fc71fa4920a86f2617e68fddaf51024a6adc653d7b163b71f0ebcd08e",
+  "final_result_sha256": "330678f2b976e49fc5304ae81ea5b27376791b725be02fddc26ac6aa90426376",
+  "final_scored_once": true,
+  "frozen_model_config_sha256": "9a1c1f23e1d6bdf3552606370ae860930c9cbf16dd2cad8c02ecdf1e6e881bca",
+  "limits": "One partial final UTC date of sampled sparse books; market bootstrap conditions on that date. Snapshot repricing only, not terminal information, exact fills/PnL or WSE independent confirmation.",
+  "private_final_target_sha256": "6759f649c565f170af684bad677b46c5dbb3a4d89a1a534754b1fca8b17e2057",
+  "private_rows_predictions_models_in_git": false,
+  "stage": "PM1B",
+  "status": "FINAL_SCORED_ONCE"
+}
