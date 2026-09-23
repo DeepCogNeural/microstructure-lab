@@ -1,0 +1,21 @@
+{
+  "stage": "PM1B",
+  "status": "pre_fit_horizon_frozen",
+  "source_version_doi": "10.5281/zenodo.22084977",
+  "pm1a_eligibility_config_sha256": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+  "market_split_sha256": "5fb3f66288048c1f2eb19a924a16211255d4de87f000d13343bf8355ddaae0ea",
+  "horizon_audit_sha256": "b2531000a410ed5f54d050d12c430ee77ca3f9a60c7e30899a4f681924088a40",
+  "primary_horizon_seconds": 15,
+  "candidate_horizons_audited_seconds": [5, 15, 30],
+  "decision_opportunities": "Exactly the PM1A Up-token close-anchored common-eligibility opportunities before future-book qualification",
+  "future_lookup": "Latest Up book captured strictly after decision and no later than decision+15s; target capture age <=5s; valid two-sided unlocked/uncrossed book; no target if any condition fails.",
+  "target": "future best-bid/ask midpoint minus current decision-time midpoint, in probability points",
+  "frozen_primary_metric": "equal-market mean squared error of probability-point repricing, paired market bootstrap",
+  "baseline": "B0_zero_repricing: predict no change in current midpoint",
+  "model_arms": ["B1_current_state_XGBoost", "B2_same_history_XGBoost", "B3_same_history_GRU_seeds_7_17_29"],
+  "same_information_rule": "B2 and B3 use identical eight-by-eleven causal PM1A history tensor on identical PM1B-qualified opportunities",
+  "training_weights": "each market has equal total training weight; evaluation averages within market then equally across markets",
+  "model_selection": "Only train/dev may select or early-stop; final future changes remain unopened until code, settings and fitted models are frozen and pushed",
+  "interpretation": "A PM1B gain predicts transient repricing, not terminal information or execution profit; PM1A results remain separate.",
+  "limits": "Collector snapshot time, sparse changed-book rows, four sampled dates and a partial final day; no independent WSE confirmation."
+}
