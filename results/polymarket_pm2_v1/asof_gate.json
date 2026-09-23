@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "book_event_markets": 290,
+  "book_markets_without_metadata": 0,
+  "matched_distinct_resolution_urls": 1,
+  "matched_distinct_settlement_descriptions": 1,
+  "matched_markets": 290,
+  "matched_metadata_updated_after_close": 290,
+  "matched_metadata_updated_after_first_book": 290,
+  "matched_missing_strike": 18,
+  "metadata_markets_without_book": 2,
+  "metadata_rows": 292,
+  "rule": "The available metadata snapshot is post-close. The value/timing of strike and settlement rule as observable at each decision time cannot be inferred from that snapshot alone. No structural model fit or paid expansion.",
+  "stage": "PM2_SOURCE_GATE",
+  "status": "ASOF_STRIKE_PROVENANCE_UNVERIFIED"
+}
