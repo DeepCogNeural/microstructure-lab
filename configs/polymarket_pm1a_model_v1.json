@@ -1,0 +1,16 @@
+{
+  "stage": "PM1A",
+  "status": "pre_fit_frozen",
+  "eligibility_config_sha256": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+  "split_manifest_sha256": "5fb3f66288048c1f2eb19a924a16211255d4de87f000d13343bf8355ddaae0ea",
+  "source_audit_sha256": "71d778c83edbcf6143e525bcf22f2ce32517cc40c7559468988111731e8d3925",
+  "training_weights": "Each market has total weight one, spread equally over its eligible opportunities; rescale mean weight to one within split.",
+  "probability_clip": 0.0001,
+  "P1": {"model": "LogisticRegression", "C": 1.0, "solver": "lbfgs", "max_iter": 1000, "features": ["logit_midpoint", "log_seconds_to_close"]},
+  "P2": {"model": "XGBClassifier", "n_estimators": 200, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 10.0, "n_jobs": 4, "random_state": 7, "features": "ten frozen current-state features"},
+  "P3": {"model": "XGBClassifier", "n_estimators": 200, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 10.0, "n_jobs": 4, "random_state": 7, "features": "same eight by eleven history tensor flattened as P4"},
+  "P4": {"model": "one-layer GRU binary classifier", "hidden_size": 32, "seeds": [7, 17, 29], "max_epochs": 60, "patience": 8, "batch_size": 256, "learning_rate": 0.001, "weight_decay": 0.0001, "early_stopping": "minimum dev market-mean log loss", "features": "same eight by eleven history tensor as P3"},
+  "primary": "equal-market mean log loss and Brier; paired market differences P3 vs P4, both versus P0; five-day date-block sensitivity only if dates support it",
+  "final_rule": "Fit/calibrate/select with train/dev only; freeze code, fitted models, hashes and one primary P3-vs-P4 comparison before one final chronological read. Report all P0-P4 and all seeds regardless of sign.",
+  "limits": "Four dates total, partial final date, sampled markets; final is a narrow exploratory pilot. No WSE independent-confirmation claim."
+}
