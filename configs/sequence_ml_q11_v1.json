@@ -1,0 +1,40 @@
+{
+  "arms": [
+    "B1_history_xgboost",
+    "S0_seed_mean"
+  ],
+  "common_denominator": "same context128-eligible original-event prediction rows, exact quote/event/segment validity for all three delays, four predictor series and fixed t+20 exit; report exclusions",
+  "contexts": [
+    8,
+    32,
+    128
+  ],
+  "costs": "one share, visible quotes only; no fees, actual fills, queue, impact, inventory or cash PnL",
+  "decision": "strict abs(prediction_bps)>1.0 at original event t, fixed before retrospective crossing outcomes",
+  "decision_threshold_bps": 1.0,
+  "entry_delay_original_events": [
+    0,
+    1,
+    5
+  ],
+  "entry_exit": "predicted buy enters at visible ask and exits at visible bid; predicted sell enters at visible bid and exits at visible ask",
+  "exit_horizon_original_events": 20,
+  "exit_original_event": "t+20, fixed for every entry delay",
+  "modes": [
+    "Q8_within_stock",
+    "Q10_source_only_transfer"
+  ],
+  "parent_Q10_summary_sha256": "cfd6202b426bcc0dd21f2cf7593fb9f1df2baaf7ff5d81f8f5ea239ed04c7957",
+  "parent_Q8_summary_sha256": "c76e14660e517658c6e1b21f355d4f9b3467eefd8a5cb069497c2fe3362d3fcc",
+  "reporting": "all stock/day/mode/arm/delay cells, selected coverage, crossed markout, gross and half-spread components, undefined cells, both-selected subset, equal-cell and pooled descriptive summaries",
+  "source_cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "source_registry_sha256": "59a7f2e97a62d1f81eed653697caf07919b4043ceafb14b1482f492caae647ab",
+  "stage": "Q11 fixed visible-crossing execution re-check",
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ]
+}
