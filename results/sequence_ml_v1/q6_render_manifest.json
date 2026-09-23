@@ -1,0 +1,14 @@
+{
+  "cost_table_sha256": "0f3884f675ab733354595c5dbf076c7371c042304db2a37e24adcf733ee07cf7",
+  "figures_sha256": {
+    "01_history_matched_models.png": "1944ab600a8288696b9d2e5522f0cdf831f4159224aa859e903438c3c7cd6511",
+    "02_fixed_vs_updated_time.png": "2f77154957c3a5e603f0576186c5ece4d2ebdb8c5fd5a2580581a63bfb29cf5d",
+    "03_stock_and_state_breakdown.png": "bb99c9897d194533f71a1c923678818085160b4ff8a7cc81602833d96777beb6",
+    "04_prediction_vs_crossing.png": "50588c8645b3d935f572892270360d3f2d35039f875643efea9839544763750f"
+  },
+  "limits": "All figures are from previously exposed 2017 aggregate receipts; no new final or PnL claim.",
+  "source_aggregate_sha256": {
+    "q2_summary": "9a088b3ce8ec54cdc5fda71502f7f17c84f8700c84c35cfb97b1dbae39425dbb",
+    "q3_summary": "697c7e815d5b640a2ea3b54b01f9ad4b04f030527c725f258bb9dd458ce30692"
+  }
+}
