@@ -19,6 +19,7 @@ native = ["pybind11>=2.13,<4", "cmake>=3.20"]
 ml = ["scikit-learn>=1.4", "matplotlib>=3.8"]
 data = ["h5py>=3.10"]
 xgb = ["xgboost>=3.0,<3.1"]
+sequence = ["torch>=2.6,<3"]
 
 [project.scripts]
 cloblab = "cloblab.cli:main"
