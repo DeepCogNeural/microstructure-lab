@@ -1,0 +1,9 @@
+# FQ3 formal robustness and visible crossing protocol — frozen before FQ3 fits
+
+Use only the fixed 200k/stock B1 and three S0 GRU seed finalists from FQ2, regardless of FQ2 retrospective gain sign. The machine settings are `configs/sequence_ml_fq3_v1.json`, with the FQ2 configuration pinned by SHA-256. The original 20k Q3 receipts remain untouched and pilot-only.
+
+Repeat one prespecified state slice using the elapsed nanoseconds across the 32 causal states, with a per-stock Jan–Mar 200k training-endpoint median. Report every stock/date and undefined cell. Refit B1 and all three S0 seeds at 200k endpoints/stock with unchanged CUDA GRU architecture, max 60 epochs, patience 8, and the same features, target and sampling rule. June uses Feb–Apr train/May dev; September uses May–Jul train/Aug dev; November uses Jul–Sep train/Oct dev. Compare fixed versus updated predictions on identical original-event IDs and exact float32 target rows; verify against the fixed private FQ2 prediction hash and cache manifest. Later model updates change training information as well as calendar conditions, so this is not a causal decay estimate.
+
+At each fixed-model event, apply only the frozen strict absolute prediction >1 bp visible-crossing rule. Record gross signed midpoint movement, current and future visible half-spreads, one-share quote markout, coverage and a common-selected sensitivity. Require an exact event+20 within-segment quote, not the next filtered score row. The primary sequence decision uses the mean of the three fixed GRU predictions; each seed remains visible. No actual fill, queue, fees, impact, inventory or realized-PnL claim follows.
+
+The evaluation dates were all exposed before FQ3. FQ3 diagnostics do not select a model, change a threshold, or tune from June/September/November. Undefined and negative cells stay in the aggregate. LOSO is deferred under the original Q3 contract because source-only inner tuning was not frozen.
