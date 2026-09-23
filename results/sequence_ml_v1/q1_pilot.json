@@ -1,0 +1,109 @@
+{
+  "cache_config_hash": "2457a7f5f20dc552bbe9479d9c8769e38256c209ff699f00b2b4690287bc6cc7",
+  "cache_source_hash": "7919375bb0b82faba250a0e1adc1c18704a494fa766591f39b5f93e9220d8ebb",
+  "date_max": "2017-12-22",
+  "date_min": "2017-01-02",
+  "kind": "Q1 metadata audit and one-day resource/correctness pilot",
+  "limitations": "All cached feature partitions were freshly rehashed; full raw files were not rehashed. Only one day's rows were examined. No market model fit or GPU use. The development period was previously exposed.",
+  "manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "month_partition_counts": {
+    "2017-01": 105,
+    "2017-02": 100,
+    "2017-03": 115,
+    "2017-04": 90,
+    "2017-05": 105,
+    "2017-06": 105,
+    "2017-07": 105,
+    "2017-08": 110,
+    "2017-09": 105,
+    "2017-10": 110,
+    "2017-11": 105,
+    "2017-12": 80
+  },
+  "partition_count": 1235,
+  "pilot": [
+    {
+      "features_sha256": "ca9b63f727f13282c7e55890b124c3b117ff9e289e2c742180456f8b97892f68",
+      "nonfinite_window": 0,
+      "scorable": 75870,
+      "short_or_broken": 32,
+      "states": 75922,
+      "stride20_scorable": 3794,
+      "symbol": "KGHM",
+      "unscorable_label": 20,
+      "valid_windows": 75890
+    },
+    {
+      "features_sha256": "50ac6e3468a7b65b28b33da0fc711ab4b2f4969f9b7b3a464e7d61c13935af79",
+      "nonfinite_window": 0,
+      "scorable": 21737,
+      "short_or_broken": 32,
+      "states": 21789,
+      "stride20_scorable": 1087,
+      "symbol": "PEKAO",
+      "unscorable_label": 20,
+      "valid_windows": 21757
+    },
+    {
+      "features_sha256": "ef8023f7dcad58ce198c5678ac6c5de6fc8f311dfa424a91d1c0e924648e8811",
+      "nonfinite_window": 0,
+      "scorable": 66323,
+      "short_or_broken": 32,
+      "states": 66375,
+      "stride20_scorable": 3316,
+      "symbol": "PKNORLEN",
+      "unscorable_label": 20,
+      "valid_windows": 66343
+    },
+    {
+      "features_sha256": "39b2138007608fc169147d5a6cd51a82d0c5db0c9ba9c4173beb4309b4fc45a4",
+      "nonfinite_window": 0,
+      "scorable": 17504,
+      "short_or_broken": 32,
+      "states": 17556,
+      "stride20_scorable": 875,
+      "symbol": "PKOBP",
+      "unscorable_label": 20,
+      "valid_windows": 17524
+    },
+    {
+      "features_sha256": "7c181ae78da74c60ec8c740bac64d0e60b04e5548d9d6e639fc733ca3edadc53",
+      "nonfinite_window": 51,
+      "scorable": 32538,
+      "short_or_broken": 976,
+      "states": 33962,
+      "stride20_scorable": 1626,
+      "symbol": "PZU",
+      "unscorable_label": 397,
+      "valid_windows": 32935
+    }
+  ],
+  "pilot_day": "2017-01-02",
+  "pilot_wall_seconds": 1.4402808750746772,
+  "process_peak_rss_bytes": 174227456,
+  "retrospective_only": true,
+  "source_files": {
+    "KGHM": {
+      "bytes": 325838174,
+      "sha256": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c"
+    },
+    "PEKAO": {
+      "bytes": 152759953,
+      "sha256": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6"
+    },
+    "PKNORLEN": {
+      "bytes": 290678577,
+      "sha256": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40"
+    },
+    "PKOBP": {
+      "bytes": 281092890,
+      "sha256": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e"
+    },
+    "PZU": {
+      "bytes": 262873333,
+      "sha256": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c"
+    }
+  },
+  "stock_count": 5,
+  "verified_feature_partitions": 1235
+}
