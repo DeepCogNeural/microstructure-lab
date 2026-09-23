@@ -1,0 +1,298 @@
+{
+  "ages_ms": {
+    "1000": {
+      "by_market": {
+        "M1": {
+          "D": {
+            "n": 12,
+            "range_cents": [
+              "-3.000",
+              "7.500"
+            ],
+            "shares": "67.05125",
+            "weighted_mean_cents": "1.503831024775824462631196286"
+          },
+          "G": {
+            "n": 12,
+            "range_cents": [
+              "-2.00",
+              "1.00"
+            ],
+            "shares": "67.05125",
+            "weighted_mean_cents": "0.5213269700415726776160026845"
+          },
+          "N": {
+            "n": 12,
+            "range_cents": [
+              "-2.500",
+              "5.500"
+            ],
+            "shares": "67.05125",
+            "weighted_mean_cents": "2.025157994817397140247198971"
+          }
+        },
+        "M2": {
+          "D": null,
+          "G": null,
+          "N": null
+        }
+      },
+      "distinct_markets": 1,
+      "distinct_prints": 7,
+      "eligible_legs": 12,
+      "failure_counts": {
+        "same_receive_time_conflict": 1,
+        "stale_quote": 1
+      },
+      "largest_leg_shares": "15",
+      "summary": {
+        "D": {
+          "n": 12,
+          "range_cents": [
+            "-3.000",
+            "7.500"
+          ],
+          "shares": "67.05125",
+          "weighted_mean_cents": "1.503831024775824462631196286"
+        },
+        "G": {
+          "n": 12,
+          "range_cents": [
+            "-2.00",
+            "1.00"
+          ],
+          "shares": "67.05125",
+          "weighted_mean_cents": "0.5213269700415726776160026845"
+        },
+        "N": {
+          "n": 12,
+          "range_cents": [
+            "-2.500",
+            "5.500"
+          ],
+          "shares": "67.05125",
+          "weighted_mean_cents": "2.025157994817397140247198971"
+        }
+      },
+      "without_largest_leg": {
+        "D": {
+          "n": 11,
+          "range_cents": [
+            "-3.000",
+            "7.500"
+          ],
+          "shares": "52.05125",
+          "weighted_mean_cents": "0.9285800052832544847626137701"
+        },
+        "G": {
+          "n": 11,
+          "range_cents": [
+            "-2.00",
+            "0.500"
+          ],
+          "shares": "52.05125",
+          "weighted_mean_cents": "0.3833841646454215796930909440"
+        },
+        "N": {
+          "n": 11,
+          "range_cents": [
+            "-2.500",
+            "5.500"
+          ],
+          "shares": "52.05125",
+          "weighted_mean_cents": "1.311964169928676064455704714"
+        }
+      }
+    },
+    "250": {
+      "by_market": {
+        "M1": {
+          "D": {
+            "n": 5,
+            "range_cents": [
+              "0.000",
+              "3.500"
+            ],
+            "shares": "29.02",
+            "weighted_mean_cents": "1.810130944176430048242591316"
+          },
+          "G": {
+            "n": 5,
+            "range_cents": [
+              "-1.00",
+              "1.00"
+            ],
+            "shares": "29.02",
+            "weighted_mean_cents": "0.5509993108201240523776705720"
+          },
+          "N": {
+            "n": 5,
+            "range_cents": [
+              "-0.500",
+              "4.500"
+            ],
+            "shares": "29.02",
+            "weighted_mean_cents": "2.361130254996554100620261888"
+          }
+        },
+        "M2": {
+          "D": null,
+          "G": null,
+          "N": null
+        }
+      },
+      "distinct_markets": 1,
+      "distinct_prints": 3,
+      "eligible_legs": 5,
+      "failure_counts": {
+        "same_receive_time_conflict": 1,
+        "stale_quote": 8
+      },
+      "largest_leg_shares": "15",
+      "summary": {
+        "D": {
+          "n": 5,
+          "range_cents": [
+            "0.000",
+            "3.500"
+          ],
+          "shares": "29.02",
+          "weighted_mean_cents": "1.810130944176430048242591316"
+        },
+        "G": {
+          "n": 5,
+          "range_cents": [
+            "-1.00",
+            "1.00"
+          ],
+          "shares": "29.02",
+          "weighted_mean_cents": "0.5509993108201240523776705720"
+        },
+        "N": {
+          "n": 5,
+          "range_cents": [
+            "-0.500",
+            "4.500"
+          ],
+          "shares": "29.02",
+          "weighted_mean_cents": "2.361130254996554100620261888"
+        }
+      },
+      "without_largest_leg": {
+        "D": {
+          "n": 4,
+          "range_cents": [
+            "0.000",
+            "1.500"
+          ],
+          "shares": "14.02",
+          "weighted_mean_cents": "0.002139800285306704707560627675"
+        },
+        "G": {
+          "n": 4,
+          "range_cents": [
+            "-1.00",
+            "0.500"
+          ],
+          "shares": "14.02",
+          "weighted_mean_cents": "0.07061340941512125534950071327"
+        },
+        "N": {
+          "n": 4,
+          "range_cents": [
+            "-0.500",
+            "0.500"
+          ],
+          "shares": "14.02",
+          "weighted_mean_cents": "0.07275320970042796005706134094"
+        }
+      }
+    }
+  },
+  "candidate_markets": 2,
+  "common_1000": {
+    "D": {
+      "n": 5,
+      "range_cents": [
+        "0.000",
+        "3.500"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "1.810130944176430048242591316"
+    },
+    "G": {
+      "n": 5,
+      "range_cents": [
+        "-1.00",
+        "1.00"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "0.5509993108201240523776705720"
+    },
+    "N": {
+      "n": 5,
+      "range_cents": [
+        "-0.500",
+        "4.500"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "2.361130254996554100620261888"
+    }
+  },
+  "common_250": {
+    "D": {
+      "n": 5,
+      "range_cents": [
+        "0.000",
+        "3.500"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "1.810130944176430048242591316"
+    },
+    "G": {
+      "n": 5,
+      "range_cents": [
+        "-1.00",
+        "1.00"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "0.5509993108201240523776705720"
+    },
+    "N": {
+      "n": 5,
+      "range_cents": [
+        "-0.500",
+        "4.500"
+      ],
+      "shares": "29.02",
+      "weighted_mean_cents": "2.361130254996554100620261888"
+    }
+  },
+  "common_eligible_legs": 5,
+  "coverage_screen_note": "first/last-30-second presence only; no middle completeness certification",
+  "coverage_screened_markets": 288,
+  "fee_note": "raw receipt fee field excluded from gross cents/share; fee denomination not inferred",
+  "fixed_prints": 20,
+  "limits": "Receive-clock gross descriptive values only; no pre-trade predictability, cancellation lead time, executable P&L, or original 5s match-time study pass.",
+  "nonzero_print_maker_leg_price_differences": 1,
+  "nonzero_print_taker_price_differences": 4,
+  "print_minus_maker_leg_price_range": [
+    "-0.01",
+    "0.00"
+  ],
+  "print_minus_taker_price_range": [
+    "-0.0042785714285714285714285714",
+    "2.24516111650365549649E-8"
+  ],
+  "print_price_semantics": "not established as per-leg or VWAP; receipt leg prices used; no verified print tick/rounding rule",
+  "receipt_exclusion_counts": {},
+  "receipt_joined_prints": 20,
+  "selected_maker_fee_raw_by_side": {
+    "buy": "0",
+    "sell": "0"
+  },
+  "selected_token_passive_legs": 14,
+  "source": "OutcomeTick samples-2026-09-08",
+  "source_archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "status": "DEVELOPMENT_OBSERVER_DIAGNOSTIC / NOT_ACTIONABLE_QOP"
+}
