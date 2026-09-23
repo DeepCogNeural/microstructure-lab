@@ -71,10 +71,14 @@ def main() -> None:
         q4_path = args.fq4_reports / f"fq4_transformer_{symbol}.json"
         q2_path = args.fq2_reports / f"fq2_200000_{symbol}_a1.json"
         q4, q2_stock = json.loads(q4_path.read_text()), json.loads(q2_path.read_text())
+        # FQ4 used the original FQ2 run receipt. The public FQ2 copy redacts
+        # only gpu_device_name and binds that original with its raw hash.
+        if q2_stock.get("public_redactions") != ["gpu_device_name"]:
+            raise ValueError(f"FQ2 redaction lineage mismatch {symbol}")
         if ((q4["stage"], q4["symbol"], q4["training_size_per_stock"], q4["config_sha256"],
              q4["gate_sha256"], q4["cache_manifest_sha256"], q4["fq2_report_sha256"])
             != ("FQ4", symbol, 200000, sha(config_path), cfg["gate_sha256"],
-                cfg["source_cache_manifest_sha256"], sha(q2_path))):
+                cfg["source_cache_manifest_sha256"], q2_stock["private_raw_receipt_sha256"])):
             raise ValueError(f"FQ4 identity mismatch {symbol}")
         if (q4["training_endpoint_identity_sha256"] != q2_stock["training_endpoint_identity_sha256"]
             or q4["selection_counts"] != q2_stock["selection_counts"]
@@ -84,7 +88,8 @@ def main() -> None:
             if q4["costs"][arm]["train_endpoints"] != 200000:
                 raise ValueError(f"training size mismatch {symbol}/{arm}")
         q4_reports[symbol] = (q4, q2_stock)
-        hashes[symbol] = {"fq4": sha(q4_path), "fq2_fixed": sha(q2_path)}
+        hashes[symbol] = {"fq4": sha(q4_path), "fq2_fixed_public": sha(q2_path),
+                          "fq2_fixed_private_raw": q2_stock["private_raw_receipt_sha256"]}
         costs[symbol] = q4["costs"]
     commits = {pair[0]["source_commit"] for pair in q4_reports.values()}
     if len(commits) != 1:

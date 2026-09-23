@@ -1,0 +1,346 @@
+{
+  "cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "config_sha256": "34d4f48093ae0b0abcfcaa836cd41d6bf9e0f31490afe60d9580342e559b8300",
+  "dev": {
+    "cells_per_arm": 90,
+    "dates": [
+      "2017-04-03",
+      "2017-04-04",
+      "2017-04-05",
+      "2017-04-06",
+      "2017-04-07",
+      "2017-04-10",
+      "2017-04-11",
+      "2017-04-12",
+      "2017-04-13",
+      "2017-04-18",
+      "2017-04-19",
+      "2017-04-20",
+      "2017-04-21",
+      "2017-04-24",
+      "2017-04-25",
+      "2017-04-26",
+      "2017-04-27",
+      "2017-04-28"
+    ],
+    "full_denominator_result": {
+      "S0_seed_mean_ic": 0.2895956872375789,
+      "S1_each_seed_vs_S0_seed_mean": {},
+      "S1_seed_mean_ic": 0.28610939815727077,
+      "S1_seed_mean_vs_B1": {
+        "mean_delta_ic": 0.003209463683307297
+      },
+      "S1_seed_mean_vs_S0_seed_mean": {
+        "mean_delta_ic": -0.0034862890803081126
+      },
+      "mean_ic": {
+        "B1_history_xgboost": 0.2828999344739635,
+        "S0_history_gru_seed17": 0.28925576128259556,
+        "S0_history_gru_seed29": 0.2904315047251562,
+        "S0_history_gru_seed7": 0.2890997957049849,
+        "S1_history_transformer_seed17": 0.2857378813782185,
+        "S1_history_transformer_seed29": 0.2868934163621093,
+        "S1_history_transformer_seed7": 0.2856968967314845
+      }
+    },
+    "rows_per_arm": 210290,
+    "undefined_cells": []
+  },
+  "evaluation": {
+    "cells_per_arm": 315,
+    "dates": [
+      "2017-06-01",
+      "2017-06-02",
+      "2017-06-05",
+      "2017-06-06",
+      "2017-06-07",
+      "2017-06-08",
+      "2017-06-09",
+      "2017-06-12",
+      "2017-06-13",
+      "2017-06-14",
+      "2017-06-16",
+      "2017-06-19",
+      "2017-06-20",
+      "2017-06-21",
+      "2017-06-22",
+      "2017-06-23",
+      "2017-06-26",
+      "2017-06-27",
+      "2017-06-28",
+      "2017-06-29",
+      "2017-06-30",
+      "2017-09-01",
+      "2017-09-04",
+      "2017-09-05",
+      "2017-09-06",
+      "2017-09-07",
+      "2017-09-08",
+      "2017-09-11",
+      "2017-09-12",
+      "2017-09-13",
+      "2017-09-14",
+      "2017-09-15",
+      "2017-09-18",
+      "2017-09-19",
+      "2017-09-20",
+      "2017-09-21",
+      "2017-09-22",
+      "2017-09-25",
+      "2017-09-26",
+      "2017-09-27",
+      "2017-09-28",
+      "2017-09-29",
+      "2017-11-02",
+      "2017-11-03",
+      "2017-11-06",
+      "2017-11-07",
+      "2017-11-08",
+      "2017-11-09",
+      "2017-11-10",
+      "2017-11-13",
+      "2017-11-14",
+      "2017-11-15",
+      "2017-11-16",
+      "2017-11-17",
+      "2017-11-20",
+      "2017-11-21",
+      "2017-11-22",
+      "2017-11-23",
+      "2017-11-24",
+      "2017-11-27",
+      "2017-11-28",
+      "2017-11-29",
+      "2017-11-30"
+    ],
+    "full_denominator_result": {
+      "S0_seed_mean_ic": 0.29750635447260426,
+      "S1_each_seed_vs_S0_seed_mean": {
+        "17": {
+          "ci95_date_block5": [
+            -0.011125614732044813,
+            -0.007737684823681087
+          ],
+          "leave_one_stock_out_delta_ic": {
+            "KGHM": -0.009954304580682981,
+            "PEKAO": -0.00894945507144864,
+            "PKNORLEN": -0.010521603246645486,
+            "PKOBP": -0.008411672560015803,
+            "PZU": -0.007270632329051537
+          },
+          "mean_delta_ic": -0.00902153355756889,
+          "month_delta_ic": {
+            "2017-06": -0.007469805686817923,
+            "2017-09": -0.009321913926129332,
+            "2017-11": -0.010272881059759412
+          },
+          "stock_delta_ic": {
+            "KGHM": -0.0052904494651125206,
+            "PEKAO": -0.00930984750204988,
+            "PKNORLEN": -0.0030212548012625035,
+            "PKOBP": -0.011460977547781241,
+            "PZU": -0.016025138471638296
+          }
+        },
+        "29": {
+          "ci95_date_block5": [
+            -0.011781771175045449,
+            -0.008905301292438925
+          ],
+          "leave_one_stock_out_delta_ic": {
+            "KGHM": -0.010944368601042255,
+            "PEKAO": -0.008586756785686161,
+            "PKNORLEN": -0.013455774831556709,
+            "PKOBP": -0.011705415411442967,
+            "PZU": -0.0070946677856328815
+          },
+          "mean_delta_ic": -0.010357396683072194,
+          "month_delta_ic": {
+            "2017-06": -0.009220414355124463,
+            "2017-09": -0.009451346711046438,
+            "2017-11": -0.012400428983045681
+          },
+          "stock_delta_ic": {
+            "KGHM": -0.008009509011191955,
+            "PEKAO": -0.01743995627261632,
+            "PKNORLEN": 0.002036115910865862,
+            "PKOBP": -0.004965321769589104,
+            "PZU": -0.023408312272829444
+          }
+        },
+        "7": {
+          "ci95_date_block5": [
+            -0.011606762218258628,
+            -0.008750994223235647
+          ],
+          "leave_one_stock_out_delta_ic": {
+            "KGHM": -0.01108225316129157,
+            "PEKAO": -0.009517349189315058,
+            "PKNORLEN": -0.01079483915870401,
+            "PKOBP": -0.010370495126204601,
+            "PZU": -0.008153687385871357
+          },
+          "mean_delta_ic": -0.00998372480427732,
+          "month_delta_ic": {
+            "2017-06": -0.00806334234392938,
+            "2017-09": -0.010460182572172915,
+            "2017-11": -0.011427649496729662
+          },
+          "stock_delta_ic": {
+            "KGHM": -0.00558961137622031,
+            "PEKAO": -0.011849227264126364,
+            "PKNORLEN": -0.006739267386570563,
+            "PKOBP": -0.008436643516568188,
+            "PZU": -0.01730387447790118
+          }
+        }
+      },
+      "S1_seed_mean_ic": 0.2877188027909648,
+      "S1_seed_mean_vs_B1": {
+        "ci95_date_block5": [
+          -0.00024310388425126883,
+          0.00247495671673805
+        ],
+        "leave_one_stock_out_delta_ic": {
+          "KGHM": 0.0016955421317521216,
+          "PEKAO": 0.0013312946731083933,
+          "PKNORLEN": 0.002591289838519405,
+          "PKOBP": 0.00035209277027047574,
+          "PZU": 0.00043655912765957816
+        },
+        "mean_delta_ic": 0.0012813557082619947,
+        "month_delta_ic": {
+          "2017-06": 0.004991378218632216,
+          "2017-09": -0.002535140897642758,
+          "2017-11": 0.0013878298037965267
+        },
+        "stock_delta_ic": {
+          "KGHM": -0.0003753899856985133,
+          "PEKAO": 0.0010815998488764014,
+          "PKNORLEN": -0.003958380812767646,
+          "PKOBP": 0.00499840746022807,
+          "PZU": 0.0046605420306716615
+        }
+      },
+      "S1_seed_mean_vs_S0_seed_mean": {
+        "ci95_date_block5": [
+          -0.011397582143167726,
+          -0.008567072094935195
+        ],
+        "leave_one_stock_out_delta_ic": {
+          "KGHM": -0.010660308781005602,
+          "PEKAO": -0.009017853682149954,
+          "PKNORLEN": -0.011590739078968734,
+          "PKOBP": -0.010162527699221123,
+          "PZU": -0.007506329166851924
+        },
+        "mean_delta_ic": -0.009787551681639467,
+        "month_delta_ic": {
+          "2017-06": -0.00825118746195725,
+          "2017-09": -0.009744481069782894,
+          "2017-11": -0.011366986513178256
+        },
+        "stock_delta_ic": {
+          "KGHM": -0.006296523284174927,
+          "PEKAO": -0.012866343679597518,
+          "PKNORLEN": -0.0025748020923224077,
+          "PKOBP": -0.008287647611312845,
+          "PZU": -0.018912441740789637
+        }
+      },
+      "mean_ic": {
+        "B1_history_xgboost": 0.28643744708270286,
+        "S0_history_gru_seed17": 0.2963176790074829,
+        "S0_history_gru_seed29": 0.2973585118006209,
+        "S0_history_gru_seed7": 0.298842872609709,
+        "S1_history_transformer_seed17": 0.2884848209150354,
+        "S1_history_transformer_seed29": 0.2871489577895321,
+        "S1_history_transformer_seed7": 0.2875226296683269
+      }
+    },
+    "rows_per_arm": 625118,
+    "undefined_cells": []
+  },
+  "fit_seconds_by_arm": {
+    "S1_history_transformer_seed17": 2505.3483160473406,
+    "S1_history_transformer_seed29": 2138.7721888106316,
+    "S1_history_transformer_seed7": 2154.5953812114894
+  },
+  "fq2_summary_sha256": "1d2ae71efe63f41055c2767788d7c6fd5548ba11bcac0967f7fd80b7d366e180",
+  "fq3_summary_sha256": "4f606388b8d7c0b10942acfb97665b92c5994678822466f01081ca913417d52a",
+  "gate_sha256": "e2c11ca6cba2d9c35e60a00c8023456eb39ef9528494daa33761323e614dcd67",
+  "gpu_device_occupancy_seconds": 6833.955058980733,
+  "inference_seconds_by_arm": {
+    "S1_history_transformer_seed17": 11.583998901769519,
+    "S1_history_transformer_seed29": 11.902701877057552,
+    "S1_history_transformer_seed7": 11.752472132444382
+  },
+  "input_receipt_sha256": {
+    "KGHM": {
+      "fq2_fixed_private_raw": "c0af84e534fab8158bd23e6b462ca276702a3b7480e2967192506b14c462c614",
+      "fq2_fixed_public": "5f23c50c32cee3f54de8ed2a2b8a4be443ea7b7554f39dc9ddf92b6571b93959",
+      "fq4": "ccafb394908850acef34b430be81c8836532b2341e4946d728208dedb6eb0d5a"
+    },
+    "PEKAO": {
+      "fq2_fixed_private_raw": "5a75465a3d7d491ea2b72f95e0c6a2fbceb8f573da0e9cc5bf9fa7377670499f",
+      "fq2_fixed_public": "8cbae1fa5bc8d9c77206187cc3d0471dfb27548d4c6f0f4510bbbfc3431f7e57",
+      "fq4": "856b5e1e84e08ac088488184a816f0b42d1866a14a6304ef08170ecafc286053"
+    },
+    "PKNORLEN": {
+      "fq2_fixed_private_raw": "98ffc82cea38262d6c860eb0c3f1d5ffe2b03a7582fdf29f9d651f037ec1d010",
+      "fq2_fixed_public": "f9c3811a481d2d08321c3e0e868c4bd1036541f2f5ed2808f899441d9e2d9eca",
+      "fq4": "da4e3dbaaa653b0886a8319a4d062b45400fcd6111000df68453d3c87a267204"
+    },
+    "PKOBP": {
+      "fq2_fixed_private_raw": "a76a0bfa20e3fd4fdc58decbfc813afa176d40f39fa4ebafab076a4b9c5d3f28",
+      "fq2_fixed_public": "03dac5f35c360440437952e1f1e30a52d002ca9ffd25e390692015fca05052c3",
+      "fq4": "61eae837dcc215be6203fbbe0da2987a6b3b9cf2e07c9e731313f3362ee053c3"
+    },
+    "PZU": {
+      "fq2_fixed_private_raw": "495a891119c7dac490ca00d3180816333e1af8bdf7655db837e34581e49040be",
+      "fq2_fixed_public": "15e589bf43a2c49b444773b3ed7858d6ec4171fa858ba2e0ba7c7f34319e2293",
+      "fq4": "b65913f2ddbb3750f557a41a1a0486b01b345869483272d5a33189d63f92c4fc"
+    }
+  },
+  "limits": "All evaluation dates/stocks exposed; mean of seed ICs, not IC of averaged predictions. No independent, fill, or profit claim.",
+  "peak_gpu_allocated_bytes": 138106880,
+  "retrospective_only": true,
+  "source_commit": "19824642487cdd1ab45e1b9c1bf651053da76b95",
+  "stage": "FQ4",
+  "symbols": [
+    "KGHM",
+    "PEKAO",
+    "PKNORLEN",
+    "PKOBP",
+    "PZU"
+  ],
+  "task_wall_seconds": 6918.38403484039,
+  "train_endpoints_per_stock": 200000,
+  "training_limited": {
+    "KGHM": {
+      "S1_history_transformer_seed17": false,
+      "S1_history_transformer_seed29": false,
+      "S1_history_transformer_seed7": false
+    },
+    "PEKAO": {
+      "S1_history_transformer_seed17": false,
+      "S1_history_transformer_seed29": false,
+      "S1_history_transformer_seed7": false
+    },
+    "PKNORLEN": {
+      "S1_history_transformer_seed17": false,
+      "S1_history_transformer_seed29": false,
+      "S1_history_transformer_seed7": false
+    },
+    "PKOBP": {
+      "S1_history_transformer_seed17": false,
+      "S1_history_transformer_seed29": false,
+      "S1_history_transformer_seed7": false
+    },
+    "PZU": {
+      "S1_history_transformer_seed17": false,
+      "S1_history_transformer_seed29": false,
+      "S1_history_transformer_seed7": false
+    }
+  }
+}
