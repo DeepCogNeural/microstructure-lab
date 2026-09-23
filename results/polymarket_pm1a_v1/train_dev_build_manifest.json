@@ -1,0 +1,73 @@
+{
+  "eligibility_config_sha256": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+  "feature_names": [
+    "logit_midpoint",
+    "spread",
+    "best_bid_size",
+    "best_ask_size",
+    "top_level_imbalance",
+    "five_level_bid_depth",
+    "five_level_ask_depth",
+    "five_level_imbalance",
+    "log_total_visible_depth",
+    "log_seconds_to_close",
+    "capture_age_seconds"
+  ],
+  "kind": "private_opportunity_build",
+  "limits": "Only requested split labels were used; final requires explicit unseal. Private row arrays are excluded from Git.",
+  "model_config_sha256": "6eedd161eecf81ad56294abf8541dca77af63ff26c926e6827abfd529b0a7cd3",
+  "source_audit_sha256": "71d778c83edbcf6143e525bcf22f2ce32517cc40c7559468988111731e8d3925",
+  "source_code_sha256": {
+    "scripts/build_polymarket_pm1a.py": "f1b38ceeb886930fbde67efc58be9f448110b4ad24ac47d3fcee9ca9e5d8895e",
+    "src/cloblab/polymarket_pm1a.py": "e14f3094a1250b567231928bda54da38fc71e89548c2e844abdfbccff059ae74"
+  },
+  "source_version_doi": "10.5281/zenodo.22084977",
+  "split_manifest_sha256": "5fb3f66288048c1f2eb19a924a16211255d4de87f000d13343bf8355ddaae0ea",
+  "splits": {
+    "dev": {
+      "declared_markets": 241,
+      "eligible_markets": 236,
+      "eligible_opportunities": 8749,
+      "opportunities_by_coin": {
+        "bnb": 442,
+        "btc": 1279,
+        "doge": 1708,
+        "eth": 1148,
+        "hype": 782,
+        "sol": 2133,
+        "xrp": 806,
+        "zec": 451
+      },
+      "opportunities_by_length": {
+        "15m": 1815,
+        "4h": 5824,
+        "5m": 1110
+      },
+      "positive_markets": 133,
+      "private_npz_sha256": "f389acb1d63c91a4e03f99b8f059c5413b74a1e5c80586158809204f4ce32c73"
+    },
+    "train": {
+      "declared_markets": 431,
+      "eligible_markets": 405,
+      "eligible_opportunities": 16947,
+      "opportunities_by_coin": {
+        "bnb": 2044,
+        "btc": 1904,
+        "doge": 2565,
+        "eth": 3164,
+        "hype": 1584,
+        "sol": 2920,
+        "xrp": 2365,
+        "zec": 401
+      },
+      "opportunities_by_length": {
+        "15m": 3082,
+        "4h": 12421,
+        "5m": 1444
+      },
+      "positive_markets": 231,
+      "private_npz_sha256": "70b1ff1194b836ccc960cce460ea1bca4c70de82bd1dbe13622f6c78b35ae909"
+    }
+  },
+  "stage": "PM1A"
+}
