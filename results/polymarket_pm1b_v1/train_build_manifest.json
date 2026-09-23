@@ -1,0 +1,33 @@
+{
+  "by_coin": {
+    "bnb": 1399,
+    "btc": 1447,
+    "doge": 1878,
+    "eth": 2424,
+    "hype": 1255,
+    "sol": 2165,
+    "xrp": 1696,
+    "zec": 215
+  },
+  "by_contract_length": {
+    "15m": 2462,
+    "4h": 8872,
+    "5m": 1145
+  },
+  "eligible_markets": 392,
+  "eligible_opportunities": 12479,
+  "exclusions": {
+    "future_invalid_book": 240,
+    "future_stale": 3336,
+    "no_strictly_future_capture": 892
+  },
+  "group": "train",
+  "horizon_audit_sha256": "b2531000a410ed5f54d050d12c430ee77ca3f9a60c7e30899a4f681924088a40",
+  "limits": "No repricing target values or row arrays are public; final requires explicit unseal after fitted model/code freeze.",
+  "pm1a_opportunity_sha256": "70b1ff1194b836ccc960cce460ea1bca4c70de82bd1dbe13622f6c78b35ae909",
+  "private_target_sha256": "fc8f5692d4b9803aa101849134df131413e1e8b214bb3516c92dccd3ba18dc59",
+  "protocol_sha256": "d3715c8dd57618d5baeaf2603085a7f26196b280f61c6c8767927bbd83a50751",
+  "source_audit_sha256": "71d778c83edbcf6143e525bcf22f2ce32517cc40c7559468988111731e8d3925",
+  "stage": "PM1B",
+  "status": "PRIVATE_TARGET_BUILT"
+}
