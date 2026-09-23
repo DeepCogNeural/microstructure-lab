@@ -1,0 +1,529 @@
+{
+  "costs": {
+    "B0_zero_repricing": {
+      "fit_seconds": 0.0,
+      "inference_seconds": 0.0
+    },
+    "B1_current_state": {
+      "fit_seconds": 0.09120837494265288,
+      "inference_seconds": 0.002689667046070099,
+      "model_sha256": "2a7860ef9d5ba2e30177248f8950bcc3d3f9ba54cb3ea2d1e5c3bbeba1ffb703"
+    },
+    "B2_same_history": {
+      "fit_seconds": 0.21444700006395578,
+      "inference_seconds": 0.002339957980439067,
+      "model_sha256": "a55cbab9575469326dc05425c2adcb97300e1094c394853ba36b689a50cd2151"
+    },
+    "B3_gru_seed17": {
+      "best_epoch": 6,
+      "epochs_run": 14,
+      "fit_seconds": 1.535453167045489,
+      "inference_seconds": 0.02116883301641792,
+      "learning_curve": [
+        {
+          "dev_market_mse_probability_points2": 0.011105977834597512,
+          "epoch": 1,
+          "train_standardized_weighted_mse": 3.8571485723107175
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011166425878733361,
+          "epoch": 2,
+          "train_standardized_weighted_mse": 3.8345941331114295
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011134130351854336,
+          "epoch": 3,
+          "train_standardized_weighted_mse": 3.82021976297702
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011096380994888131,
+          "epoch": 4,
+          "train_standardized_weighted_mse": 3.801120068740876
+        },
+        {
+          "dev_market_mse_probability_points2": 0.01116037844353414,
+          "epoch": 5,
+          "train_standardized_weighted_mse": 3.795079263686578
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011057005947654915,
+          "epoch": 6,
+          "train_standardized_weighted_mse": 3.7745221022232336
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011177215322505976,
+          "epoch": 7,
+          "train_standardized_weighted_mse": 3.7676761431071295
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011211067872419479,
+          "epoch": 8,
+          "train_standardized_weighted_mse": 3.75621759119099
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011214414561448498,
+          "epoch": 9,
+          "train_standardized_weighted_mse": 3.7445884573836823
+        },
+        {
+          "dev_market_mse_probability_points2": 0.01130956178378108,
+          "epoch": 10,
+          "train_standardized_weighted_mse": 3.731193236508436
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011155757978881286,
+          "epoch": 11,
+          "train_standardized_weighted_mse": 3.721610515095086
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011234221770372739,
+          "epoch": 12,
+          "train_standardized_weighted_mse": 3.706566105047119
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011236737310902174,
+          "epoch": 13,
+          "train_standardized_weighted_mse": 3.690299767463954
+        },
+        {
+          "dev_market_mse_probability_points2": 0.01117210098639342,
+          "epoch": 14,
+          "train_standardized_weighted_mse": 3.6779133618281366
+        }
+      ],
+      "model_sha256": "aad5bc3b2bddaee92da46161256a2e4bbee12dced8716100fdbfb4e448ae5224",
+      "trainable_parameters": 4353,
+      "training_limited": false
+    },
+    "B3_gru_seed29": {
+      "best_epoch": 4,
+      "epochs_run": 12,
+      "fit_seconds": 1.3130278339376673,
+      "inference_seconds": 0.02161195909138769,
+      "learning_curve": [
+        {
+          "dev_market_mse_probability_points2": 0.01115125626251855,
+          "epoch": 1,
+          "train_standardized_weighted_mse": 3.859933443238433
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011108275621286065,
+          "epoch": 2,
+          "train_standardized_weighted_mse": 3.8303965087988403
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011124277069819095,
+          "epoch": 3,
+          "train_standardized_weighted_mse": 3.815336414891384
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011090841083217456,
+          "epoch": 4,
+          "train_standardized_weighted_mse": 3.799447661173334
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011164471479931225,
+          "epoch": 5,
+          "train_standardized_weighted_mse": 3.7893476322123956
+        },
+        {
+          "dev_market_mse_probability_points2": 0.0111367658133052,
+          "epoch": 6,
+          "train_standardized_weighted_mse": 3.779939508163976
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011233198338984634,
+          "epoch": 7,
+          "train_standardized_weighted_mse": 3.7703409090460283
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011237039868310292,
+          "epoch": 8,
+          "train_standardized_weighted_mse": 3.757006183858135
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011122454220912549,
+          "epoch": 9,
+          "train_standardized_weighted_mse": 3.7469527192763032
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011228825891774218,
+          "epoch": 10,
+          "train_standardized_weighted_mse": 3.7369476269075848
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011159132600723773,
+          "epoch": 11,
+          "train_standardized_weighted_mse": 3.7213661403811797
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011341577426230456,
+          "epoch": 12,
+          "train_standardized_weighted_mse": 3.715931788162152
+        }
+      ],
+      "model_sha256": "c1c0e60be0877d215aee50ea47df31ce6c1fcf24ce695b033bdef97b8d12163f",
+      "trainable_parameters": 4353,
+      "training_limited": false
+    },
+    "B3_gru_seed7": {
+      "best_epoch": 2,
+      "epochs_run": 10,
+      "fit_seconds": 1.1209650000091642,
+      "inference_seconds": 0.021681667072698474,
+      "learning_curve": [
+        {
+          "dev_market_mse_probability_points2": 0.011019061856991563,
+          "epoch": 1,
+          "train_standardized_weighted_mse": 3.9194753547217003
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011002014073456757,
+          "epoch": 2,
+          "train_standardized_weighted_mse": 3.848465435284865
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011032511065442304,
+          "epoch": 3,
+          "train_standardized_weighted_mse": 3.836212788745377
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011076913886701123,
+          "epoch": 4,
+          "train_standardized_weighted_mse": 3.8198777186146766
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011084257036921188,
+          "epoch": 5,
+          "train_standardized_weighted_mse": 3.802242483175623
+        },
+        {
+          "dev_market_mse_probability_points2": 0.01104403203527588,
+          "epoch": 6,
+          "train_standardized_weighted_mse": 3.79622421549688
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011074138557162097,
+          "epoch": 7,
+          "train_standardized_weighted_mse": 3.7856957063529624
+        },
+        {
+          "dev_market_mse_probability_points2": 0.01113106605656767,
+          "epoch": 8,
+          "train_standardized_weighted_mse": 3.76763005277532
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011147078887066068,
+          "epoch": 9,
+          "train_standardized_weighted_mse": 3.754622829575862
+        },
+        {
+          "dev_market_mse_probability_points2": 0.011227294896324623,
+          "epoch": 10,
+          "train_standardized_weighted_mse": 3.751847581172512
+        }
+      ],
+      "model_sha256": "2a300a2af1c37f02b572a91a06d1ed610cba5d0ef0218d3142c69ec468e12442",
+      "trainable_parameters": 4353,
+      "training_limited": false
+    }
+  },
+  "dev_manifest_sha256": "5e50de6b778dc4455a41ecf42b16f24f54c52d48625c706843e23fd7038af740",
+  "dev_markets": 234,
+  "dev_opportunities": 7476,
+  "dev_predictions_private_sha256": "20bc08bc0d4d0b7d533a37327ff94a0a8a80d83b1ad39ea1c39000bb5ccdda49",
+  "dev_prefers_B3_over_B2_at_1pct": true,
+  "dev_private_sha256": "bef41a8f6dab93f9153a570c16ecd3c8b138926f8ca85c57900228e1ee194988",
+  "horizon_config_sha256": "d3715c8dd57618d5baeaf2603085a7f26196b280f61c6c8767927bbd83a50751",
+  "limits": "Train/dev only; final repricing target remains closed. Market bootstrap conditional on four sampled UTC dates; no terminal information, exact exchange/fill/PnL, or WSE confirmation claim.",
+  "model_config_sha256": "9a1c1f23e1d6bdf3552606370ae860930c9cbf16dd2cad8c02ecdf1e6e881bca",
+  "paired_market_mse": {
+    "B1_current_state_minus_B0": {
+      "market_bootstrap_ci95": [
+        0.00018025778275744802,
+        0.0011361742183973165
+      ],
+      "market_mean_delta": 0.0006510501720408897,
+      "negative_market_differences": 82,
+      "paired_markets": 234,
+      "positive_market_differences": 152,
+      "zero_market_differences": 0
+    },
+    "B2_minus_B1": {
+      "market_bootstrap_ci95": [
+        -0.0007504328575819037,
+        0.0002961012579267068
+      ],
+      "market_mean_delta": -0.00023882620665739558,
+      "negative_market_differences": 126,
+      "paired_markets": 234,
+      "positive_market_differences": 108,
+      "zero_market_differences": 0
+    },
+    "B2_same_history_minus_B0": {
+      "market_bootstrap_ci95": [
+        1.880385068276156e-05,
+        0.0008328072862318111
+      ],
+      "market_mean_delta": 0.00041222396538349404,
+      "negative_market_differences": 84,
+      "paired_markets": 234,
+      "positive_market_differences": 150,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed17_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.00010197388115364809,
+        9.238025425088312e-05
+      ],
+      "market_mean_delta": -3.680590681817128e-06,
+      "negative_market_differences": 98,
+      "paired_markets": 234,
+      "positive_market_differences": 136,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed29_minus_B0": {
+      "market_bootstrap_ci95": [
+        -3.5909102512165956e-05,
+        9.824105958599203e-05
+      ],
+      "market_mean_delta": 3.0154544880720624e-05,
+      "negative_market_differences": 99,
+      "paired_markets": 234,
+      "positive_market_differences": 135,
+      "zero_market_differences": 0
+    },
+    "B3_gru_seed7_minus_B0": {
+      "market_bootstrap_ci95": [
+        -0.00012613240892036143,
+        6.540010492698725e-06
+      ],
+      "market_mean_delta": -5.867246487997534e-05,
+      "negative_market_differences": 117,
+      "paired_markets": 234,
+      "positive_market_differences": 117,
+      "zero_market_differences": 0
+    },
+    "B3_seed_mean_minus_B0": {
+      "market_bootstrap_ci95": [
+        -9.293655797847517e-05,
+        4.3100847805983116e-05
+      ],
+      "market_mean_delta": -2.4640618434025583e-05,
+      "negative_market_differences": 103,
+      "paired_markets": 234,
+      "positive_market_differences": 131,
+      "zero_market_differences": 0
+    },
+    "B3_seed_mean_minus_B2": {
+      "market_bootstrap_ci95": [
+        -0.0008351643751297778,
+        -6.047569410036759e-05
+      ],
+      "market_mean_delta": -0.00043686458381751963,
+      "negative_market_differences": 143,
+      "paired_markets": 234,
+      "positive_market_differences": 91,
+      "zero_market_differences": 0
+    }
+  },
+  "process_peak_rss_bytes": 510885888,
+  "scores": {
+    "B0_zero_repricing": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006640923870226722,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.00026395929582855986,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.014757037423998958,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011060686538336735,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011060686538336735,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.0035255114801774905
+    },
+    "B1_current_state": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006632053118337444,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.0005965284551004002,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.015812155655117406,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011711736710377622,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011711736710377622,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.003810891044573895
+    },
+    "B2_same_history": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006734233738423994,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.0008125939912808184,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.015331352302949774,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011472910503720228,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011472910503720228,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.0037438521747729008
+    },
+    "B3_gru_seed17": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006638658436442406,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.0003393855203062771,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.014743527609884583,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011057005947654915,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011057005947654915,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.003563088571777749
+    },
+    "B3_gru_seed29": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006648254261871267,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.00030719421682261086,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.014798413382698314,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011090841083217456,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011090841083217456,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.0035572847220124225
+    },
+    "B3_gru_seed7": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.006631331697281291,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.00034831581173276496,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.014654674055808689,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011002014073456757,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011002014073456757,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.0035379178334489607
+    },
+    "B3_seed_mean": {
+      "by_contract_length_descriptive": {
+        "15m": {
+          "market_mean_mse": 0.00662706468165516,
+          "markets": 78
+        },
+        "4h": {
+          "market_mean_mse": 0.0003045224494768085,
+          "markets": 16
+        },
+        "5m": {
+          "market_mean_mse": 0.01471893814926073,
+          "markets": 140
+        }
+      },
+      "by_date_descriptive": {
+        "2026-08-23": {
+          "market_mean_mse": 0.011036045919902709,
+          "markets": 234
+        }
+      },
+      "market_mean_mse": 0.011036045919902709,
+      "markets": 234,
+      "markets_with_decisions_spanning_utc_dates": 0,
+      "opportunities": 7476,
+      "row_mean_mse_descriptive": 0.003537811494305804
+    }
+  },
+  "stage": "PM1B",
+  "status": "DEV_ONLY_FINAL_CLOSED",
+  "train_manifest_sha256": "c74e18dc5c2b24169a0c645b189f5307a5c75eb2bf97532e4cbfedc8b92c1a40",
+  "train_markets": 392,
+  "train_opportunities": 12479,
+  "train_private_sha256": "fc8f5692d4b9803aa101849134df131413e1e8b214bb3516c92dccd3ba18dc59",
+  "wall_seconds": 5.186494249966927
+}
