@@ -1,0 +1,15 @@
+{
+  "stage": "Q5",
+  "checked_date_local": "2026-09-23",
+  "outcomes_viewed": false,
+  "qualified_independent_final": false,
+  "verdict": "PENDING_INDEPENDENT_CONFIRMATION",
+  "scope": "current microstructure-lab source inventory, prior source/license notes, and three official provider metadata routes; not exhaustive user-storage discovery",
+  "candidates": [
+    {"source": "WSELOB-2017 V1", "url": "https://data.mendeley.com/datasets/3g4mhdp899/1", "status": "existing 2017 source treated as exposed development data; no new later period evidenced"},
+    {"source": "FI-2010", "url": "https://etsin.fairdata.fi/dataset/73eb48d7-4dbc-4a10-a52a-da745b47a649", "status": "open CC BY 4.0 but normalized short external benchmark; exact original-event h20/economic scale not established"},
+    {"source": "LOBSTER", "url": "https://data.lobsterdata.com/info/WhatIsLOBSTER.php", "status": "longer cross-market message/orderbook data possible; subscription and data-use terms not verified for this user"}
+  ],
+  "no_new_model_fits": true,
+  "next_stage": "Q6 final bounded historical package"
+}
