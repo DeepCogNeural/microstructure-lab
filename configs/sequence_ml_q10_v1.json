@@ -1,0 +1,19 @@
+{
+  "stage": "Q10 strict source-only cross-stock transfer",
+  "parent_Q8_config_sha256": "9c6110573ec9b423a70b0868d9b0e3de67ee8a80b7490f3b2bcc26be40dc9792",
+  "source_cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+  "symbols": ["KGHM", "PEKAO", "PKNORLEN", "PKOBP", "PZU"],
+  "candidate_contexts": [8, 32, 128],
+  "common_eligibility_context": 128,
+  "source_train_endpoints_per_stock": 200000,
+  "source_train_months": ["2017-01", "2017-02", "2017-03"],
+  "source_inner_dev_month": "2017-04",
+  "heldout_evaluation_months": ["2017-06", "2017-09", "2017-11"],
+  "target": "original-event markout_20",
+  "features": ["spread_bps", "top_imbalance", "depth_imbalance", "ofi_l1_norm", "microprice_minus_mid_bps"],
+  "arms": ["B1_history_xgboost", "S0_history_gru_seed7", "S0_history_gru_seed17", "S0_history_gru_seed29"],
+  "context_selection": "Per fold, equal-source-stock/date mean of three GRU seed ICs from April Q8 reports for the other four stocks only; <=1e-6 tie selects shorter context. Never use held-out Q8 score or global Q8 choice.",
+  "model_hyperparameters": "Unchanged FQ2 XGBoost and hidden-64 one-layer GRU, max60/patience8, seeds7/17/29; pooled four-source training and source-only April early stopping/normalization.",
+  "heldout_boundary": "Held-out Jan-Apr labels never loaded into fit/model-selection arrays. Held-out June/Sep/Nov labels only for retrospective scoring after source-only fit; same Q8 context128-eligible endpoint identities.",
+  "reporting": "All five outer folds and common stock/day rows, all three seeds, training adequacy, compute, failures, null/negative results; no independent-confirmation or actual-trading claim."
+}
