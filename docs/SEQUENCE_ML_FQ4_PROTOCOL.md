@@ -1,0 +1,11 @@
+# Formal FQ4 conditional Transformer protocol
+
+The formal FQ4 gate passed **all seven** frozen criteria after FQ2 200k and FQ3 completion. Its receipt is `results/sequence_ml_fq4_v1/fq4_gate.json` (SHA-256 `e2c11ca6cba2d9c35e60a00c8023456eb39ef9528494daa33761323e614dcd67`). This pass authorizes the bounded S1 experiment; it is not evidence of a Transformer advantage.
+
+Before any S1 fit, freeze `configs/sequence_ml_fq4_v1.json`, `src/cloblab/sequence_transformer.py`, and `scripts/run_sequence_ml_fq4.py`. There is exactly one configuration: width 64, four heads, two encoder layers, feedforward width 128, dropout 0.1, learned positions, strict causal self-attention mask and last-token readout. All inputs belong to the original 32-state causal window. No hidden/cache state crosses endpoints, stocks, days or segments.
+
+Use the five formal FQ2 200k stock tasks. For each stock, recompute the FQ2 selection with the same config and check the exact training endpoint identity SHA-256 against the published FQ2 receipt. Compare dev/evaluation `day`, original `event_index` and h20 target arrays against the private fixed FQ2 prediction bundle before fitting. These checks bind S1 to the same five features, target, rows, dates, and 200k training endpoints as B1 and S0. Any mismatch fails closed.
+
+Run seeds 7/17/29 with the same training-standardized target, AdamW learning rate 0.001, weight decay 0.0001, batch 256, maximum 60 epochs and patience 8. April dev loss alone controls checkpoint/early stop. June/September/November remain previously exposed retrospective evaluation and cannot select architecture, seed, threshold or hyperparameters. Report every seed, training limit, full stock/date denominator, paired IC versus both B1 and S0, learning and compute cost, failures and null/negative results.
+
+Budget is five single-GPU stock tasks, at most three allocated hours per task and <=15 total allocated GPU-hours. Do not reduce endpoints or change protocol to produce a favorable sign. If a genuine resource or correctness hard stop occurs, retain its evidence. S1 does not change FQ2/FQ3 results, and the fixed visible crossing failure is not rebranded as a profitable strategy. All row predictions, weights, licensed data and scheduler logs remain private; only aggregate receipts and a research report may be committed.
