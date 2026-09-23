@@ -1,0 +1,86 @@
+{
+  "actual_candidate_market_count": 2,
+  "book": {
+    "best_bid_ask": {
+      "candidate_target_age_ms_min_median_max": [
+        6,
+        127.5,
+        5142
+      ],
+      "new_updates_within_5s": 19,
+      "pre_age_ms_min_median_max": [
+        2,
+        55.5,
+        198
+      ],
+      "pre_found": 20,
+      "two_sided_candidate_target": 20,
+      "two_sided_pre": 20
+    },
+    "book": {
+      "candidate_target_age_ms_min_median_max": [
+        6,
+        476.0,
+        5140
+      ],
+      "new_updates_within_5s": 19,
+      "pre_age_ms_min_median_max": [
+        14,
+        249.5,
+        992
+      ],
+      "pre_found": 20,
+      "two_sided_candidate_target": 20,
+      "two_sided_pre": 20
+    },
+    "price_change": {
+      "candidate_target_age_ms_min_median_max": [
+        2,
+        9.0,
+        284
+      ],
+      "new_updates_within_5s": 20,
+      "pre_age_ms_min_median_max": [
+        1,
+        10.5,
+        141
+      ],
+      "pre_found": 20,
+      "two_sided_candidate_target": 0,
+      "two_sided_pre": 0
+    }
+  },
+  "complete_market_count": 288,
+  "first_token_trade_count": 2272,
+  "fixed_buy_prints": 10,
+  "fixed_sell_prints": 10,
+  "limits": "Availability around print receive time, not a certified match-time or replayed 5s maker target. No C/A/M values or markouts.",
+  "receipt": {
+    "attempted_prints": 20,
+    "distinct_hashes": 20,
+    "distinct_maker_orders": 26,
+    "legs_of_repeated_maker_orders": 6,
+    "maker_legs": 30,
+    "maker_shares": "209.522286",
+    "one_to_many_prints": 7,
+    "receipt_joined_prints": 20,
+    "recv_minus_source_ms": [
+      10,
+      14.0,
+      76
+    ],
+    "repeated_maker_orders": 2,
+    "source_minus_chain_ms": [
+      -3425,
+      -2214.0,
+      -1574
+    ],
+    "target_token_maker_buy": 13,
+    "target_token_maker_legs": 14,
+    "target_token_maker_sell": 1,
+    "target_token_maker_shares": "73.67125"
+  },
+  "selected_market_count": 3,
+  "source": "OutcomeTick samples-2026-09-08",
+  "status": "DEVELOPMENT_SOURCE_AUDIT"
+}
