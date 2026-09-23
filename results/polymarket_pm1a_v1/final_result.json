@@ -1,0 +1,153 @@
+{
+  "dev_report_sha256": "c0a32cae9b3d4b11926e60eff98dbb2cbe057cc94d9e70b009bf690a871b9b42",
+  "final_build_manifest_sha256": "e54a7d0c1220f572f182dad935e0f93d958de7262de23919efd183e2933024c3",
+  "final_markets": 122,
+  "final_opportunities": 4621,
+  "final_private_npz_sha256": "6a703ba76aa4b955f7c2bbba3f402ea56c23e27d6a270bb9d1e4179816a51b06",
+  "inference_wall_seconds": 0.2455706250621006,
+  "limits": "One partial final UTC date of sampled markets. Market bootstrap conditions on this date/source; no durable out-of-time or WSE independent confirmation, and no realized PnL.",
+  "model_config_sha256": "6eedd161eecf81ad56294abf8541dca77af63ff26c926e6827abfd529b0a7cd3",
+  "paired_log_loss": {
+    "P1_calibration": {
+      "market_bootstrap_ci95": [
+        -0.023161037182049305,
+        0.008624541854087384
+      ],
+      "market_mean_delta": -0.006955071320763919,
+      "negative_market_differences": 59,
+      "paired_markets": 122,
+      "positive_market_differences": 63,
+      "zero_market_differences": 0
+    },
+    "P2_current_state": {
+      "market_bootstrap_ci95": [
+        -0.007413117053589399,
+        0.0462249836603856
+      ],
+      "market_mean_delta": 0.01963317690951961,
+      "negative_market_differences": 54,
+      "paired_markets": 122,
+      "positive_market_differences": 68,
+      "zero_market_differences": 0
+    },
+    "P3_history": {
+      "market_bootstrap_ci95": [
+        -0.01911823345917107,
+        0.035320454244645146
+      ],
+      "market_mean_delta": 0.0079991029315443,
+      "negative_market_differences": 64,
+      "paired_markets": 122,
+      "positive_market_differences": 58,
+      "zero_market_differences": 0
+    },
+    "P4_gru_seed17": {
+      "market_bootstrap_ci95": [
+        -0.015894655324343265,
+        0.03915163461089472
+      ],
+      "market_mean_delta": 0.01050627132716203,
+      "negative_market_differences": 60,
+      "paired_markets": 122,
+      "positive_market_differences": 62,
+      "zero_market_differences": 0
+    },
+    "P4_gru_seed29": {
+      "market_bootstrap_ci95": [
+        -0.017612526806243225,
+        0.02473501429095307
+      ],
+      "market_mean_delta": 0.003237238536570737,
+      "negative_market_differences": 64,
+      "paired_markets": 122,
+      "positive_market_differences": 58,
+      "zero_market_differences": 0
+    },
+    "P4_gru_seed7": {
+      "market_bootstrap_ci95": [
+        -0.014517353839222438,
+        0.025522398757999276
+      ],
+      "market_mean_delta": 0.005123014859867889,
+      "negative_market_differences": 60,
+      "paired_markets": 122,
+      "positive_market_differences": 62,
+      "zero_market_differences": 0
+    },
+    "P4_seed_mean": {
+      "market_bootstrap_ci95": [
+        -0.016236584602740238,
+        0.026457822401099878
+      ],
+      "market_mean_delta": 0.004296685475391779,
+      "negative_market_differences": 58,
+      "paired_markets": 122,
+      "positive_market_differences": 64,
+      "zero_market_differences": 0
+    },
+    "P4_seed_mean_minus_P3": {
+      "market_bootstrap_ci95": [
+        -0.023145964387424733,
+        0.014673481134269105
+      ],
+      "market_mean_delta": -0.0037024174561525185,
+      "negative_market_differences": 61,
+      "paired_markets": 122,
+      "positive_market_differences": 61,
+      "zero_market_differences": 0
+    }
+  },
+  "retrospective_external_domain_pilot": true,
+  "scores": {
+    "P0_raw_midpoint": {
+      "market_mean_brier": 0.16515695053654586,
+      "market_mean_log_loss": 0.4951695548052712,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P1_calibration": {
+      "market_mean_brier": 0.1623777710255454,
+      "market_mean_log_loss": 0.48821448348450724,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P2_current_state": {
+      "market_mean_brier": 0.1722710069100368,
+      "market_mean_log_loss": 0.5148027317147909,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P3_history": {
+      "market_mean_brier": 0.1671313243085965,
+      "market_mean_log_loss": 0.5031686577368155,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P4_gru_seed17": {
+      "market_mean_brier": 0.16817579634357335,
+      "market_mean_log_loss": 0.5056758261324332,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P4_gru_seed29": {
+      "market_mean_brier": 0.16549064362848562,
+      "market_mean_log_loss": 0.4984067933418419,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P4_gru_seed7": {
+      "market_mean_brier": 0.1659172887975771,
+      "market_mean_log_loss": 0.500292569665139,
+      "markets": 122,
+      "opportunities": 4621
+    },
+    "P4_seed_mean": {
+      "market_mean_brier": 0.16564040449855186,
+      "market_mean_log_loss": 0.49946624028066305,
+      "markets": 122,
+      "opportunities": 4621
+    }
+  },
+  "stage": "PM1A",
+  "status": "FINAL_SCORED_ONCE"
+}

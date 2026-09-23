@@ -1,0 +1,24 @@
+{
+  "files_sha256": {
+    "dev_result.json": "c0a32cae9b3d4b11926e60eff98dbb2cbe057cc94d9e70b009bf690a871b9b42",
+    "final_build_manifest.json": "e54a7d0c1220f572f182dad935e0f93d958de7262de23919efd183e2933024c3",
+    "final_calibration.json": "840d9a217628b801d4829a30e39a9f6b92556db54c2c616032b2885a139dbc33",
+    "final_result.json": "5b61b3dcb0141645367bc0f0c3bac815382fe797addbc30ebe6d220f140e19ad",
+    "train_dev_build_manifest.json": "009bcd3cec4cf598ad6625d0ac58ebbf979cfedf6cad262c9254599b3b85ce9f"
+  },
+  "limits": "One partial final UTC date; source sampled; no new WSE independent confirmation or realized PnL.",
+  "pre_final_scientific_commit": "e1c0e1c2c23b7ba21ba95430c53f62bf69a1d7ac",
+  "private_artifacts": "Train/dev/final row arrays, per-market scores, fitted models, dev row predictions remain outside Git.",
+  "source_sha256": {
+    "configs/polymarket_pm1a_model_v1.json": "6eedd161eecf81ad56294abf8541dca77af63ff26c926e6827abfd529b0a7cd3",
+    "configs/polymarket_pm1a_v1.json": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+    "scripts/build_polymarket_pm1a.py": "f1b38ceeb886930fbde67efc58be9f448110b4ad24ac47d3fcee9ca9e5d8895e",
+    "scripts/eval_polymarket_pm1a_final.py": "d54fcfd8196c8e7927ee70070230a679795cf10edb6dae73f76f157a1ae396d8",
+    "scripts/run_polymarket_pm1a_dev.py": "76a97d2aece907a69b1fb68082375a179e702d8a760f8d7eefb611eb71e5bb66",
+    "scripts/summarize_polymarket_pm1a_calibration.py": "714c6d80516f6b0b64face2ce8ea209596fcad09f4e7e41b9cac51eb9e5d7a35",
+    "src/cloblab/polymarket_models.py": "f1cba7e803fa1bedf8618d41dca06d4949f52d5df31a120214a40d191c22ae46",
+    "src/cloblab/polymarket_pm1a.py": "e14f3094a1250b567231928bda54da38fc71e89548c2e844abdfbccff059ae74"
+  },
+  "stage": "PM1A",
+  "status": "FINAL_SCORED_ONCE"
+}

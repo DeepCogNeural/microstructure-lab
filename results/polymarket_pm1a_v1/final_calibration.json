@@ -1,0 +1,710 @@
+{
+  "calibration": {
+    "P0_raw_midpoint": {
+      "calibration_intercept_descriptive": 0.08876945856961985,
+      "calibration_slope_descriptive": 1.1157586915583726,
+      "market_weighted_ece_10bins": 0.03948994179698487,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.10206317896595112,
+          "mean_outcome": 0.05937201091705552,
+          "mean_predicted": 0.044395437059026106,
+          "opportunities": 195
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.07539736611058548,
+          "mean_outcome": 0.15118562965637933,
+          "mean_predicted": 0.14734994141121416,
+          "opportunities": 156
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.09461475476942811,
+          "mean_outcome": 0.16062391386787694,
+          "mean_predicted": 0.24660820553804447,
+          "opportunities": 307
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.1004344190908223,
+          "mean_outcome": 0.3309334499599197,
+          "mean_predicted": 0.34853908095184044,
+          "opportunities": 336
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.13193201712993086,
+          "mean_outcome": 0.4313073570627152,
+          "mean_predicted": 0.4542168131698104,
+          "opportunities": 504
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.1849068101950219,
+          "mean_outcome": 0.590229781160569,
+          "mean_predicted": 0.5297242003586501,
+          "opportunities": 708
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.07344895964284293,
+          "mean_outcome": 0.7438490731255023,
+          "mean_predicted": 0.6513157759014137,
+          "opportunities": 727
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.056907614568324105,
+          "mean_outcome": 0.8354346920783209,
+          "mean_predicted": 0.7492276012089004,
+          "opportunities": 485
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.07895517536901381,
+          "mean_outcome": 0.8735748292677005,
+          "mean_predicted": 0.8517929115133758,
+          "opportunities": 462
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.10133970415807951,
+          "mean_outcome": 0.9563404565725342,
+          "mean_predicted": 0.9576834260133229,
+          "opportunities": 741
+        }
+      ]
+    },
+    "P1_calibration": {
+      "calibration_intercept_descriptive": -0.07349205742505814,
+      "calibration_slope_descriptive": 1.1526517365890323,
+      "market_weighted_ece_10bins": 0.034371472545178215,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.09356553130186052,
+          "mean_outcome": 0.04244494757751966,
+          "mean_predicted": 0.04503661800648111,
+          "opportunities": 169
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.07380381992293711,
+          "mean_outcome": 0.1565322342947704,
+          "mean_predicted": 0.14781058863672838,
+          "opportunities": 126
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.0892563219068222,
+          "mean_outcome": 0.11913596776014176,
+          "mean_predicted": 0.24986812900581973,
+          "opportunities": 133
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.0818584127745217,
+          "mean_outcome": 0.3275479045435475,
+          "mean_predicted": 0.3534554113111636,
+          "opportunities": 193
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.12276829030903413,
+          "mean_outcome": 0.4201911037844287,
+          "mean_predicted": 0.4554369968757586,
+          "opportunities": 310
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.1822210476429759,
+          "mean_outcome": 0.5265596524056076,
+          "mean_predicted": 0.5486010109336857,
+          "opportunities": 438
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.0899168925227293,
+          "mean_outcome": 0.7350703798424498,
+          "mean_predicted": 0.6468725097969819,
+          "opportunities": 550
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.07030499638488094,
+          "mean_outcome": 0.7870373187181977,
+          "mean_predicted": 0.7467915765976254,
+          "opportunities": 757
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.08727010158706977,
+          "mean_outcome": 0.8461974425139267,
+          "mean_predicted": 0.8511019142881302,
+          "opportunities": 966
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.10903458564716856,
+          "mean_outcome": 0.9558225652341865,
+          "mean_predicted": 0.9543145563418833,
+          "opportunities": 979
+        }
+      ]
+    },
+    "P2_current_state": {
+      "calibration_intercept_descriptive": -0.087846116240808,
+      "calibration_slope_descriptive": 0.9446648380967119,
+      "market_weighted_ece_10bins": 0.03089529353556814,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.07553974036057735,
+          "mean_outcome": 0.03419160763171493,
+          "mean_predicted": 0.06322087502763014,
+          "opportunities": 126
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.09307528897376152,
+          "mean_outcome": 0.1548398293506591,
+          "mean_predicted": 0.15049383148288817,
+          "opportunities": 163
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.10711380126354039,
+          "mean_outcome": 0.2384778088292139,
+          "mean_predicted": 0.25673149438710907,
+          "opportunities": 186
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.1100768430577753,
+          "mean_outcome": 0.3155998732872267,
+          "mean_predicted": 0.3548186838988102,
+          "opportunities": 260
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.13478542386852593,
+          "mean_outcome": 0.4498489475226977,
+          "mean_predicted": 0.44925609197392596,
+          "opportunities": 461
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.10323711228974268,
+          "mean_outcome": 0.5964683384389186,
+          "mean_predicted": 0.5499962159500746,
+          "opportunities": 450
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.0698713867650142,
+          "mean_outcome": 0.6924137831044326,
+          "mean_predicted": 0.6524568263429599,
+          "opportunities": 505
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.08327003136683606,
+          "mean_outcome": 0.6832094293316318,
+          "mean_predicted": 0.7477336268738636,
+          "opportunities": 729
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.08414290299908792,
+          "mean_outcome": 0.7634588795808172,
+          "mean_predicted": 0.8482671871629472,
+          "opportunities": 669
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.13888746905513874,
+          "mean_outcome": 0.9432077157438901,
+          "mean_predicted": 0.95650817809183,
+          "opportunities": 1072
+        }
+      ]
+    },
+    "P3_history": {
+      "calibration_intercept_descriptive": -0.025599703494301063,
+      "calibration_slope_descriptive": 0.9780761564523782,
+      "market_weighted_ece_10bins": 0.018437234788636927,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.07181159895968584,
+          "mean_outcome": 0.031739202652967445,
+          "mean_predicted": 0.06916081634323845,
+          "opportunities": 120
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.11751998792849057,
+          "mean_outcome": 0.14151533598995442,
+          "mean_predicted": 0.14985035212709719,
+          "opportunities": 198
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.12163357965820759,
+          "mean_outcome": 0.24839810683386687,
+          "mean_predicted": 0.24714149289160764,
+          "opportunities": 181
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.10833770578571618,
+          "mean_outcome": 0.3360097829516458,
+          "mean_predicted": 0.3488447437772475,
+          "opportunities": 316
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.10606306849036988,
+          "mean_outcome": 0.5177489826442072,
+          "mean_predicted": 0.45424270304101555,
+          "opportunities": 432
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.0841368266240847,
+          "mean_outcome": 0.5359274684342031,
+          "mean_predicted": 0.5526825313023511,
+          "opportunities": 433
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.09419518319976296,
+          "mean_outcome": 0.652619759309856,
+          "mean_predicted": 0.6490545599276427,
+          "opportunities": 478
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.08771292537826197,
+          "mean_outcome": 0.7457097336808528,
+          "mean_predicted": 0.7471010345905293,
+          "opportunities": 691
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.06206816222787871,
+          "mean_outcome": 0.8128353631384854,
+          "mean_predicted": 0.8462083038862966,
+          "opportunities": 668
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.1465209617475417,
+          "mean_outcome": 0.9359431952680078,
+          "mean_predicted": 0.9533631992112759,
+          "opportunities": 1104
+        }
+      ]
+    },
+    "P4_gru_seed17": {
+      "calibration_intercept_descriptive": -0.1757042369996845,
+      "calibration_slope_descriptive": 0.9886937601205719,
+      "market_weighted_ece_10bins": 0.03357605327742274,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.06752118231728943,
+          "mean_outcome": 0.029619552478885355,
+          "mean_predicted": 0.06976194574939995,
+          "opportunities": 123
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.08670346448034497,
+          "mean_outcome": 0.13970564009770503,
+          "mean_predicted": 0.15008981581490868,
+          "opportunities": 158
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.09155809622044159,
+          "mean_outcome": 0.2014478190433727,
+          "mean_predicted": 0.2502056537979172,
+          "opportunities": 163
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.12023375995489652,
+          "mean_outcome": 0.2944330844490108,
+          "mean_predicted": 0.3512706110087811,
+          "opportunities": 283
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.1084589106417123,
+          "mean_outcome": 0.3946022397337726,
+          "mean_predicted": 0.4513430502723428,
+          "opportunities": 317
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.1314677184304864,
+          "mean_outcome": 0.5415001718837944,
+          "mean_predicted": 0.5485847842831637,
+          "opportunities": 326
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.10421932402093201,
+          "mean_outcome": 0.6649376287160089,
+          "mean_predicted": 0.6460887265542048,
+          "opportunities": 432
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.05744867715940031,
+          "mean_outcome": 0.7219771367715774,
+          "mean_predicted": 0.7471213661251352,
+          "opportunities": 489
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.06798852241724214,
+          "mean_outcome": 0.8282527638649791,
+          "mean_predicted": 0.855456303133667,
+          "opportunities": 785
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.1644003443572544,
+          "mean_outcome": 0.9182859705613728,
+          "mean_predicted": 0.956749320881003,
+          "opportunities": 1545
+        }
+      ]
+    },
+    "P4_gru_seed29": {
+      "calibration_intercept_descriptive": -0.017426276669789843,
+      "calibration_slope_descriptive": 1.0809202043106794,
+      "market_weighted_ece_10bins": 0.028719829607187747,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.0602884795712131,
+          "mean_outcome": 0.03317295803953708,
+          "mean_predicted": 0.07774948885508375,
+          "opportunities": 105
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.10252686564680387,
+          "mean_outcome": 0.13872656917800408,
+          "mean_predicted": 0.1489806877482951,
+          "opportunities": 186
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.13147243958433122,
+          "mean_outcome": 0.17675311588165507,
+          "mean_predicted": 0.24689302222446832,
+          "opportunities": 204
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.10073507458341327,
+          "mean_outcome": 0.3685392255090195,
+          "mean_predicted": 0.34631177872110286,
+          "opportunities": 256
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.11733531590491994,
+          "mean_outcome": 0.4591077127255132,
+          "mean_predicted": 0.4550382586908741,
+          "opportunities": 332
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.13785016762445051,
+          "mean_outcome": 0.5934587947226505,
+          "mean_predicted": 0.5438749541392137,
+          "opportunities": 402
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.08283655104978493,
+          "mean_outcome": 0.6487125116079241,
+          "mean_predicted": 0.6406095845890118,
+          "opportunities": 456
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.05669953467718963,
+          "mean_outcome": 0.7881333361760823,
+          "mean_predicted": 0.7525652721137608,
+          "opportunities": 570
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.07239183358315299,
+          "mean_outcome": 0.8118054726732896,
+          "mean_predicted": 0.8546829471330002,
+          "opportunities": 821
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.13786373777474062,
+          "mean_outcome": 0.9469055085840014,
+          "mean_predicted": 0.9499228791042645,
+          "opportunities": 1289
+        }
+      ]
+    },
+    "P4_gru_seed7": {
+      "calibration_intercept_descriptive": -0.0660262710485867,
+      "calibration_slope_descriptive": 1.091907999964111,
+      "market_weighted_ece_10bins": 0.04081780501033402,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.054954151799251685,
+          "mean_outcome": 0.012451252862823487,
+          "mean_predicted": 0.07800314645264546,
+          "opportunities": 97
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.10269270525847382,
+          "mean_outcome": 0.1424458790302529,
+          "mean_predicted": 0.14744304407334802,
+          "opportunities": 187
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.10708205523959,
+          "mean_outcome": 0.18550287395555845,
+          "mean_predicted": 0.25471042158161716,
+          "opportunities": 179
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.11296069416106044,
+          "mean_outcome": 0.2882993955400641,
+          "mean_predicted": 0.3521581126531979,
+          "opportunities": 250
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.13125819047269113,
+          "mean_outcome": 0.4408727542000065,
+          "mean_predicted": 0.45433061603761266,
+          "opportunities": 361
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.1504466182851282,
+          "mean_outcome": 0.589829332337262,
+          "mean_predicted": 0.542764310049342,
+          "opportunities": 399
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.07236409824678953,
+          "mean_outcome": 0.7043985391285978,
+          "mean_predicted": 0.6452999554909243,
+          "opportunities": 452
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.05115339761731537,
+          "mean_outcome": 0.8112428086238531,
+          "mean_predicted": 0.7542672095630513,
+          "opportunities": 581
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.07398217294427063,
+          "mean_outcome": 0.7938794847864216,
+          "mean_predicted": 0.8582874459632704,
+          "opportunities": 980
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.1431059159754292,
+          "mean_outcome": 0.9394940858013279,
+          "mean_predicted": 0.9484000230483997,
+          "opportunities": 1135
+        }
+      ]
+    },
+    "P4_seed_mean": {
+      "calibration_intercept_descriptive": -0.08707392917668752,
+      "calibration_slope_descriptive": 1.0724373975354013,
+      "market_weighted_ece_10bins": 0.03632646441607516,
+      "reliability_10bins": [
+        {
+          "hi": 0.1,
+          "lo": 0.0,
+          "market_weight_fraction": 0.06276477680160869,
+          "mean_outcome": 0.03186416498229435,
+          "mean_predicted": 0.07600745401686103,
+          "opportunities": 109
+        },
+        {
+          "hi": 0.2,
+          "lo": 0.1,
+          "market_weight_fraction": 0.09599182645489636,
+          "mean_outcome": 0.1386831983411028,
+          "mean_predicted": 0.1503726345974083,
+          "opportunities": 175
+        },
+        {
+          "hi": 0.3,
+          "lo": 0.2,
+          "market_weight_fraction": 0.10566413411958059,
+          "mean_outcome": 0.18042834682376013,
+          "mean_predicted": 0.2554937095824794,
+          "opportunities": 180
+        },
+        {
+          "hi": 0.4,
+          "lo": 0.3,
+          "market_weight_fraction": 0.11323575762591094,
+          "mean_outcome": 0.28786091115311147,
+          "mean_predicted": 0.3518483940696731,
+          "opportunities": 262
+        },
+        {
+          "hi": 0.5,
+          "lo": 0.4,
+          "market_weight_fraction": 0.12585461979950716,
+          "mean_outcome": 0.44487305653501485,
+          "mean_predicted": 0.4527703691645434,
+          "opportunities": 339
+        },
+        {
+          "hi": 0.6,
+          "lo": 0.5,
+          "market_weight_fraction": 0.1420817014994704,
+          "mean_outcome": 0.5908473634977754,
+          "mean_predicted": 0.547501663212284,
+          "opportunities": 377
+        },
+        {
+          "hi": 0.7,
+          "lo": 0.6,
+          "market_weight_fraction": 0.08107386145087259,
+          "mean_outcome": 0.6960945052214181,
+          "mean_predicted": 0.642921217172982,
+          "opportunities": 446
+        },
+        {
+          "hi": 0.8,
+          "lo": 0.7,
+          "market_weight_fraction": 0.0512114441589092,
+          "mean_outcome": 0.7470315185033285,
+          "mean_predicted": 0.7491656834242073,
+          "opportunities": 563
+        },
+        {
+          "hi": 0.9,
+          "lo": 0.8,
+          "market_weight_fraction": 0.07640594941746665,
+          "mean_outcome": 0.8060522024145923,
+          "mean_predicted": 0.8557315208422326,
+          "opportunities": 862
+        },
+        {
+          "hi": 1.0,
+          "lo": 0.9,
+          "market_weight_fraction": 0.1457159286717776,
+          "mean_outcome": 0.9388808954428215,
+          "mean_predicted": 0.9518358666255442,
+          "opportunities": 1308
+        }
+      ]
+    }
+  },
+  "dev_report_sha256": "c0a32cae9b3d4b11926e60eff98dbb2cbe057cc94d9e70b009bf690a871b9b42",
+  "final_markets": 122,
+  "final_opportunities": 4621,
+  "final_private_npz_sha256": "6a703ba76aa4b955f7c2bbba3f402ea56c23e27d6a270bb9d1e4179816a51b06",
+  "kind": "post_primary_prespecified_secondary_calibration",
+  "limits": "Descriptive slope/intercept fitted on final labels only for diagnosis, never used to alter/rescore the frozen models. One partial UTC date; reliability bins are highly dependent snapshots and are market weighted.",
+  "model_config_sha256": "6eedd161eecf81ad56294abf8541dca77af63ff26c926e6827abfd529b0a7cd3",
+  "primary_final_sha256": "5b61b3dcb0141645367bc0f0c3bac815382fe797addbc30ebe6d220f140e19ad",
+  "private_market_scores_sha256": "7b3f685a366e702aee046b02d9aa5f8ce41b4f6119c5b169266eeb02d6d374cf",
+  "stage": "PM1A"
+}
