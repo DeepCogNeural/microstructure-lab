@@ -1,0 +1,36 @@
+{
+  "stage": "Q3 bounded retrospective robustness and visible crossing",
+  "base_config_sha256": "0c7fcf3fdce7e861df5033148046b1512f8891251e5741a63de8189aaaa3ba17",
+  "baseline": "B1_history_xgboost",
+  "sequence": "S0_history_gru",
+  "sequence_seeds": [7, 17, 29],
+  "state_slice": {
+    "measure": "nanoseconds elapsed between the first and last state in the same 32-event causal window",
+    "threshold": "per-stock median on the same Jan-March sampled training endpoints as Q2",
+    "high_activity": "duration strictly below the frozen training median",
+    "low_activity": "duration greater than or equal to the frozen training median",
+    "undefined": "zero/negative duration or fewer than three scored rows in a stock/day/slice"
+  },
+  "updated_models": {
+    "evaluation_months": ["2017-06", "2017-09", "2017-11"],
+    "2017-06": {"train_months": ["2017-02", "2017-03", "2017-04"], "dev_month": "2017-05"},
+    "2017-09": {"train_months": ["2017-05", "2017-06", "2017-07"], "dev_month": "2017-08"},
+    "2017-11": {"train_months": ["2017-07", "2017-08", "2017-09"], "dev_month": "2017-10"},
+    "train_cap_per_stock": 20000,
+    "model_hyperparameters": "unchanged from sequence_ml_v1.json",
+    "comparison": "updated and fixed models evaluated on identical original-event rows in each month"
+  },
+  "execution": {
+    "decision_time": "original event t",
+    "entry": "visible ask for long or bid for short at t",
+    "exit": "opposite visible quote at original event t+20 in same stock/day/segment",
+    "threshold": "strict abs(prediction_bps)>1.0",
+    "unit": "one share for each selected opportunity, zero delay, no impact/fees/inventory model",
+    "primary_sequence_action": "arithmetic mean of three fixed GRU seed predictions",
+    "common_opportunity": "same Q2 scoring event IDs with finite current and t+20 spread and midpoint label",
+    "crossed_formula": "sign(pred)*markout_20 - spread_bps_t/2 - spread_bps_t_plus_20/2*(1+markout_20/10000)",
+    "outputs": "per-stock/day opportunity counts, each model coverage, selected gross midpoint movement, entry/exit half-spread, visible crossed markout; common-selected sensitivity"
+  },
+  "lo_so": "not run unless source-only inner chronological tuning and remaining compute budget are established",
+  "exposure": "all evaluation dates previously inspected; descriptive only"
+}
