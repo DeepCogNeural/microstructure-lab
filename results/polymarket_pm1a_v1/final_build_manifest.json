@@ -1,0 +1,47 @@
+{
+  "eligibility_config_sha256": "8faf4a9dde85cba881264376b655a6fbb0afd808d0765dca6ee483c3648841a8",
+  "feature_names": [
+    "logit_midpoint",
+    "spread",
+    "best_bid_size",
+    "best_ask_size",
+    "top_level_imbalance",
+    "five_level_bid_depth",
+    "five_level_ask_depth",
+    "five_level_imbalance",
+    "log_total_visible_depth",
+    "log_seconds_to_close",
+    "capture_age_seconds"
+  ],
+  "kind": "private_opportunity_build",
+  "limits": "Only requested split labels were used; final requires explicit unseal. Private row arrays are excluded from Git.",
+  "model_config_sha256": "6eedd161eecf81ad56294abf8541dca77af63ff26c926e6827abfd529b0a7cd3",
+  "source_audit_sha256": "71d778c83edbcf6143e525bcf22f2ce32517cc40c7559468988111731e8d3925",
+  "source_version_doi": "10.5281/zenodo.22084977",
+  "split_manifest_sha256": "5fb3f66288048c1f2eb19a924a16211255d4de87f000d13343bf8355ddaae0ea",
+  "splits": {
+    "final": {
+      "declared_markets": 122,
+      "eligible_markets": 122,
+      "eligible_opportunities": 4621,
+      "opportunities_by_coin": {
+        "bnb": 594,
+        "btc": 1077,
+        "doge": 675,
+        "eth": 614,
+        "hype": 641,
+        "sol": 249,
+        "xrp": 620,
+        "zec": 151
+      },
+      "opportunities_by_length": {
+        "15m": 918,
+        "4h": 3123,
+        "5m": 580
+      },
+      "positive_markets": 61,
+      "private_npz_sha256": "6a703ba76aa4b955f7c2bbba3f402ea56c23e27d6a270bb9d1e4179816a51b06"
+    }
+  },
+  "stage": "PM1A"
+}
