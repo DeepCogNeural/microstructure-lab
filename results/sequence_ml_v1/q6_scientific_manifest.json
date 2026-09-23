@@ -1,0 +1,217 @@
+{
+  "aggregate_sha256": {
+    "q1_pilot.json": "9dd8baa5f26b730afa242c7501fe9242458a565f534a96a6222597bfda5fc5f2",
+    "q2_label_control_pekao.json": "701e1c319b4c93eef08bcd4ea9f4141e718a8a12f123a25b46a6defbbf3d7f6b",
+    "q2_summary.json": "9a088b3ce8ec54cdc5fda71502f7f17c84f8700c84c35cfb97b1dbae39425dbb",
+    "q3_summary.json": "697c7e815d5b640a2ea3b54b01f9ad4b04f030527c725f258bb9dd458ce30692",
+    "q4_gate.json": "4c7de1178c192af420d9502c4740bbdeed622dd9fcdbc2d6cf409100222cf1d6",
+    "q5_data_gate.json": "7308e670336337b09490183be3748d13240c9b5742de4d12f0666add9c3805c9"
+  },
+  "branch": "codex/quant-ai-ml-20260922",
+  "data": {
+    "cache_source_hash": "7919375bb0b82faba250a0e1adc1c18704a494fa766591f39b5f93e9220d8ebb",
+    "q2_config_sha256": "0c7fcf3fdce7e861df5033148046b1512f8891251e5741a63de8189aaaa3ba17",
+    "q3_config_sha256": "d9c1cd9d846c2d3ddfe607514a9500794029b57a817fd811b89c8aa12fc17b10",
+    "verified_local_feature_cache_manifest_sha256": "6b426a633bda5d1d767a6346f5838a9df4cc1df2e0f0589b88ae27c56ba7988d",
+    "wselob_v1_raw_source_sha256_from_prior_receipts_not_locally_rehashed": {
+      "KGHM": "0246f994b42af04c65deb38f28f64988b7b6fa71d0fb83e41bda8487afff4c5c",
+      "PEKAO": "3c418a55a492ebe2e39c8513cd7fc7e3e6827dc1a176af09fdcaad9f3485bae6",
+      "PKNORLEN": "5b8f394144b8a3dace3e08bb2b4228d63231a12ae21f5f27aa662a8d09f3fa40",
+      "PKOBP": "ecf94a905b04836442c9124c7f7d7edc5b7d98e7236ca4026f0ec37b9407407e",
+      "PZU": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c"
+    }
+  },
+  "limits": "Historical exposed 2017 aggregate receipts; no independent final, profitable crossing, or CPU core-hour claim. Raw files, model weights and row predictions are not committed.",
+  "model_sha256_from_aggregate_receipts": {
+    "q2": {
+      "KGHM": {
+        "A0_current_ridge": "40e627110d868b01be0ec249ada9600255700e6dbcc244d6e64a547a1cc92839",
+        "A1_current_xgboost": "124f861156e97334f48c177f3fbbc2b9a35918538a6be731df4a52dab7e34cdf",
+        "B0_history_ridge": "a75d5cd87ee0e09396e899b8896b6cfa7413098a538d349c5fb6de45912c7d00",
+        "B1_history_xgboost": "c3444ce504c6a4668d679ca9b133a8fce685ed3be8820f8bbb04c0ae22f1f49d",
+        "S0_history_gru_seed17": "c61444d00593bfcc9175a113576bafa66815ec5faa1bdf0c267e0e16f747e6ea",
+        "S0_history_gru_seed29": "0c1fd628481d900879d374242bb48a679db483e4a24ff07fc0f09832fb7f1059",
+        "S0_history_gru_seed7": "69c0533172b95cdd2dacdee93abd93eca67ae20ccaa3ac92e11fb50fdc3c26bc"
+      },
+      "PEKAO": {
+        "A0_current_ridge": "c0be2f0ee90b6fcaef7d754627deff8e4854d979037e2663d53c352e91bcbe6a",
+        "A1_current_xgboost": "ad86c4d4f1718e90b0ce00aee5d0d55533999ea042948a87361f725343fd5a47",
+        "B0_history_ridge": "c116a1dc22c08bc782bacbc1f578b2c58e290c395d915f1fc9444de2ff282482",
+        "B1_history_xgboost": "e74267798abc5de750ae74e256d03a35b60b691d41a0411b7aebdfd75c382cb9",
+        "S0_history_gru_seed17": "e6616b734216952c53305e9fb7f4b66bd36ba812c0396694f90fbd623c214c2a",
+        "S0_history_gru_seed29": "614d44b8df6a8ab9b6bf37eefe25710fde879175bf32e60784e729e8b1309368",
+        "S0_history_gru_seed7": "cd3e2cadd959838616c6fe50ca3cbaa564e2a650e8d4b5688c36af3cd40560b8"
+      },
+      "PKNORLEN": {
+        "A0_current_ridge": "6df8b642a85867f0e511b1ca9e49985005ee0fcec7b641bffe00c9337e57cf63",
+        "A1_current_xgboost": "82010209178493e2b9f14a0a4a709284715f37622c9843f7d35d819b44f6dcef",
+        "B0_history_ridge": "3c90a2a8bb74c225a97b1c1fbb98f30f29183453cdd8b3f773d16c1aede4f9c9",
+        "B1_history_xgboost": "153bf3f31aada72ab19cc27b1b156c4f4db644a22e59526835aa341ebe90434f",
+        "S0_history_gru_seed17": "b9044507f33645908426b376c6d0d1e94ede8106bf326da6f2d360fe80e88821",
+        "S0_history_gru_seed29": "4644bdcae2228bfc85f82e096b64b893e791427806677eff1df7222d0048ed05",
+        "S0_history_gru_seed7": "1d2b4853805dbf7c544fb0e7d033cf3143c8c6c95d94f3521f40c05797869b7d"
+      },
+      "PKOBP": {
+        "A0_current_ridge": "8a1a37f98d7d46a2027b239a821919aced0979f629a9801c674ce539c69d3e50",
+        "A1_current_xgboost": "6889eca9fe9c80d33e886434c8b770a8384cc92ff3e8d98ee3804ac25a8d928a",
+        "B0_history_ridge": "399c782bf8bf50288fb5a3179ff3d16ded5cb35bac1ae2df7c24fdb6a7ce715b",
+        "B1_history_xgboost": "9327d57a1c6bc9534db71e019cde0e936f91eb2051172214b71c0aad2d798760",
+        "S0_history_gru_seed17": "ab40bb425371e231a888fe897545490c044ce19dbcfafcd0423dc1c1b8c6a53d",
+        "S0_history_gru_seed29": "af749b419a0e755cd8d0086e84e315b51d96879e8175d38ca80c547c8640a81d",
+        "S0_history_gru_seed7": "048f7118a59b55f784f2fe457a26a70f993e66fc5e6160ae3245a763d37c52fb"
+      },
+      "PZU": {
+        "A0_current_ridge": "997c527aca8ddb636f126c2477325382a8e4210602b35df8a11f563c06349a2a",
+        "A1_current_xgboost": "bf71b37aa4f3c6872d66291031e813f4f098fad9e84058d4c13b6438556783f9",
+        "B0_history_ridge": "69353fcfbea4aae46371371b4369120adeefc2e6ddaa522a4f9b0071d71771ff",
+        "B1_history_xgboost": "6ae62657351d7bc5eb99eb3d713beb103c2143d856af672e444a0c7b7ebe7062",
+        "S0_history_gru_seed17": "2e70181a848bda13cac9e7f85bc542cfecff2f23a7d5b008be387acc5ce22a5f",
+        "S0_history_gru_seed29": "01855bb74edd606e1d46ae31b35ae50b7d6c59c0e87eee5ea9918d481b680a1f",
+        "S0_history_gru_seed7": "1a04daff35ccce3bc1b89132e4652041fa79762f861ae4aa06e0007207228219"
+      }
+    },
+    "q3_updates": {
+      "2017-06_KGHM": {
+        "B1_history_xgboost": "23a24ddfc4244f08fdec848031bb89f56d946bb24288fffab3d238ec8c711270",
+        "S0_history_gru_seed17": "45b8afa4989ac0e551ee3d0ebae139bbfbcf253823eba526d967999c6b1843d6",
+        "S0_history_gru_seed29": "429cabca28eb50bf4c2d3779de66f8cf2f809986e5d4c22fed74e82632065023",
+        "S0_history_gru_seed7": "3c9d1d96aaa047880c5143f2d436d920f14d7a5d316936517cd5f828562b4483"
+      },
+      "2017-06_PEKAO": {
+        "B1_history_xgboost": "c36618b0accd4d033e36d2f69f537699c35e8cda179cf241424d427d7ab7e78b",
+        "S0_history_gru_seed17": "469a5832956012844e9cc759afd5c13244c6d385886e140a96b92fd27280586a",
+        "S0_history_gru_seed29": "89130dfe0b9e9e6e8f61ffc57b119f7537ecf7e412f3354e47c0c917c2e1502b",
+        "S0_history_gru_seed7": "5ed16b50f79ac2707cad6e66a501bf87deadb3d35d040af825f543aaa0523258"
+      },
+      "2017-06_PKNORLEN": {
+        "B1_history_xgboost": "6a31723f7bce6772e6416d650ab1ec9547b03098d25c6ec2075ab684ddb815b4",
+        "S0_history_gru_seed17": "818e4af9d9a3fe90a3be5da796c8f0c36fef9fe59e2e249580ab414143867c80",
+        "S0_history_gru_seed29": "44fe14c0edb5c9e559a455bef50919a7e48b75ed8925982587821689118f2326",
+        "S0_history_gru_seed7": "9f7d55325d09e097da4bcb36b5804b411cf13d600dd295fa5bc3f32b94787046"
+      },
+      "2017-06_PKOBP": {
+        "B1_history_xgboost": "b08659b68199f7a29ae6a10ac976f697420b10ba0415d82c1848185d892f1677",
+        "S0_history_gru_seed17": "73b3c7a716fe851c2db1d3fe5fc8dacf5dd84cc20e45ff76cfdd134877242190",
+        "S0_history_gru_seed29": "2c6f95b716378e7bc9f058c22fb7075be16de589bbc81340a8265270b3027841",
+        "S0_history_gru_seed7": "57b6a88634d7952a4b5ac6aa9a0155aea809c810be6b73aea52d7f2fb6ac6859"
+      },
+      "2017-06_PZU": {
+        "B1_history_xgboost": "5dadff57e06689e45d54f477fdb3a113e04ebe8d5c708511d8daf7ed82d393c6",
+        "S0_history_gru_seed17": "9953895de95da6ef4a7df4040cedd032564c676caade922546aac31501e63bda",
+        "S0_history_gru_seed29": "624279e14e1237dbc02cf29ca09bfd7f4730ecd2b962ec31802819fc5e050da9",
+        "S0_history_gru_seed7": "f0ac6d96ac9796a89181ab11ab9ba0b7c58b342da9566dccd29831249e9c16f0"
+      },
+      "2017-09_KGHM": {
+        "B1_history_xgboost": "6e7776bd827e2ec17d5b3afa62270601588d5c5f0696180c6f91531b06ad9751",
+        "S0_history_gru_seed17": "d0a62dace87ed45e838300d47785e575d96df170d92fea6fbdd8ae15c12842cd",
+        "S0_history_gru_seed29": "7ab1c2316862f4412eddd41a1f83dd7f11c87ccc5308a68bd1988a7be853af23",
+        "S0_history_gru_seed7": "d37c5df7aa660c993e0571c806ec2ac2d02e00c59cac6ae94dd499d1afbb385f"
+      },
+      "2017-09_PEKAO": {
+        "B1_history_xgboost": "fda80f2bc0f3008ee2289f8430d181f963feedea63ae445edd8505b3fd4f97e2",
+        "S0_history_gru_seed17": "6132f4fa22e63773270eb57cdda21ffb755f3de860a2fa0d4f2ab24ff881d90c",
+        "S0_history_gru_seed29": "4f4b2c41f984fdb1c9818127b969ea488d1d161d5df0a1fc49909eabf1bd4637",
+        "S0_history_gru_seed7": "f45f65e0a470edf9008c9bc648eef65d1d5747deae562327667b94508105776d"
+      },
+      "2017-09_PKNORLEN": {
+        "B1_history_xgboost": "689e59717a8159c4cb0acc0f1de2f9875cbb31ed878fb448f4bb25911358a703",
+        "S0_history_gru_seed17": "c25c8f7155050a0a7873bb9800b05a5b4cc0a96944ec90e9f67c98f384a6ac36",
+        "S0_history_gru_seed29": "e32d302f39dfaefef50587d305b53e9431f872b0557e2048eeea7845fcba0b62",
+        "S0_history_gru_seed7": "27ca304966e5dd3ab6a44b8b98461249fd496f51cfd572e0313013ba52c1ed1e"
+      },
+      "2017-09_PKOBP": {
+        "B1_history_xgboost": "6da64dc7c2bd8f46c7312ea5ed8a5029258e4867a886495f3efd57374b23699e",
+        "S0_history_gru_seed17": "b9dc6cc5f8da0285d4c77674f9eff7281e30133a5b15dfb5271936093823833b",
+        "S0_history_gru_seed29": "6742286e1685af2e4cf511f65836f4f4c00b1e3b6d0aa4a42785eeb93b7c4e53",
+        "S0_history_gru_seed7": "51635c1755ce1a6aebeb70de099dd9fc2a3c75269afe7697945a6c9e867bacb2"
+      },
+      "2017-09_PZU": {
+        "B1_history_xgboost": "d75efa2b63bfb443b994636a1490528ba1f8dfe4201b7559c5e5973a131de35b",
+        "S0_history_gru_seed17": "b050ee7845afd45f817c2b2c45a7a8b592991294deb2886c80f24b7d27c7d11d",
+        "S0_history_gru_seed29": "bf83e100fc54ca4ae8a6d3c5af646a7d01d9457dd69c7a64ed2a7161281bee24",
+        "S0_history_gru_seed7": "694d18370d5e1d848eae04a672db9c1fad9dae3a8ea4b796803e72cabb2e4f93"
+      },
+      "2017-11_KGHM": {
+        "B1_history_xgboost": "d5847b2e0a1ee57289fdd65b60e1e0f780ee67051340c2279734bcb859c1ad85",
+        "S0_history_gru_seed17": "b097f9d9f62e54608450c2b510b84bad81ac1683ee3d7271f9532484ffd1b5ab",
+        "S0_history_gru_seed29": "450c310ece9d64af72dca64019f839532ced9d2e6d445d19cfa7a5f4ac0d356c",
+        "S0_history_gru_seed7": "70cc49ff3405635afe65204d44fd76626242221f649989f0907ff88f73e35756"
+      },
+      "2017-11_PEKAO": {
+        "B1_history_xgboost": "8d4d7776057a76e9876b7bdf1911a884892b957f851933f3cbe5154ea2064a70",
+        "S0_history_gru_seed17": "ea2f62239886d8ff55ee893fd38db8f9d51098648300d56390ac25b8ea34824b",
+        "S0_history_gru_seed29": "ee5c0011f2616cd51fcec03e9e6775d22636f66abf5b3fcdcaa57a7fa2b7709b",
+        "S0_history_gru_seed7": "1bd777e93f2a65128fa340840ff9596e74f5a2df235a703afa179c5d2405eb3f"
+      },
+      "2017-11_PKNORLEN": {
+        "B1_history_xgboost": "7d30c122a86c0623eea081b4ba8f36750549b8322d0da4de8532294e12fa3e93",
+        "S0_history_gru_seed17": "1515ef86381ac0b26b424db10dc430b00b8d08888ce9a7037057cd040c15ef9f",
+        "S0_history_gru_seed29": "6df62bf47aed159fa5ad3841ed0bdfd6820b987bbe0ebcd740788f6339b9aec6",
+        "S0_history_gru_seed7": "7a1fadc938ec7e36194fbdc5f23d03431a129eea93de71d1153bdf24cd99f22d"
+      },
+      "2017-11_PKOBP": {
+        "B1_history_xgboost": "524adab2489d2cc24a9a95c4dbb917c4c10f848d7fe4c51c472960244b51cf48",
+        "S0_history_gru_seed17": "5721b09d622687a09ecbe0abb45a5ae92bd1f3e829809fa43d09ed643b713d7f",
+        "S0_history_gru_seed29": "8ca793751a134570ce6234aa09096ce4584cc4054f2a6e29c4e171896bf9e54d",
+        "S0_history_gru_seed7": "4adf8712de864149be92b4986e403563512147506e4c86a4da7094a1dc92f1b9"
+      },
+      "2017-11_PZU": {
+        "B1_history_xgboost": "118293100ae8a87382c48c9aee48d410a1ad9b8b8c6265507b6b2cede5f7385c",
+        "S0_history_gru_seed17": "535e5ace170b1569b47cb128d807861d7af78ac59f2def0941d0d6eb61fbbafc",
+        "S0_history_gru_seed29": "85b474b6b1b53d4e1df1f61c80d87f7848739e5622c7f109f0aaa7cd34f14b6b",
+        "S0_history_gru_seed7": "02bf9bbfab153796cc219552fd0628856bd0eeca530511c2f2aece6f8239ed5a"
+      }
+    }
+  },
+  "package_parent_commit": "4a977d65d9f2d6eaff2cb40fbf5e842c8aa812b3",
+  "q6_output_sha256": {
+    "cost_table": "0f3884f675ab733354595c5dbf076c7371c042304db2a37e24adcf733ee07cf7",
+    "figures": {
+      "01_history_matched_models.png": "1944ab600a8288696b9d2e5522f0cdf831f4159224aa859e903438c3c7cd6511",
+      "02_fixed_vs_updated_time.png": "2f77154957c3a5e603f0576186c5ece4d2ebdb8c5fd5a2580581a63bfb29cf5d",
+      "03_stock_and_state_breakdown.png": "bb99c9897d194533f71a1c923678818085160b4ff8a7cc81602833d96777beb6",
+      "04_prediction_vs_crossing.png": "50588c8645b3d935f572892270360d3f2d35039f875643efea9839544763750f"
+    },
+    "render_manifest": "1e45d3cdd4a34ef5c60ff95d7e16254d034bc1f362ea0dd60728f4d6c6ee1afe",
+    "research_brief": "9d48af8e23f7c7966322a6adf63ec8a3bab6583aba6718c3ede45a7d6d069fbc"
+  },
+  "recomputation": "Q2 and Q3 CPU aggregate scripts reran locally; before/after summary SHA-256 matched. No model refit or new final outcomes in Q6.",
+  "run_receipt_sha256": {
+    "q2_PKNORLEN.json": "b9dbba15f066abfc32819119e1e19a54677ff79c67e5ce0c2d48b7c01cce799d",
+    "q2_PKOBP.json": "3ecd3edea22f86dd8f391662fff5d4d30dc0115e5df68726917f9c5636be6477",
+    "q2_PZU.json": "39fdc81650dd1f968c9f158ba22a0fc0ace505097121d4773f2adc16f0dfc678",
+    "q2_kghm.json": "16ad17a0821c7bb57cbeb5fb1cf38c3b2a0aa0d6ca16b3f805b51913dc999bd6",
+    "q2_pekao.json": "d343687f19ef9f835c56512fb854070c0b2290e2408c1de15c39ad3eafdc204f",
+    "q3_diagnostic_KGHM.json": "11298741cf4eca8f83066613a671c8a3165c350ee4b47ff741364173e960e564",
+    "q3_diagnostic_PEKAO.json": "709f9a2c9f02ecd496d94e6ce2a4c7fb00444e42bae4fb65cca92bd8a734a6a3",
+    "q3_diagnostic_PKNORLEN.json": "5b9815e16bc86076351502bb9895c270f6e1f7cfbf5070ee56de19a581adfa2b",
+    "q3_diagnostic_PKOBP.json": "0a0f771bd4cc41d282e6d1e5791393a2baa4987539fed230bcffb0a040928f26",
+    "q3_diagnostic_PZU.json": "3623c6841ad14b96e13c0f8a615e33f3f5daa6baa714a21046b63c25b2a838a9",
+    "q3_update_2017-06_KGHM.json": "cb45b5a612c1f66818f4b62835098d9c44edbd114d26a862059e324f11010b82",
+    "q3_update_2017-06_PEKAO.json": "61f95cf6c7431621ae1ec35ce4ab0367294bf6ab8df1e0180c69112f0b248956",
+    "q3_update_2017-06_PKNORLEN.json": "35a1e8d22a903dd6ba0714e8e0e7da179201b552275656490dd5d79777a06d1f",
+    "q3_update_2017-06_PKOBP.json": "756eea16e4c9b2ca14f9378d5c9c4c2572da9cfef576ce204da79323191b7478",
+    "q3_update_2017-06_PZU.json": "93f3e63d41c63701f11721b9299dc4b4e172453b58f67ba944b7ec8565043613",
+    "q3_update_2017-09_KGHM.json": "7a724739f5227a09659a468128fd45ec1dfb459ab6bb9f6bba9b6df8cc8512e2",
+    "q3_update_2017-09_PEKAO.json": "6e57f2075da1c856fe9225f4602ff9e84953ae37ba1837b4c3b3540b7a7f8c28",
+    "q3_update_2017-09_PKNORLEN.json": "f68408546d9d68590906d6922f0f311dfc3719cfc71e981853d8fb8722ba7678",
+    "q3_update_2017-09_PKOBP.json": "5739e180af17d7c6d6353ef10de3efacf94944d6826ec376f8908c2048a9d36f",
+    "q3_update_2017-09_PZU.json": "a10d49fa4642b604592e8a66487c1d0d1c404121a2f3f8372f1aac2680c4fe9e",
+    "q3_update_2017-11_KGHM.json": "ccc0ac420cefb314ae27e4c988ccfaf74e7caa3c59b88973bff524599bcba597",
+    "q3_update_2017-11_PEKAO.json": "ea6ef48f6f00214ca6adf25b9ab2f94aacc8a59ad320bd84deba2ea8b9ee8752",
+    "q3_update_2017-11_PKNORLEN.json": "cebff77940bd5d3a25b101ba22976127f11b0bcfa95c58779b5205dbd734b499",
+    "q3_update_2017-11_PKOBP.json": "4406f7339e09c1403560cce83f99322de51645309afa5324a084f11baf75f844",
+    "q3_update_2017-11_PZU.json": "eacad8bcf1c58e7e472fcf5d78f846ae8a23a23238d1faf9702e5eab6aa95ea4"
+  },
+  "source_commits": {
+    "q1": "a7e21922f029bb6542acf387a40c0baa5e285e5b",
+    "q2_aggregate": "6969ea0188962b61871263a0dcc34077ea49d9b1",
+    "q2_frozen_runner": "1f26e52d1d6ee09939de2f243f4f30a5b042d230",
+    "q3_aggregate": "93c31d271b21773d74e115d89e7c6273bb0ea059",
+    "q3_diagnostic": "8e75af1e63af51a1219e746cd5fa6b5cf939ad3b",
+    "q3_frozen_runner": "0f17ab665eaf11280efde3ac8a57a7b0a2bbe51b",
+    "q4_gate": "0c454e4a1f28d0960ad15ca03780c586209b0358",
+    "q5_audit": "4a977d65d9f2d6eaff2cb40fbf5e842c8aa812b3"
+  },
+  "stage": "Q6"
+}

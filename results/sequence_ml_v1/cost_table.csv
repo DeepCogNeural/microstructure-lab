@@ -1,0 +1,8 @@
+arm,q2_fit_seconds_five_stocks,q2_inference_seconds_five_stocks,q3_updated_fit_seconds_fifteen_stock_month_tasks,device,gpu_hours
+A0_current_ridge,0.036247,0.061117,,local CPU,0
+A1_current_xgboost,0.688824,0.312275,,local CPU,0
+B0_history_ridge,0.095079,0.220474,,local CPU,0
+B1_history_xgboost,3.190360,0.346267,9.621263,local CPU,0
+S0_history_gru_seed17,116.009752,16.146172,266.181512,local CPU,0
+S0_history_gru_seed29,103.895858,16.221214,295.760240,local CPU,0
+S0_history_gru_seed7,98.569760,16.113810,331.555868,local CPU,0

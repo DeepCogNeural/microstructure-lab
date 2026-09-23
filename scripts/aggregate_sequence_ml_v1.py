@@ -135,9 +135,9 @@ def main():
         "study": config["study"], "retrospective_only": True,
         "config_sha256": sha(config_path), "scientific_commit": reports[0]["code_commit"],
         "source_cache_manifest_sha256": config["source_cache_manifest_sha256"],
-        "input_report_hashes": {r["symbol"]: sha(next(p for p in args.reports.glob("q2_*.json")
-                                                      if json.loads(p.read_text()).get("symbol") == r["symbol"]))
-                                for r in reports},
+        "input_report_hashes": {r["symbol"]: sha(args.reports / (
+            f"q2_{r['symbol']}.json" if (args.reports/f"q2_{r['symbol']}.json").exists()
+            else f"q2_{r['symbol'].lower()}.json")) for r in reports},
         "symbols": symbols, "dev_dates": dev_dates, "evaluation_dates": eval_dates,
         "dev_cells_per_arm": len(dev_dates)*len(symbols),
         "evaluation_cells_per_arm": len(eval_dates)*len(symbols),
