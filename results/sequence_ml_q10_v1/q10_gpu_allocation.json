@@ -1,0 +1,41 @@
+{
+  "allocated_gpu_hours": 2.1172222222222223,
+  "explicit_zero_exit_count": 5,
+  "limits": "One GPU allocated per task; allocation wall time includes data load and is not compute utilization. Private scheduler logs remain outside Git.",
+  "nonempty_stderr_count": 0,
+  "receipt": "infrastructure_neutral_allocation",
+  "stage": "Q10",
+  "task_count": 5,
+  "tasks": {
+    "q10_transfer_KGHM": {
+      "allocated_gpu_seconds": 1551.0,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "q10_transfer_PEKAO": {
+      "allocated_gpu_seconds": 1532.0,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "q10_transfer_PKNORLEN": {
+      "allocated_gpu_seconds": 1448.0,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "q10_transfer_PKOBP": {
+      "allocated_gpu_seconds": 1552.0,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    },
+    "q10_transfer_PZU": {
+      "allocated_gpu_seconds": 1539.0,
+      "explicit_exit_zero": true,
+      "gpu_count": 1,
+      "stderr_bytes": 0
+    }
+  }
+}
