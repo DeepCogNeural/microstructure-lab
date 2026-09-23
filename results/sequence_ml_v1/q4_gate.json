@@ -1,0 +1,54 @@
+{
+  "checks": {
+    "at_least_two_historical_months_positive": true,
+    "no_single_stock_completely_dominates": true,
+    "retrospective_delta_at_least_0_005": true,
+    "sequence_correctness_tests_passed": true,
+    "three_seed_means_positive": true,
+    "training_not_limited": false
+  },
+  "correctness_receipts": {
+    "q1": "8 focused tests passed",
+    "q3": "2 synthetic crossing parity/identity tests passed"
+  },
+  "decision": "SKIP_TRANSFORMER",
+  "leave_one_stock_out_deltas": {
+    "KGHM": 0.005964288614484792,
+    "PEKAO": 0.006164612232987058,
+    "PKNORLEN": 0.0057556295949319665,
+    "PKOBP": 0.0048286474866781484,
+    "PZU": 0.007834834225705153
+  },
+  "month_deltas": {
+    "2017-06": 0.008086236590611535,
+    "2017-09": 0.003681761606434514,
+    "2017-11": 0.006560809095826224
+  },
+  "next_stage": "Q5 independent-confirmation source qualification",
+  "observed_seed_mean_delta_ic": 0.006109602430957422,
+  "planned_delta_ic": 0.005,
+  "q2_summary_sha256": "9a088b3ce8ec54cdc5fda71502f7f17c84f8700c84c35cfb97b1dbae39425dbb",
+  "q2_training_limited": [
+    "KGHM/S0_history_gru_seed17",
+    "KGHM/S0_history_gru_seed29"
+  ],
+  "q3_summary_sha256": "697c7e815d5b640a2ea3b54b01f9ad4b04f030527c725f258bb9dd458ce30692",
+  "q3_training_limited": [
+    "2017-06/KGHM/S0_history_gru_seed7",
+    "2017-06/KGHM/S0_history_gru_seed17",
+    "2017-06/PEKAO/S0_history_gru_seed7",
+    "2017-06/PEKAO/S0_history_gru_seed17",
+    "2017-09/PEKAO/S0_history_gru_seed29",
+    "2017-09/PKNORLEN/S0_history_gru_seed7",
+    "2017-11/KGHM/S0_history_gru_seed7",
+    "2017-11/KGHM/S0_history_gru_seed29"
+  ],
+  "reason": "Training-limit condition failed; do not change the protocol or add architecture search to rescue a positive old-sample number.",
+  "retrospective_only": true,
+  "seed_deltas": {
+    "S0_history_gru_seed17": 0.007092429067434505,
+    "S0_history_gru_seed29": 0.006109932585769403,
+    "S0_history_gru_seed7": 0.005126445639668365
+  },
+  "stage": "Q4"
+}
