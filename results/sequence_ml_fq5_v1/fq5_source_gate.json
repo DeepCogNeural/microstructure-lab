@@ -1,0 +1,11 @@
+{
+  "limits": "Formal results reuse the exposed WSELOB-2017 source. No new uninspected original-event h20 cohort or rights/access change established. PM is a separate external domain.",
+  "new_independent_cohort_qualified": false,
+  "new_models_fit": 0,
+  "new_source_entitlement_verified": false,
+  "outcomes_viewed": false,
+  "prior_gate_sha256": "7308e670336337b09490183be3748d13240c9b5742de4d12f0666add9c3805c9",
+  "prior_source_audit_sha256": "6801cba61f64c0464afdc42bed8d987f1134be8a9032968cadaac086329cf647",
+  "stage": "FQ5",
+  "status": "PENDING_INDEPENDENT_CONFIRMATION"
+}

@@ -1,0 +1,9 @@
+# Formal FQ5 independent-data source gate
+
+Status: **PENDING_INDEPENDENT_CONFIRMATION**. The prior Q5 provenance, rights, schema and access audit remains valid for the formal FQ2–FQ4 study. Source audit: `docs/SEQUENCE_ML_Q5_DATA_FEASIBILITY.md` (SHA-256 `6801cba61f64c0464afdc42bed8d987f1134be8a9032968cadaac086329cf647`); machine verdict: `results/sequence_ml_v1/q5_data_gate.json` (SHA-256 `7308e670336337b09490183be3748d13240c9b5742de4d12f0666add9c3805c9`).
+
+No new lawful, uninspected WSE original-event h20 cohort or verified source entitlement was established between that audit and this formal packaging pass. The formal runs consumed the same WSELOB-2017 cache with the same source-manifest identity and the same previously viewed June/September/November evaluation periods. Formal training adequacy and the conditional Transformer extension do not turn those periods into an independent final.
+
+The prior audit covers WSELOB-2017 V1, FI-2010 and LOBSTER provider routes within its stated inventory/metadata scope. It is not an exhaustive search of user-owned data or all providers. FI-2010 does not yet preserve the exact original-event/economic-scale task, and LOBSTER access and data-use terms are unverified; no subscription or paid data is authorized. Polymarket is a separate public external domain, not an independent confirmation of the WSE effect.
+
+This FQ5 reuse opens **zero** new final outcomes, fits **zero** models, and makes no negative-replication, unseen-generalization, realized-trading or résumé-upgrade claim. Continue Q8 matched-context sensitivity, strict source-only transfer and fixed execution re-check under reviewer control `bf00ef6e3428870c9fb94bc1eb5f7ce4d1791c9f`; only then build the formal final research package with the independent-data gate explicitly pending.
