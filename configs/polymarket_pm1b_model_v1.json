@@ -1,0 +1,20 @@
+{
+  "stage": "PM1B 15-second snapshot repricing model protocol",
+  "parent_horizon_config_sha256": "d3715c8dd57618d5baeaf2603085a7f26196b280f61c6c8767927bbd83a50751",
+  "train_target_manifest_sha256": "c74e18dc5c2b24169a0c645b189f5307a5c75eb2bf97532e4cbfedc8b92c1a40",
+  "dev_target_manifest_sha256": "5e50de6b778dc4455a41ecf42b16f24f54c52d48625c706843e23fd7038af740",
+  "target": "future valid Up midpoint minus current decision midpoint in probability points, frozen 15-second horizon",
+  "primary_metric": "equal-market mean squared error in probability points squared, lower is better",
+  "primary_contrast": "B3 three-seed prediction mean minus B2 same-history XGBoost paired market MSE",
+  "secondary_contrasts": ["B2 minus B1", "B1 minus B0 zero change", "B3 minus B0 zero change"],
+  "practical_effect_rule": "Before final reveal, B3 is preferred only if April-style chronological dev market MSE is at least 1% lower than B2; report every arm on final regardless of selection. A positive final claim also requires paired market CI upper bound below zero and remains within-date only.",
+  "uncertainty": "5000 paired market bootstrap draws with fixed seed; markets are the resampling units, conditional on only four captured UTC dates. Also report per-date and contract-length descriptive counts/metrics without tuning.",
+  "training_weights": "Each train market has equal total weight; no final market or label enters normalization, fit, checkpointing or selection.",
+  "B0": {"model": "zero repricing", "prediction": 0.0},
+  "B1": {"model": "XGBRegressor", "features": "ten current-state PM1A features from the last captured book", "n_estimators": 200, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 10.0, "n_jobs": 4, "random_state": 7},
+  "B2": {"model": "XGBRegressor", "features": "identical eight-by-eleven causal PM1A history tensor as B3, flattened", "n_estimators": 200, "max_depth": 3, "learning_rate": 0.05, "min_child_weight": 10, "subsample": 1.0, "colsample_bytree": 1.0, "reg_lambda": 10.0, "n_jobs": 4, "random_state": 7},
+  "B3": {"model": "one-layer GRU linear repricing regressor", "features": "identical eight-by-eleven causal PM1A history tensor as B2", "hidden_size": 32, "seeds": [7, 17, 29], "max_epochs": 60, "patience": 8, "batch_size": 256, "learning_rate": 0.001, "weight_decay": 0.0001, "optimizer": "AdamW", "early_stopping": "minimum dev equal-market MSE after train-only feature and target standardization"},
+  "configuration_search": "one fixed XGB/GRU configuration, no final-data tuning and no Transformer",
+  "final_rule": "Push exact code/config, dev results and fitted model hashes before building or scoring the final repricing target. Open final once, score all B0-B3 and all seeds, preserve null/negative results; no refit, threshold change or re-sealing.",
+  "limits": "Collector snapshot time, sparse changed-book rows, four sampled UTC dates and partial final date. Not terminal information, exact exchange return, fills, PnL or WSE independent confirmation."
+}
