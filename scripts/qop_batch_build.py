@@ -78,6 +78,9 @@ for event_idx,e in enumerate(events):
         target_legs=[leg for leg in rec['legs'] if (leg['target'] and print_token==target) or (not leg['target'] and print_token==alt)]
         transaction_stats['target_leg_hashes']+=bool(target_legs)
         for leg_idx,leg in enumerate(target_legs):
+            if not (Decimal(0)<=leg['price']<=Decimal(1)):
+                fail['selected_leg_price_outside_binary_range']+=1
+                continue
             print_target_leg_price_diffs.append(rec['print_price']-leg['price'])
             buy_sell['BUY' if leg['sign']==1 else 'SELL']+=1
             base={'event_idx':event_idx,'market_start_sec':m['start_sec'],'hash':h,'leg_idx':leg_idx,
