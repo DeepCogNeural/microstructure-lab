@@ -1,0 +1,19 @@
+{
+  "causal_interpretation": "File order follows captured receive order but its full-depth replay is not certified. Exchange-time sorting is offline only because it reorders later-received updates before earlier snapshots. Direct BBO fields may be described separately when finite and 0<bid<ask<1; no exact size or queue inference.",
+  "first_event_baseline": {
+    "exchange_stable_bbo_price_match": 2206,
+    "exchange_stable_full_match": 1883,
+    "exchange_stable_later_received_update_pairs": 684,
+    "file_order_bbo_price_match": 2028,
+    "file_order_full_match": 1495,
+    "transitions": 2229
+  },
+  "first_event_public_sha256": "6bec5d352e1dfed2d108d8489cbb31f467deefbf27147ae44fecb37b9b56452a",
+  "gate": "Full-depth causal L2 requires all snapshot transitions plus independent order/sequence semantics; BBO-only partial status cannot certify maker actionability. Per-leg match-time bound remains a separate prerequisite.",
+  "no_amended_rule": "No source-backed sequence or snapshot semantics justified a new rule from the first event; hash fields are not treated as sequence numbers. Holdout results cannot revise this rule; any later change must be separately labeled exploratory.",
+  "replay_code_sha256": "c31f0aaa11eab7a0eb3e43bf43c584797eb0a64c787074cd0b596043978e92e6",
+  "rule": "On all seven remaining preidentified BTC-5m events, apply exactly the same file-order reset-and-absolute-size/zero-delete replay and stable exchange-time offline diagnostic. Numeric Decimal price/size normalization, batch expansion and top-price/touch-size/top2/full-depth comparison are unchanged. Also compare the public price_change best_bid/best_ask field against immediate replay without future snapshots.",
+  "source_date_utc": "2026-07-28",
+  "status": "FROZEN_BEFORE_SEVEN_EVENT_HOLDOUT",
+  "version": "rocklabs-qop-replay-rule-v1"
+}

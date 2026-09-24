@@ -1,0 +1,22 @@
+{
+  "abi_required_items": {
+    "event:OrderFilled": 1,
+    "event:OrdersMatched": 1,
+    "function:matchOrders": 1
+  },
+  "chain_id": 137,
+  "compiler_version": "0.8.34+commit.80d5c536",
+  "explorer_api": "https://polygon.blockscout.com/api/v2/smart-contracts/0xe111180000d2663c0091e4f400237545b87b996b",
+  "explorer_name": "CTFExchange",
+  "explorer_response_sha256": "78e46732d011d65327ea56ec4a256ed2b1e6694d5f0eaca9546634614a7553f8",
+  "is_fully_verified": false,
+  "is_verified": true,
+  "limit": "Verified source and matching ABI precede the sample; is_fully_verified is false and no independent sample-block bytecode hash was obtained. Event/input reconciliation in fixed receipts is a separate empirical check.",
+  "observed_contract_address": "0xe111180000d2663c0091e4f400237545b87b996b",
+  "official_polymarket_contract_address": "https://github.com/Polymarket/ctf-exchange-v2/blob/main/README.md#deployed-contracts",
+  "official_v2_event_interface": "https://github.com/Polymarket/ctf-exchange-v2/blob/main/src/exchange/interfaces/ITrading.sol",
+  "official_v2_match_logic": "https://github.com/Polymarket/ctf-exchange-v2/blob/main/src/exchange/mixins/Trading.sol",
+  "sample_period": "2026-07-28 08:00-09:00 UTC",
+  "status": "EXPLORER_VERIFIED_ABI_WITH_BYTECODE_LIMIT",
+  "verified_at": "2026-04-06T23:56:54.250560Z"
+}

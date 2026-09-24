@@ -1,0 +1,24 @@
+{
+  "complement_maker_inputs_verified": 37,
+  "http_requests_this_run": 0,
+  "maker_input_count_total_verified": 41,
+  "note": "24 fixed structural examples checked against decoded transaction input and complete receipt logs; unmatched three checked by exact hash only. Public output excludes hashes and raw logs.",
+  "private_evidence_sha256": "c92d7b7905455b0f5637c64e9c86df28cd217ae99ee1badeeda81411b749adbd",
+  "response_bytes_this_run": 0,
+  "selected": 24,
+  "selected_by_category": {
+    "complement_route": 6,
+    "multi_maker": 6,
+    "repeated_maker_order": 6,
+    "single_maker": 6
+  },
+  "selected_outcomes": {
+    "verified": 24
+  },
+  "status": "FIXED_RECEIPT_AUDIT",
+  "unmatched_receipt_status": {
+    "complete": 3
+  },
+  "unmatched_selected": 3,
+  "unmatched_with_any_matching_logs": 0
+}

@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "book": 2231,
+      "event_index": 0,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2217,
+            "ask_touch_size_match": 2198,
+            "bbo_prices_match": 2206,
+            "bid_price_match": 2216,
+            "bid_touch_size_match": 2200,
+            "compared": 2229,
+            "direct_bbo_matches_replay": 79280,
+            "direct_bbo_numeric": 85894,
+            "direct_bbo_strict_valid": 80566,
+            "full_match": 1883,
+            "receive_backsteps": 14227,
+            "top2_match": 2129,
+            "touch_size_match": 2172
+          },
+          "mismatch_categories": {
+            "bbo_mismatch_with_later_received_update": 2,
+            "bbo_price": 23,
+            "deep_only": 246,
+            "full_mismatch_with_later_received_update": 18,
+            "identical_update_repeats": 38619,
+            "pairs_with_any_update": 2229,
+            "same_ms_same_level_conflicting_sizes": 2386,
+            "shallow_depth": 43,
+            "snapshot_same_exchange_ms_as_update": 2225,
+            "touch_size": 34,
+            "update_received_after_snapshot": 684
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2130,
+            "ask_touch_size_match": 2000,
+            "bbo_prices_match": 2028,
+            "bid_price_match": 2105,
+            "bid_touch_size_match": 1997,
+            "compared": 2229,
+            "direct_bbo_matches_replay": 70373,
+            "direct_bbo_numeric": 85894,
+            "direct_bbo_strict_valid": 80566,
+            "exchange_backsteps": 5282,
+            "full_match": 1495,
+            "top2_match": 1745,
+            "touch_size_match": 1842
+          },
+          "mismatch_categories": {
+            "bbo_price": 201,
+            "deep_only": 250,
+            "identical_update_repeats": 25128,
+            "pairs_with_any_update": 2229,
+            "same_ms_same_level_conflicting_sizes": 3007,
+            "shallow_depth": 97,
+            "snapshot_same_exchange_ms_as_update": 2225,
+            "touch_size": 186
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 85894
+    }
+  ],
+  "private_evidence_sha256": "9284af0a56c356966be066f04e4408231806e4a88aceb0dcdc208430695b6037",
+  "private_minimal_examples_count": 8,
+  "receive_minus_exchange_ms_min_median_max": [
+    0,
+    11,
+    8816
+  ],
+  "scope": "first",
+  "source_event_count": 1,
+  "status": "OFFLINE_SNAPSHOT_REPLAY_DIAGNOSTIC_ONLY",
+  "target_event_counts": {
+    "array_items": 31801,
+    "array_lines": 462,
+    "book": 2231,
+    "direct_bbo_numeric": 85894,
+    "updates": 85894
+  },
+  "target_tokens": 2,
+  "update_side_values": {
+    "BUY": 42947,
+    "SELL": 42947
+  },
+  "warning": "Both orderings are offline diagnostics. Exchange sorting can place later-received records earlier and is not a certified causal stream."
+}
