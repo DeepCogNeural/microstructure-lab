@@ -1,0 +1,32 @@
+{
+  "boundary": "DEVELOPMENT_ONLY; no fresh final, live orders, paid data, private row publication, or resumes",
+  "inputs_sha256": {
+    "_private/qop_batch_v1/build_private.json": "789424059c61c0f7f9b37415b87704b0ee77d7127e66e7b08581448c0647be10",
+    "_private/qop_batch_v1/features_private.json": "13a93e59c6f82f3a56109699738f9965dedfb6ca115b87a6c4b183e60d8e2b66",
+    "_private/qop_batch_v1/model_predictions_private.json": "0c239c6ac9b209751a336e825a0cb19ff1f9e6b23b385a2ff07c011be5fb1b11",
+    "_private/qop_batch_v1/selection_private.json": "b12e3fe8c917ea89c2252c2d968461e10e5a04da9405e73daceaae75abc3e88d",
+    "configs/polymarket_qop_batch_model_v2.json": "8b96cbd1c9b8d78ad93bcbcc86def18e14334410ae3d0cbc7a22585628f5abf7",
+    "configs/polymarket_qop_batch_v1.json": "2d9171b9e3d7abdfa8656cc57f54639ee423e521f368e627517285acefd27361",
+    "results/polymarket_qop_batch_v1/model_evaluation.json": "dde8b36a9188a64f599655b10dfb1f68b872c61565a4af725b4eca6c20ff84f4",
+    "scripts/qop_batch_models.py": "f27db268348c169fd0ec907a253cf5904e030df898a64fd1af32ac94020b1316"
+  },
+  "maximum_allocated_cpu_core_hours": 96,
+  "maximum_elapsed_hours": 12,
+  "quant_control_commit": "46e5ec226fbdf206d9cf26c9782335543a2b0da4",
+  "science_parent_commit": "eda29afb427cae123e55f0106b3b69ccee61ab87",
+  "scope": [
+    "A_economic_closeout",
+    "B_terminal_probability_replication",
+    "CPU_known_truth_simulation",
+    "unified_research_package"
+  ],
+  "source_archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "start_utc": "2026-09-24T02:39:13.301592+00:00",
+  "statuses": {
+    "A_economic_closeout": "PENDING",
+    "B_terminal_probability_replication": "PENDING",
+    "CPU_known_truth_simulation": "PENDING",
+    "unified_research_package": "PENDING"
+  },
+  "version": "POLYMARKET_V4_CONTINUOUS_12H_DEVELOPMENT"
+}
