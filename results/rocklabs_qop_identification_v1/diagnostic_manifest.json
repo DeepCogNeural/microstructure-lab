@@ -1,0 +1,42 @@
+{
+  "version": "rocklabs-qop-identification-v1-20260924",
+  "status": "FROZEN_BEFORE_DIAGNOSTIC_OUTCOMES",
+  "science_parent_commit": "8280774585115555c7e17a10b4790b18860f1d0e",
+  "source": {
+    "label": "DEVELOPMENT_MEASUREMENT_ONLY",
+    "date_utc": "2026-07-28",
+    "hour_utc": "08:00-09:00",
+    "files_sha256": {
+      "clob.jsonl.zst": "0a86857c5192ef5771efe6383a85727a00afedf76a985da458972ea767c939e0",
+      "onchain.jsonl.zst": "e44a1f03dca0c055102380c020d78d59a98ff8b019d85da49fc343d9a686547b",
+      "polymarket_index.json": "8030460868aa5e5124c56c3062ad4fb0ffe753a6dca618629300cda089554391",
+      "onchain_index.json": "70ce6a24bbadd790df8fb95b64c40c5049aaaf0777a5c7ee5e006d8228b03f5a"
+    },
+    "event_rule": "All BTC-5m events in this hour identified by embedded market metadata and cross-checked token/condition identity; expected 8 events and 16 tokens; exclusions explicitly counted; no outcome-based event substitution",
+    "additional_dates": "Only 2026-07-29 and 2026-07-30 at 08:00-09:00 UTC, if separately delivered and preregistered DEVELOPMENT_MEASUREMENT_VALIDATION before reading; no waiting or replacement"
+  },
+  "identity": {
+    "units": ["CLOB print records", "unique transaction hashes", "OrdersMatched economic groups", "unique chain/contract/transaction/log_index maker legs"],
+    "group_rule": "Require sample-period contract address, deployment and ABI verification. Match CLOB transaction_hash to chain tx hash; use actual decoded takerOrderHash and matchOrders makerOrders, then one-to-one reconcile OrderFilled by order hash, maker, token, side, asset amounts and fee. Do not infer true maker role solely by excluding taker hash.",
+    "complement": "Both token print routes and target maker legs included; receipt asset exchange sets each maker leg's direction, shares and price",
+    "ambiguous": "Unknown or duplicate joins are excluded from certified denominator and reported without replacement",
+    "fixed_examples": "At most 24 distinct transaction hashes: six each from single-maker, multi-maker, complement-token route and repeated maker-order use, in that priority order; candidate category is structural and determined before price/replay results; within each category sort SHA256('rocklabs-qop-v1-examples:'+txhash), skip already selected, take first six; if category has fewer, record shortfall without substitution. All three originally unlinked target prints audited separately without replacement."
+  },
+  "replay": {
+    "baseline": ["file order", "stable exchange-timestamp order"],
+    "reference": "Independently reproduce first event's 1495/2229 and 1883/2229 full-book snapshot-transition exact matches before changing replay rules",
+    "normalization": "Decimal price/absolute size per token, side and price; zero size deletes; compare numeric equality independent of JSON key and string ordering",
+    "diagnostics": ["array and batch expansion", "duplicate delivery", "snapshot reset semantics", "same-millisecond conflict", "cross-stream order", "timestamp reversal", "available sequence fields and gaps"],
+    "fields": ["top bid and ask prices", "touch bid and ask sizes", "fixed top-two-level depth and imbalance", "full depth"],
+    "holdout": "Investigate first chronological eligible event only; freeze any mechanism-grounded amended replay rule before applying it unchanged to the other seven events. Post-holdout change is exploratory and separately versioned.",
+    "causality": "Exchange-time sort is offline only unless receive-time precedence can be proved. Do not use future snapshot to choose order or copy reference book. Hash is not a sequence number without independent verification."
+  },
+  "clock": {
+    "evidence": ["CLOB inner exchange timestamp", "collector outer receive timestamp", "OrdersMatched and OrderFilled chain/block/receive times", "sample-period source or contract semantics"],
+    "gate": "Per-leg match interval and error <=min(500ms, actionable_lead/4) must have independent mechanism or record support; format precision, small latency and later block time alone do not qualify",
+    "unknown": "Return UNKNOWN when no independent bound exists"
+  },
+  "publication": "Only aggregate counts, code, source/config hashes and private evidence index hash. Raw rows, transaction/order/address IDs, signed URLs and credentials remain ignored under _private/.",
+  "limits": {"deadline_utc": "2026-09-24T14:51:00Z", "max_threads": 4, "max_memory_gib": 16, "max_cpu_core_hours": 16, "gpu": 0},
+  "tests": {"source_and_abi": "PENDING", "maker_leg_identity": "PENDING", "fixed_examples_and_three_missing": "PENDING", "replay_baseline": "PENDING", "replay_mechanism_and_holdout": "PENDING", "timestamp_semantics": "PENDING", "conditional_cross_date_validation": "PENDING", "field_coverage_for_B": "PENDING"}
+}
