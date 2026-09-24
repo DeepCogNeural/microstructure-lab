@@ -1,0 +1,14 @@
+{
+  "cache_bytes": 174134296,
+  "cache_files": 1920,
+  "complete": 1920,
+  "fixed_hashes": 1920,
+  "log_page_counts": {
+    "1": 1893,
+    "2": 20,
+    "3": 2,
+    "4": 5
+  },
+  "missing": 0,
+  "private_manifest_sha256": "f4f52e4191d764c0bf6eb91b2a1ec9cb7d0ca277ab8ac38443c9002fdd12471d"
+}

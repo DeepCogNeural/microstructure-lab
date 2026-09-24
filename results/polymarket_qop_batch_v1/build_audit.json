@@ -1,0 +1,88 @@
+{
+  "contract_count": 1,
+  "joined_unique_hashes": 1885,
+  "multi_log_page_receipts": 27,
+  "multi_maker_hashes": 630,
+  "note": "Only uniquely receipt-compatible public prints anchor passive target-token legs; no replacement hashes; missing values remain NA.",
+  "print_vs_taker_price": {
+    "nonzero_count": 668,
+    "range_dollars_per_share": [
+      "-0.0048564776979947893351495857",
+      "0.005"
+    ]
+  },
+  "print_vs_target_maker_leg_price": {
+    "nonzero_count": 1438,
+    "range_dollars_per_share": [
+      "-0.98",
+      "0.98"
+    ]
+  },
+  "private_rows_sha256": "789424059c61c0f7f9b37415b87704b0ee77d7127e66e7b08581448c0647be10",
+  "quote_coverage": {
+    "1000_30000": {
+      "eligible_events": 96,
+      "eligible_legs": 1210,
+      "failure_reasons": {
+        "empty_or_invalid_quote": 184,
+        "past_scheduled_end": 35,
+        "same_receive_time_conflict": 61,
+        "stale_quote": 332
+      }
+    },
+    "1000_5000": {
+      "eligible_events": 96,
+      "eligible_legs": 1552,
+      "failure_reasons": {
+        "empty_or_invalid_quote": 91,
+        "past_scheduled_end": 3,
+        "same_receive_time_conflict": 58,
+        "stale_quote": 81
+      }
+    },
+    "250_30000": {
+      "eligible_events": 96,
+      "eligible_legs": 797,
+      "failure_reasons": {
+        "empty_or_invalid_quote": 71,
+        "past_scheduled_end": 35,
+        "same_receive_time_conflict": 61,
+        "stale_quote": 874
+      }
+    },
+    "250_5000": {
+      "eligible_events": 96,
+      "eligible_legs": 1131,
+      "failure_reasons": {
+        "empty_or_invalid_quote": 74,
+        "past_scheduled_end": 3,
+        "same_receive_time_conflict": 58,
+        "stale_quote": 536
+      }
+    }
+  },
+  "receipt_failures": {
+    "no_unique_receipt_compatible_print": 35
+  },
+  "receipts_complete": 1920,
+  "selected_events": 96,
+  "selected_new_hashes": 1920,
+  "selected_token_legs": 1754,
+  "selected_token_sides": {
+    "BUY": 1481,
+    "SELL": 273
+  },
+  "source_minus_block_ms_min_median_max": [
+    -3976,
+    -2233,
+    -943
+  ],
+  "source_to_receive_ms_min_median_max": [
+    9,
+    13,
+    587
+  ],
+  "status": "DEVELOPMENT_EXPANDED_RECEIPT_AND_QUOTE_BUILD",
+  "target_leg_hashes": 1035,
+  "target_leg_shares": "26095.716846"
+}

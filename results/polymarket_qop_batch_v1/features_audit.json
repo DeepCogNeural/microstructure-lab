@@ -1,0 +1,25 @@
+{
+  "all_selected_token_legs": 1754,
+  "causality_check": "PASS_FUTURE_QUOTE_AND_PRINT_MUTATION",
+  "common_model_ready_legs": 781,
+  "feature_available_counts": {
+    "feature_-500_1000": 1214,
+    "feature_-500_5000": 1133,
+    "feature_0_1000": 1210,
+    "feature_0_5000": 1158,
+    "feature_500_1000": 1215,
+    "feature_500_5000": 1240
+  },
+  "feature_failure_counts": {
+    "empty_or_invalid_quote": 29,
+    "invalid_book": 17,
+    "missing_quote": 10,
+    "same_receive_time_conflict": 155,
+    "stale_book": 723,
+    "stale_quote": 637
+  },
+  "main_5s_label_count": 1552,
+  "note": "All features use public rows received at or before r minus cutoff; later receipt identity, maker price and size are labels/accounting only. Snapshot depths are age-limited snapshots, not exact replay.",
+  "private_feature_rows_sha256": "13a93e59c6f82f3a56109699738f9965dedfb6ca115b87a6c4b183e60d8e2b66",
+  "status": "DEVELOPMENT_CAUSAL_FEATURE_BUILD"
+}

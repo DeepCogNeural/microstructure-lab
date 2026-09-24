@@ -1,0 +1,30 @@
+{
+  "interpretation": "Public print token route is a representation of the active match; target maker leg price and direction come from receipt asset exchange, never from public print price.",
+  "routes": {
+    "complement": {
+      "distinct_hashes": 794,
+      "eligible_5s_1000ms_legs": 1207,
+      "eligible_5s_1000ms_shares": "18217.200932",
+      "events": 96,
+      "legs": 1364,
+      "passive_sides": {
+        "BUY": 1341,
+        "SELL": 23
+      },
+      "shares": "22064.853069"
+    },
+    "target": {
+      "distinct_hashes": 241,
+      "eligible_5s_1000ms_legs": 345,
+      "eligible_5s_1000ms_shares": "3168.429924",
+      "events": 87,
+      "legs": 390,
+      "passive_sides": {
+        "BUY": 140,
+        "SELL": 250
+      },
+      "shares": "4030.863777"
+    }
+  },
+  "status": "DEVELOPMENT_AGGREGATE_ONLY"
+}
