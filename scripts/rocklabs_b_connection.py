@@ -19,6 +19,7 @@ USDC_E = '2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
 RPC = 'https://polygon-bor-rpc.publicnode.com'
 PRIVATE = Path('_private/rocklabs/2026-09-23/b_connection_v1')
 PUBLIC = Path('results/rocklabs_qop_b_connection_v1')
+CORRECTED = Path('results/rocklabs_qop_b_connection_v2')
 RAW = Path('_private/rocklabs/2026-09-23')
 SOURCES = {
     '2026-07-28': RAW / 'sample-2026-07-28-0800/clob.jsonl.zst',
@@ -61,6 +62,16 @@ def curl_json(url, *, body=None):
 def iso_ms(s):
     try:
         return int(dt.datetime.fromisoformat(s.replace('Z', '+00:00')).timestamp() * 1000)
+    except (AttributeError, ValueError):
+        return None
+
+
+def iso_us(s):
+    """Exact UTC microseconds; float timestamp milliseconds would admit future rows."""
+    try:
+        stamp = dt.datetime.fromisoformat(s.replace('Z', '+00:00'))
+        delta = stamp.astimezone(dt.timezone.utc) - dt.datetime(1970, 1, 1, tzinfo=dt.timezone.utc)
+        return ((delta.days * 86400 + delta.seconds) * 1000000) + delta.microseconds
     except (AttributeError, ValueError):
         return None
 
@@ -134,33 +145,49 @@ def finite(x):
         return None
 
 
-def last_record(rows, kind, t, max_age):
+def received_by_decision(receive_us, decision_ms):
+    return receive_us <= decision_ms * 1000
+
+
+def last_record(rows, kind, t_us, max_age_ms):
     if not rows:
-        return None, 'no_record'
+        return None, 'no_record', {}
     latest = max(x[0] for x in rows)
     same = [x[1] for x in rows if x[0] == latest]
-    if len({json.dumps(x, sort_keys=True) for x in same}) > 1:
-        return None, 'same_receive_time_conflict'
-    age = t - latest
-    if age < 0 or age > max_age:
-        return None, 'stale'
+    whole_variants = len({json.dumps(x, sort_keys=True) for x in same})
+    if kind == 'bbo':
+        signatures = {(finite(x.get('best_bid')), finite(x.get('best_ask'))) for x in same}
+    else:
+        signatures = {
+            (max((v for q in x.get('bids') or [] if (v := finite(q.get('price'))) is not None), default=None),
+             min((v for q in x.get('asks') or [] if (v := finite(q.get('price'))) is not None), default=None))
+            for x in same
+        }
+    diag = {'latest_receive_us': latest, 'latest_record_count': len(same),
+            'message_variants': whole_variants, 'required_quote_variants': len(signatures)}
+    if len(signatures) > 1:
+        return None, 'same_receive_time_conflict', diag
+    age_us = t_us - latest
+    if age_us < 0 or age_us > max_age_ms * 1000:
+        return None, 'stale', diag
+    age = age_us / 1000
     x = same[-1]
     if kind == 'bbo':
         bid, ask = finite(x.get('best_bid')), finite(x.get('best_ask'))
         if bid is None or ask is None or not 0 < bid < ask < 1:
-            return None, 'invalid_or_crossed_bbo'
-        return {'bid': bid, 'ask': ask, 'age_ms': age}, 'ok'
+            return None, 'invalid_or_crossed_bbo', diag
+        return {'bid': bid, 'ask': ask, 'age_ms': age}, 'ok', diag
     bids, asks = x.get('bids') or [], x.get('asks') or []
     if not bids or not asks:
-        return None, 'empty_book_side'
+        return None, 'empty_book_side', diag
     parsed_bids = [(finite(q.get('price')), finite(q.get('size'))) for q in bids]
     parsed_asks = [(finite(q.get('price')), finite(q.get('size'))) for q in asks]
     if any(p is None or s is None or not 0 < p < 1 or s <= 0 for p, s in parsed_bids + parsed_asks):
-        return None, 'invalid_book_levels'
+        return None, 'invalid_book_levels', diag
     bid, ask = max(p for p, _ in parsed_bids), min(p for p, _ in parsed_asks)
     if bid >= ask:
-        return None, 'crossed_book'
-    return {'bid': bid, 'ask': ask, 'age_ms': age}, 'ok'
+        return None, 'crossed_book', diag
+    return {'bid': bid, 'ask': ask, 'age_ms': age}, 'ok', diag
 
 
 def main():
@@ -241,10 +268,11 @@ def main():
     for date, group in bydate.items():
         target = {r['up_token']: (i, r) for i, r in group}
         latest = {i: {'bbo': [], 'book': []} for i, _ in group}
+        boundary_excluded = {i: {'bbo': 0, 'book': 0} for i, _ in group}
         with zstd.open(SOURCES[date], 'rt') as f:
             for raw in f:
                 outer = json.loads(raw)
-                recv = iso_ms(outer.get('timestamp'))
+                recv = iso_us(outer.get('timestamp'))
                 if recv is None:
                     continue
                 try:
@@ -266,8 +294,9 @@ def main():
                         if hit is None:
                             continue
                         i, cohort = hit
-                        t = cohort['decision_ms_from_slug']
-                        if recv > t:
+                        if recv > cohort['decision_ms_from_slug'] * 1000 and recv // 1000 == cohort['decision_ms_from_slug']:
+                            boundary_excluded[i][kind] += 1
+                        if not received_by_decision(recv, cohort['decision_ms_from_slug']):
                             continue
                         arr = latest[i][kind]
                         if not arr or recv > arr[0][0]:
@@ -276,17 +305,19 @@ def main():
                             arr.append((recv, x))
         for i, r in group:
             for kind, age in [('bbo', 1000), ('book', 5000)]:
-                value, status = last_record(latest[i][kind], kind, r['decision_ms_from_slug'], age)
+                value, status, diagnostics = last_record(latest[i][kind], kind, r['decision_ms_from_slug'] * 1000, age)
                 r[kind + '_value'] = value
                 r[kind + '_status'] = status
                 r[kind + '_record_count_at_latest_recv'] = len(latest[i][kind])
+                r[kind + '_diagnostics'] = diagnostics
+                r[kind + '_future_boundary_records_excluded'] = boundary_excluded[i][kind]
     for r in rows:
         for kind in ('bbo', 'book'):
             r.setdefault(kind + '_status', 'identity_unverified')
             r.setdefault(kind + '_value', None)
         r['paired_bbo_gate'] = bool(r['label_gate'] and r['bbo_status'] == 'ok')
         r['paired_book_gate'] = bool(r['label_gate'] and r['book_status'] == 'ok')
-    save(PRIVATE / 'auditable_32.json', rows)
+    save(PRIVATE / 'auditable_32_corrected.json', rows)
     summary = {}
     for date in SOURCES:
         subset = [r for r in rows if r['date'] == date]
@@ -298,15 +329,44 @@ def main():
             'label_and_book': sum(r['paired_book_gate'] for r in subset),
             'bbo_failures': dict(collections.Counter(r['bbo_status'] for r in subset if r['bbo_status'] != 'ok')),
             'book_failures': dict(collections.Counter(r['book_status'] for r in subset if r['book_status'] != 'ok'))}
-    public = {'status': 'BOUNDED_B_CONNECTION_AUDIT', 'cohort_events': len(rows), 'by_date': summary,
-        'private_auditable_32_sha256': digest(PRIVATE / 'auditable_32.json'),
+        summary[date]['events_with_future_boundary_records_excluded'] = sum(
+            any(r.get(k + '_future_boundary_records_excluded', 0) for k in ('bbo', 'book')) for r in subset)
+    original_path = PRIVATE / 'auditable_32_d606417_original.json'
+    interim_path = PRIVATE / 'auditable_32_field_only_intermediate.json'
+    if digest(original_path) != 'f928e2b6c392f55c789ad5fda0bd4be2dfd8730ec91d6d3728e73a95df4f81b9':
+        raise ValueError('Original v1 private table checksum mismatch')
+    original = json.loads(original_path.read_text())
+    interim = json.loads(interim_path.read_text())
+    if not (len(original) == len(interim) == len(rows)):
+        raise ValueError('Correction table lengths differ')
+    correction = {
+        'original_direct_bbo_valid': sum(r['bbo_status'] == 'ok' for r in original),
+        'corrected_direct_bbo_valid': sum(r['bbo_status'] == 'ok' for r in rows),
+        'original_snapshot_top_valid': sum(r['book_status'] == 'ok' for r in original),
+        'corrected_snapshot_top_valid': sum(r['book_status'] == 'ok' for r in rows),
+        'original_bbo_same_ms_conflicts': sum(r['bbo_status'] == 'same_receive_time_conflict' for r in original),
+        'original_conflicts_reclassified_to_valid': sum(o['bbo_status'] == 'same_receive_time_conflict' and r['bbo_status'] == 'ok' for o, r in zip(original, rows)),
+        'original_conflicts_reclassified_to_stale': sum(o['bbo_status'] == 'same_receive_time_conflict' and r['bbo_status'] == 'stale' for o, r in zip(original, rows)),
+        'remaining_true_bbo_conflicts': sum(r['bbo_status'] == 'same_receive_time_conflict' for r in rows),
+        'original_snapshot_same_ms_conflicts': sum(r['book_status'] == 'same_receive_time_conflict' for r in original),
+        'snapshot_conflict_reclassified_to_stale': sum(o['book_status'] == 'same_receive_time_conflict' and r['book_status'] == 'stale' for o, r in zip(original, rows)),
+        'events_with_future_submillisecond_boundary_record': sum(any(r.get(k + '_future_boundary_records_excluded', 0) for k in ('bbo', 'book')) for r in rows),
+        'field_only_vs_exact_time_status_changes': sum(any(a[k + '_status'] != r[k + '_status'] for k in ('bbo', 'book')) for a, r in zip(interim, rows)),
+        'field_only_vs_exact_time_quote_changes': sum(any(a[k + '_value'] != r[k + '_value'] for k in ('bbo', 'book')) for a, r in zip(interim, rows)),
+        'identity_or_label_gate_changes': sum(o['identity_gate'] != r['identity_gate'] or o['label_gate'] != r['label_gate'] for o, r in zip(original, rows)),
+    }
+    public = {'status': 'BOUNDED_B_CONNECTION_QUOTE_CORRECTED', 'cohort_events': len(rows), 'by_date': summary,
+        'parent_science_commit': 'd606417c59bb03600f838d437a92a0d77662a834',
+        'original_private_auditable_32_sha256': digest(original_path), 'correction': correction,
+        'private_auditable_32_sha256': digest(PRIVATE / 'auditable_32_corrected.json'),
         'private_identity_32_sha256': digest(PRIVATE / 'identity_32.json'),
         'private_fixed_32_sha256': digest(PRIVATE / 'fixed_32.json'),
         'network': json.loads((PRIVATE / 'identity_network.json').read_text()),
         'label_publication_time': 'unknown',
         'caveat': 'Post hoc onchain payout labels and received-record quotes; no point-in-time label availability or maker match-time certificate.'}
-    save(PUBLIC / 'summary.json', public)
-    os.chmod(PUBLIC / 'summary.json', 0o644)
+    CORRECTED.mkdir(parents=True, exist_ok=True)
+    save(CORRECTED / 'summary.json', public)
+    os.chmod(CORRECTED / 'summary.json', 0o644)
     print(json.dumps({'events': len(rows), 'by_date': summary}))
 
 

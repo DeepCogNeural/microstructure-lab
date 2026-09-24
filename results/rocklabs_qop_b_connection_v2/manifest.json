@@ -1,0 +1,16 @@
+{
+  "status": "CORRECTED_QUOTE_GATE_ONLY",
+  "parent_science_commit": "d606417c59bb03600f838d437a92a0d77662a834",
+  "frozen_v1_manifest_commit": "9c66dec7e47e6214499ed10446be07fda026573c",
+  "private_fixed_cohort_sha256": "7b91e9d085325f26410e814c337707ebc41cf0bfc3e590ef72e9d2e423433bee",
+  "original_private_table_sha256": "f928e2b6c392f55c789ad5fda0bd4be2dfd8730ec91d6d3728e73a95df4f81b9",
+  "field_only_intermediate_private_table_sha256": "5c2f8438989adcd9e71878292f86062eab81b98780e35a03c735a56ebf139b3f",
+  "corrected_private_table_sha256": "4467d01b17ed5e87e0579b3f51be8127da1d78229de075d0a2d58779743f641c",
+  "original_public_summary_sha256": "e40649eaa6270fec9244b6fd5aedfb31673e6ec7e1b1bb7531bd84a02f4c5dbc",
+  "corrected_public_summary_sha256": "c6920a003946b6e8835443816e9e6f7d76fdbc79ffc8c7107ceefad043274e52",
+  "scope": "Only the fixed 32 development events, same three hashed Rocklabs CLOB hours, same identity/payout cache, same 1000ms direct-BBO and 5000ms snapshot-top limits. No new network requests, dates, models, scores, PnL or final data.",
+  "quote_rule": "Exact integer receive microseconds <= fixed decision milliseconds*1000. Compare numerically normalized required top prices for same-time conflict. Latest record first, then conflict, age, validity; no older-row fallback.",
+  "depth_gate": "Unavailable: equal snapshot top prices do not certify top quantities, deep levels, continuous L2, or maker match-time state.",
+  "tests": "Five synthetic quote-boundary and conflict tests pass.",
+  "science_stop": "Complete this correction and stop science; archive independently."
+}
