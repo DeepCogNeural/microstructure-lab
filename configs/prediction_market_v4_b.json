@@ -1,0 +1,20 @@
+{
+  "version": "prediction-market-v4-b-development-prefit-20260923",
+  "source_archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "event_universe": "all BTC-5m sample markets with start_sec >= 1788825600 and end_sec <= 1788912000; sort (start_sec, condition_id); one Up token from ordered outcomes and token IDs",
+  "decision": "scheduled end minus 120 seconds; receive timestamp <= decision; latest raw record first, then validate; no older valid fallback",
+  "history_ms": 30000,
+  "bbo_age_max_ms": 1000,
+  "snapshot_age_max_ms": 5000,
+  "bbo_validity": "finite 0 < bid < ask < 1; same-receive-time conflicting values invalid; no future backfill",
+  "snapshot_validity": "full book snapshot only; both sides positive price and size, no same-time conflict; not reconstructed deltas",
+  "label": "binary payout numerator/denominator for index 0 read from Polygon CTF at 0x4D97DCd97eC945f40cF65F87097ACe5EA0476045; require denominator 1 and vector [1,0] or [0,1], match sample token order and outcome metadata; other vectors unknown",
+  "splits": {"primary": [0, 0.5, 0.75, 1], "forward": [[0, 0.4, 0.5, 0.6], [0, 0.5, 0.6, 0.75], [0, 0.6, 0.75, 1]], "assignment": "candidate event index before exclusions; boundaries floor fraction times candidate count"},
+  "features": {"B0": ["midpoint"], "B1": ["three-df natural cubic logit-midpoint spline", "common missing markers for snapshot/current state/history", "snapshot age when valid"], "B2_extra": ["spread", "log1p(best bid size+best ask size)", "(bid size-ask size)/(bid size+ask size)"], "B3_extra": ["midpoint minus midpoint 30 seconds earlier", "snapshot imbalance minus 30-second-earlier snapshot imbalance"]},
+  "missing": "train-segment median imputation with shared indicators in B1/B2/B3; train-only standardization and spline knots; B0 raw midpoint",
+  "model": "same L2 logistic for B1/B2/B3; C candidates 0.1, 1, 10; train each, select on calibration event log loss; epsilon 1e-6; B1/B2/B3 same paired eligible events",
+  "minimum_fit": "at least 10 events per class in train and 20 events in scored segment for learned-arm inference; otherwise diagnostic only",
+  "primary_comparison": "late event-equal B2 minus B1 log loss; B1 minus B0 and B3 minus B2 secondary",
+  "simulation": {"mechanisms": [[0,1,0],[0.2,0.8,0],[0.2,0.8,0.25],[0.2,0.8,"0.25 train and calibration, -0.25 late"]], "sizes": [1,4,16], "seeds": "0..99", "selection_thresholds_nats": [0,0.005,0.01], "status": "SYNTHETIC, conditional on generator only"},
+  "boundaries": "DEVELOPMENT_PRICING_REPLICATION / WITHIN_DAY_RETROSPECTIVE; no repricing, strategy, fresh final, or actionability claim"
+}
