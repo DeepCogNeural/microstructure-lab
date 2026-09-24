@@ -1,0 +1,17 @@
+{
+  "archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "both_token_print_hashes": 0,
+  "candidate_hashes": 158097,
+  "coverage_note": "first/last presence screen, not middle completeness",
+  "development_source": "OutcomeTick samples-2026-09-08",
+  "eligible_market_count": 288,
+  "event_sampling": "positions 1,4,...,286 sorted by (start_sec, condition_id) after first/last 30s coverage screen",
+  "events_with_20_hashes": 96,
+  "old_fixed_hashes_excluded": 20,
+  "outcome_blind": "selection used only event identity, presence, token and transaction hash; no price, future quote or receipt outcome",
+  "private_selection_sha256": "b12e3fe8c917ea89c2252c2d968461e10e5a04da9405e73daceaae75abc3e88d",
+  "selected_events": 96,
+  "selected_new_hashes": 1920,
+  "selection_seed": "qop-batch-20260923-v1",
+  "status": "FROZEN_BEFORE_NEW_RECEIPT_OR_PRICE_OUTCOME"
+}
