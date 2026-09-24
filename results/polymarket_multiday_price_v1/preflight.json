@@ -1,0 +1,140 @@
+{
+  "budget_compressed_bytes": 103079215104,
+  "by_date": {
+    "2026-07-27": {
+      "clob": {
+        "bytes": 16589467438,
+        "objects": 24
+      },
+      "index": {
+        "bytes": 16732818,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 825744663,
+        "objects": 24
+      }
+    },
+    "2026-07-28": {
+      "clob": {
+        "bytes": 15870661995,
+        "objects": 25
+      },
+      "index": {
+        "bytes": 27371518,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 880653217,
+        "objects": 26
+      }
+    },
+    "2026-07-29": {
+      "clob": {
+        "bytes": 17127430555,
+        "objects": 24
+      },
+      "index": {
+        "bytes": 34078149,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 918488001,
+        "objects": 24
+      }
+    },
+    "2026-07-30": {
+      "clob": {
+        "bytes": 15559547314,
+        "objects": 24
+      },
+      "index": {
+        "bytes": 23110206,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 845301291,
+        "objects": 24
+      }
+    },
+    "2026-07-31": {
+      "clob": {
+        "bytes": 14788819468,
+        "objects": 24
+      },
+      "index": {
+        "bytes": 21977511,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 873217237,
+        "objects": 24
+      }
+    },
+    "2026-08-01": {
+      "clob": {
+        "bytes": 12837401708,
+        "objects": 25
+      },
+      "index": {
+        "bytes": 21618832,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 912691313,
+        "objects": 26
+      }
+    },
+    "2026-08-02": {
+      "clob": {
+        "bytes": 12172216007,
+        "objects": 24
+      },
+      "index": {
+        "bytes": 26281214,
+        "objects": 2
+      },
+      "onchain": {
+        "bytes": 817895983,
+        "objects": 24
+      }
+    }
+  },
+  "by_kind": {
+    "clob": {
+      "bytes": 104945544485,
+      "objects": 170
+    },
+    "index": {
+      "bytes": 171170248,
+      "objects": 14
+    },
+    "onchain": {
+      "bytes": 6073991705,
+      "objects": 172
+    }
+  },
+  "canonical_clob": {
+    "bytes": 104620375984,
+    "excess_bytes_alone": 1541160880,
+    "objects": 168
+  },
+  "market_family": "Polymarket BTC 5-minute Up/Down",
+  "roles": {
+    "2026-07-27": "train",
+    "2026-07-28": "train",
+    "2026-07-29": "train",
+    "2026-07-30": "calibration",
+    "2026-07-31": "forward_1",
+    "2026-08-01": "forward_2",
+    "2026-08-02": "forward_3"
+  },
+  "scope": "manifest-only preflight; no compressed market object scanned or model fitted",
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "status": "ACCESS_OR_BUDGET_BLOCKED",
+  "window_excess_bytes": 8111491334,
+  "window_source_bytes": 111190706438,
+  "window_source_objects": 356,
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z"
+}
