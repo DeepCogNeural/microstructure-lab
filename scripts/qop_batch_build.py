@@ -1,6 +1,6 @@
 """Build private receipt-verified selected-token QOP development rows and quote tape."""
 from __future__ import annotations
-import argparse,bisect,collections,hashlib,json
+import argparse,bisect,collections,hashlib,json,statistics,datetime
 from decimal import Decimal
 from pathlib import Path
 from audit_qop_outcometick_r0 import rows,verify
@@ -42,6 +42,7 @@ for row in rows(a.sample_root,'book'):
 for d in (quote,book,flow):
     for key in d:d[key].sort(key=lambda x:x['recv_ms'])
 fail=collections.Counter();transaction_stats=collections.Counter();leg_rows=[];one_to_many=0;buy_sell=collections.Counter()
+source_to_receive=[];source_minus_block=[];contracts=set()
 for event_idx,e in enumerate(events):
     m=e['market'];slug=m['slug'];target=str(m['token_ids'][0]);alt=str(m['token_ids'][1]);
     for t in e['transactions']:
@@ -64,6 +65,12 @@ for event_idx,e in enumerate(events):
             fail['multiple_compatible_print_anchors']+=1;continue
         pr,rec=matched[0];transaction_stats['joined_unique_hashes']+=1
         one_to_many+=len(rec['legs'])>1
+        contracts.add((item['tx']['to'].get('hash') if isinstance(item['tx']['to'],dict) else item['tx']['to']).lower())
+        source_to_receive.append(pr['recv_ms']-pr['event_ts_ms'])
+        try:
+            block_ms=int(datetime.datetime.fromisoformat(item['tx']['timestamp'].replace('Z','+00:00')).timestamp()*1000)
+            source_minus_block.append(pr['event_ts_ms']-block_ms)
+        except (KeyError,ValueError,TypeError):transaction_stats['block_timestamp_unparseable']+=1
         print_token=str(pr['asset_id'])
         if print_token not in (target,alt):fail['print_token_outside_event']+=1;continue
         target_legs=[leg for leg in rec['legs'] if (leg['target'] and print_token==target) or (not leg['target'] and print_token==alt)]
@@ -98,7 +105,10 @@ public={'status':'DEVELOPMENT_EXPANDED_RECEIPT_AND_QUOTE_BUILD','selected_events
         'receipts_complete':transaction_stats['receipts_complete'],'joined_unique_hashes':transaction_stats['joined_unique_hashes'],
         'target_leg_hashes':transaction_stats['target_leg_hashes'],'selected_token_legs':len(leg_rows),
         'target_leg_shares':str(sum((Decimal(z['shares']) for z in leg_rows),Decimal(0))),
-        'selected_token_sides':dict(buy_sell),'multi_maker_hashes':one_to_many,
+        'selected_token_sides':dict(buy_sell),'multi_maker_hashes':one_to_many,'contract_count':len(contracts),
+        'multi_log_page_receipts':sum((json.loads((a.receipt_cache/(h.removeprefix('0x')+'.json')).read_text()).get('logs') or {}).get('pages',0)>1 for h in needed if (a.receipt_cache/(h.removeprefix('0x')+'.json')).exists()),
+        'source_to_receive_ms_min_median_max':[min(source_to_receive),statistics.median(source_to_receive),max(source_to_receive)] if source_to_receive else None,
+        'source_minus_block_ms_min_median_max':[min(source_minus_block),statistics.median(source_minus_block),max(source_minus_block)] if source_minus_block else None,
         'receipt_failures':{k:v for k,v in fail.items() if not k.startswith('example_')},
         'quote_coverage':{f'{age}_{h}':{'eligible_legs':sum(not z['failure'][f'{age}_{h}'] for z in leg_rows),
            'eligible_events':len({z['event_idx'] for z in leg_rows if not z['failure'][f'{age}_{h}']}),
