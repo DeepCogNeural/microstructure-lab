@@ -137,6 +137,22 @@ if minimum:
                 'late_ids':[(x['event_idx'],x['hash'],x['leg_idx']) for x in late]})
 else:
     public['blocked_reason']='Each train/calibration/late split requires at least 8 events and 30 complete legs on one common opportunity set.'
+public['paired_comparisons']={}
+if minimum:
+    for target in ('N','D'):
+        for cutoff in (1000,5000):
+            root=f'{target}_{cutoff}_'
+            for newer,older,label in (('M1_ridge','M0_ridge','M1_minus_M0'),
+                                      ('M2_ridge','M1_ridge','M2_minus_M1'),
+                                      ('M2_shallow_boosting','M2_ridge','shallow_minus_ridge_same_M2')):
+                new=public['models'][root+newer];old=public['models'][root+older]
+                item={'late_mse_difference':new['late']['mse']-old['late']['mse'],
+                      'late_mae_difference':new['late']['mae']-old['late']['mae']}
+                if target=='N':
+                    item['late_J75_difference_cents_per_raw_share']=(
+                        new['economic']['0.75']['J_cents_per_raw_share']-
+                        old['economic']['0.75']['J_cents_per_raw_share'])
+                public['paired_comparisons'][root+label]=item
 a.out_private.write_text(json.dumps({'split_counts':counts,'predictions':private_predictions},separators=(',',':'))+'\n')
 public['private_predictions_sha256']=hashlib.sha256(a.out_private.read_bytes()).hexdigest()
 a.out_public.write_text(json.dumps(public,indent=2,sort_keys=True)+'\n')
