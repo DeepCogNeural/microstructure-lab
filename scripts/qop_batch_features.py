@@ -124,11 +124,28 @@ for row in built['leg_rows']:
             record['feature_failure'][f'{key}_{cut}']=e
             if f:counts[f'feature_{key}_{cut}']+=1
     out.append(record)
+# Executable causality check: adding a quote and public print strictly after a
+# feature cutoff must leave every feature of that historical row unchanged.
+causality_check='SKIPPED_NO_COMPLETE_FEATURE_ROW'
+for original,computed in zip(built['leg_rows'],out):
+    if computed['features'].get('0_1000') is None:continue
+    slug=meta[original['event_idx']]['slug'];cutoff=original['print_recv_ms']-1000
+    before=computed['features']['0_1000'];qt=times['bbo'][slug];qx=bbo[slug]
+    future_quote={'recv_ms':cutoff+1,'payload':{'best_bid':'0.01','best_ask':'0.99'}}
+    pos=bisect.bisect_right(qt,cutoff+1);qt.insert(pos,cutoff+1);qx.insert(pos,future_quote)
+    pt=times['print'][slug];px=prints[slug]
+    future_print={'recv_ms':cutoff+1,'asset_id':first_by_slug[slug],
+                  'payload':{'transaction_hash':'synthetic_future','side':'BUY','size':'1'}}
+    ppos=bisect.bisect_right(pt,cutoff+1);pt.insert(ppos,cutoff+1);px.insert(ppos,future_print)
+    after,error=feature(slug,original['print_recv_ms'],original['sign'],1000,original['hash'])
+    px.pop(ppos);pt.pop(ppos);qx.pop(pos);qt.pop(pos)
+    if error or after != before:raise AssertionError('future public mutation changed past feature')
+    causality_check='PASS_FUTURE_QUOTE_AND_PRINT_MUTATION';break
 private={'source':'OutcomeTick samples-2026-09-08','selection_sha256':built['selection_sha256'],
          'build_private_sha256':hashlib.sha256(a.build_private.read_bytes()).hexdigest(),'rows':out}
 a.out_private.write_text(json.dumps(private,separators=(',',':'))+'\n')
 public={'status':'DEVELOPMENT_CAUSAL_FEATURE_BUILD','all_selected_token_legs':len(out),
-        'feature_available_counts':dict(counts),
+        'feature_available_counts':dict(counts),'causality_check':causality_check,
         'main_5s_label_count':sum(bool(x['shift']['0']['labels'].get('5000')) for x in out),
         'common_model_ready_legs':sum(bool(x['shift']['0']['labels'].get('5000')) and all(x['features'].get(f'0_{c}') for c in (1000,5000)) for x in out),
         'feature_failure_counts':dict(collections.Counter(reason for x in out for c in ('0_1000','0_5000') for reason in x['feature_failure'][c])),
