@@ -1,0 +1,34 @@
+{
+  "chain_block_time_minus_public_exchange": {
+    "max_ms": 3940,
+    "median_ms": 1999,
+    "min_ms": -7556,
+    "p95_ms": 3053
+  },
+  "chain_indexer_receive_minus_public_exchange": {
+    "max_ms": 109763,
+    "median_ms": 102930,
+    "min_ms": 96494,
+    "p95_ms": 108274
+  },
+  "groups": 7179,
+  "groups_with_multiple_maker_legs": 2497,
+  "invalid_reason_counts": {},
+  "maker_legs": 15346,
+  "per_maker_leg_independent_match_timestamp_count": 0,
+  "private_identity_sha256": "874d2cb72172c3cabc5bbe4a66d276ad0085710d2f790eb426af15895ee11eaa",
+  "public_exchange_to_capture_receive": {
+    "max_ms": 1480,
+    "median_ms": 12,
+    "min_ms": 2,
+    "p95_ms": 159
+  },
+  "statement": "Observed low public message latency and later chain/block times do not independently bound match time for any of the multiple maker legs. No C/A/M or cancellation lead is computed.",
+  "status": "UNKNOWN_PER_LEG_MATCH_TIME",
+  "timestamp_sources": {
+    "chain_block": "Polygon block time, whole-second only",
+    "chain_indexer_receive": "Rocklabs chain indexer receive time, post-block",
+    "public_inner": "CLOB last_trade_price.timestamp, exchange ms, generation semantics unknown",
+    "public_outer": "Rocklabs websocket receive timestamp, collector-side"
+  }
+}

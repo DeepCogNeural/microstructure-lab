@@ -1,0 +1,23 @@
+{
+  "version": "rocklabs-qop-validation-v1-20260924",
+  "status": "DEVELOPMENT_MEASUREMENT_VALIDATION_REGISTERED_BEFORE_CONTENT_READ",
+  "preregistered_in_quant_audit_commit": "fbafd8da289d00e5205660e311c1aa137ab1ca40",
+  "local_hash_verification": "PASS_ALL_EIGHT_FILES",
+  "scope": "Only 2026-07-29 and 2026-07-30 08:00-09:00 UTC; same BTC-5m identity/replay rules; no replacement date and no final/model/markout claim",
+  "frozen_replay_rule_science_commit": "24de9b0aba6ba060fc3784433455a2c911dd3bc5",
+  "dates": {
+    "2026-07-29": {
+      "clob_hour_sha256": "6555532b044ea2953a8c0ec394a2790974c2a7e6c640a66ea04d4d10840ec693",
+      "onchain_hour_sha256": "49ccec80d925b42e0bbcad3077c6dc09c8c95aa4ff11ed77bdf8e698b40d755d",
+      "onchain_index_sha256": "49189499ad26fbb8373190b57f5c84379fd41c342c76bd99ed8fd4068d51d092",
+      "polymarket_index_sha256": "6b5e87ebefa120f862dd4060d6cb3db56966e09a289a4b98bfc4ad1620bcb87e"
+    },
+    "2026-07-30": {
+      "clob_hour_sha256": "d8dc353ec81fd0387ef05dfe697e6f3246eaf1760b0e94d85bc333143ab4de0a",
+      "onchain_hour_sha256": "255077b07bbf341aefafd55a2be3cfe1f85d056d43d30506e4014849f73643a1",
+      "onchain_index_sha256": "57a9883fcf7f97a29c4ecf4e25d5697eb890ed317f4c6890f83d63b269976b2d",
+      "polymarket_index_sha256": "7e6ada74559b5e75c1c4d5f3251ab96c6dfb6992a36bd285a1aecf0dacde0fc6"
+    }
+  },
+  "guardrail": "No additional date, model, markout, cancellation value, signed URL, raw row or account identity enters this public registry."
+}
