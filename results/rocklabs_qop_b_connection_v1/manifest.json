@@ -1,0 +1,37 @@
+{
+  "cohort": "32 active BTC-5m events / 64 observed tokens from exactly three preregistered 08 UTC development hours; no date or event substitution",
+  "end_rule": "Use planned 5-minute end implied by embedded slug start+300s only when official event/market end corroborates; record both sources and mismatch. Decision t=end-120s.",
+  "identity_rule": "Require embedded event_slug plus two observed token IDs and unique print market condition; verify against official Gamma event/market and CLOB by-token endpoints. Do not infer Up from token order.",
+  "label_rule": "Use CTF payoutNumerators(0,1), payoutDenominator and getCollectionId/getPositionId with USDC.e to bind token to outcome index; current Gamma outcomePrices/closed/last trade are not labels. Label publication time unknown unless separately proven.",
+  "limits": {
+    "global_deadline_utc": "2026-09-24T14:51:00Z",
+    "gpu": 0,
+    "max_cpu_threads": 2,
+    "max_http_requests": 300,
+    "max_memory_gib": 8,
+    "max_wall_minutes": 90
+  },
+  "private_fixed_cohort_sha256": "7b91e9d085325f26410e814c337707ebc41cf0bfc3e590ef72e9d2e423433bee",
+  "publication": "Private per-event table and raw API/RPC replies stay gitignored; public only daily counts, intersection, failures and evidence hashes.",
+  "quote_rule": "Latest received raw price_change direct BBO for verified Up token at or before t; age <=1000ms, then numeric/cross/conflict check. Separate latest full book snapshot top at or before t with age<=5000ms. No fallback to older valid row; no future event-time sort.",
+  "science_parent_commit": "5d48c64308d0bd7b39d45a49ecb1f2932d9f8a00",
+  "sources": [
+    {
+      "clob_sha256": "0a86857c5192ef5771efe6383a85727a00afedf76a985da458972ea767c939e0",
+      "date": "2026-07-28",
+      "identity_public_sha256": "5038061c8d2149049402b02161c9bbd6060ab6deb899b6287cf039825d39e2cf"
+    },
+    {
+      "clob_sha256": "6555532b044ea2953a8c0ec394a2790974c2a7e6c640a66ea04d4d10840ec693",
+      "date": "2026-07-29",
+      "identity_public_sha256": "dfa55532eabdfdd3599a856d328c72c584aa1df756757928e5b0c34e6f9e5f37"
+    },
+    {
+      "clob_sha256": "d8dc353ec81fd0387ef05dfe697e6f3246eaf1760b0e94d85bc333143ab4de0a",
+      "date": "2026-07-30",
+      "identity_public_sha256": "582de131cbb258df730ce2213a7c51576931a2571968fb09ec28171cd5552278"
+    }
+  ],
+  "status": "FROZEN_BEFORE_OFFICIAL_API_AND_PAYOUT_QUERIES",
+  "version": "rocklabs-b-connection-v1"
+}
