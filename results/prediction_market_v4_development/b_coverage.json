@@ -1,0 +1,39 @@
+{
+  "candidate_events": 288,
+  "coverage": {
+    "bbo_conflicting_same_receive_time": 5,
+    "bbo_invalid_bbo": 5,
+    "bbo_ok": 254,
+    "bbo_stale": 24,
+    "candidate": 288,
+    "hist_bbo_conflicting_same_receive_time": 8,
+    "hist_bbo_invalid_bbo": 1,
+    "hist_bbo_ok": 257,
+    "hist_bbo_stale": 22,
+    "hist_snapshot_empty_book_side": 3,
+    "hist_snapshot_ok": 284,
+    "hist_snapshot_stale": 1,
+    "label_verified_binary": 288,
+    "paired_score_eligible": 254,
+    "snapshot_empty_book_side": 11,
+    "snapshot_ok": 276,
+    "snapshot_stale": 1
+  },
+  "eligible_train_cal_late": {
+    "calibration": 63,
+    "late": 64,
+    "train": 127
+  },
+  "features": "one per event, receive-time causal, no terminal/raw metadata feature",
+  "label_verification": "CTF onchain payout vector and sample metadata identity/outcome price agreement; no quote-derived labels",
+  "limitations": "snapshot is age-limited complete snapshot, not continuous replay; one day only",
+  "network": {
+    "failed_calls": 0,
+    "http_requests": 12,
+    "response_bytes": 90636
+  },
+  "private_event_table_sha256": "dd043f471ca7d0ee46453dc0c717a87409ef05c54ab1f9c8bdb04c0271c3f7ef",
+  "source_archive_sha256": "9ded382d298476c6061bfa13ed675d9147216b817dc0800fe84eb62937831506",
+  "status": "DEVELOPMENT_PRICING_REPLICATION / WITHIN_DAY_RETROSPECTIVE",
+  "terminal_label_publication_time": "unknown; offline retrospective only"
+}
