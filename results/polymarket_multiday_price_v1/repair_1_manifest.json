@@ -1,0 +1,18 @@
+{
+  "action": "retain original private hour outputs; rerun all fixed-window CLOB hours with corrected frozen code and count prior reads conservatively",
+  "cap_bytes": 120259084288,
+  "completed_initial_hours": 17,
+  "completed_initial_read_bytes": 11955733371,
+  "corrected_extractor_sha256": "97505a2373e8f87317f9f1c5300c159ac77a53106af903e3432a390d943ee9dc",
+  "corrected_test_sha256": "c22b2105f964414114829aeaac7a4154d2354e8083a5ba25847e229f28f39945",
+  "fresh_full_scan_expected_bytes": 104945544485,
+  "initial_extractor_sha256": "3ece6da7813cc721397c60a2c42d339442a988c0ceab097df8f2b484ae4dd3f7",
+  "interrupted_next_hour_full_object_upper_bound_bytes": 754499665,
+  "labels_opened_at_repair": false,
+  "margin_bytes": 1529564943,
+  "other_partial_read_reserve_bytes": 1073741824,
+  "prior_read_upper_bound_bytes": 13783974860,
+  "reason": "Rocklabs market_metadata.market is a nested market object; comparing the entire object to Gamma conditionId falsely marked inline metadata as conflicting. The corrected extractor reads market.conditionId.",
+  "status": "NECESSARY_CORRECTNESS_REPAIR_BEFORE_LABELS",
+  "total_compressed_read_upper_bound_bytes": 118729519345
+}

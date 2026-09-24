@@ -27,6 +27,11 @@ def test_equal_receive_conflicts_and_repeated_depth_level():
                          'asks':[{'price':'.6','size':'1'}]})
     assert book['reason']=='duplicate_level'
 
+def test_inline_metadata_market_object_uses_condition_id():
+    condition='0x'+'ab'*32
+    assert e.metadata_condition({'market':{'conditionId':condition}})==condition
+    assert e.metadata_condition({'market':condition})==condition
+
 def test_day_equal_weights_and_offset_identity():
     rows=[{'date':'2026-07-27'},{'date':'2026-07-27'},{'date':'2026-07-28'}]
     assert np.allclose(m.day_weights(rows),[.25,.25,.5])

@@ -33,6 +33,10 @@ def parse_list(x):
     try:return json.loads(x) if isinstance(x,str) else x
     except (TypeError,ValueError):return None
 
+def metadata_condition(payload):
+    market=payload.get('market')
+    return market.get('conditionId') if isinstance(market,dict) else market
+
 def roster(gamma_path):
     items={}
     attempts=0
@@ -190,7 +194,8 @@ def extract_hour(day,hour,objects,events,patterns,base,output):
                     if slot in states:
                         if str(y.get('token_id'))==events[slot]['up_token']:
                             states[slot]['metadata_seen']=True
-                            if str(y.get('market'))!=events[slot]['condition_id']:states[slot]['metadata_conflict']=True
+                            condition=metadata_condition(y)
+                            if str(condition).lower()!=events[slot]['condition_id'].lower():states[slot]['metadata_conflict']=True
                     else:unknown_metadata.add(slug)
                 continue
             typ=y.get('event_type')
@@ -242,6 +247,7 @@ def extract_hour(day,hour,objects,events,patterns,base,output):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--source-zip',type=Path,required=True);ap.add_argument('--gamma-cache',type=Path,required=True)
     ap.add_argument('--private-dir',type=Path,required=True);ap.add_argument('--source-base',type=Path,required=True)
+    ap.add_argument('--prior-read-bytes',type=int,default=0)
     a=ap.parse_args();private=a.private_dir;private.mkdir(parents=True,exist_ok=True);os.chmod(private,0o700)
     groups,registry,zip_hash,manifest_hash=source_registry(a.source_zip)
     events,bad,requests=roster(a.gamma_cache)
@@ -259,7 +265,8 @@ def main():
     (private/'roster_private.json').write_text(json.dumps(events,separators=(',',':'))+'\n')
     patterns=private/'patterns_private.txt';patterns.write_text('btc-updown-5m-\n'+'\n'.join(e['up_token'] for e in events.values())+'\n');os.chmod(patterns,0o600)
     hour_dir=private/'hours';hour_dir.mkdir(exist_ok=True)
-    scanned=0;done=0;start=time.monotonic()
+    if a.prior_read_bytes<0:raise ValueError('negative prior read bytes')
+    scanned=a.prior_read_bytes;done=0;start=time.monotonic()
     for day in DAYS:
         for h in range(24):
             if time.time()>=DEADLINE_UTC:raise RuntimeError('four-hour wall deadline reached')
