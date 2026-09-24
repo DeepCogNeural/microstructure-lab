@@ -1,6 +1,6 @@
 {
-  "a_aggregate_sha256": "7f03dd1446414a7a6be603b280dceea618d1947a07f06f261563c7d03a4bd97c",
-  "a_code_sha256": "762f36f38e21f20104911d3c1ba0ddfcee403e7d95096969ee9412826b69e0fe",
+  "a_aggregate_sha256": "ae1705161077034aaf94a24d9f3b082e7fc41000b434af36f6c3c5ea3b180f84",
+  "a_code_sha256": "fa6b0f5f0ae67f205848e75c733aa2d6233e109a6036501a46681b74c1f69779",
   "b_artifact_sha256": {
     "configs/prediction_market_v4_b.json": "65dbe5e19e291226a24a09c057ed5bc1020e9b5d87530b3deb9750fe89805d4d",
     "results/prediction_market_v4_development/b_coverage.json": "505157536aeaf27dc20bbfd560ecff91f7049d6e1ca9719138e65c0370c6a7dd",
@@ -11,6 +11,7 @@
     "scripts/polymarket_v4_token_identity.py": "3b31228e7fa28bd3bf8e93114b6a7ae414f0fbe476139c895c3450ed83a93cc8"
   },
   "boundary": "DEVELOPMENT_ONLY; no fresh final, live orders, paid data, private row publication, or resumes",
+  "end_utc": "2026-09-24T02:59:16.911174+00:00",
   "inputs_sha256": {
     "_private/qop_batch_v1/build_private.json": "789424059c61c0f7f9b37415b87704b0ee77d7127e66e7b08581448c0647be10",
     "_private/qop_batch_v1/features_private.json": "13a93e59c6f82f3a56109699738f9965dedfb6ca115b87a6c4b183e60d8e2b66",
@@ -24,6 +25,8 @@
   "maximum_allocated_cpu_core_hours": 96,
   "maximum_elapsed_hours": 12,
   "quant_control_commit": "46e5ec226fbdf206d9cf26c9782335543a2b0da4",
+  "report_sha256": "4b38ba6605cb3b95bbc79a1321f8bc71ef4093bd25af8e1cdd482703e64407ae",
+  "resource_record_sha256": "85b48cd40c187946a5d2f069571d2cf862db094ba5d8e75471a032d4c4ae2ea3",
   "science_parent_commit": "eda29afb427cae123e55f0106b3b69ccee61ab87",
   "scope": [
     "A_economic_closeout",
@@ -37,9 +40,12 @@
   "start_utc": "2026-09-24T02:39:13.301592+00:00",
   "statuses": {
     "A_economic_closeout": "DONE",
+    "A_original_action_clock": "BLOCKED_WITH_EVIDENCE",
     "B_terminal_probability_replication": "DONE",
     "CPU_known_truth_simulation": "DONE",
-    "unified_research_package": "PENDING"
+    "Rocklabs_future_source": "NOT_APPLICABLE",
+    "independent_final_or_live": "NOT_APPLICABLE",
+    "unified_research_package": "DONE"
   },
   "version": "POLYMARKET_V4_CONTINUOUS_12H_DEVELOPMENT"
 }

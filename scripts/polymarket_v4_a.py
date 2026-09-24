@@ -27,6 +27,20 @@ def main():
     events=list(range(72,96)); byevent={e:[i for i,x in enumerate(late) if x['event_idx']==e] for e in events}
     y=np.array([float(x['shift']['0']['labels']['5000']['N']) for x in late]);v=np.array([float(x['shares']) for x in late]);
     res={'status':'DEVELOPMENT_RECEIVE_CLOCK_ONLY','units':'cents per raw joined selected target share, event-equal','source_sha256':{k:sha(p) for k,p in src.items()},'old_public_model_evaluation_sha256':sha(r/'results/polymarket_qop_batch_v1/model_evaluation.json'),'late_events_total':len(events),'late_raw_joined_shares':sum(volume[e] for e in events),'late_common_rows':len(late),'late_common_shares':float(v.sum()),'unjoined_transactions':35,'models':{},'primary_retention':0.75,'comparison':'within-event expected random retention at same expected observable share count; no execution/P&L claim'}
+    # Conservative full-known-leg bound for unknown late common-set outcomes.
+    common_ids={(x['event_idx'],x['hash'],x['leg_idx']) for x in late}
+    observed_by_event={e:float(np.sum(v[byevent[e]]*y[byevent[e]])) for e in events}
+    full_bounds=[]
+    for e in events:
+        missing=[x for x in built if x['event_idx']==e and (x['event_idx'],x['hash'],x['leg_idx']) not in common_ids]
+        lower=observed_by_event[e];upper=observed_by_event[e]
+        for x in missing:
+            size=float(x['shares']);price=float(x['price']);sign=int(x['sign'])
+            if sign==1:lower+=size*(-100*price);upper+=size*(100*(1-price))
+            elif sign==-1:lower+=size*(100*(price-1));upper+=size*(100*price)
+            else:raise ValueError('unexpected sign')
+        full_bounds.append((lower/volume[e],upper/volume[e]))
+    res['known_joined_legs_full_value_bound']={'lower_event_equal':mean([x[0] for x in full_bounds]),'upper_event_equal':mean([x[1] for x in full_bounds]),'excludes_unjoined_transactions':35,'assumption':'unmeasured final midpoint in [0,1] for each known missing leg; no assumption about unjoined trade size'}
     private_rows=[]
     for p in preds:
         key=p['key']
@@ -53,7 +67,7 @@ def main():
             if not math.isclose(mean_all,old['J_all_observed_cents_per_raw_share'],rel_tol=1e-9,abs_tol=1e-9):raise ValueError('old Jall mismatch')
             max_e=max(ok,key=lambda x:x['V'])
             block=[[x for x in ok if (x['event_idx']-72)//6==b] for b in range(4)]
-            table[str(retention)]={'threshold_from_calibration':thresh,'evaluated_events':len(ok),'empty_common_events':len(rows)-len(ok),'J':mean_j,'J_all_observed':mean_all,'E_J_random':mean([x['EJrandom'] for x in ok]),'S_within_event':mean_s,'J_minus_Jall':mean_j-mean_all,'mean_U_over_V':mean([x['U']/x['V'] for x in ok]),'mean_retained_U_fraction':mean([x['pi'] for x in ok]),'mean_retained_V_fraction':mean([x['retained_raw_fraction'] for x in ok]),'mean_lost_positive':mean([x['lost_positive'] for x in ok]),'kept_legs':sum(x['kept_legs'] for x in ok),'events_with_any_retention':sum(x['kept_legs']>0 for x in ok),'largest_raw_event_removed_S':mean([x['S'] for x in ok if x['event_idx']!=max_e['event_idx']]),'largest_raw_event_removed_J':mean([x['J'] for x in ok if x['event_idx']!=max_e['event_idx']]),'six_hour_S':[mean([x['S'] for x in b]) for b in block],'six_hour_J':[mean([x['J'] for x in b]) for b in block]}
+            table[str(retention)]={'threshold_from_calibration':thresh,'evaluated_events':len(ok),'empty_common_events':len(rows)-len(ok),'J':mean_j,'J_all_observed':mean_all,'E_J_random':mean([x['EJrandom'] for x in ok]),'S_within_event':mean_s,'global_equal_pi_random':mean([x['pi'] for x in ok])*mean_all,'between_event_participation_contribution':mean([x['EJrandom'] for x in ok])-mean([x['pi'] for x in ok])*mean_all,'J_minus_Jall':mean_j-mean_all,'mean_U_over_V':mean([x['U']/x['V'] for x in ok]),'mean_retained_U_fraction':mean([x['pi'] for x in ok]),'mean_retained_V_fraction':mean([x['retained_raw_fraction'] for x in ok]),'mean_lost_positive':mean([x['lost_positive'] for x in ok]),'kept_legs':sum(x['kept_legs'] for x in ok),'events_with_any_retention':sum(x['kept_legs']>0 for x in ok),'largest_raw_event_removed_S':mean([x['S'] for x in ok if x['event_idx']!=max_e['event_idx']]),'largest_raw_event_removed_J':mean([x['J'] for x in ok if x['event_idx']!=max_e['event_idx']]),'six_hour_S':[mean([x['S'] for x in b]) for b in block],'six_hour_J':[mean([x['J'] for x in b]) for b in block]}
             private_rows.append({'key':key,'retention':retention,'events':rows})
         res['models'][key]=table
     (r/'_private/prediction_market_v4_development').mkdir(parents=True,exist_ok=True)
