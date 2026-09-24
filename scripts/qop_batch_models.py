@@ -31,6 +31,13 @@ splits={'train':[x for x in common if x['event_idx']<48],
         'late':[x for x in common if x['event_idx']>=72]}
 counts={k:{'legs':len(v),'events':len({x['event_idx'] for x in v}),'shares':str(sum(float(x['shares']) for x in v))} for k,v in splits.items()}
 minimum=all(x['legs']>=30 and x['events']>=8 for x in counts.values())
+purge_gaps={}
+for left,right,label in (('train','calibration','train_to_calibration'),('calibration','late','calibration_to_late')):
+    if splits[left] and splits[right]:
+        gap=min(x['print_recv_ms'] for x in splits[right])-max(x['print_recv_ms'] for x in splits[left])
+        purge_gaps[label]=gap
+        if gap<=35000:raise ValueError('35-second boundary purge violated')
+
 
 # Raw denominator contains every receipt-joined selected-token leg in an event,
 # even if quote/feature missing. Failed receipt transactions lack known maker shares.
@@ -76,7 +83,7 @@ def economic(late,late_scores,cal_scores,cal_w):
     return result
 
 public={'status':'DONE' if minimum else 'BLOCKED_DATA_INSUFFICIENT',
-        'common_model_ready_legs':len(common),'split_counts':counts,
+        'common_model_ready_legs':len(common),'split_counts':counts,'boundary_gaps_ms':purge_gaps,
         'raw_selected_target_legs':len(built),
         'late_raw_shares':str(sum(raw_volume[e] for e in range(72,96))),
         'late_model_ready_shares':counts['late']['shares'],
