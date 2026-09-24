@@ -1,0 +1,10 @@
+{
+  "additional_compressed_source_bytes": 0,
+  "corrected_extractor_sha256": "5d1cacad3e9ebe683be3d3a32d20f30e0305efb811f2335fc43a770324634dfd",
+  "labels_opened_at_repair": false,
+  "previous_extractor_sha256": "97505a2373e8f87317f9f1c5300c159ac77a53106af903e3432a390d943ee9dc",
+  "prior_read_upper_bound_bytes": 13783974860,
+  "private_freeze_equality_verified": true,
+  "reason": "Private freeze stored the fixed dates as a JSON array; resumed Python code compared it to a tuple. Canonicalize to a list before equality check. No market source object was opened by the failed resume attempt.",
+  "status": "RESUME_SERIALIZATION_REPAIR_BEFORE_RESCAN"
+}

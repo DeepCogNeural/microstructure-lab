@@ -252,7 +252,7 @@ def main():
     groups,registry,zip_hash,manifest_hash=source_registry(a.source_zip)
     events,bad,requests=roster(a.gamma_cache)
     if requests>10000:raise ValueError('Gamma request cap')
-    frozen={'protocol':'POLYMARKET_MULTIDAY_PRICE_INFORMATION_ONLY','window':DAYS,'source_zip_sha256':zip_hash,
+    frozen={'protocol':'POLYMARKET_MULTIDAY_PRICE_INFORMATION_ONLY','window':list(DAYS),'source_zip_sha256':zip_hash,
             'source_manifest_sha256':manifest_hash,'fixed_manifest_objects':registry,'gamma_cache_sha256':sha_bytes(a.gamma_cache.read_bytes()),
             'gamma_requests':requests,'gamma_valid_events':len(events),'gamma_invalid_reasons':dict(bad),
             'rules':{'decision':'end_minus_120s','history':'30s','bbo_age_ms_max':1000,'snapshot_age_ms_max':5000,
