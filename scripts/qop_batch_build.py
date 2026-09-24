@@ -43,6 +43,7 @@ for d in (quote,book,flow):
     for key in d:d[key].sort(key=lambda x:x['recv_ms'])
 fail=collections.Counter();transaction_stats=collections.Counter();leg_rows=[];one_to_many=0;buy_sell=collections.Counter()
 source_to_receive=[];source_minus_block=[];contracts=set()
+print_taker_price_diffs=[];print_target_leg_price_diffs=[]
 for event_idx,e in enumerate(events):
     m=e['market'];slug=m['slug'];target=str(m['token_ids'][0]);alt=str(m['token_ids'][1]);
     for t in e['transactions']:
@@ -65,6 +66,7 @@ for event_idx,e in enumerate(events):
             fail['multiple_compatible_print_anchors']+=1;continue
         pr,rec=matched[0];transaction_stats['joined_unique_hashes']+=1
         one_to_many+=len(rec['legs'])>1
+        print_taker_price_diffs.append(rec['print_price']-rec['taker_price'])
         contracts.add((item['tx']['to'].get('hash') if isinstance(item['tx']['to'],dict) else item['tx']['to']).lower())
         source_to_receive.append(pr['recv_ms']-pr['event_ts_ms'])
         try:
@@ -76,6 +78,7 @@ for event_idx,e in enumerate(events):
         target_legs=[leg for leg in rec['legs'] if (leg['target'] and print_token==target) or (not leg['target'] and print_token==alt)]
         transaction_stats['target_leg_hashes']+=bool(target_legs)
         for leg_idx,leg in enumerate(target_legs):
+            print_target_leg_price_diffs.append(rec['print_price']-leg['price'])
             buy_sell['BUY' if leg['sign']==1 else 'SELL']+=1
             base={'event_idx':event_idx,'market_start_sec':m['start_sec'],'hash':h,'leg_idx':leg_idx,
                   'print_token':'target' if print_token==target else 'complement','print_recv_ms':pr['recv_ms'],
@@ -106,6 +109,10 @@ public={'status':'DEVELOPMENT_EXPANDED_RECEIPT_AND_QUOTE_BUILD','selected_events
         'target_leg_hashes':transaction_stats['target_leg_hashes'],'selected_token_legs':len(leg_rows),
         'target_leg_shares':str(sum((Decimal(z['shares']) for z in leg_rows),Decimal(0))),
         'selected_token_sides':dict(buy_sell),'multi_maker_hashes':one_to_many,'contract_count':len(contracts),
+        'print_vs_taker_price':{'nonzero_count':sum(x!=0 for x in print_taker_price_diffs),
+            'range_dollars_per_share':[str(min(print_taker_price_diffs)),str(max(print_taker_price_diffs))] if print_taker_price_diffs else None},
+        'print_vs_target_maker_leg_price':{'nonzero_count':sum(x!=0 for x in print_target_leg_price_diffs),
+            'range_dollars_per_share':[str(min(print_target_leg_price_diffs)),str(max(print_target_leg_price_diffs))] if print_target_leg_price_diffs else None},
         'multi_log_page_receipts':sum((json.loads((a.receipt_cache/(h.removeprefix('0x')+'.json')).read_text()).get('logs') or {}).get('pages',0)>1 for h in needed if (a.receipt_cache/(h.removeprefix('0x')+'.json')).exists()),
         'source_to_receive_ms_min_median_max':[min(source_to_receive),statistics.median(source_to_receive),max(source_to_receive)] if source_to_receive else None,
         'source_minus_block_ms_min_median_max':[min(source_minus_block),statistics.median(source_minus_block),max(source_minus_block)] if source_minus_block else None,
