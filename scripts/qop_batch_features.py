@@ -20,10 +20,15 @@ selection=json.loads(a.selection_private.read_text());built=json.loads(a.build_p
 events=selection['events'];slugs={e['market']['slug'] for e in events};meta={i:e['market'] for i,e in enumerate(events)}
 first_by_slug={e['market']['slug']:str(e['market']['token_ids'][0]) for e in events}
 bbo=collections.defaultdict(list);books=collections.defaultdict(list);prints=collections.defaultdict(list)
+quote_reversals=collections.defaultdict(list);last_quote_recv={}
 for kind,dest in (('best_bid_ask',bbo),('book',books),('last_trade_price',prints)):
     for x in rows(a.sample_root,kind):
         if x['slug'] not in slugs:continue
         if kind!='last_trade_price' and str(x['asset_id'])!=first_by_slug[x['slug']]:continue
+        if kind=='best_bid_ask':
+            slug=x['slug']
+            if slug in last_quote_recv and x['recv_ms']<last_quote_recv[slug]:quote_reversals[slug].append(x['recv_ms'])
+            last_quote_recv[slug]=x['recv_ms']
         dest[x['slug']].append(x)
     for slug in dest:dest[slug].sort(key=lambda z:z['recv_ms'])
 times={kind:{slug:[x['recv_ms'] for x in data] for slug,data in dest.items()} for kind,dest in (('bbo',bbo),('book',books),('print',prints))}
@@ -76,6 +81,7 @@ def feature(slug,r,d,cut_before_ms,exclude_hash):
     prev,e1=asof_quote(slug,cutoff-30000)
     book,e2=asof_book(slug,cutoff)
     if e0 or e1 or e2:return None,[x for x in (e0,e1,e2) if x]
+    if any(cutoff-31000<=t<=cutoff for t in quote_reversals[slug]):return None,['receive_clock_reversal']
     f_signed,count,unk=flow_window(slug,cutoff,exclude_hash)
     if unk:return None,['unknown_public_flow_side_or_size']
     remain=(int(market_by_slug[slug]['end_sec'])*1000-cutoff)/1000
@@ -101,6 +107,7 @@ for row in built['leg_rows']:
             post,e1=asof_quote(slug,rr+horizon)
             errs=[x for x in (e0,e1) if x]
             if rr+horizon>m['end_sec']*1000:errs.append('past_scheduled_end')
+            if any(rr-1000<=t<=rr+horizon for t in quote_reversals[slug]):errs.append('receive_clock_reversal')
             rec['failures'][str(horizon)]=errs
             if not errs:
                 G=Decimal(100)*d*(dec(pre['mid'])-q)

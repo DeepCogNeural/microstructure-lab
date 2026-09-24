@@ -28,9 +28,13 @@ for row in rows(a.sample_root,'last_trade_price'):
     h=row.get('payload',{}).get('transaction_hash')
     if h and h.lower() in needed:print_groups[h.lower()].append(row)
 quote=collections.defaultdict(list)
+quote_reversals=collections.defaultdict(list);last_quote_recv={}
 for row in rows(a.sample_root,'best_bid_ask'):
     if row['slug'] in slugs and str(row['asset_id'])==str(market_by_slug[row['slug']]['token_ids'][0]):
-        quote[(row['slug'],str(row['asset_id']))].append(row)
+        key=(row['slug'],str(row['asset_id']))
+        if key in last_quote_recv and row['recv_ms']<last_quote_recv[key]:quote_reversals[key].append(row['recv_ms'])
+        last_quote_recv[key]=row['recv_ms']
+        quote[key].append(row)
 book=collections.defaultdict(list)
 for row in rows(a.sample_root,'book'):
     if row['slug'] in slugs and str(row['asset_id'])==str(market_by_slug[row['slug']]['token_ids'][0]):
@@ -78,6 +82,7 @@ for event_idx,e in enumerate(events):
                     post,e1,a1=endpoint(series,times,pr['recv_ms']+horizon,False,age)
                     errs=[z for z in (e0,e1) if z]
                     if pr['recv_ms']+horizon>m['end_sec']*1000:errs.append('past_scheduled_end')
+                    if any(pr['recv_ms']-1000<=t<=pr['recv_ms']+horizon for t in quote_reversals[key]):errs.append('receive_clock_reversal')
                     base['failure'][k]=errs
                     base['quote'][k]={'pre_age_ms':a0,'post_age_ms':a1}
                     if not errs:
