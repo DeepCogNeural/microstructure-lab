@@ -1,0 +1,10 @@
+{
+  "both_token_ids_ctf_verified": 288,
+  "candidate_events": 288,
+  "mismatch_count": 0,
+  "network_http_requests": 20,
+  "network_response_bytes": 121045,
+  "source_markets_gzip_sha256": "4096a32ef2a42628a81a5d221b4e9c6f28fdebe26c805b835972dc490bcc3d88",
+  "status": "DONE",
+  "verification": "CTF getCollectionId for index sets 1/2 and getPositionId with USDC.e collateral, matched to frozen sample ordered token IDs"
+}

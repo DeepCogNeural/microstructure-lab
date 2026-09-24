@@ -1,6 +1,15 @@
 {
   "a_aggregate_sha256": "7f03dd1446414a7a6be603b280dceea618d1947a07f06f261563c7d03a4bd97c",
   "a_code_sha256": "762f36f38e21f20104911d3c1ba0ddfcee403e7d95096969ee9412826b69e0fe",
+  "b_artifact_sha256": {
+    "configs/prediction_market_v4_b.json": "65dbe5e19e291226a24a09c057ed5bc1020e9b5d87530b3deb9750fe89805d4d",
+    "results/prediction_market_v4_development/b_coverage.json": "505157536aeaf27dc20bbfd560ecff91f7049d6e1ca9719138e65c0370c6a7dd",
+    "results/prediction_market_v4_development/b_scoring.json": "80a6ea670546da87c95991120c66bc98d6a37c8d78d34913e350a905228f0548",
+    "results/prediction_market_v4_development/b_token_identity.json": "f285808dd20e7ab0104a51c9929dcf36c26dfc193c0543d9d183649efb900002",
+    "scripts/polymarket_v4_b_extract.py": "fe6b2f4380661de3bfa3df9bdb8633ce73a53a3603054a2b0db6c59674ea62a6",
+    "scripts/polymarket_v4_b_fit.py": "8beebe8d64ff59a4f82bd783a28be0134337cdcfc731ab85a6a72d9c0204843c",
+    "scripts/polymarket_v4_token_identity.py": "3b31228e7fa28bd3bf8e93114b6a7ae414f0fbe476139c895c3450ed83a93cc8"
+  },
   "boundary": "DEVELOPMENT_ONLY; no fresh final, live orders, paid data, private row publication, or resumes",
   "inputs_sha256": {
     "_private/qop_batch_v1/build_private.json": "789424059c61c0f7f9b37415b87704b0ee77d7127e66e7b08581448c0647be10",
@@ -26,7 +35,7 @@
   "start_utc": "2026-09-24T02:39:13.301592+00:00",
   "statuses": {
     "A_economic_closeout": "DONE",
-    "B_terminal_probability_replication": "PENDING",
+    "B_terminal_probability_replication": "DONE",
     "CPU_known_truth_simulation": "PENDING",
     "unified_research_package": "PENDING"
   },
