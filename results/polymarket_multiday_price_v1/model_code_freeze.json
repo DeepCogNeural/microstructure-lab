@@ -1,0 +1,17 @@
+{
+  "file_sha256": {
+    "configs/polymarket_multiday_price_v1.json": "be18670e065c1e23ba03dfd66936758722d36b6bcca23e8b254bdacbb7ec18b3",
+    "results/polymarket_multiday_price_v1/source_manifest_112gib.json": "f9453b07d768aa0ce97222d34b187fda86278f43cd4a86d321685951ebc39200",
+    "scripts/extract_polymarket_multiday_price.py": "3ece6da7813cc721397c60a2c42d339442a988c0ceab097df8f2b484ae4dd3f7",
+    "scripts/fetch_polymarket_multiday_gamma.py": "56a84f264cfc9358c84d873a5f514aacfd73315c169723e521993623a9967675",
+    "scripts/finalize_polymarket_multiday_events.py": "e6f6f10876e9bdbb2a409bdb93dc653af914ea841d15e6b59446b8f5937d143f",
+    "scripts/fit_polymarket_multiday_price.py": "4491cd007f8242a14432553ee2e088c17dbfc8003a3be2c98023c7db4ee9d4f1",
+    "scripts/verify_polymarket_multiday_ctf.py": "30c908d2115778850938222e2e84a06526e830ffb53fd63a2db16778653d296d",
+    "tests/test_polymarket_multiday_price.py": "f88fbab960a1c343b46f895f7e8f3192a6b3e5ced2fc46e7e1cbd6ac422448f3"
+  },
+  "note": "Historical 96 GiB stop preserved; 112 GiB continuation retains fixed dates, thresholds and four arms.",
+  "scientific_window": "2026-07-27 through 2026-08-02 UTC",
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "status": "FROZEN_BEFORE_CTF_LABEL_ACCESS"
+}
