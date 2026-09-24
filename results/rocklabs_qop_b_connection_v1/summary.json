@@ -1,0 +1,69 @@
+{
+  "by_date": {
+    "2026-07-28": {
+      "bbo_failures": {
+        "same_receive_time_conflict": 4,
+        "stale": 3
+      },
+      "binary_payout_verified": 8,
+      "book_failures": {
+        "same_receive_time_conflict": 1,
+        "stale": 5
+      },
+      "direct_bbo_valid": 1,
+      "frozen_events": 8,
+      "full_book_top_valid": 2,
+      "identity_verified": 8,
+      "label_and_bbo": 1,
+      "label_and_book": 2
+    },
+    "2026-07-29": {
+      "bbo_failures": {
+        "same_receive_time_conflict": 2
+      },
+      "binary_payout_verified": 11,
+      "book_failures": {},
+      "direct_bbo_valid": 9,
+      "frozen_events": 11,
+      "full_book_top_valid": 11,
+      "identity_verified": 11,
+      "label_and_bbo": 9,
+      "label_and_book": 11
+    },
+    "2026-07-30": {
+      "bbo_failures": {
+        "same_receive_time_conflict": 2,
+        "stale": 1
+      },
+      "binary_payout_verified": 13,
+      "book_failures": {
+        "stale": 1
+      },
+      "direct_bbo_valid": 10,
+      "frozen_events": 13,
+      "full_book_top_valid": 12,
+      "identity_verified": 13,
+      "label_and_bbo": 10,
+      "label_and_book": 12
+    }
+  },
+  "caveat": "Post hoc onchain payout labels and received-record quotes; no point-in-time label availability or maker match-time certificate.",
+  "cohort_events": 32,
+  "label_publication_time": "unknown",
+  "network": {
+    "http_requests": 102,
+    "identity_table_sha256": "4ed1687ee874248773f622faed4f08b35f9d4b04ba7ab5232aa932d7cfa4156a",
+    "rpc_response_sha256": [
+      "4176fb19b0b94abdabd526c20694c258c42581aa2cf442d345fa671e62a0ab6a",
+      "5ed1b1444e2cc729b3610465d201419e22d36114e2d31dfbd07683189ed25898",
+      "1e9eb537f82398bdaf70be35aaeae94371da93302cac71a596ef805f8482b38d",
+      "461ed11a91ce8dca0ec724dcd010fcd0a3554395b783adfe17a156677ac312ac",
+      "69937d997a6626c048fd30e4dd50acbce10688547342b342422094d461210c2f",
+      "e09b2a58d5757868cc46fa7966c6d24078bfc4defaad1612f1b9585a4988e9db"
+    ]
+  },
+  "private_auditable_32_sha256": "f928e2b6c392f55c789ad5fda0bd4be2dfd8730ec91d6d3728e73a95df4f81b9",
+  "private_fixed_32_sha256": "7b91e9d085325f26410e814c337707ebc41cf0bfc3e590ef72e9d2e423433bee",
+  "private_identity_32_sha256": "4ed1687ee874248773f622faed4f08b35f9d4b04ba7ab5232aa932d7cfa4156a",
+  "status": "BOUNDED_B_CONNECTION_AUDIT"
+}
