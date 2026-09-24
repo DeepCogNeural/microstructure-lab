@@ -1,0 +1,715 @@
+{
+  "events": [
+    {
+      "book": 1539,
+      "event_index": 0,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 1536,
+            "ask_touch_size_match": 1536,
+            "bbo_prices_match": 1535,
+            "bid_price_match": 1536,
+            "bid_touch_size_match": 1536,
+            "compared": 1537,
+            "direct_bbo_matches_replay": 203931,
+            "direct_bbo_numeric": 233445,
+            "direct_bbo_strict_valid": 204129,
+            "full_match": 1517,
+            "receive_backsteps": 20502,
+            "top2_match": 1535,
+            "touch_size_match": 1535
+          },
+          "mismatch_categories": {
+            "bbo_price": 2,
+            "deep_only": 18,
+            "identical_update_repeats": 115489,
+            "pairs_with_any_update": 1537,
+            "same_ms_same_level_conflicting_sizes": 2694,
+            "snapshot_same_exchange_ms_as_update": 1537,
+            "update_received_after_snapshot": 103
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 1526,
+            "ask_touch_size_match": 1503,
+            "bbo_prices_match": 1515,
+            "bid_price_match": 1523,
+            "bid_touch_size_match": 1502,
+            "compared": 1537,
+            "direct_bbo_matches_replay": 201675,
+            "direct_bbo_numeric": 233443,
+            "direct_bbo_strict_valid": 204127,
+            "exchange_backsteps": 17217,
+            "full_match": 1350,
+            "top2_match": 1449,
+            "touch_size_match": 1476
+          },
+          "mismatch_categories": {
+            "bbo_price": 22,
+            "deep_only": 99,
+            "identical_update_repeats": 112592,
+            "pairs_with_any_update": 1537,
+            "same_ms_same_level_conflicting_sizes": 2772,
+            "shallow_depth": 27,
+            "snapshot_same_exchange_ms_as_update": 1537,
+            "touch_size": 39
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 234432
+    },
+    {
+      "book": 2642,
+      "event_index": 1,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2638,
+            "ask_touch_size_match": 2637,
+            "bbo_prices_match": 2636,
+            "bid_price_match": 2638,
+            "bid_touch_size_match": 2637,
+            "compared": 2640,
+            "direct_bbo_matches_replay": 351765,
+            "direct_bbo_numeric": 369553,
+            "direct_bbo_strict_valid": 352005,
+            "full_match": 2542,
+            "receive_backsteps": 30934,
+            "top2_match": 2634,
+            "touch_size_match": 2634
+          },
+          "mismatch_categories": {
+            "bbo_price": 4,
+            "deep_only": 92,
+            "full_mismatch_with_later_received_update": 3,
+            "identical_update_repeats": 184010,
+            "pairs_with_any_update": 2640,
+            "same_ms_same_level_conflicting_sizes": 4440,
+            "snapshot_same_exchange_ms_as_update": 2640,
+            "touch_size": 2,
+            "update_received_after_snapshot": 116
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2635,
+            "ask_touch_size_match": 2613,
+            "bbo_prices_match": 2621,
+            "bid_price_match": 2626,
+            "bid_touch_size_match": 2590,
+            "compared": 2640,
+            "direct_bbo_matches_replay": 350885,
+            "direct_bbo_numeric": 369550,
+            "direct_bbo_strict_valid": 352002,
+            "exchange_backsteps": 30934,
+            "full_match": 2379,
+            "top2_match": 2552,
+            "touch_size_match": 2569
+          },
+          "mismatch_categories": {
+            "bbo_price": 19,
+            "deep_only": 173,
+            "identical_update_repeats": 182419,
+            "pairs_with_any_update": 2640,
+            "same_ms_same_level_conflicting_sizes": 4496,
+            "shallow_depth": 17,
+            "snapshot_same_exchange_ms_as_update": 2640,
+            "touch_size": 52
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 369568
+    },
+    {
+      "book": 4046,
+      "event_index": 2,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 4042,
+            "ask_touch_size_match": 4042,
+            "bbo_prices_match": 4040,
+            "bid_price_match": 4042,
+            "bid_touch_size_match": 4042,
+            "compared": 4044,
+            "direct_bbo_matches_replay": 470872,
+            "direct_bbo_numeric": 472279,
+            "direct_bbo_strict_valid": 471675,
+            "full_match": 3904,
+            "receive_backsteps": 34382,
+            "top2_match": 4036,
+            "touch_size_match": 4040
+          },
+          "mismatch_categories": {
+            "bbo_mismatch_with_later_received_update": 1,
+            "bbo_price": 4,
+            "deep_only": 132,
+            "full_mismatch_with_later_received_update": 8,
+            "identical_update_repeats": 233914,
+            "pairs_with_any_update": 4044,
+            "same_ms_same_level_conflicting_sizes": 5746,
+            "shallow_depth": 4,
+            "snapshot_same_exchange_ms_as_update": 4043,
+            "update_received_after_snapshot": 214
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 4032,
+            "ask_touch_size_match": 3978,
+            "bbo_prices_match": 4009,
+            "bid_price_match": 4020,
+            "bid_touch_size_match": 3973,
+            "compared": 4044,
+            "direct_bbo_matches_replay": 466987,
+            "direct_bbo_numeric": 472278,
+            "direct_bbo_strict_valid": 471674,
+            "exchange_backsteps": 30541,
+            "full_match": 3641,
+            "top2_match": 3895,
+            "touch_size_match": 3926
+          },
+          "mismatch_categories": {
+            "bbo_price": 35,
+            "deep_only": 254,
+            "identical_update_repeats": 229686,
+            "pairs_with_any_update": 4044,
+            "same_ms_same_level_conflicting_sizes": 5882,
+            "shallow_depth": 31,
+            "snapshot_same_exchange_ms_as_update": 4043,
+            "touch_size": 83
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 475404
+    },
+    {
+      "book": 2529,
+      "event_index": 3,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2527,
+            "ask_touch_size_match": 2527,
+            "bbo_prices_match": 2527,
+            "bid_price_match": 2527,
+            "bid_touch_size_match": 2527,
+            "compared": 2527,
+            "direct_bbo_matches_replay": 276934,
+            "direct_bbo_numeric": 290687,
+            "direct_bbo_strict_valid": 277371,
+            "full_match": 2481,
+            "receive_backsteps": 35950,
+            "top2_match": 2527,
+            "touch_size_match": 2527
+          },
+          "mismatch_categories": {
+            "deep_only": 46,
+            "full_mismatch_with_later_received_update": 5,
+            "identical_update_repeats": 143704,
+            "pairs_with_any_update": 2527,
+            "same_ms_same_level_conflicting_sizes": 3865,
+            "snapshot_same_exchange_ms_as_update": 2527,
+            "update_received_after_snapshot": 230
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2505,
+            "ask_touch_size_match": 2459,
+            "bbo_prices_match": 2484,
+            "bid_price_match": 2503,
+            "bid_touch_size_match": 2459,
+            "compared": 2527,
+            "direct_bbo_matches_replay": 273304,
+            "direct_bbo_numeric": 290687,
+            "direct_bbo_strict_valid": 277371,
+            "exchange_backsteps": 28100,
+            "full_match": 2094,
+            "top2_match": 2373,
+            "touch_size_match": 2407
+          },
+          "mismatch_categories": {
+            "bbo_price": 43,
+            "deep_only": 279,
+            "identical_update_repeats": 137186,
+            "pairs_with_any_update": 2527,
+            "same_ms_same_level_conflicting_sizes": 4066,
+            "shallow_depth": 34,
+            "snapshot_same_exchange_ms_as_update": 2527,
+            "touch_size": 77
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 292194
+    },
+    {
+      "book": 3024,
+      "event_index": 4,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 3022,
+            "ask_touch_size_match": 3022,
+            "bbo_prices_match": 3022,
+            "bid_price_match": 3022,
+            "bid_touch_size_match": 3022,
+            "compared": 3022,
+            "direct_bbo_matches_replay": 398031,
+            "direct_bbo_numeric": 411759,
+            "direct_bbo_strict_valid": 398451,
+            "full_match": 2938,
+            "receive_backsteps": 49715,
+            "top2_match": 3020,
+            "touch_size_match": 3022
+          },
+          "mismatch_categories": {
+            "deep_only": 82,
+            "full_mismatch_with_later_received_update": 11,
+            "identical_update_repeats": 205190,
+            "pairs_with_any_update": 3022,
+            "same_ms_same_level_conflicting_sizes": 4818,
+            "shallow_depth": 2,
+            "snapshot_same_exchange_ms_as_update": 3022,
+            "update_received_after_snapshot": 165
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2997,
+            "ask_touch_size_match": 2942,
+            "bbo_prices_match": 2975,
+            "bid_price_match": 2995,
+            "bid_touch_size_match": 2935,
+            "compared": 3022,
+            "direct_bbo_matches_replay": 394991,
+            "direct_bbo_numeric": 411759,
+            "direct_bbo_strict_valid": 398451,
+            "exchange_backsteps": 43389,
+            "full_match": 2442,
+            "top2_match": 2819,
+            "touch_size_match": 2875
+          },
+          "mismatch_categories": {
+            "bbo_price": 47,
+            "deep_only": 377,
+            "identical_update_repeats": 199722,
+            "pairs_with_any_update": 3022,
+            "same_ms_same_level_conflicting_sizes": 5026,
+            "shallow_depth": 56,
+            "snapshot_same_exchange_ms_as_update": 3022,
+            "touch_size": 100
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 411762
+    },
+    {
+      "book": 4143,
+      "event_index": 5,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 4140,
+            "ask_touch_size_match": 4140,
+            "bbo_prices_match": 4139,
+            "bid_price_match": 4140,
+            "bid_touch_size_match": 4140,
+            "compared": 4141,
+            "direct_bbo_matches_replay": 439405,
+            "direct_bbo_numeric": 443296,
+            "direct_bbo_strict_valid": 440278,
+            "full_match": 4059,
+            "receive_backsteps": 29469,
+            "top2_match": 4139,
+            "touch_size_match": 4139
+          },
+          "mismatch_categories": {
+            "bbo_price": 2,
+            "deep_only": 80,
+            "full_mismatch_with_later_received_update": 3,
+            "identical_update_repeats": 221305,
+            "pairs_with_any_update": 4141,
+            "same_ms_same_level_conflicting_sizes": 5051,
+            "snapshot_same_exchange_ms_as_update": 4141,
+            "update_received_after_snapshot": 211
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 4122,
+            "ask_touch_size_match": 4082,
+            "bbo_prices_match": 4097,
+            "bid_price_match": 4112,
+            "bid_touch_size_match": 4076,
+            "compared": 4141,
+            "direct_bbo_matches_replay": 436859,
+            "direct_bbo_numeric": 443295,
+            "direct_bbo_strict_valid": 440277,
+            "exchange_backsteps": 24180,
+            "full_match": 3787,
+            "top2_match": 4003,
+            "touch_size_match": 4034
+          },
+          "mismatch_categories": {
+            "bbo_price": 44,
+            "deep_only": 216,
+            "identical_update_repeats": 216532,
+            "pairs_with_any_update": 4141,
+            "same_ms_same_level_conflicting_sizes": 5167,
+            "shallow_depth": 31,
+            "snapshot_same_exchange_ms_as_update": 4141,
+            "touch_size": 63
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 443304
+    },
+    {
+      "book": 2518,
+      "event_index": 6,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2515,
+            "ask_touch_size_match": 2515,
+            "bbo_prices_match": 2514,
+            "bid_price_match": 2515,
+            "bid_touch_size_match": 2515,
+            "compared": 2516,
+            "direct_bbo_matches_replay": 352151,
+            "direct_bbo_numeric": 361067,
+            "direct_bbo_strict_valid": 352543,
+            "full_match": 2469,
+            "receive_backsteps": 35947,
+            "top2_match": 2512,
+            "touch_size_match": 2514
+          },
+          "mismatch_categories": {
+            "bbo_price": 2,
+            "deep_only": 43,
+            "full_mismatch_with_later_received_update": 2,
+            "identical_update_repeats": 178902,
+            "pairs_with_any_update": 2516,
+            "same_ms_same_level_conflicting_sizes": 4579,
+            "shallow_depth": 2,
+            "snapshot_same_exchange_ms_as_update": 2516,
+            "update_received_after_snapshot": 244
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2486,
+            "ask_touch_size_match": 2440,
+            "bbo_prices_match": 2438,
+            "bid_price_match": 2463,
+            "bid_touch_size_match": 2409,
+            "compared": 2516,
+            "direct_bbo_matches_replay": 345476,
+            "direct_bbo_numeric": 361067,
+            "direct_bbo_strict_valid": 352543,
+            "exchange_backsteps": 26792,
+            "full_match": 2114,
+            "top2_match": 2295,
+            "touch_size_match": 2356
+          },
+          "mismatch_categories": {
+            "bbo_price": 78,
+            "deep_only": 181,
+            "identical_update_repeats": 170096,
+            "pairs_with_any_update": 2516,
+            "same_ms_same_level_conflicting_sizes": 4901,
+            "shallow_depth": 61,
+            "snapshot_same_exchange_ms_as_update": 2516,
+            "touch_size": 82
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 363274
+    },
+    {
+      "book": 2078,
+      "event_index": 7,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2074,
+            "ask_touch_size_match": 2074,
+            "bbo_prices_match": 2072,
+            "bid_price_match": 2074,
+            "bid_touch_size_match": 2074,
+            "compared": 2076,
+            "direct_bbo_matches_replay": 327906,
+            "direct_bbo_numeric": 378283,
+            "direct_bbo_strict_valid": 328271,
+            "full_match": 1970,
+            "receive_backsteps": 23670,
+            "top2_match": 2070,
+            "touch_size_match": 2072
+          },
+          "mismatch_categories": {
+            "bbo_mismatch_with_later_received_update": 1,
+            "bbo_price": 4,
+            "deep_only": 100,
+            "full_mismatch_with_later_received_update": 8,
+            "identical_update_repeats": 189205,
+            "pairs_with_any_update": 2076,
+            "same_ms_same_level_conflicting_sizes": 4466,
+            "shallow_depth": 2,
+            "snapshot_same_exchange_ms_as_update": 2076,
+            "update_received_after_snapshot": 105
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2066,
+            "ask_touch_size_match": 2048,
+            "bbo_prices_match": 2060,
+            "bid_price_match": 2069,
+            "bid_touch_size_match": 2053,
+            "compared": 2076,
+            "direct_bbo_matches_replay": 326861,
+            "direct_bbo_numeric": 378283,
+            "direct_bbo_strict_valid": 328271,
+            "exchange_backsteps": 18444,
+            "full_match": 1844,
+            "top2_match": 2011,
+            "touch_size_match": 2027
+          },
+          "mismatch_categories": {
+            "bbo_price": 16,
+            "deep_only": 167,
+            "identical_update_repeats": 187323,
+            "pairs_with_any_update": 2076,
+            "same_ms_same_level_conflicting_sizes": 4529,
+            "shallow_depth": 16,
+            "snapshot_same_exchange_ms_as_update": 2076,
+            "touch_size": 33
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 378286
+    },
+    {
+      "book": 2847,
+      "event_index": 8,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 2844,
+            "ask_touch_size_match": 2844,
+            "bbo_prices_match": 2843,
+            "bid_price_match": 2844,
+            "bid_touch_size_match": 2844,
+            "compared": 2845,
+            "direct_bbo_matches_replay": 344625,
+            "direct_bbo_numeric": 375416,
+            "direct_bbo_strict_valid": 345238,
+            "full_match": 2770,
+            "receive_backsteps": 39873,
+            "top2_match": 2841,
+            "touch_size_match": 2843
+          },
+          "mismatch_categories": {
+            "bbo_mismatch_with_later_received_update": 1,
+            "bbo_price": 2,
+            "deep_only": 71,
+            "full_mismatch_with_later_received_update": 9,
+            "identical_update_repeats": 186703,
+            "pairs_with_any_update": 2845,
+            "same_ms_same_level_conflicting_sizes": 4498,
+            "shallow_depth": 2,
+            "snapshot_same_exchange_ms_as_update": 2845,
+            "update_received_after_snapshot": 205
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 2828,
+            "ask_touch_size_match": 2788,
+            "bbo_prices_match": 2810,
+            "bid_price_match": 2826,
+            "bid_touch_size_match": 2785,
+            "compared": 2845,
+            "direct_bbo_matches_replay": 341738,
+            "direct_bbo_numeric": 375416,
+            "direct_bbo_strict_valid": 345238,
+            "exchange_backsteps": 33365,
+            "full_match": 2470,
+            "top2_match": 2698,
+            "touch_size_match": 2737
+          },
+          "mismatch_categories": {
+            "bbo_price": 35,
+            "deep_only": 228,
+            "identical_update_repeats": 182795,
+            "pairs_with_any_update": 2845,
+            "same_ms_same_level_conflicting_sizes": 4638,
+            "shallow_depth": 39,
+            "snapshot_same_exchange_ms_as_update": 2845,
+            "touch_size": 73
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 375796
+    },
+    {
+      "book": 1616,
+      "event_index": 9,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 1614,
+            "ask_touch_size_match": 1614,
+            "bbo_prices_match": 1614,
+            "bid_price_match": 1614,
+            "bid_touch_size_match": 1614,
+            "compared": 1614,
+            "direct_bbo_matches_replay": 195466,
+            "direct_bbo_numeric": 219062,
+            "direct_bbo_strict_valid": 195558,
+            "full_match": 1607,
+            "receive_backsteps": 10296,
+            "top2_match": 1614,
+            "touch_size_match": 1614
+          },
+          "mismatch_categories": {
+            "deep_only": 7,
+            "identical_update_repeats": 108791,
+            "pairs_with_any_update": 1614,
+            "same_ms_same_level_conflicting_sizes": 2992,
+            "snapshot_same_exchange_ms_as_update": 1614,
+            "update_received_after_snapshot": 60
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 1609,
+            "ask_touch_size_match": 1594,
+            "bbo_prices_match": 1607,
+            "bid_price_match": 1612,
+            "bid_touch_size_match": 1600,
+            "compared": 1614,
+            "direct_bbo_matches_replay": 195140,
+            "direct_bbo_numeric": 219062,
+            "direct_bbo_strict_valid": 195558,
+            "exchange_backsteps": 8778,
+            "full_match": 1545,
+            "top2_match": 1580,
+            "touch_size_match": 1583
+          },
+          "mismatch_categories": {
+            "bbo_price": 7,
+            "deep_only": 35,
+            "identical_update_repeats": 107470,
+            "pairs_with_any_update": 1614,
+            "same_ms_same_level_conflicting_sizes": 3052,
+            "shallow_depth": 3,
+            "snapshot_same_exchange_ms_as_update": 1614,
+            "touch_size": 24
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 220476
+    },
+    {
+      "book": 3142,
+      "event_index": 10,
+      "modes": {
+        "exchange_stable": {
+          "metrics": {
+            "ask_price_match": 3139,
+            "ask_touch_size_match": 3139,
+            "bbo_prices_match": 3138,
+            "bid_price_match": 3139,
+            "bid_touch_size_match": 3139,
+            "compared": 3140,
+            "direct_bbo_matches_replay": 441719,
+            "direct_bbo_numeric": 447692,
+            "direct_bbo_strict_valid": 442316,
+            "full_match": 2996,
+            "receive_backsteps": 96446,
+            "top2_match": 3126,
+            "touch_size_match": 3138
+          },
+          "mismatch_categories": {
+            "bbo_mismatch_with_later_received_update": 1,
+            "bbo_price": 2,
+            "deep_only": 130,
+            "full_mismatch_with_later_received_update": 17,
+            "identical_update_repeats": 222702,
+            "pairs_with_any_update": 3140,
+            "same_ms_same_level_conflicting_sizes": 5166,
+            "shallow_depth": 12,
+            "snapshot_same_exchange_ms_as_update": 3140,
+            "update_received_after_snapshot": 492
+          }
+        },
+        "file_order": {
+          "metrics": {
+            "ask_price_match": 3093,
+            "ask_touch_size_match": 3008,
+            "bbo_prices_match": 3054,
+            "bid_price_match": 3095,
+            "bid_touch_size_match": 2978,
+            "compared": 3140,
+            "direct_bbo_matches_replay": 435285,
+            "direct_bbo_numeric": 447692,
+            "direct_bbo_strict_valid": 442316,
+            "exchange_backsteps": 63816,
+            "full_match": 2072,
+            "top2_match": 2781,
+            "touch_size_match": 2859
+          },
+          "mismatch_categories": {
+            "bbo_price": 86,
+            "deep_only": 709,
+            "identical_update_repeats": 213343,
+            "pairs_with_any_update": 3140,
+            "same_ms_same_level_conflicting_sizes": 5488,
+            "shallow_depth": 78,
+            "snapshot_same_exchange_ms_as_update": 3140,
+            "touch_size": 195
+          }
+        }
+      },
+      "tokens": 2,
+      "updates": 447692
+    }
+  ],
+  "private_evidence_sha256": "ad728f61fa076cf82e1e0ac4a4211881ddae5dd9d2f09ca49df575b97d7dc80b",
+  "private_minimal_examples_count": 8,
+  "receive_minus_exchange_ms_min_median_max": [
+    -5,
+    3.0,
+    2410
+  ],
+  "scope": "all",
+  "source_event_count": 11,
+  "status": "OFFLINE_SNAPSHOT_REPLAY_DIAGNOSTIC_ONLY",
+  "target_event_counts": {
+    "array_items": 20149,
+    "array_lines": 927,
+    "book": 30124,
+    "direct_bbo_numeric": 4012188,
+    "updates": 4012188
+  },
+  "target_tokens": 22,
+  "update_side_values": {
+    "BUY": 2006094,
+    "SELL": 2006094
+  },
+  "warning": "Both orderings are offline diagnostics. Exchange sorting can place later-received records earlier and is not a certified causal stream."
+}

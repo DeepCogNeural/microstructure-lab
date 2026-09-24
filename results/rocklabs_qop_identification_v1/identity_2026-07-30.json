@@ -1,0 +1,58 @@
+{
+  "active_btc5m_events": 13,
+  "active_tokens": 26,
+  "all_hour_clob_prints": 43080,
+  "candidate_maker_legs_complement_token_count": 42724,
+  "candidate_maker_legs_unique_chain_log_keys": 50236,
+  "candidate_maker_shares": "731865.993129",
+  "clob_array_items": 19542,
+  "clob_array_lines": 804,
+  "duplicate_print_records_by_tx": 0,
+  "fixed_examples_by_category": {
+    "complement_route": 6,
+    "multi_maker": 6,
+    "repeated_maker_order": 6,
+    "single_maker": 6
+  },
+  "fixed_examples_private_sha256": "b9db7932591d82ebbecf0f285d7c7dcd7ac0f4d4447f09966aa7b8e2e3b7dfa7",
+  "fixed_examples_total": 24,
+  "group_failure_reasons": {},
+  "groups_per_tx": {
+    "1": 25246
+  },
+  "groups_with_multiple_public_prints": 0,
+  "hour_onchain_log_counts": {
+    "OrderFilled": 198806,
+    "OrdersMatched": 71706
+  },
+  "joined_groups_with_complement_maker_leg": 21841,
+  "metadata_btc5m_events": 13,
+  "print_join_status": {
+    "none": 683,
+    "unique": 25246
+  },
+  "private_evidence_sha256": "811126878b81f596c9f8f969b7c9f7bd78762428e59ab1bf22a0578de5dfec28",
+  "reused_maker_order_hashes_across_tx": 8655,
+  "role_note": "Event-derived candidate maker legs; independent input/receipt verification of fixed examples is separate. Contract ABI/event signature alone does not establish every per-leg match timestamp.",
+  "source_hashes": {
+    "clob.jsonl.zst": "d8dc353ec81fd0387ef05dfe697e6f3246eaf1760b0e94d85bc333143ab4de0a",
+    "onchain.jsonl.zst": "255077b07bbf341aefafd55a2be3cfe1f85d056d43d30506e4014849f73643a1",
+    "onchain_index.json": "57a9883fcf7f97a29c4ecf4e25d5697eb890ed317f4c6890f83d63b269976b2d",
+    "polymarket_index.json": "7e6ada74559b5e75c1c4d5f3251ab96c6dfb6992a36bd285a1aecf0dacde0fc6"
+  },
+  "source_to_receive_ms_min_median_max": [
+    6,
+    11.0,
+    1093
+  ],
+  "status": "DEVELOPMENT_MEASUREMENT_ONLY",
+  "target_clob_print_records": 25929,
+  "target_tx_economic_groups": 25246,
+  "target_tx_with_any_chain_logs": 25246,
+  "target_tx_without_chain_logs": 683,
+  "target_unique_tx_hashes": 25929,
+  "tx_with_multiple_prints": 0,
+  "unique_joined_economic_groups": 25246,
+  "unjoined_print_records": 683,
+  "unjoined_private_sha256": "51f24599bcced118bc8955ab4f79e2294aba1a2f4a12b602d753e5f82f9cf2b5"
+}

@@ -103,7 +103,10 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--sample',type=Path,required=True);p.add_argument('--identity-private',type=Path,required=True)
  p.add_argument('--scope',choices=['first','all'],required=True);p.add_argument('--private',type=Path,required=True);p.add_argument('--public',type=Path,required=True);a=p.parse_args()
  if a.private.exists() or a.public.exists():raise ValueError('preserve output')
- ident=json.loads(a.identity_private.read_text());slugs=sorted(ident['active_slugs'],key=lambda s:int(s.rsplit('-',1)[-1]));chosen=slugs[:1] if a.scope=='first' else slugs
+ ident=json.loads(a.identity_private.read_text())
+ source_hash=ident['source_hashes']['clob.jsonl.zst']
+ if hashlib.sha256((a.sample/'clob.jsonl.zst').read_bytes()).hexdigest()!=source_hash:raise ValueError('CLOB source identity mismatch')
+ slugs=sorted(ident['active_slugs'],key=lambda s:int(s.rsplit('-',1)[-1]));chosen=slugs[:1] if a.scope=='first' else slugs
  token_slug=ident['token_slug'];tokens={t for t,s in token_slug.items() if s in chosen}
  seqs=collections.defaultdict(list);meta=collections.Counter();side_values=collections.Counter();received_later_than_exchange=[]
  with zstd.open(a.sample/'clob.jsonl.zst','rt') as f:

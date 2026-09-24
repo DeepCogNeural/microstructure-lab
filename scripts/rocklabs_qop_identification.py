@@ -42,9 +42,16 @@ def assets(e):
     raise ValueError('invalid side/amount')
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--sample',type=Path,required=True);p.add_argument('--private',type=Path,required=True);p.add_argument('--public',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--sample',type=Path,required=True);p.add_argument('--private',type=Path,required=True);p.add_argument('--public',type=Path,required=True)
+    p.add_argument('--validation-registry',type=Path);p.add_argument('--validation-date',type=str);a=p.parse_args()
     if a.private.exists() or a.public.exists():raise ValueError('preserve output')
-    for name,h in SHA.items():
+    expected=SHA
+    if a.validation_registry or a.validation_date:
+        if not a.validation_registry or not a.validation_date:raise ValueError('registry and date required together')
+        v=json.loads(a.validation_registry.read_text());d=v['dates'][a.validation_date]
+        expected={'clob.jsonl.zst':d['clob_hour_sha256'],'onchain.jsonl.zst':d['onchain_hour_sha256'],
+          'polymarket_index.json':d['polymarket_index_sha256'],'onchain_index.json':d['onchain_index_sha256']}
+    for name,h in expected.items():
         if hashlib.sha256((a.sample/name).read_bytes()).hexdigest()!=h:raise ValueError('source hash mismatch: '+name)
     token_slug={};market_of={};metadata_conflicts=0
     for _,x in stream(a.sample/'clob.jsonl.zst'):
@@ -152,12 +159,12 @@ def main():
         candidates=sorted(categories[cat]-set(selected),key=lambda h:hashlib.sha256((SEED+h).encode()).hexdigest())
         take=candidates[:6];selected+=take;selected_by[cat]=take
     sample_lag=[p['recv_ms']-p['inner_ms'] for p,g in matched_prints]
-    private={'source_hashes':SHA,'token_slug':token_slug,'active_slugs':sorted(active_slugs),'prints':prints,
+    private={'source_hashes':expected,'token_slug':token_slug,'active_slugs':sorted(active_slugs),'prints':prints,
              'groups':all_groups,'selected_24_by_category':selected_by,'unmatched':unmatched,
              'joined_print_indices':[(p['line'],p['sub'],g['tx'],g['contract'],g['match_log_index']) for p,g in matched_prints]}
     a.private.parent.mkdir(parents=True,exist_ok=True)
     a.private.write_text(json.dumps(private,separators=(',',':'))+'\n')
-    pub={'status':'DEVELOPMENT_MEASUREMENT_ONLY','source_hashes':SHA,'metadata_btc5m_events':len(set(token_slug.values())),
+    pub={'status':'DEVELOPMENT_MEASUREMENT_ONLY','source_hashes':expected,'metadata_btc5m_events':len(set(token_slug.values())),
          'active_btc5m_events':len(active_slugs),'active_tokens':len(active_tokens),'all_hour_clob_prints':all_prints,
          'target_clob_print_records':len(prints),'target_unique_tx_hashes':len(needed),
          'duplicate_print_records_by_tx':len(prints)-len(needed),'tx_with_multiple_prints':sum(len(v)>1 for v in tx_prints.values()),
