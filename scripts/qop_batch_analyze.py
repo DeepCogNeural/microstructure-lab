@@ -41,9 +41,9 @@ primary=[x for x in rows if not x['failure']['1000_5000']]
 sensitivity=[x for x in rows if not x['failure']['250_5000']]
 common=[x for x in rows if not x['failure']['1000_5000'] and not x['failure']['250_5000']]
 assert len(common)==len(sensitivity)
-max_leg=max(primary,key=lambda x:Decimal(x['shares'])) if primary else None
+max_leg=max(rows,key=lambda x:Decimal(x['shares'])) if rows else None
 volumes=collections.defaultdict(Decimal)
-for x in primary:volumes[x['event_idx']]+=Decimal(x['shares'])
+for x in rows:volumes[x['event_idx']]+=Decimal(x['shares'])
 max_event=max(volumes,key=lambda e:volumes[e]) if volumes else None
 failure={f'{age}_{h}':dict(collections.Counter(reason for x in rows for reason in x['failure'][f'{age}_{h}'])) for age in (1000,250) for h in (5000,30000)}
 # Conservative price-only bounds on all receipt-joined selected-token legs; unavailable receipts
@@ -87,8 +87,8 @@ result={'status':'DEVELOPMENT_MEASUREMENT_ONLY','source':'OutcomeTick samples-20
         'by_event':per_event,'by_six_hour_block':blocks,'by_passive_side':sides,
         'concentration':{'largest_leg_shares':str(max_leg['shares']) if max_leg else None,
             'without_largest_leg':summary([x for x in rows if x is not max_leg]),
-            'largest_primary_event_shares':str(volumes[max_event]) if max_event is not None else None,
-            'without_largest_primary_event':summary([x for x in rows if x['event_idx']!=max_event])},
+            'largest_raw_selected_event_shares':str(volumes[max_event]) if max_event is not None else None,
+            'without_largest_raw_selected_event':summary([x for x in rows if x['event_idx']!=max_event])},
         'shifted_anchor_ms':shifted,'mid_quote_vs_exit_side':{'mid_N5_share_weighted_cents':full['1000_5000']['N']['share_weighted_mean_cents'] if full['1000_5000']['N'] else None,
             'exit_bid_for_buy_ask_for_sell_cents':exit_mean,'note':'quote arithmetic only; displayed size and executable exit unverified'},
         'selected_maker_fee_raw_by_side':{k:str(v) for k,v in fee.items()},'missing_price_bounds':bounds,
