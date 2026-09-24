@@ -1,0 +1,65 @@
+{
+  "protocol": "POLYMARKET_MULTIDAY_PRICE_INFORMATION_ONLY",
+  "source": "Rocklabs academic research CLOB archive, manifest snapshot SHA-256 db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z",
+  "roles": {
+    "train": ["2026-07-27", "2026-07-28", "2026-07-29"],
+    "calibration": ["2026-07-30"],
+    "forward_checks": ["2026-07-31", "2026-08-01", "2026-08-02"]
+  },
+  "family": "Polymarket BTC 5-minute Up/Down only",
+  "event_unit": "one verified Up token and one end-minus-120-second endpoint per confirmed event",
+  "candidate_universe": "all 2016 fixed five-minute calendar slots queried by exact Gamma slug; only identity-confirmed events enter roster, never selected by prints or result",
+  "label": "CTF Up/Down token and binary payout verified post hoc; label publication time unknown means RETROSPECTIVE_OFFLINE",
+  "quote": {
+    "source": "price_change explicit best_bid and best_ask, no snapshot-top fill",
+    "receive_time": "integer microseconds",
+    "max_age_ms": 1000,
+    "latest_raw_before_validity": true,
+    "same_receive_top_conflict": "missing",
+    "history": "one midpoint 30 seconds before decision, same 1000 ms age limit, median impute with shared missing indicator"
+  },
+  "snapshot": {
+    "source": "latest complete book received by decision",
+    "max_age_ms": 5000,
+    "require": "finite positive prices and sizes, two sides, no repeated level, noncrossed top",
+    "same_receive_top_match_size_conflict": "quantity missing",
+    "features": ["log1p(touch bid size + touch ask size)", "(touch bid size - touch ask size)/(sum)"]
+  },
+  "cohort_gate": {
+    "eligible_train_min": 400,
+    "eligible_calibration_min": 100,
+    "eligible_each_forward_min": 100,
+    "train_and_calibration_both_binary_classes": true,
+    "quantity_valid_fraction_train_and_each_forward_min": 0.5
+  },
+  "model": {
+    "epsilon": 1e-6,
+    "R0": "raw midpoint, no fit",
+    "R1": "offset logistic with 3-column train-fitted logit spline and shared quality/missing controls Z",
+    "R2": "R1 plus spread and 30-second midpoint move",
+    "R3": "R2 plus the two snapshot quantity features",
+    "spline_logit_quantiles": [0.05, 0.35, 0.65, 0.95],
+    "learned_imputation_and_standardization": "train only",
+    "regularization": "L2 on nonintercept coefficients; lambda = 1/(C * number_of_train_events)",
+    "C_candidates": [0.1, 1.0, 10.0],
+    "selection": "lowest 2026-07-30 log loss, tie smaller C; never refit train plus calibration"
+  },
+  "score": {
+    "primary": "mean of three forward-day mean log losses; events equal within day",
+    "secondary": ["Brier", "all-event equal mean", "common valid-snapshot subset"],
+    "gain": "LL(R2)-LL(R3)",
+    "continue_threshold": "gain >= 0.005 nats, at least 2 of 3 days positive, Brier not worse, R3 not worse than the better of R0/R1"
+  },
+  "limits": {
+    "max_wall_hours": 4,
+    "max_cpu_core_hours": 32,
+    "max_threads": 8,
+    "max_memory_gib": 32,
+    "gpu": 0,
+    "max_compressed_source_gib": 112,
+    "max_official_requests": 10000,
+    "min_local_free_gib": 10,
+    "max_temporary_raw_cache_gib": 2
+  }
+}

@@ -1,0 +1,1440 @@
+{
+  "budget_bytes": 120259084288,
+  "clob_objects_bytes": 104945544485,
+  "clob_objects_count": 170,
+  "config_sha256": "be18670e065c1e23ba03dfd66936758722d36b6bcca23e8b254bdacbb7ec18b3",
+  "extractor_sha256": "3ece6da7813cc721397c60a2c42d339442a988c0ceab097df8f2b484ae4dd3f7",
+  "fixed_objects": [
+    {
+      "path": "raw/2026-07-27/0000.jsonl.zst",
+      "size_bytes": 600450993
+    },
+    {
+      "path": "raw/2026-07-27/0100.jsonl.zst",
+      "size_bytes": 637471501
+    },
+    {
+      "path": "raw/2026-07-27/0200.jsonl.zst",
+      "size_bytes": 626004241
+    },
+    {
+      "path": "raw/2026-07-27/0300.jsonl.zst",
+      "size_bytes": 545497707
+    },
+    {
+      "path": "raw/2026-07-27/0400.jsonl.zst",
+      "size_bytes": 588970328
+    },
+    {
+      "path": "raw/2026-07-27/0500.jsonl.zst",
+      "size_bytes": 614182368
+    },
+    {
+      "path": "raw/2026-07-27/0600.jsonl.zst",
+      "size_bytes": 668078177
+    },
+    {
+      "path": "raw/2026-07-27/0700.jsonl.zst",
+      "size_bytes": 633304675
+    },
+    {
+      "path": "raw/2026-07-27/0800.jsonl.zst",
+      "size_bytes": 656647435
+    },
+    {
+      "path": "raw/2026-07-27/0900.jsonl.zst",
+      "size_bytes": 575101807
+    },
+    {
+      "path": "raw/2026-07-27/1000.jsonl.zst",
+      "size_bytes": 620367596
+    },
+    {
+      "path": "raw/2026-07-27/1100.jsonl.zst",
+      "size_bytes": 687267617
+    },
+    {
+      "path": "raw/2026-07-27/1200.jsonl.zst",
+      "size_bytes": 818502190
+    },
+    {
+      "path": "raw/2026-07-27/1300.jsonl.zst",
+      "size_bytes": 869541301
+    },
+    {
+      "path": "raw/2026-07-27/1400.jsonl.zst",
+      "size_bytes": 1030689157
+    },
+    {
+      "path": "raw/2026-07-27/1500.jsonl.zst",
+      "size_bytes": 1007049730
+    },
+    {
+      "path": "raw/2026-07-27/1600.jsonl.zst",
+      "size_bytes": 776606548
+    },
+    {
+      "path": "raw/2026-07-27/1700.jsonl.zst",
+      "size_bytes": 754499665
+    },
+    {
+      "path": "raw/2026-07-27/1800.jsonl.zst",
+      "size_bytes": 666937401
+    },
+    {
+      "path": "raw/2026-07-27/1900.jsonl.zst",
+      "size_bytes": 710573184
+    },
+    {
+      "path": "raw/2026-07-27/2000.jsonl.zst",
+      "size_bytes": 605119046
+    },
+    {
+      "path": "raw/2026-07-27/2100.jsonl.zst",
+      "size_bytes": 549189633
+    },
+    {
+      "path": "raw/2026-07-27/2200.jsonl.zst",
+      "size_bytes": 578414584
+    },
+    {
+      "path": "raw/2026-07-27/2300.jsonl.zst",
+      "size_bytes": 769000554
+    },
+    {
+      "path": "raw/2026-07-28/0000.jsonl.zst",
+      "size_bytes": 838062839
+    },
+    {
+      "path": "raw/2026-07-28/0100.jsonl.zst",
+      "size_bytes": 748428739
+    },
+    {
+      "path": "raw/2026-07-28/0200.jsonl.zst",
+      "size_bytes": 706654406
+    },
+    {
+      "path": "raw/2026-07-28/0300.jsonl.zst",
+      "size_bytes": 731592072
+    },
+    {
+      "path": "raw/2026-07-28/0400.jsonl.zst",
+      "size_bytes": 702429325
+    },
+    {
+      "path": "raw/2026-07-28/0400_1785214627878.jsonl.zst",
+      "size_bytes": 44072754
+    },
+    {
+      "path": "raw/2026-07-28/0500.jsonl.zst",
+      "size_bytes": 593625270
+    },
+    {
+      "path": "raw/2026-07-28/0600.jsonl.zst",
+      "size_bytes": 707850998
+    },
+    {
+      "path": "raw/2026-07-28/0700.jsonl.zst",
+      "size_bytes": 553679314
+    },
+    {
+      "path": "raw/2026-07-28/0800.jsonl.zst",
+      "size_bytes": 107103951
+    },
+    {
+      "path": "raw/2026-07-28/0900.jsonl.zst",
+      "size_bytes": 282159292
+    },
+    {
+      "path": "raw/2026-07-28/1000.jsonl.zst",
+      "size_bytes": 760201644
+    },
+    {
+      "path": "raw/2026-07-28/1100.jsonl.zst",
+      "size_bytes": 818866834
+    },
+    {
+      "path": "raw/2026-07-28/1200.jsonl.zst",
+      "size_bytes": 776787095
+    },
+    {
+      "path": "raw/2026-07-28/1300.jsonl.zst",
+      "size_bytes": 870986140
+    },
+    {
+      "path": "raw/2026-07-28/1400.jsonl.zst",
+      "size_bytes": 873499403
+    },
+    {
+      "path": "raw/2026-07-28/1500.jsonl.zst",
+      "size_bytes": 840782767
+    },
+    {
+      "path": "raw/2026-07-28/1600.jsonl.zst",
+      "size_bytes": 746419750
+    },
+    {
+      "path": "raw/2026-07-28/1700.jsonl.zst",
+      "size_bytes": 667202926
+    },
+    {
+      "path": "raw/2026-07-28/1800.jsonl.zst",
+      "size_bytes": 674425377
+    },
+    {
+      "path": "raw/2026-07-28/1900.jsonl.zst",
+      "size_bytes": 587371183
+    },
+    {
+      "path": "raw/2026-07-28/2000.jsonl.zst",
+      "size_bytes": 565435124
+    },
+    {
+      "path": "raw/2026-07-28/2100.jsonl.zst",
+      "size_bytes": 520372626
+    },
+    {
+      "path": "raw/2026-07-28/2200.jsonl.zst",
+      "size_bytes": 578792505
+    },
+    {
+      "path": "raw/2026-07-28/2300.jsonl.zst",
+      "size_bytes": 573859661
+    },
+    {
+      "path": "raw/2026-07-29/0000.jsonl.zst",
+      "size_bytes": 648472154
+    },
+    {
+      "path": "raw/2026-07-29/0100.jsonl.zst",
+      "size_bytes": 651148693
+    },
+    {
+      "path": "raw/2026-07-29/0200.jsonl.zst",
+      "size_bytes": 562811690
+    },
+    {
+      "path": "raw/2026-07-29/0300.jsonl.zst",
+      "size_bytes": 628493143
+    },
+    {
+      "path": "raw/2026-07-29/0400.jsonl.zst",
+      "size_bytes": 676035330
+    },
+    {
+      "path": "raw/2026-07-29/0500.jsonl.zst",
+      "size_bytes": 650099182
+    },
+    {
+      "path": "raw/2026-07-29/0600.jsonl.zst",
+      "size_bytes": 726212770
+    },
+    {
+      "path": "raw/2026-07-29/0700.jsonl.zst",
+      "size_bytes": 708479924
+    },
+    {
+      "path": "raw/2026-07-29/0800.jsonl.zst",
+      "size_bytes": 714610893
+    },
+    {
+      "path": "raw/2026-07-29/0900.jsonl.zst",
+      "size_bytes": 791268375
+    },
+    {
+      "path": "raw/2026-07-29/1000.jsonl.zst",
+      "size_bytes": 763001020
+    },
+    {
+      "path": "raw/2026-07-29/1100.jsonl.zst",
+      "size_bytes": 749930635
+    },
+    {
+      "path": "raw/2026-07-29/1200.jsonl.zst",
+      "size_bytes": 709378654
+    },
+    {
+      "path": "raw/2026-07-29/1300.jsonl.zst",
+      "size_bytes": 907261160
+    },
+    {
+      "path": "raw/2026-07-29/1400.jsonl.zst",
+      "size_bytes": 1001574520
+    },
+    {
+      "path": "raw/2026-07-29/1500.jsonl.zst",
+      "size_bytes": 1018639853
+    },
+    {
+      "path": "raw/2026-07-29/1600.jsonl.zst",
+      "size_bytes": 791622326
+    },
+    {
+      "path": "raw/2026-07-29/1700.jsonl.zst",
+      "size_bytes": 611900664
+    },
+    {
+      "path": "raw/2026-07-29/1800.jsonl.zst",
+      "size_bytes": 742639070
+    },
+    {
+      "path": "raw/2026-07-29/1900.jsonl.zst",
+      "size_bytes": 680744437
+    },
+    {
+      "path": "raw/2026-07-29/2000.jsonl.zst",
+      "size_bytes": 672193735
+    },
+    {
+      "path": "raw/2026-07-29/2100.jsonl.zst",
+      "size_bytes": 556129871
+    },
+    {
+      "path": "raw/2026-07-29/2200.jsonl.zst",
+      "size_bytes": 571995648
+    },
+    {
+      "path": "raw/2026-07-29/2300.jsonl.zst",
+      "size_bytes": 592786808
+    },
+    {
+      "path": "raw/2026-07-30/0000.jsonl.zst",
+      "size_bytes": 654827877
+    },
+    {
+      "path": "raw/2026-07-30/0100.jsonl.zst",
+      "size_bytes": 592747750
+    },
+    {
+      "path": "raw/2026-07-30/0200.jsonl.zst",
+      "size_bytes": 614312169
+    },
+    {
+      "path": "raw/2026-07-30/0300.jsonl.zst",
+      "size_bytes": 557534490
+    },
+    {
+      "path": "raw/2026-07-30/0400.jsonl.zst",
+      "size_bytes": 606522832
+    },
+    {
+      "path": "raw/2026-07-30/0500.jsonl.zst",
+      "size_bytes": 672595281
+    },
+    {
+      "path": "raw/2026-07-30/0600.jsonl.zst",
+      "size_bytes": 795632950
+    },
+    {
+      "path": "raw/2026-07-30/0700.jsonl.zst",
+      "size_bytes": 721737719
+    },
+    {
+      "path": "raw/2026-07-30/0800.jsonl.zst",
+      "size_bytes": 730552314
+    },
+    {
+      "path": "raw/2026-07-30/0900.jsonl.zst",
+      "size_bytes": 705396679
+    },
+    {
+      "path": "raw/2026-07-30/1000.jsonl.zst",
+      "size_bytes": 619363314
+    },
+    {
+      "path": "raw/2026-07-30/1100.jsonl.zst",
+      "size_bytes": 790837705
+    },
+    {
+      "path": "raw/2026-07-30/1200.jsonl.zst",
+      "size_bytes": 821932162
+    },
+    {
+      "path": "raw/2026-07-30/1300.jsonl.zst",
+      "size_bytes": 910089013
+    },
+    {
+      "path": "raw/2026-07-30/1400.jsonl.zst",
+      "size_bytes": 890103284
+    },
+    {
+      "path": "raw/2026-07-30/1500.jsonl.zst",
+      "size_bytes": 907496230
+    },
+    {
+      "path": "raw/2026-07-30/1600.jsonl.zst",
+      "size_bytes": 715687469
+    },
+    {
+      "path": "raw/2026-07-30/1700.jsonl.zst",
+      "size_bytes": 528983340
+    },
+    {
+      "path": "raw/2026-07-30/1800.jsonl.zst",
+      "size_bytes": 480310562
+    },
+    {
+      "path": "raw/2026-07-30/1900.jsonl.zst",
+      "size_bytes": 453926865
+    },
+    {
+      "path": "raw/2026-07-30/2000.jsonl.zst",
+      "size_bytes": 464431254
+    },
+    {
+      "path": "raw/2026-07-30/2100.jsonl.zst",
+      "size_bytes": 448029382
+    },
+    {
+      "path": "raw/2026-07-30/2200.jsonl.zst",
+      "size_bytes": 425389754
+    },
+    {
+      "path": "raw/2026-07-30/2300.jsonl.zst",
+      "size_bytes": 451106919
+    },
+    {
+      "path": "raw/2026-07-31/0000.jsonl.zst",
+      "size_bytes": 532987181
+    },
+    {
+      "path": "raw/2026-07-31/0100.jsonl.zst",
+      "size_bytes": 574193133
+    },
+    {
+      "path": "raw/2026-07-31/0200.jsonl.zst",
+      "size_bytes": 573343714
+    },
+    {
+      "path": "raw/2026-07-31/0300.jsonl.zst",
+      "size_bytes": 550225562
+    },
+    {
+      "path": "raw/2026-07-31/0400.jsonl.zst",
+      "size_bytes": 507531922
+    },
+    {
+      "path": "raw/2026-07-31/0500.jsonl.zst",
+      "size_bytes": 506894228
+    },
+    {
+      "path": "raw/2026-07-31/0600.jsonl.zst",
+      "size_bytes": 521754878
+    },
+    {
+      "path": "raw/2026-07-31/0700.jsonl.zst",
+      "size_bytes": 560283006
+    },
+    {
+      "path": "raw/2026-07-31/0800.jsonl.zst",
+      "size_bytes": 623442233
+    },
+    {
+      "path": "raw/2026-07-31/0900.jsonl.zst",
+      "size_bytes": 715086788
+    },
+    {
+      "path": "raw/2026-07-31/1000.jsonl.zst",
+      "size_bytes": 675607700
+    },
+    {
+      "path": "raw/2026-07-31/1100.jsonl.zst",
+      "size_bytes": 690038996
+    },
+    {
+      "path": "raw/2026-07-31/1200.jsonl.zst",
+      "size_bytes": 660283427
+    },
+    {
+      "path": "raw/2026-07-31/1300.jsonl.zst",
+      "size_bytes": 816043202
+    },
+    {
+      "path": "raw/2026-07-31/1400.jsonl.zst",
+      "size_bytes": 1031557627
+    },
+    {
+      "path": "raw/2026-07-31/1500.jsonl.zst",
+      "size_bytes": 898860666
+    },
+    {
+      "path": "raw/2026-07-31/1600.jsonl.zst",
+      "size_bytes": 726296049
+    },
+    {
+      "path": "raw/2026-07-31/1700.jsonl.zst",
+      "size_bytes": 657114206
+    },
+    {
+      "path": "raw/2026-07-31/1800.jsonl.zst",
+      "size_bytes": 626303436
+    },
+    {
+      "path": "raw/2026-07-31/1900.jsonl.zst",
+      "size_bytes": 529354118
+    },
+    {
+      "path": "raw/2026-07-31/2000.jsonl.zst",
+      "size_bytes": 468104616
+    },
+    {
+      "path": "raw/2026-07-31/2100.jsonl.zst",
+      "size_bytes": 438375365
+    },
+    {
+      "path": "raw/2026-07-31/2200.jsonl.zst",
+      "size_bytes": 462990355
+    },
+    {
+      "path": "raw/2026-07-31/2300.jsonl.zst",
+      "size_bytes": 442147060
+    },
+    {
+      "path": "raw/2026-08-01/0000.jsonl.zst",
+      "size_bytes": 445576573
+    },
+    {
+      "path": "raw/2026-08-01/0100.jsonl.zst",
+      "size_bytes": 448475767
+    },
+    {
+      "path": "raw/2026-08-01/0200.jsonl.zst",
+      "size_bytes": 435871713
+    },
+    {
+      "path": "raw/2026-08-01/0300.jsonl.zst",
+      "size_bytes": 449025859
+    },
+    {
+      "path": "raw/2026-08-01/0400.jsonl.zst",
+      "size_bytes": 213430646
+    },
+    {
+      "path": "raw/2026-08-01/0400_1785558413871.jsonl.zst",
+      "size_bytes": 281095747
+    },
+    {
+      "path": "raw/2026-08-01/0500.jsonl.zst",
+      "size_bytes": 545589615
+    },
+    {
+      "path": "raw/2026-08-01/0600.jsonl.zst",
+      "size_bytes": 581118236
+    },
+    {
+      "path": "raw/2026-08-01/0700.jsonl.zst",
+      "size_bytes": 530404218
+    },
+    {
+      "path": "raw/2026-08-01/0800.jsonl.zst",
+      "size_bytes": 614967672
+    },
+    {
+      "path": "raw/2026-08-01/0900.jsonl.zst",
+      "size_bytes": 697468283
+    },
+    {
+      "path": "raw/2026-08-01/1000.jsonl.zst",
+      "size_bytes": 746299125
+    },
+    {
+      "path": "raw/2026-08-01/1100.jsonl.zst",
+      "size_bytes": 582355542
+    },
+    {
+      "path": "raw/2026-08-01/1200.jsonl.zst",
+      "size_bytes": 523422991
+    },
+    {
+      "path": "raw/2026-08-01/1300.jsonl.zst",
+      "size_bytes": 490673247
+    },
+    {
+      "path": "raw/2026-08-01/1400.jsonl.zst",
+      "size_bytes": 563197903
+    },
+    {
+      "path": "raw/2026-08-01/1500.jsonl.zst",
+      "size_bytes": 692151219
+    },
+    {
+      "path": "raw/2026-08-01/1600.jsonl.zst",
+      "size_bytes": 541179592
+    },
+    {
+      "path": "raw/2026-08-01/1700.jsonl.zst",
+      "size_bytes": 472953684
+    },
+    {
+      "path": "raw/2026-08-01/1800.jsonl.zst",
+      "size_bytes": 524386988
+    },
+    {
+      "path": "raw/2026-08-01/1900.jsonl.zst",
+      "size_bytes": 541395080
+    },
+    {
+      "path": "raw/2026-08-01/2000.jsonl.zst",
+      "size_bytes": 505698733
+    },
+    {
+      "path": "raw/2026-08-01/2100.jsonl.zst",
+      "size_bytes": 483034670
+    },
+    {
+      "path": "raw/2026-08-01/2200.jsonl.zst",
+      "size_bytes": 487635330
+    },
+    {
+      "path": "raw/2026-08-01/2300.jsonl.zst",
+      "size_bytes": 439993275
+    },
+    {
+      "path": "raw/2026-08-02/0000.jsonl.zst",
+      "size_bytes": 437916857
+    },
+    {
+      "path": "raw/2026-08-02/0100.jsonl.zst",
+      "size_bytes": 403296124
+    },
+    {
+      "path": "raw/2026-08-02/0200.jsonl.zst",
+      "size_bytes": 512135568
+    },
+    {
+      "path": "raw/2026-08-02/0300.jsonl.zst",
+      "size_bytes": 473530802
+    },
+    {
+      "path": "raw/2026-08-02/0400.jsonl.zst",
+      "size_bytes": 441033212
+    },
+    {
+      "path": "raw/2026-08-02/0500.jsonl.zst",
+      "size_bytes": 457782841
+    },
+    {
+      "path": "raw/2026-08-02/0600.jsonl.zst",
+      "size_bytes": 497368548
+    },
+    {
+      "path": "raw/2026-08-02/0700.jsonl.zst",
+      "size_bytes": 501665485
+    },
+    {
+      "path": "raw/2026-08-02/0800.jsonl.zst",
+      "size_bytes": 520719219
+    },
+    {
+      "path": "raw/2026-08-02/0900.jsonl.zst",
+      "size_bytes": 558283054
+    },
+    {
+      "path": "raw/2026-08-02/1000.jsonl.zst",
+      "size_bytes": 514595661
+    },
+    {
+      "path": "raw/2026-08-02/1100.jsonl.zst",
+      "size_bytes": 620185630
+    },
+    {
+      "path": "raw/2026-08-02/1200.jsonl.zst",
+      "size_bytes": 626226672
+    },
+    {
+      "path": "raw/2026-08-02/1300.jsonl.zst",
+      "size_bytes": 572246844
+    },
+    {
+      "path": "raw/2026-08-02/1400.jsonl.zst",
+      "size_bytes": 622639494
+    },
+    {
+      "path": "raw/2026-08-02/1500.jsonl.zst",
+      "size_bytes": 619019127
+    },
+    {
+      "path": "raw/2026-08-02/1600.jsonl.zst",
+      "size_bytes": 505986318
+    },
+    {
+      "path": "raw/2026-08-02/1700.jsonl.zst",
+      "size_bytes": 499024203
+    },
+    {
+      "path": "raw/2026-08-02/1800.jsonl.zst",
+      "size_bytes": 495191740
+    },
+    {
+      "path": "raw/2026-08-02/1900.jsonl.zst",
+      "size_bytes": 501889884
+    },
+    {
+      "path": "raw/2026-08-02/2000.jsonl.zst",
+      "size_bytes": 391763368
+    },
+    {
+      "path": "raw/2026-08-02/2100.jsonl.zst",
+      "size_bytes": 463505871
+    },
+    {
+      "path": "raw/2026-08-02/2200.jsonl.zst",
+      "size_bytes": 464307469
+    },
+    {
+      "path": "raw/2026-08-02/2300.jsonl.zst",
+      "size_bytes": 471902016
+    },
+    {
+      "path": "raw/_index/2026-07-27/onchain_index.json",
+      "size_bytes": 10128942
+    },
+    {
+      "path": "raw/_index/2026-07-27/polymarket_index.json",
+      "size_bytes": 6603876
+    },
+    {
+      "path": "raw/_index/2026-07-28/onchain_index.json",
+      "size_bytes": 15893282
+    },
+    {
+      "path": "raw/_index/2026-07-28/polymarket_index.json",
+      "size_bytes": 11478236
+    },
+    {
+      "path": "raw/_index/2026-07-29/onchain_index.json",
+      "size_bytes": 11737031
+    },
+    {
+      "path": "raw/_index/2026-07-29/polymarket_index.json",
+      "size_bytes": 22341118
+    },
+    {
+      "path": "raw/_index/2026-07-30/onchain_index.json",
+      "size_bytes": 11353779
+    },
+    {
+      "path": "raw/_index/2026-07-30/polymarket_index.json",
+      "size_bytes": 11756427
+    },
+    {
+      "path": "raw/_index/2026-07-31/onchain_index.json",
+      "size_bytes": 10795462
+    },
+    {
+      "path": "raw/_index/2026-07-31/polymarket_index.json",
+      "size_bytes": 11182049
+    },
+    {
+      "path": "raw/_index/2026-08-01/onchain_index.json",
+      "size_bytes": 11866268
+    },
+    {
+      "path": "raw/_index/2026-08-01/polymarket_index.json",
+      "size_bytes": 9752564
+    },
+    {
+      "path": "raw/_index/2026-08-02/onchain_index.json",
+      "size_bytes": 11751740
+    },
+    {
+      "path": "raw/_index/2026-08-02/polymarket_index.json",
+      "size_bytes": 14529474
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0000.jsonl.zst",
+      "size_bytes": 34570447
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0100.jsonl.zst",
+      "size_bytes": 36406982
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0200.jsonl.zst",
+      "size_bytes": 29733410
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0300.jsonl.zst",
+      "size_bytes": 29403227
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0400.jsonl.zst",
+      "size_bytes": 25759761
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0500.jsonl.zst",
+      "size_bytes": 28715926
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0600.jsonl.zst",
+      "size_bytes": 32587527
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0700.jsonl.zst",
+      "size_bytes": 33386597
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0800.jsonl.zst",
+      "size_bytes": 32756366
+    },
+    {
+      "path": "raw/onchain/2026-07-27/0900.jsonl.zst",
+      "size_bytes": 29382432
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1000.jsonl.zst",
+      "size_bytes": 27449743
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1100.jsonl.zst",
+      "size_bytes": 30973610
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1200.jsonl.zst",
+      "size_bytes": 34324119
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1300.jsonl.zst",
+      "size_bytes": 41066066
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1400.jsonl.zst",
+      "size_bytes": 42746791
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1500.jsonl.zst",
+      "size_bytes": 46747067
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1600.jsonl.zst",
+      "size_bytes": 41751641
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1700.jsonl.zst",
+      "size_bytes": 38646049
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1800.jsonl.zst",
+      "size_bytes": 37320604
+    },
+    {
+      "path": "raw/onchain/2026-07-27/1900.jsonl.zst",
+      "size_bytes": 36686859
+    },
+    {
+      "path": "raw/onchain/2026-07-27/2000.jsonl.zst",
+      "size_bytes": 30809067
+    },
+    {
+      "path": "raw/onchain/2026-07-27/2100.jsonl.zst",
+      "size_bytes": 29175985
+    },
+    {
+      "path": "raw/onchain/2026-07-27/2200.jsonl.zst",
+      "size_bytes": 37264529
+    },
+    {
+      "path": "raw/onchain/2026-07-27/2300.jsonl.zst",
+      "size_bytes": 38079858
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0000.jsonl.zst",
+      "size_bytes": 37262990
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0100.jsonl.zst",
+      "size_bytes": 34090878
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0200.jsonl.zst",
+      "size_bytes": 30378194
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0300.jsonl.zst",
+      "size_bytes": 32394345
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0400.jsonl.zst",
+      "size_bytes": 30175638
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0400_1785214647137.jsonl.zst",
+      "size_bytes": 19812261
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0500.jsonl.zst",
+      "size_bytes": 36927557
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0500_1785215212034.jsonl.zst",
+      "size_bytes": 27176511
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0600.jsonl.zst",
+      "size_bytes": 30003408
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0700.jsonl.zst",
+      "size_bytes": 28914613
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0800.jsonl.zst",
+      "size_bytes": 15832683
+    },
+    {
+      "path": "raw/onchain/2026-07-28/0900.jsonl.zst",
+      "size_bytes": 17306005
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1000.jsonl.zst",
+      "size_bytes": 35234137
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1100.jsonl.zst",
+      "size_bytes": 37417104
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1200.jsonl.zst",
+      "size_bytes": 42106693
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1300.jsonl.zst",
+      "size_bytes": 43921949
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1400.jsonl.zst",
+      "size_bytes": 39093568
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1500.jsonl.zst",
+      "size_bytes": 47075944
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1600.jsonl.zst",
+      "size_bytes": 44343047
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1700.jsonl.zst",
+      "size_bytes": 37607404
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1800.jsonl.zst",
+      "size_bytes": 40342551
+    },
+    {
+      "path": "raw/onchain/2026-07-28/1900.jsonl.zst",
+      "size_bytes": 37995515
+    },
+    {
+      "path": "raw/onchain/2026-07-28/2000.jsonl.zst",
+      "size_bytes": 33698966
+    },
+    {
+      "path": "raw/onchain/2026-07-28/2100.jsonl.zst",
+      "size_bytes": 31501202
+    },
+    {
+      "path": "raw/onchain/2026-07-28/2200.jsonl.zst",
+      "size_bytes": 34702047
+    },
+    {
+      "path": "raw/onchain/2026-07-28/2300.jsonl.zst",
+      "size_bytes": 35338007
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0000.jsonl.zst",
+      "size_bytes": 39468747
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0100.jsonl.zst",
+      "size_bytes": 37223801
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0200.jsonl.zst",
+      "size_bytes": 34081145
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0300.jsonl.zst",
+      "size_bytes": 32882852
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0400.jsonl.zst",
+      "size_bytes": 36373179
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0500.jsonl.zst",
+      "size_bytes": 32339112
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0600.jsonl.zst",
+      "size_bytes": 33524422
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0700.jsonl.zst",
+      "size_bytes": 30440247
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0800.jsonl.zst",
+      "size_bytes": 29989434
+    },
+    {
+      "path": "raw/onchain/2026-07-29/0900.jsonl.zst",
+      "size_bytes": 36565045
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1000.jsonl.zst",
+      "size_bytes": 35012594
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1100.jsonl.zst",
+      "size_bytes": 35595924
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1200.jsonl.zst",
+      "size_bytes": 36114612
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1300.jsonl.zst",
+      "size_bytes": 43790089
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1400.jsonl.zst",
+      "size_bytes": 46880913
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1500.jsonl.zst",
+      "size_bytes": 47456770
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1600.jsonl.zst",
+      "size_bytes": 44365407
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1700.jsonl.zst",
+      "size_bytes": 40969029
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1800.jsonl.zst",
+      "size_bytes": 51649551
+    },
+    {
+      "path": "raw/onchain/2026-07-29/1900.jsonl.zst",
+      "size_bytes": 44354101
+    },
+    {
+      "path": "raw/onchain/2026-07-29/2000.jsonl.zst",
+      "size_bytes": 41627984
+    },
+    {
+      "path": "raw/onchain/2026-07-29/2100.jsonl.zst",
+      "size_bytes": 36309533
+    },
+    {
+      "path": "raw/onchain/2026-07-29/2200.jsonl.zst",
+      "size_bytes": 36431718
+    },
+    {
+      "path": "raw/onchain/2026-07-29/2300.jsonl.zst",
+      "size_bytes": 35041792
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0000.jsonl.zst",
+      "size_bytes": 36195755
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0100.jsonl.zst",
+      "size_bytes": 33485112
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0200.jsonl.zst",
+      "size_bytes": 39467932
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0300.jsonl.zst",
+      "size_bytes": 33556328
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0400.jsonl.zst",
+      "size_bytes": 39877647
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0500.jsonl.zst",
+      "size_bytes": 33788569
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0600.jsonl.zst",
+      "size_bytes": 30972017
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0700.jsonl.zst",
+      "size_bytes": 29821356
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0800.jsonl.zst",
+      "size_bytes": 35393262
+    },
+    {
+      "path": "raw/onchain/2026-07-30/0900.jsonl.zst",
+      "size_bytes": 32522504
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1000.jsonl.zst",
+      "size_bytes": 29643577
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1100.jsonl.zst",
+      "size_bytes": 33239991
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1200.jsonl.zst",
+      "size_bytes": 36816684
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1300.jsonl.zst",
+      "size_bytes": 41638854
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1400.jsonl.zst",
+      "size_bytes": 39919702
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1500.jsonl.zst",
+      "size_bytes": 39893353
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1600.jsonl.zst",
+      "size_bytes": 40428190
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1700.jsonl.zst",
+      "size_bytes": 40710577
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1800.jsonl.zst",
+      "size_bytes": 39885942
+    },
+    {
+      "path": "raw/onchain/2026-07-30/1900.jsonl.zst",
+      "size_bytes": 34002687
+    },
+    {
+      "path": "raw/onchain/2026-07-30/2000.jsonl.zst",
+      "size_bytes": 33091037
+    },
+    {
+      "path": "raw/onchain/2026-07-30/2100.jsonl.zst",
+      "size_bytes": 30920287
+    },
+    {
+      "path": "raw/onchain/2026-07-30/2200.jsonl.zst",
+      "size_bytes": 30558833
+    },
+    {
+      "path": "raw/onchain/2026-07-30/2300.jsonl.zst",
+      "size_bytes": 29471095
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0000.jsonl.zst",
+      "size_bytes": 38562517
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0100.jsonl.zst",
+      "size_bytes": 34120746
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0200.jsonl.zst",
+      "size_bytes": 37188135
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0300.jsonl.zst",
+      "size_bytes": 31952428
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0400.jsonl.zst",
+      "size_bytes": 31451954
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0500.jsonl.zst",
+      "size_bytes": 30743960
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0600.jsonl.zst",
+      "size_bytes": 32294279
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0700.jsonl.zst",
+      "size_bytes": 33723847
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0800.jsonl.zst",
+      "size_bytes": 30638656
+    },
+    {
+      "path": "raw/onchain/2026-07-31/0900.jsonl.zst",
+      "size_bytes": 35015893
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1000.jsonl.zst",
+      "size_bytes": 33139361
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1100.jsonl.zst",
+      "size_bytes": 32974392
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1200.jsonl.zst",
+      "size_bytes": 37855636
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1300.jsonl.zst",
+      "size_bytes": 43332572
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1400.jsonl.zst",
+      "size_bytes": 52205107
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1500.jsonl.zst",
+      "size_bytes": 42246975
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1600.jsonl.zst",
+      "size_bytes": 41459756
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1700.jsonl.zst",
+      "size_bytes": 39184072
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1800.jsonl.zst",
+      "size_bytes": 37231948
+    },
+    {
+      "path": "raw/onchain/2026-07-31/1900.jsonl.zst",
+      "size_bytes": 37457512
+    },
+    {
+      "path": "raw/onchain/2026-07-31/2000.jsonl.zst",
+      "size_bytes": 36925901
+    },
+    {
+      "path": "raw/onchain/2026-07-31/2100.jsonl.zst",
+      "size_bytes": 36850711
+    },
+    {
+      "path": "raw/onchain/2026-07-31/2200.jsonl.zst",
+      "size_bytes": 34566008
+    },
+    {
+      "path": "raw/onchain/2026-07-31/2300.jsonl.zst",
+      "size_bytes": 32094871
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0000.jsonl.zst",
+      "size_bytes": 36599806
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0100.jsonl.zst",
+      "size_bytes": 35726204
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0200.jsonl.zst",
+      "size_bytes": 35153887
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0300.jsonl.zst",
+      "size_bytes": 31752131
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0400.jsonl.zst",
+      "size_bytes": 15375976
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0400_1785558464380.jsonl.zst",
+      "size_bytes": 36495109
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0400_1785558721548.jsonl.zst",
+      "size_bytes": 32801728
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0500.jsonl.zst",
+      "size_bytes": 30452384
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0600.jsonl.zst",
+      "size_bytes": 29869672
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0700.jsonl.zst",
+      "size_bytes": 27208912
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0800.jsonl.zst",
+      "size_bytes": 28417695
+    },
+    {
+      "path": "raw/onchain/2026-08-01/0900.jsonl.zst",
+      "size_bytes": 35862943
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1000.jsonl.zst",
+      "size_bytes": 37211470
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1100.jsonl.zst",
+      "size_bytes": 34577117
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1200.jsonl.zst",
+      "size_bytes": 37240683
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1300.jsonl.zst",
+      "size_bytes": 38316724
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1400.jsonl.zst",
+      "size_bytes": 36564155
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1500.jsonl.zst",
+      "size_bytes": 38351227
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1600.jsonl.zst",
+      "size_bytes": 46779754
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1700.jsonl.zst",
+      "size_bytes": 43278885
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1800.jsonl.zst",
+      "size_bytes": 45922209
+    },
+    {
+      "path": "raw/onchain/2026-08-01/1900.jsonl.zst",
+      "size_bytes": 41285739
+    },
+    {
+      "path": "raw/onchain/2026-08-01/2000.jsonl.zst",
+      "size_bytes": 38401494
+    },
+    {
+      "path": "raw/onchain/2026-08-01/2100.jsonl.zst",
+      "size_bytes": 34719367
+    },
+    {
+      "path": "raw/onchain/2026-08-01/2200.jsonl.zst",
+      "size_bytes": 31719608
+    },
+    {
+      "path": "raw/onchain/2026-08-01/2300.jsonl.zst",
+      "size_bytes": 32606434
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0000.jsonl.zst",
+      "size_bytes": 37579831
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0100.jsonl.zst",
+      "size_bytes": 33514726
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0200.jsonl.zst",
+      "size_bytes": 41584141
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0300.jsonl.zst",
+      "size_bytes": 36160552
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0400.jsonl.zst",
+      "size_bytes": 32333537
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0500.jsonl.zst",
+      "size_bytes": 26995272
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0600.jsonl.zst",
+      "size_bytes": 26517787
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0700.jsonl.zst",
+      "size_bytes": 30771278
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0800.jsonl.zst",
+      "size_bytes": 31694891
+    },
+    {
+      "path": "raw/onchain/2026-08-02/0900.jsonl.zst",
+      "size_bytes": 31384074
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1000.jsonl.zst",
+      "size_bytes": 29878529
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1100.jsonl.zst",
+      "size_bytes": 37645829
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1200.jsonl.zst",
+      "size_bytes": 36232979
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1300.jsonl.zst",
+      "size_bytes": 35123718
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1400.jsonl.zst",
+      "size_bytes": 36407493
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1500.jsonl.zst",
+      "size_bytes": 35310713
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1600.jsonl.zst",
+      "size_bytes": 37530620
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1700.jsonl.zst",
+      "size_bytes": 36785832
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1800.jsonl.zst",
+      "size_bytes": 35137292
+    },
+    {
+      "path": "raw/onchain/2026-08-02/1900.jsonl.zst",
+      "size_bytes": 34750791
+    },
+    {
+      "path": "raw/onchain/2026-08-02/2000.jsonl.zst",
+      "size_bytes": 31347939
+    },
+    {
+      "path": "raw/onchain/2026-08-02/2100.jsonl.zst",
+      "size_bytes": 38350844
+    },
+    {
+      "path": "raw/onchain/2026-08-02/2200.jsonl.zst",
+      "size_bytes": 33838795
+    },
+    {
+      "path": "raw/onchain/2026-08-02/2300.jsonl.zst",
+      "size_bytes": 31018520
+    }
+  ],
+  "fixed_objects_bytes": 111190706438,
+  "fixed_objects_count": 356,
+  "note": "paths and sizes only; signed URLs absent; source-read hashes follow extraction",
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "status": "FROZEN_BEFORE_MARKET_OBJECT_SCAN",
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z"
+}
