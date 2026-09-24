@@ -1,0 +1,46 @@
+{
+  "cached_ctf_successful_batches": {
+    "collection": 32,
+    "payout": 121,
+    "position": 32
+  },
+  "cached_ctf_successful_logical_calls": {
+    "collection": 790,
+    "payout": 3025,
+    "position": 790
+  },
+  "cached_successful_logical_calls_including_gamma": 6621,
+  "ctf_labels_private_created": false,
+  "ctf_position_checks_required": 395,
+  "ctf_position_verified_via_daily_indexes_before_rpc": 1621,
+  "event_table_private_sha256": "504d6d322daaeb8d71b103f004b71428b8a9ec7cbb820b48875b7494e2ac4f65",
+  "exact_logical_used_persisted": false,
+  "exception": "RuntimeError: official logical request cap reached before next 25-call payout batch",
+  "forward_days_scored": 0,
+  "full_cohort_no_retry_logical_calls_required": 9644,
+  "gamma_logical_requests": 2016,
+  "index_sha256": {
+    "2026-07-27": "247f89817b68f19a4bc4a5cdeaba42620798548a9fb1de0eca68fd788ac156ba",
+    "2026-07-28": "70ce6a24bbadd790df8fb95b64c40c5049aaaf0777a5c7ee5e006d8228b03f5a",
+    "2026-07-29": "49189499ad26fbb8373190b57f5c84379fd41c342c76bd99ed8fd4068d51d092",
+    "2026-07-30": "57a9883fcf7f97a29c4ecf4e25d5697eb890ed317f4c6890f83d63b269976b2d",
+    "2026-07-31": "2489a2166ccdffb855a263803668b04f330bb44af4f91483b2142632c2f04d43",
+    "2026-08-01": "6ba0a439eecf8788bd0e9c73fd0391f38c55c3f109449b74e45e9f1d10cdf087",
+    "2026-08-02": "58a42873fa50a1f39fc5f06c5d27aad1fd59667ba832c91ad36b718ab85dd822"
+  },
+  "logical_used_interval_at_stop": [
+    9976,
+    10000
+  ],
+  "models_fitted": 0,
+  "note": "Completed responses remain private. Exact retry count was held only in process memory; the cap check proves the stated interval. No settlement labels were substituted from Gamma prices.",
+  "official_logical_request_cap": 10000,
+  "payout_logical_calls_not_cached": 3023,
+  "payout_logical_calls_required": 6048,
+  "payout_logical_calls_successfully_cached": 3025,
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_read_receipts_sha256": "762f60f609c1f09a5ab4c3478d630c9f0b63b40c81cf240e666d5c2dd1548ff4",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "status": "ACCESS_OR_BUDGET_BLOCKED",
+  "stop_reason": "OFFICIAL_IDENTITY_SETTLEMENT_LOGICAL_REQUEST_CAP"
+}

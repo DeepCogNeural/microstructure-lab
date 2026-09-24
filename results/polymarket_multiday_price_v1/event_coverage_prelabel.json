@@ -1,0 +1,189 @@
+{
+  "by_day": {
+    "2026-07-27": {
+      "bbo": {
+        "conflicting_same_receive_top": 1,
+        "invalid_bbo": 3,
+        "ok": 280,
+        "stale": 4
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "invalid_bbo": 2,
+        "ok": 285,
+        "stale": 1
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 265,
+      "price_eligible_before_labels": 280,
+      "snapshot_quantity": {
+        "invalid_book_top_empty_or_nonlist": 1,
+        "ok": 285,
+        "stale": 2
+      },
+      "valid_snapshot_on_price_eligible": 280
+    },
+    "2026-07-28": {
+      "bbo": {
+        "conflicting_same_receive_top": 3,
+        "invalid_bbo": 9,
+        "no_record": 7,
+        "ok": 255,
+        "stale": 14
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "conflicting_same_receive_top": 1,
+        "invalid_bbo": 2,
+        "no_record": 8,
+        "ok": 264,
+        "stale": 13
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 271,
+      "price_eligible_before_labels": 255,
+      "snapshot_quantity": {
+        "conflicting_same_receive_size": 3,
+        "invalid_book_top_empty_or_nonlist": 8,
+        "no_record": 1,
+        "ok": 256,
+        "stale": 20
+      },
+      "valid_snapshot_on_price_eligible": 250
+    },
+    "2026-07-29": {
+      "bbo": {
+        "conflicting_same_receive_top": 1,
+        "invalid_bbo": 10,
+        "ok": 277
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "conflicting_same_receive_top": 2,
+        "invalid_bbo": 3,
+        "ok": 282,
+        "stale": 1
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 277,
+      "price_eligible_before_labels": 277,
+      "snapshot_quantity": {
+        "invalid_book_top_empty_or_nonlist": 9,
+        "ok": 278,
+        "stale": 1
+      },
+      "valid_snapshot_on_price_eligible": 277
+    },
+    "2026-07-30": {
+      "bbo": {
+        "conflicting_same_receive_top": 1,
+        "invalid_bbo": 8,
+        "ok": 279
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "invalid_bbo": 4,
+        "ok": 284
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 275,
+      "price_eligible_before_labels": 279,
+      "snapshot_quantity": {
+        "conflicting_same_receive_size": 1,
+        "invalid_book_top_empty_or_nonlist": 7,
+        "ok": 279,
+        "stale": 1
+      },
+      "valid_snapshot_on_price_eligible": 278
+    },
+    "2026-07-31": {
+      "bbo": {
+        "invalid_bbo": 3,
+        "ok": 285
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "conflicting_same_receive_top": 2,
+        "ok": 286
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 279,
+      "price_eligible_before_labels": 285,
+      "snapshot_quantity": {
+        "invalid_book_top_empty_or_nonlist": 3,
+        "ok": 285
+      },
+      "valid_snapshot_on_price_eligible": 285
+    },
+    "2026-08-01": {
+      "bbo": {
+        "conflicting_same_receive_top": 4,
+        "invalid_bbo": 3,
+        "ok": 281
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "conflicting_same_receive_top": 1,
+        "invalid_bbo": 2,
+        "ok": 285
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 268,
+      "price_eligible_before_labels": 281,
+      "snapshot_quantity": {
+        "invalid_book_top_empty_or_nonlist": 3,
+        "ok": 285
+      },
+      "valid_snapshot_on_price_eligible": 281
+    },
+    "2026-08-02": {
+      "bbo": {
+        "invalid_bbo": 3,
+        "ok": 285
+      },
+      "calendar_slots": 288,
+      "gamma_confirmed_events": 288,
+      "history": {
+        "conflicting_same_receive_top": 2,
+        "invalid_bbo": 2,
+        "ok": 284
+      },
+      "identity_conflicts": 0,
+      "inline_up_metadata_seen": 265,
+      "price_eligible_before_labels": 285,
+      "snapshot_quantity": {
+        "conflicting_same_receive_top": 1,
+        "invalid_book_top_empty_or_nonlist": 2,
+        "ok": 284,
+        "stale": 1
+      },
+      "valid_snapshot_on_price_eligible": 284
+    }
+  },
+  "clob_objects_scanned": 170,
+  "compressed_clob_bytes_read": 104945544485,
+  "event_table_private_sha256": "504d6d322daaeb8d71b103f004b71428b8a9ec7cbb820b48875b7494e2ac4f65",
+  "gamma_cache_sha256": "cd35fc263562021866ad8b19a45ce0e0365d4edf3a77f7058e2a07960ba3068e",
+  "gamma_invalid_reasons": {},
+  "gamma_requests": 2016,
+  "gamma_valid_events": 2016,
+  "hours_scanned": 168,
+  "label_status": "not_opened_at_this_stage",
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_read_receipts_sha256": "762f60f609c1f09a5ab4c3478d630c9f0b63b40c81cf240e666d5c2dd1548ff4",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "status": "PRELABEL_COHORT_FROZEN",
+  "target_record_counts": {
+    "btc_metadata_rows": 4046,
+    "target_bbo_items": 459239192,
+    "target_book_rows": 3669569
+  },
+  "unknown_btc_metadata_lines_by_hour_sum": 120,
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z"
+}

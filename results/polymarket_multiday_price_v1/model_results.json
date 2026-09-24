@@ -1,0 +1,13 @@
+{
+  "arms": {
+    "R0": "NOT_SCORED",
+    "R1": "NOT_FIT",
+    "R2": "NOT_FIT",
+    "R3": "NOT_FIT"
+  },
+  "cohort_gate": "UNEVALUATED_FULL_SETTLEMENT_LABELS_UNAVAILABLE",
+  "ctf_request_budget_stop_sha256": "3058b14c3ac3503ee732abbf3e65e7e0dcb095187636c713baab34f6fede3a11",
+  "forward_days_scored": 0,
+  "quantity_gate": "UNEVALUATED_FULL_SETTLEMENT_LABELS_UNAVAILABLE",
+  "status": "ACCESS_OR_BUDGET_BLOCKED"
+}
