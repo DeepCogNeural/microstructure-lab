@@ -89,9 +89,16 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--private-dir',type=Path,required=True);parser.add_argument('--public-dir',type=Path,required=True)
     a=parser.parse_args();private=a.private_dir;public=a.public_dir;public.mkdir(parents=True,exist_ok=True)
     source=private/'events_before_labels_private.json';label_source=private/'ctf_labels_private.json'
+    settlement=json.loads((public/'settlement_closeout.json').read_text())
+    if settlement['status']!='COMPLETE' or settlement['remaining_keys']:
+        raise ValueError('complete settlement query stage required before scoring')
+    if sha(label_source)!=settlement['private_labels_sha256']:
+        raise ValueError('settlement label hash mismatch')
     rows=json.loads(source.read_text());labels=json.loads(label_source.read_text())
     if len(rows)!=2016 or len(labels)!=2016 or [z['slot'] for z in rows]!=[z['slot'] for z in labels]:raise ValueError('event/label join mismatch')
     for row,lab in zip(rows,labels):
+        if lab['label_status']=='verified_binary' and (lab['identity_status']!='verified' or lab['y'] not in (0,1)):
+            raise ValueError('invalid released binary label')
         row['y']=lab['y'] if lab['label_status']=='verified_binary' else None
         row['label_status']=lab['label_status']
     counts={};eligible={}
@@ -146,6 +153,11 @@ def main():
             gain=loss(yd,qd['R2'])-loss(yd,qd['R3'])
             result['R2_minus_R3_gain']={'mean_nats':float(gain.mean()),'positive_events':int((gain>0).sum()),
                  'negative_events':int((gain<0).sum()),'contribution_p01_p50_p99':[float(x) for x in np.quantile(gain,(.01,.5,.99))]}
+            order=np.argsort(np.abs(gain))[::-1]
+            result['concentrated_contributions']={'total_gain_nats':float(gain.sum()),
+                'largest_absolute_event_gain_nats':float(gain[order[0]]),
+                'ten_largest_absolute_events_gain_nats':float(gain[order[:10]].sum()),
+                'remaining_events_gain_nats':float(gain[order[10:]].sum())}
             spread=np.array([z['spread'] for z in forward],float)[mask]
             bid=np.array([z['bid'] for z in forward],float)[mask];ask=np.array([z['ask'] for z in forward],float)[mask]
             delta=qd['R3']-qd['R2']
@@ -172,7 +184,7 @@ def main():
                   'brier_not_worse':r3['brier']<=r2['brier'], 'R3_not_worse_than_best_simple':r3['log_loss']<=simple}
         out['primary']={'R2_minus_R3_gain_day_equal_nats':avg,'positive_days':sum(g>0 for g in gains),
                         'planning_checks':decision,'continue_to_new_confirmation_plan':all(decision.values())}
-        out['status']='COMPLETED_MULTIDAY_DEVELOPMENT'
+        out['status']='PROPOSE_INDEPENDENT_CONFIRMATION' if all(decision.values()) else 'STOP_QUANTITY_INCREMENT'
     else:
         out['status']='QUANTITY_COVERAGE_GATED';out['primary']='R3 not fit because prespecified valid-snapshot coverage gate failed'
     weights_path=private/'models_private.json';weights_path.write_text(json.dumps({k:v for k,v in models.items()},separators=(',',':'))+'\n');os.chmod(weights_path,0o600)
