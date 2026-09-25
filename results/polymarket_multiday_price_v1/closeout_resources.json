@@ -1,0 +1,58 @@
+{
+  "budget_anchor_utc": "2026-09-25T20:00:00+00:00",
+  "budget_anchor_note": "Conservative rounded earlier anchor used for deadline; not an instrumented exact turn start. Phase timings and first RPC reservation below are measured.",
+  "first_new_rpc_reserved_utc": "2026-09-25T20:08:33.839104+00:00",
+  "completed_research_utc": "2026-09-25T20:16:54.115900+00:00",
+  "budget_wall_elapsed_upper_seconds": 1014.1159,
+  "phases": {
+    "settlement": {
+      "wall_seconds": 417.49,
+      "user_seconds": 76.06,
+      "system_seconds": 8.32,
+      "peak_rss_bytes": 142868480
+    },
+    "scoring": {
+      "wall_seconds": 0.5,
+      "user_seconds": 0.3,
+      "system_seconds": 0.06,
+      "peak_rss_bytes": 81494016
+    }
+  },
+  "measured_settlement_and_scoring_cpu_core_hours": 0.023538888888888887,
+  "other_setup_and_test_cpu": "not separately instrumented; included in conservative 8-thread wall bound",
+  "all_task_cpu_core_hours_conservative_bound": 2.2535908888888887,
+  "gpu": 0,
+  "network_writers": 1,
+  "compute_thread_limit": 1,
+  "peak_measured_process_rss_bytes": 142868480,
+  "new_compressed_market_bytes_read_or_downloaded": 0,
+  "previous_compressed_market_bytes_upper_bound": 118729519345,
+  "new_requests": {
+    "blocked_reason": null,
+    "http_requests": 389,
+    "logical_calls": 9683,
+    "response_bytes": 1020523,
+    "retry_http_requests": 7,
+    "retry_logical_calls": 175
+  },
+  "historical_logical_requests_interval": [
+    9976,
+    10000
+  ],
+  "all_historical_plus_new_logical_requests_interval": [
+    19659,
+    19683
+  ],
+  "http_status_counts": {
+    "200": 382,
+    "429": 7
+  },
+  "all_attempts_have_saved_response": true,
+  "unconfirmed_sends": 0,
+  "remaining_queries": 0,
+  "network_executed_verifier_sha256": "bf91eb988c358fb2964469dbbf851a1f2ed71dbadd1fcdadbe633fde39fa9b2a",
+  "private_timing_log_sha256": {
+    "closeout_run.log": "476ae7d7a519ebf15d66c3b635b31e8c8e232aeba56ab471801242201a58a324",
+    "model_closeout_run.log": "d55a9e75f9b51fd69bb228dc85482b13ce849d290e34fea2b8e7b1392553d071"
+  }
+}

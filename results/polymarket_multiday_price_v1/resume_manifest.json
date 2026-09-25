@@ -31,5 +31,7 @@
     "memory_gib": 32,
     "cpu_core_hours": 32,
     "gpu": 0
-  }
+  },
+  "start_time_note": "Conservative rounded earlier anchor used for deadline; not an instrumented exact turn start. Phase timings and first RPC reservation below are measured.",
+  "first_new_rpc_reserved_utc": "2026-09-25T20:08:33.839104+00:00"
 }
