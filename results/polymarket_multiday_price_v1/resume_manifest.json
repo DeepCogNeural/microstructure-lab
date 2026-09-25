@@ -1,0 +1,35 @@
+{
+  "directive": "POLYMARKET_CACHED_SETTLEMENT_AND_SCORING_CLOSEOUT",
+  "parent_science_sha": "2458c5915bcb53a239aef4ccebb7a3ff3a71b5e0",
+  "control_sha": "1136d134e9f1b3897b57761352400da95ba5f398",
+  "started_utc": "2026-09-25T20:00:00Z",
+  "deadline_utc": "2026-09-26T00:00:00Z",
+  "hashes": {
+    "events_before_labels_private.json": "504d6d322daaeb8d71b103f004b71428b8a9ec7cbb820b48875b7494e2ac4f65",
+    "roster_private.json": "c187b8dfdff2c85e366db0e2a222e5c287da3c239fb34584e479b33da19b2c71",
+    "freeze_private.json": "1e49fe7cffe988c4aa34231896fa88a0da07f1a2ed952db5550d4d81dfcefc09",
+    "polymarket_multiday_price_v1.json": "be18670e065c1e23ba03dfd66936758722d36b6bcca23e8b254bdacbb7ec18b3",
+    "source_read_receipts.json": "762f60f609c1f09a5ab4c3478d630c9f0b63b40c81cf240e666d5c2dd1548ff4"
+  },
+  "old_logical_request_interval": [
+    9976,
+    10000
+  ],
+  "cached_successes": {
+    "collection": 790,
+    "position": 790,
+    "payout": 3025
+  },
+  "missing_payout_keys": 3023,
+  "direction_unproved_events": 1621,
+  "new_source_bytes": 0,
+  "limits": {
+    "logical": 30000,
+    "http": 2000,
+    "response_bytes": 536870912,
+    "threads": 8,
+    "memory_gib": 32,
+    "cpu_core_hours": 32,
+    "gpu": 0
+  }
+}
