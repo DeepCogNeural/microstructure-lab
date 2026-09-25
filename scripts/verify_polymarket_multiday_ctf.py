@@ -85,7 +85,26 @@ class Rpc:
             'response_bytes':0,'attempts':{},'attempt_log':[],'last_success_time':now(),
             'last_send_time':0,'blocked_reason':None}
         self.deadline=deadline;self.transport=transport or self.curl;self.sleep=sleeper;self.now=now
-        # A crash after reserving an attempt is conservatively charged. No reset.
+        # Recover a saved reply if interrupted before cache/ledger finalization.
+        for record in self.ledger['attempt_log']:
+            if record['state']!='reserved_before_send':continue
+            reply=root/f"reply_{record['http_sequence']:05d}.json"
+            if reply.exists() and 'specs' in record:
+                raw=json.loads(reply.read_text());body=raw['body'].encode()
+                self.ledger['response_bytes']+=len(body)
+                requests=[{'id':i+1,'spec':s} for i,s in enumerate(record['specs'])]
+                good={}
+                try:
+                    if raw['http_status']!=200 or raw['error']:raise ValueError('saved transport error')
+                    good,_=validate(json.loads(raw['body']),requests)
+                except (ValueError,TypeError):pass
+                for q in requests:
+                    if q['id'] in good:self.save(q['spec'],good[q['id']],{'reply_sha256':sha(reply),'http_sequence':record['http_sequence'],'block_number':'unknown_latest'})
+                record.update(state='recovered_saved_response',bytes=len(body),successes=len(good))
+                if good:self.ledger['last_success_time']=now()
+        # Unknown post-send/pre-save responses reserve the transport maximum.
+        self.ledger['unknown_response_bytes_reserved']=sum(1048576 for r in self.ledger['attempt_log'] if r['state']=='reserved_before_send')
+        atomic(self.success,self.cache)
         self.persist()
     def persist(self):atomic(self.ledger_path,self.ledger)
     def get(self,spec):
@@ -129,7 +148,7 @@ class Rpc:
             elif now-self.ledger['last_success_time']>=600:reason='ten_minutes_without_success'
             elif self.ledger['logical_calls']+len(batch)>30000:reason='logical_budget'
             elif self.ledger['http_requests']+1>2000:reason='http_budget'
-            elif self.ledger['response_bytes']+1048576>536870912:reason='response_budget_reserve'
+            elif self.ledger['response_bytes']+self.ledger.get('unknown_response_bytes_reserved',0)+1048576>536870912:reason='response_budget_reserve'
             elif shutil.disk_usage(self.root).free<10*1024**3:reason='disk_free_below_10GiB'
             if reason:self.ledger['blocked_reason']=reason;self.persist();break
             retry_n=sum(self.ledger['attempts'].get(k,0)>0 for k in keys)
@@ -144,7 +163,7 @@ class Rpc:
             self.ledger['retry_logical_calls']+=retry_n;self.ledger['retry_http_requests']+=int(retry_n>0)
             for k in keys:self.ledger['attempts'][k]=self.ledger['attempts'].get(k,0)+1
             self.ledger['last_send_time']=self.now()
-            record={'http_sequence':seq,'keys':keys,'reserved_at':self.now(),'state':'reserved_before_send'}
+            record={'http_sequence':seq,'keys':keys,'specs':batch,'reserved_at':self.now(),'state':'reserved_before_send'}
             self.ledger['attempt_log'].append(record);self.persist()
             status,raw,retry_after,error=self.transport(body)
             self.ledger['response_bytes']+=len(raw)

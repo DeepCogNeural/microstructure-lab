@@ -83,3 +83,21 @@ def test_check_day_labels_cannot_change_model_or_transform():
         assert a[arm][0]==b[arm][0]
         np.testing.assert_array_equal(a[arm][1],b[arm][1]);np.testing.assert_array_equal(a[arm][2],b[arm][2])
     np.testing.assert_array_equal(ka,kb);assert ma==mb
+
+def test_interrupted_saved_response_recovers_without_resending(tmp_path):
+    def interrupted(body):
+        v.atomic(tmp_path/'reply_00001.json',{'http_status':200,'body':response(body).decode(),'error':None})
+        raise RuntimeError('simulated interruption after response save')
+    rpc=v.Rpc(tmp_path,10**12,interrupted,sleeper=lambda _:None)
+    with pytest.raises(RuntimeError):rpc.call([spec(1)])
+    resumed=v.Rpc(tmp_path,10**12,lambda _:pytest.fail('saved success resent'),sleeper=lambda _:None)
+    resumed.call([spec(1)])
+    assert resumed.ledger['logical_calls']==1 and resumed.ledger['http_requests']==1
+    assert resumed.ledger['response_bytes']>0 and resumed.ledger['unknown_response_bytes_reserved']==0
+
+def test_interrupted_unknown_response_is_conservatively_charged(tmp_path):
+    def interrupted(body):raise RuntimeError('simulated post-send interruption')
+    rpc=v.Rpc(tmp_path,10**12,interrupted,sleeper=lambda _:None)
+    with pytest.raises(RuntimeError):rpc.call([spec(1)])
+    resumed=v.Rpc(tmp_path,10**12,sleeper=lambda _:None)
+    assert resumed.ledger['logical_calls']==1 and resumed.ledger['unknown_response_bytes_reserved']==1048576

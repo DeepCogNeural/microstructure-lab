@@ -1,6 +1,6 @@
 {
   "result": "PASS",
-  "passed": 11,
+  "passed": 13,
   "elapsed_seconds": 0.83,
   "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -m pytest -q tests/test_polymarket_cached_settlement.py tests/test_polymarket_multiday_price.py",
   "coverage": [
@@ -13,14 +13,23 @@
     "Gamma discrepancy does not reject valid payout",
     "unresolved and nonbinary remain unknown; scaled payouts accepted",
     "train-only transforms and check-day-label invariance",
-    "original microsecond and latest-record extraction invariants"
+    "original microsecond and latest-record extraction invariants",
+    "saved reply recovered after interruption without resending",
+    "unknown interrupted response bytes conservatively reserved"
   ],
   "file_sha256": {
-    "scripts/verify_polymarket_multiday_ctf.py": "bf91eb988c358fb2964469dbbf851a1f2ed71dbadd1fcdadbe633fde39fa9b2a",
+    "scripts/verify_polymarket_multiday_ctf.py": "894409e83b8bb500d5dc1efdd2f503de7263e2e8a6854d5c2b08a4dc1efe9701",
     "scripts/fit_polymarket_multiday_price.py": "bbf1afd28b03458d361a644c5a52730212341900ba499d754d2fcd6430e40a33",
-    "tests/test_polymarket_cached_settlement.py": "eef9f3d008d4201cf4e313d2de23b37acc5dceec11858465444a4b92a4480ad8",
+    "tests/test_polymarket_cached_settlement.py": "ce196af65ac5b70bd2736d5bd00f4ef1af286c59d1f25b07f1300e1696b629a6",
     "tests/test_polymarket_multiday_price.py": "c22b2105f964414114829aeaac7a4154d2354e8083a5ba25847e229f28f39945",
     "configs/polymarket_multiday_price_v1.json": "be18670e065c1e23ba03dfd66936758722d36b6bcca23e8b254bdacbb7ec18b3"
   },
-  "scientific_design_changed": false
+  "scientific_design_changed": false,
+  "executed_network_verifier_sha256": "bf91eb988c358fb2964469dbbf851a1f2ed71dbadd1fcdadbe633fde39fa9b2a",
+  "initial_passed": 11,
+  "interruption_repair_regression": {
+    "passed": 8,
+    "elapsed_seconds": 0.45,
+    "command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 .venv/bin/python -m pytest -q tests/test_polymarket_cached_settlement.py"
+  }
 }
