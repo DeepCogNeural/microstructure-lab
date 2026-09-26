@@ -1,0 +1,161 @@
+{
+  "assumption": "Candidate ts_recv is Unix milliseconds and is a genuine historical receipt timestamp.",
+  "assumption_verified": false,
+  "blocking_codes": [
+    "EXTERNAL_PRICE_SEMANTICS_UNKNOWN",
+    "EXTERNAL_CLOCK_UNKNOWN"
+  ],
+  "by_date": {
+    "2026-07-27": {
+      "frozen_price_eligible_events": 280,
+      "main_joint_available": 280,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 280,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 280,
+      "shift_joint_fraction": 1.0
+    },
+    "2026-07-28": {
+      "frozen_price_eligible_events": 255,
+      "main_joint_available": 254,
+      "main_joint_fraction": 0.996078431372549,
+      "main_shift_common_available": 254,
+      "main_shift_common_fraction": 0.996078431372549,
+      "shift_joint_available": 254,
+      "shift_joint_fraction": 0.996078431372549
+    },
+    "2026-07-29": {
+      "frozen_price_eligible_events": 277,
+      "main_joint_available": 277,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 276,
+      "main_shift_common_fraction": 0.9963898916967509,
+      "shift_joint_available": 276,
+      "shift_joint_fraction": 0.9963898916967509
+    },
+    "2026-07-30": {
+      "frozen_price_eligible_events": 279,
+      "main_joint_available": 279,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 279,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 279,
+      "shift_joint_fraction": 1.0
+    },
+    "2026-07-31": {
+      "frozen_price_eligible_events": 285,
+      "main_joint_available": 285,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 285,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 285,
+      "shift_joint_fraction": 1.0
+    },
+    "2026-08-01": {
+      "frozen_price_eligible_events": 281,
+      "main_joint_available": 281,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 281,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 281,
+      "shift_joint_fraction": 1.0
+    },
+    "2026-08-02": {
+      "frozen_price_eligible_events": 285,
+      "main_joint_available": 283,
+      "main_joint_fraction": 0.9929824561403509,
+      "main_shift_common_available": 283,
+      "main_shift_common_fraction": 0.9929824561403509,
+      "shift_joint_available": 283,
+      "shift_joint_fraction": 0.9929824561403509
+    }
+  },
+  "by_partition": {
+    "calibration": {
+      "conditional_main_coverage_at_least_80pct": true,
+      "conditional_shift_coverage_at_least_80pct": true,
+      "days": [
+        "2026-07-30"
+      ],
+      "denominator": 279,
+      "main_joint_available": 279,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 279,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 279,
+      "shift_joint_fraction": 1.0
+    },
+    "check_2026-07-31": {
+      "conditional_main_coverage_at_least_80pct": true,
+      "conditional_shift_coverage_at_least_80pct": true,
+      "days": [
+        "2026-07-31"
+      ],
+      "denominator": 285,
+      "main_joint_available": 285,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 285,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 285,
+      "shift_joint_fraction": 1.0
+    },
+    "check_2026-08-01": {
+      "conditional_main_coverage_at_least_80pct": true,
+      "conditional_shift_coverage_at_least_80pct": true,
+      "days": [
+        "2026-08-01"
+      ],
+      "denominator": 281,
+      "main_joint_available": 281,
+      "main_joint_fraction": 1.0,
+      "main_shift_common_available": 281,
+      "main_shift_common_fraction": 1.0,
+      "shift_joint_available": 281,
+      "shift_joint_fraction": 1.0
+    },
+    "check_2026-08-02": {
+      "conditional_main_coverage_at_least_80pct": true,
+      "conditional_shift_coverage_at_least_80pct": true,
+      "days": [
+        "2026-08-02"
+      ],
+      "denominator": 285,
+      "main_joint_available": 283,
+      "main_joint_fraction": 0.9929824561403509,
+      "main_shift_common_available": 283,
+      "main_shift_common_fraction": 0.9929824561403509,
+      "shift_joint_available": 283,
+      "shift_joint_fraction": 0.9929824561403509
+    },
+    "train": {
+      "conditional_main_coverage_at_least_80pct": true,
+      "conditional_shift_coverage_at_least_80pct": true,
+      "days": [
+        "2026-07-27",
+        "2026-07-28",
+        "2026-07-29"
+      ],
+      "denominator": 812,
+      "main_joint_available": 811,
+      "main_joint_fraction": 0.9987684729064039,
+      "main_shift_common_available": 810,
+      "main_shift_common_fraction": 0.9975369458128078,
+      "shift_joint_available": 810,
+      "shift_joint_fraction": 0.9975369458128078
+    }
+  },
+  "conditional_80pct_coverage_gate": true,
+  "fit_allowed": false,
+  "frozen_price_eligible_denominator": 1942,
+  "main_anchor_status_counts": {
+    "ok": 5820,
+    "stale_latest_top": 6
+  },
+  "role": "CONDITIONAL_DIAGNOSTIC_ONLY",
+  "shift_anchor_status_counts": {
+    "ok": 5819,
+    "stale_latest_top": 7
+  },
+  "source_gate": false,
+  "status": "CONDITIONAL_COVERAGE_PASS_BUT_SOURCE_SEMANTICS_FAILED"
+}

@@ -1,0 +1,13 @@
+{
+  "blocking_codes": [
+    "EXTERNAL_PRICE_SEMANTICS_UNKNOWN",
+    "EXTERNAL_CLOCK_UNKNOWN"
+  ],
+  "coverage_gate_conditional_only": true,
+  "five_second_sensitivity_metrics": null,
+  "interpretation": "The source can supply candidate top-of-book values under conditional price and timestamp interpretations, but neither its snapshot/best-price contract nor its historical receipt-time semantics is verified. This is a source-semantics block, not evidence of no external signal.",
+  "main_metrics": null,
+  "models_fit": [],
+  "source_gate_passed": false,
+  "status": "NOT_FIT_EXTERNAL_SOURCE_SEMANTICS_UNKNOWN"
+}

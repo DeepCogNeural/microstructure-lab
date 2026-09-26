@@ -1,0 +1,414 @@
+{
+  "all_required_fields_exact": true,
+  "ask_order_violation_rows": 0,
+  "bid_order_violation_rows": 0,
+  "blocking_codes": [
+    "EXTERNAL_PRICE_SEMANTICS_UNKNOWN",
+    "EXTERNAL_CLOCK_UNKNOWN"
+  ],
+  "duplicate_receive_conflict_pairs": 174,
+  "duplicate_receive_rows": 4874,
+  "file_coverage": [
+    {
+      "max_ts_recv": 1785138915631,
+      "min_ts_recv": 1785110115731,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_00.parquet",
+      "rows": 287368
+    },
+    {
+      "max_ts_recv": 1785167715630,
+      "min_ts_recv": 1785138915731,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_08.parquet",
+      "rows": 287533
+    },
+    {
+      "max_ts_recv": 1785196515630,
+      "min_ts_recv": 1785167715730,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_16.parquet",
+      "rows": 287950
+    },
+    {
+      "max_ts_recv": 1785225099827,
+      "min_ts_recv": 1785196515730,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_00.parquet",
+      "rows": 285276
+    },
+    {
+      "max_ts_recv": 1785253899830,
+      "min_ts_recv": 1785225099928,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_08.parquet",
+      "rows": 287548
+    },
+    {
+      "max_ts_recv": 1785282699828,
+      "min_ts_recv": 1785253899930,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_16.parquet",
+      "rows": 287372
+    },
+    {
+      "max_ts_recv": 1785311799829,
+      "min_ts_recv": 1785282699930,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_00.parquet",
+      "rows": 290589
+    },
+    {
+      "max_ts_recv": 1785340299824,
+      "min_ts_recv": 1785311799935,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_08.parquet",
+      "rows": 284596
+    },
+    {
+      "max_ts_recv": 1785369399829,
+      "min_ts_recv": 1785340299924,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_16.parquet",
+      "rows": 290932
+    },
+    {
+      "max_ts_recv": 1785398199829,
+      "min_ts_recv": 1785369399929,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_00.parquet",
+      "rows": 287940
+    },
+    {
+      "max_ts_recv": 1785426699830,
+      "min_ts_recv": 1785398199929,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_08.parquet",
+      "rows": 284959
+    },
+    {
+      "max_ts_recv": 1785455799829,
+      "min_ts_recv": 1785426699930,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_16.parquet",
+      "rows": 290789
+    },
+    {
+      "max_ts_recv": 1785484299829,
+      "min_ts_recv": 1785455799931,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_00.parquet",
+      "rows": 284918
+    },
+    {
+      "max_ts_recv": 1785513399829,
+      "min_ts_recv": 1785484299929,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_08.parquet",
+      "rows": 290919
+    },
+    {
+      "max_ts_recv": 1785541899830,
+      "min_ts_recv": 1785513399933,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_16.parquet",
+      "rows": 284854
+    },
+    {
+      "max_ts_recv": 1785570991732,
+      "min_ts_recv": 1785541899933,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_00.parquet",
+      "rows": 290284
+    },
+    {
+      "max_ts_recv": 1785599791730,
+      "min_ts_recv": 1785570991831,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_08.parquet",
+      "rows": 287713
+    },
+    {
+      "max_ts_recv": 1785628291730,
+      "min_ts_recv": 1785599791830,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_16.parquet",
+      "rows": 284800
+    },
+    {
+      "max_ts_recv": 1785657091730,
+      "min_ts_recv": 1785628291829,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_00.parquet",
+      "rows": 287771
+    },
+    {
+      "max_ts_recv": 1785686191730,
+      "min_ts_recv": 1785657091830,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_08.parquet",
+      "rows": 290761
+    },
+    {
+      "max_ts_recv": 1785714691731,
+      "min_ts_recv": 1785686191830,
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_16.parquet",
+      "rows": 284759
+    }
+  ],
+  "first_object_schema": {
+    "columns": [
+      {
+        "name": "ts_recv",
+        "nullable": false,
+        "type": "int64"
+      },
+      {
+        "name": "ts_event",
+        "nullable": false,
+        "type": "int64"
+      },
+      {
+        "name": "symbol",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "last_update_id",
+        "nullable": false,
+        "type": "int64"
+      },
+      {
+        "name": "bid_levels",
+        "nullable": false,
+        "type": "int32"
+      },
+      {
+        "name": "ask_levels",
+        "nullable": false,
+        "type": "int32"
+      },
+      {
+        "name": "bid1_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid1_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid2_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid2_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid3_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid3_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid4_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid4_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid5_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid5_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid6_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid6_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid7_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid7_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid8_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid8_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid9_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid9_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid10_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "bid10_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask1_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask1_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask2_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask2_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask3_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask3_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask4_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask4_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask5_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask5_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask6_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask6_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask7_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask7_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask8_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask8_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask9_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask9_sz",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask10_px",
+        "nullable": true,
+        "type": "double"
+      },
+      {
+        "name": "ask10_sz",
+        "nullable": true,
+        "type": "double"
+      }
+    ],
+    "created_by": "parquet-rs version 54.3.1",
+    "field_metadata_present": false,
+    "metadata_keys": [],
+    "num_row_groups": 1,
+    "num_rows": 287368
+  },
+  "fit_allowed": false,
+  "invalid_top_rows": 0,
+  "level_count_violation_rows": 0,
+  "max_observed_candidate_receive_gap_ms": 49502,
+  "objects": 21,
+  "price_mapping": {
+    "candidate_ask": "ask1_px",
+    "candidate_bid": "bid1_px",
+    "candidate_midpoint": "(bid1_px + ask1_px) / 2",
+    "reason": "No bundled field contract or collector code establishes that each row is a complete or partial depth snapshot whose bid1/ask1 are verified best prices, rather than a sampled or reconstructed representation of upstream diff updates. Column names and ordering alone are insufficient under the frozen protocol.",
+    "source_semantics_verified": false,
+    "structural_evidence": "Every row has ten ordered bid price columns and ten ordered ask price columns with bid_levels=ask_levels=10."
+  },
+  "readme_evidence": {
+    "defines_parquet_columns": false,
+    "describes_manifest_format": true,
+    "describes_snapshot_date_range": true,
+    "note": "The bundled README describes snapshot scope and download mechanics but does not define Parquet fields or clock semantics."
+  },
+  "receive_nonmonotone_transitions": 0,
+  "recv_equal_event_fraction": 1.0,
+  "recv_equal_event_rows": 6039631,
+  "rows": 6039631,
+  "schema_consistent": true,
+  "status": "BLOCKED_EXTERNAL_SOURCE_SEMANTICS_UNKNOWN",
+  "symbol_violation_rows": 0,
+  "timestamp_mapping": {
+    "candidate_event_field": "ts_event",
+    "candidate_receive_field": "ts_recv",
+    "first_candidate_receive_utc": "2026-07-26T23:55:15.731000+00:00",
+    "independent_receive_semantics_verified": false,
+    "integer_unit_supported_by_magnitude_and_window": "milliseconds",
+    "last_candidate_receive_utc": "2026-08-02T23:51:31.731000+00:00",
+    "reason": "No bundled field contract or Parquet metadata defines ts_recv, and ts_recv equals ts_event on every row. The plan forbids treating event time as receipt time or inferring semantics from apparent low latency."
+  },
+  "update_id_nonmonotone_transitions": 0
+}

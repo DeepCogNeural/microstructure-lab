@@ -1,0 +1,65 @@
+{
+  "coverage_threshold": 0.8,
+  "evaluation": {
+    "epsilon": 1e-06,
+    "gain": "LL(Eprice)-LL(Eexternal)",
+    "sensitivity": "fixed five-second information shift without retraining"
+  },
+  "event_cohort": "original 1942 Polymarket price-and-label-eligible events",
+  "external_features": {
+    "main_x1": "log(S(t)/S(s))",
+    "main_x2": "log(S(t)/S(t-30s))",
+    "shift_x1": "log(S(t-5s)/S(s))",
+    "shift_x2": "log(S(t-5s)/S(t-35s))"
+  },
+  "label_boundary": "CTF labels retained; Binance is not used to create winners and S(s) is not an official strike.",
+  "main_anchors_seconds_from_start": {
+    "s": 0,
+    "t": 180,
+    "t_minus_30": 150
+  },
+  "model": {
+    "C_candidates": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "arms": [
+      "E0",
+      "Eprice",
+      "Eexternal"
+    ],
+    "family": "original offset-logistic/L2",
+    "old_R3_excluded": true,
+    "refit_train_plus_calibration": false,
+    "selection_day": "2026-07-30"
+  },
+  "protocol": "POLYMARKET_SETTLEMENT_EXTERNAL_BTC_V1",
+  "quote_rule": {
+    "latest_invalid_no_fallback": true,
+    "latest_raw_receive_lte_anchor": true,
+    "max_age_ms": 1000,
+    "same_receive_different_top_is_conflict": true
+  },
+  "roles": {
+    "calibration": "2026-07-30",
+    "forward_checks": [
+      "2026-07-31",
+      "2026-08-01",
+      "2026-08-02"
+    ],
+    "train": [
+      "2026-07-27",
+      "2026-07-28",
+      "2026-07-29"
+    ]
+  },
+  "shift_anchors_seconds_from_start": {
+    "s": 0,
+    "t_minus_35": 145,
+    "t_minus_5": 175
+  },
+  "status": "FROZEN; fitting contingent on price, clock, and coverage gates",
+  "symbol": "BTCUSDT spot",
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z"
+}

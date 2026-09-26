@@ -1,0 +1,125 @@
+{
+  "by_date": {
+    "2026-07-27": {
+      "object_count": 3,
+      "total_bytes": 36445924
+    },
+    "2026-07-28": {
+      "object_count": 3,
+      "total_bytes": 36177638
+    },
+    "2026-07-29": {
+      "object_count": 3,
+      "total_bytes": 42142668
+    },
+    "2026-07-30": {
+      "object_count": 3,
+      "total_bytes": 34108580
+    },
+    "2026-07-31": {
+      "object_count": 3,
+      "total_bytes": 33114663
+    },
+    "2026-08-01": {
+      "object_count": 3,
+      "total_bytes": 19157242
+    },
+    "2026-08-02": {
+      "object_count": 3,
+      "total_bytes": 23086385
+    }
+  },
+  "object_count": 21,
+  "objects": [
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_00.parquet",
+      "size_bytes": 10756333
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_08.parquet",
+      "size_bytes": 13572346
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-27_16.parquet",
+      "size_bytes": 12117245
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_00.parquet",
+      "size_bytes": 11507345
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_08.parquet",
+      "size_bytes": 13234622
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-28_16.parquet",
+      "size_bytes": 11435671
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_00.parquet",
+      "size_bytes": 12966250
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_08.parquet",
+      "size_bytes": 12965190
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-29_16.parquet",
+      "size_bytes": 16211228
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_00.parquet",
+      "size_bytes": 12355939
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_08.parquet",
+      "size_bytes": 12368828
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-30_16.parquet",
+      "size_bytes": 9383813
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_00.parquet",
+      "size_bytes": 11035400
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_08.parquet",
+      "size_bytes": 13019545
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-07-31_16.parquet",
+      "size_bytes": 9059718
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_00.parquet",
+      "size_bytes": 5640806
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_08.parquet",
+      "size_bytes": 5164054
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-01_16.parquet",
+      "size_bytes": 8352382
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_00.parquet",
+      "size_bytes": 7573790
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_08.parquet",
+      "size_bytes": 7300063
+    },
+    {
+      "path": "raw/external/binance/symbol=btcusdt/depth/2026-08-02_16.parquet",
+      "size_bytes": 8212532
+    }
+  ],
+  "prefix": "raw/external/binance/symbol=btcusdt/depth/",
+  "source_manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "source_readme_sha256": "3ab08e6a4a4a43db5f8fbbb566069afd5e0a5d612ad0edacdae2fb3af15b5476",
+  "source_zip_sha256": "705c873ee9cd0f31fa455bc167dbf725218f69a03ae7fa933b19af3dbd710674",
+  "total_bytes": 224233100,
+  "window_utc": "2026-07-27T00:00:00Z/2026-08-03T00:00:00Z"
+}

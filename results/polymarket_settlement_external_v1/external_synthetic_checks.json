@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "identical_top_tie_allowed": true,
+    "latest_invalid_no_fallback": true,
+    "no_future_quote": true,
+    "same_receive_conflict": true,
+    "stale_latest_no_fallback": true
+  },
+  "status": "PASS"
+}
