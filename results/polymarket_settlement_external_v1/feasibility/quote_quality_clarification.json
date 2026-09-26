@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-09-26T04:11:31.998479+00:00",
+  "status": "QUALITY_CLARIFICATION_BEFORE_QUOTE_RESULT_INSPECTION",
+  "reason": "Static review found inclusive boundary/locked prices and unvalidated snapshot tops could be mislabeled as usable two-sided quotes.",
+  "strict_direct_bbo": "0 < bid < ask < 1, finite, no conflicting latest timestamp",
+  "inclusive_arithmetic_check": "retained as separate diagnostic, not a connection certificate",
+  "snapshot_top": "diagnostic_unvalidated; never counted as connection",
+  "selection_changed": false,
+  "decisions_changed": false,
+  "raw_objects_changed": false,
+  "raw_rescan_required": false,
+  "implementation": "Apply identical quote_status to selected small records; no earlier-valid fallback.",
+  "synthetic_tests_passed": 10,
+  "review": "Independent static read-only review accepted fix; no private/raw re-computation."
+}
