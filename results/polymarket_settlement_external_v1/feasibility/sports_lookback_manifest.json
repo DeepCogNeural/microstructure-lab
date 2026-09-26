@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-09-26T04:26:36.939519+00:00",
+  "status": "FROZEN_BEFORE_FOURTH_OBJECT_READ",
+  "objects": [
+    {
+      "path": "raw/2026-08-01/1700.jsonl.zst",
+      "bytes": 472953684
+    }
+  ],
+  "purpose": "Same second preselected Sports example and same 18:02:44.027 decision; adjacent prior-hour quote lookback after target absence in 18 UTC object. No model/outcome use or example substitution.",
+  "scope": "v2 section7 allows up to2 hours per slice,4 total; W2+S2=4",
+  "previous_manifest_sha256": "90a22e82144625b2e1619bce18338c1a7f793f8d821807212ee6579046e5345f",
+  "total_distinct_hours_after_extension": 4,
+  "total_compressed_bytes_after_extension": 2780996950,
+  "selection_changed": false,
+  "decision_changed": false,
+  "token_selection_changed": false,
+  "protected_final_opened": false,
+  "raw_rescans": 0
+}
