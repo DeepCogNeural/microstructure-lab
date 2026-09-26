@@ -3,6 +3,7 @@
   "hours": [
     "2026-07-27T15:00:00Z",
     "2026-07-27T16:00:00Z",
+    "2026-08-01T17:00:00Z",
     "2026-08-01T18:00:00Z"
   ],
   "objects": [
@@ -29,7 +30,7 @@
   "protected_final_check": "All hours inside explicitly authorized exposed development week; PM0 final August 24 belongs to other source; no reserved-final conflict found in protocol/manifest search.",
   "policy": "latest received record at or before fixed decision; report validity/conflict and age, no new freshness/model gate; direct BBO and snapshot independently",
   "purpose": "two fixed weather examples and one constructible sports example",
-  "clob_hour_count": 3,
+  "clob_hour_count": 4,
   "clob_hour_limit": 4,
   "sports_selection_sha256": "6eaf87e1ca80738b9958d2c473c99e6b331c8db93b37a4ca525592966668aed4",
   "private_targets_sha256": "e3c99a87d2ec378b5a591cfd448d37dc53bb8f0614fff616b332f16e648722ce",
