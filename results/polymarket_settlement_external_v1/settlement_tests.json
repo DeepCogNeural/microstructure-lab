@@ -1,0 +1,7 @@
+{
+  "tests": 11,
+  "passed": 11,
+  "command": "python tests/test_polymarket_settlement_value.py",
+  "script_sha256": "cfe05821bbc9655db3c0162d08a5bcb9fcb6da84e8222c3e05c1a1b817d08b64",
+  "test_sha256": "1672baa01218ce957089c22f2bedf45d4c3cc5edaf223d6620ff381b439a7d9f"
+}

@@ -1,0 +1,879 @@
+{
+  "concentration": {
+    "largest_absolute_primary_contribution_cents": 0.21054281417873286,
+    "largest_event_share_fraction": 0.11099908723951649
+  },
+  "direction": {
+    "up_equivalent_buy": {
+      "all_legs": {
+        "event_equal_cents": 6.564323227985944,
+        "events": 31,
+        "groups": 23400,
+        "legs": 47793,
+        "share_weighted_cents": 2.2970645241613665,
+        "shares": "710794.637428",
+        "total_cents": "1632741.145600000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 10.0957025352266,
+          "events": 8,
+          "groups": 4065,
+          "legs": 8187,
+          "share_weighted_cents": 3.198665615495466,
+          "shares": "112040.012674",
+          "total_cents": "358378.5361000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": 6.710935466891421,
+          "events": 11,
+          "groups": 6904,
+          "legs": 13569,
+          "share_weighted_cents": 4.807320750460144,
+          "shares": "221786.709114",
+          "total_cents": "1066199.848900000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": 4.075675804162153,
+          "events": 12,
+          "groups": 12431,
+          "legs": 26037,
+          "share_weighted_cents": 0.5522028585551908,
+          "shares": "376967.915640",
+          "total_cents": "208162.7606000000000000000000"
+        }
+      },
+      "three_day_equal_cents": 6.960771268760058
+    },
+    "up_equivalent_sell": {
+      "all_legs": {
+        "event_equal_cents": -5.0774971976266094,
+        "events": 31,
+        "groups": 23092,
+        "legs": 46436,
+        "share_weighted_cents": -3.446034326993834,
+        "shares": "795031.536929",
+        "total_cents": "-2739705.967300000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": -8.975218259890028,
+          "events": 8,
+          "groups": 3114,
+          "legs": 7159,
+          "share_weighted_cents": -2.7808740104795837,
+          "shares": "107389.271745",
+          "total_cents": "-298636.0348000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -4.07897359124362,
+          "events": 11,
+          "groups": 7163,
+          "legs": 15078,
+          "share_weighted_cents": -5.7171427073693275,
+          "shares": "332744.187695",
+          "total_cents": "-1902346.006100000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -3.394329795302071,
+          "events": 12,
+          "groups": 12815,
+          "legs": 24199,
+          "share_weighted_cents": -1.5179680042552433,
+          "shares": "354898.077489",
+          "total_cents": "-538723.9264000000000000000000"
+        }
+      },
+      "three_day_equal_cents": -5.4828405488119065
+    }
+  },
+  "event_aggregates": [
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": 0.6239131370635026,
+      "events": 1,
+      "groups": 1000,
+      "legs": 2276,
+      "ordinal": 1,
+      "share_weighted_cents": 0.6239131370635026,
+      "shares": "31289.980993",
+      "total_cents": "19522.23020000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": -0.3882192879560354,
+      "events": 1,
+      "groups": 742,
+      "legs": 1759,
+      "ordinal": 2,
+      "share_weighted_cents": -0.3882192879560354,
+      "shares": "24708.848575",
+      "total_cents": "-9592.451600000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": 0.09465555333778758,
+      "events": 1,
+      "groups": 1154,
+      "legs": 2212,
+      "ordinal": 3,
+      "share_weighted_cents": 0.09465555333778758,
+      "shares": "29856.033802",
+      "total_cents": "2826.039400000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": 0.026297296659869226,
+      "events": 1,
+      "groups": 1201,
+      "legs": 2280,
+      "ordinal": 4,
+      "share_weighted_cents": 0.026297296659869226,
+      "shares": "31781.137461",
+      "total_cents": "835.758000000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": -1.1000409036941954,
+      "events": 1,
+      "groups": 1278,
+      "legs": 2871,
+      "ordinal": 5,
+      "share_weighted_cents": -1.1000409036941954,
+      "shares": "42726.945191",
+      "total_cents": "-47001.38740000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": 1.4148058052681003,
+      "events": 1,
+      "groups": 870,
+      "legs": 1973,
+      "ordinal": 6,
+      "share_weighted_cents": 1.4148058052681003,
+      "shares": "32449.154173",
+      "total_cents": "45909.25170000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": 1.9613755185485018,
+      "events": 1,
+      "groups": 893,
+      "legs": 1860,
+      "ordinal": 7,
+      "share_weighted_cents": 1.9613755185485018,
+      "shares": "25050.957777",
+      "total_cents": "49134.33530000000000000000000"
+    },
+    {
+      "date": "2026-07-28",
+      "event_equal_cents": -1.2075356686912082,
+      "events": 1,
+      "groups": 41,
+      "legs": 115,
+      "ordinal": 8,
+      "share_weighted_cents": -1.2075356686912082,
+      "shares": "1566.226447",
+      "total_cents": "-1891.274300000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -0.041758347536013346,
+      "events": 1,
+      "groups": 752,
+      "legs": 1617,
+      "ordinal": 9,
+      "share_weighted_cents": -0.041758347536013346,
+      "shares": "28308.799791",
+      "total_cents": "-1182.128700000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": 2.2958962871729574,
+      "events": 1,
+      "groups": 1280,
+      "legs": 3038,
+      "ordinal": 10,
+      "share_weighted_cents": 2.2958962871729574,
+      "shares": "54896.336609",
+      "total_cents": "126036.2954000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -3.1054596991768397,
+      "events": 1,
+      "groups": 1906,
+      "legs": 3847,
+      "ordinal": 11,
+      "share_weighted_cents": -3.1054596991768397,
+      "shares": "167145.330895",
+      "total_cents": "-519063.0890000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": 1.0716467947520054,
+      "events": 1,
+      "groups": 1208,
+      "legs": 2287,
+      "ordinal": 12,
+      "share_weighted_cents": 1.0716467947520054,
+      "shares": "37996.098994",
+      "total_cents": "40718.39770000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -0.3125788586605829,
+      "events": 1,
+      "groups": 1484,
+      "legs": 3189,
+      "ordinal": 13,
+      "share_weighted_cents": -0.3125788586605829,
+      "shares": "47112.164473",
+      "total_cents": "-14726.26660000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -6.33730944714424,
+      "events": 1,
+      "groups": 1995,
+      "legs": 3950,
+      "ordinal": 14,
+      "share_weighted_cents": -6.33730944714424,
+      "shares": "57224.890472",
+      "total_cents": "-362651.8390000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -1.990457981903979,
+      "events": 1,
+      "groups": 1220,
+      "legs": 2219,
+      "ordinal": 15,
+      "share_weighted_cents": -1.990457981903979,
+      "shares": "28879.813602",
+      "total_cents": "-57484.05550000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": 1.2091567346671168,
+      "events": 1,
+      "groups": 1012,
+      "legs": 2191,
+      "ordinal": 16,
+      "share_weighted_cents": 1.2091567346671168,
+      "shares": "31998.923705",
+      "total_cents": "38691.71410000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -0.3910718429408922,
+      "events": 1,
+      "groups": 1363,
+      "legs": 2555,
+      "ordinal": 17,
+      "share_weighted_cents": -0.3910718429408922,
+      "shares": "46449.347167",
+      "total_cents": "-18165.03180000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -0.41851524223892733,
+      "events": 1,
+      "groups": 801,
+      "legs": 1394,
+      "ordinal": 18,
+      "share_weighted_cents": -0.41851524223892733,
+      "shares": "26655.247824",
+      "total_cents": "-11155.62750000000000000000000"
+    },
+    {
+      "date": "2026-07-29",
+      "event_equal_cents": -2.051559096704947,
+      "events": 1,
+      "groups": 1046,
+      "legs": 2360,
+      "ordinal": 19,
+      "share_weighted_cents": -2.051559096704947,
+      "shares": "27863.943277",
+      "total_cents": "-57164.52630000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 7.579541310434383,
+      "events": 1,
+      "groups": 3079,
+      "legs": 6315,
+      "ordinal": 20,
+      "share_weighted_cents": 7.579541310434383,
+      "shares": "85056.743132",
+      "total_cents": "644691.0983000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": -3.8133490701566624,
+      "events": 1,
+      "groups": 3841,
+      "legs": 8331,
+      "ordinal": 21,
+      "share_weighted_cents": -3.8133490701566624,
+      "shares": "136148.904296",
+      "total_cents": "-519183.2976000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": -5.9971578834190264,
+      "events": 1,
+      "groups": 3039,
+      "legs": 6181,
+      "ordinal": 22,
+      "share_weighted_cents": -5.9971578834190264,
+      "shares": "78344.744016",
+      "total_cents": "-469845.7992000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 0.9895825407059822,
+      "events": 1,
+      "groups": 2347,
+      "legs": 4423,
+      "ordinal": 23,
+      "share_weighted_cents": 0.9895825407059822,
+      "shares": "60080.316451",
+      "total_cents": "59454.43220000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 1.1294744457550936,
+      "events": 1,
+      "groups": 947,
+      "legs": 1844,
+      "ordinal": 24,
+      "share_weighted_cents": 1.1294744457550936,
+      "shares": "38316.037926",
+      "total_cents": "43276.98570000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": -2.2926003314632175,
+      "events": 1,
+      "groups": 2678,
+      "legs": 5406,
+      "ordinal": 25,
+      "share_weighted_cents": -2.2926003314632175,
+      "shares": "105289.886679",
+      "total_cents": "-241387.6291000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 0.4537696982909003,
+      "events": 1,
+      "groups": 2061,
+      "legs": 3667,
+      "ordinal": 26,
+      "share_weighted_cents": 0.4537696982909003,
+      "shares": "44936.151922",
+      "total_cents": "20390.66410000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 2.0133157886871498,
+      "events": 1,
+      "groups": 1486,
+      "legs": 2583,
+      "ordinal": 27,
+      "share_weighted_cents": 2.0133157886871498,
+      "shares": "34589.446470",
+      "total_cents": "69639.47870000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 1.6559749649648996,
+      "events": 1,
+      "groups": 1821,
+      "legs": 4149,
+      "ordinal": 28,
+      "share_weighted_cents": 1.6559749649648996,
+      "shares": "60213.066447",
+      "total_cents": "99711.3306000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": 1.2877556376756323,
+      "events": 1,
+      "groups": 1814,
+      "legs": 3275,
+      "ordinal": 29,
+      "share_weighted_cents": 1.2877556376756323,
+      "shares": "39513.111037",
+      "total_cents": "50883.23150000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": -1.1194377628412848,
+      "events": 1,
+      "groups": 1211,
+      "legs": 2280,
+      "ordinal": 30,
+      "share_weighted_cents": -1.1194377628412848,
+      "shares": "30601.232902",
+      "total_cents": "-34256.17570000000000000000000"
+    },
+    {
+      "date": "2026-07-30",
+      "event_equal_cents": -2.8725220813929027,
+      "events": 1,
+      "groups": 922,
+      "legs": 1782,
+      "ordinal": 31,
+      "share_weighted_cents": -2.8725220813929027,
+      "shares": "18776.351851",
+      "total_cents": "-53935.48530000000000000000000"
+    }
+  ],
+  "evidence_class": "RETROSPECTIVE_OFFLINE",
+  "excluded": {},
+  "funnel": {
+    "2026-07-28": {
+      "active_events": 8,
+      "candidate_groups": 7179,
+      "candidate_known_shares": "219429.284419",
+      "candidate_legs": 15346,
+      "deduplicated_role_verified_legs": 15346,
+      "joined_print_records": 7179,
+      "payout_joined_legs": 15346,
+      "role_identity_verified_groups": 7179,
+      "target_print_records": 7182,
+      "unjoined_print_records": 3
+    },
+    "2026-07-29": {
+      "active_events": 11,
+      "candidate_groups": 14067,
+      "candidate_known_shares": "554530.896809",
+      "candidate_legs": 28647,
+      "deduplicated_role_verified_legs": 28647,
+      "joined_print_records": 14067,
+      "payout_joined_legs": 28647,
+      "role_identity_verified_groups": 14067,
+      "target_print_records": 14551,
+      "unjoined_print_records": 484
+    },
+    "2026-07-30": {
+      "active_events": 13,
+      "candidate_groups": 25246,
+      "candidate_known_shares": "731865.993129",
+      "candidate_legs": 50236,
+      "deduplicated_role_verified_legs": 50236,
+      "joined_print_records": 25246,
+      "payout_joined_legs": 50236,
+      "role_identity_verified_groups": 25246,
+      "target_print_records": 25929,
+      "unjoined_print_records": 683
+    }
+  },
+  "independently_receipt_checked_structural_examples": {
+    "groups": 24,
+    "legs": 41,
+    "note": "Fixed 24 pilot cases only; full population uses inherited event mechanism, not independent receipt audit."
+  },
+  "limits": [
+    "Three exposed activity-selected hours, not all makers or full days.",
+    "Gross value relative to settlement excludes fees, inventory basis, hedges, early exits, rebates and capital costs.",
+    "Unjoined print quantities do not establish missing maker quantities; no whole-population bounds.",
+    "Fewer than five events in any displayed stratum cannot support a stable pattern.",
+    "CTF binding inherits both-token collection/position and USDC.e collateral verification; historical label availability unknown."
+  ],
+  "manifest_sha256": "a29b11c00a07097bc35dedc2f17648fc54ac1fd378fadffe21da5cdd976af72e",
+  "measurement": {
+    "all_legs": {
+      "event_equal_cents": -0.31072296748184103,
+      "events": 31,
+      "groups": 46492,
+      "legs": 94229,
+      "share_weighted_cents": -0.7351212514104976,
+      "shares": "1505826.174357",
+      "total_cents": "-1106964.821700000000000000000"
+    },
+    "days": {
+      "2026-07-28": {
+        "event_equal_cents": 0.17815643131704031,
+        "events": 8,
+        "groups": 7179,
+        "legs": 15346,
+        "share_weighted_cents": 0.2722631186543076,
+        "shares": "219429.284419",
+        "total_cents": "59742.50130000000000000000000"
+      },
+      "2026-07-29": {
+        "event_equal_cents": -0.9156373363376674,
+        "events": 11,
+        "groups": 14067,
+        "legs": 28647,
+        "share_weighted_cents": -1.5078441291757243,
+        "shares": "554530.896809",
+        "total_cents": "-836146.1572000000000000000000"
+      },
+      "2026-07-30": {
+        "event_equal_cents": -0.08213772856325438,
+        "events": 12,
+        "groups": 25246,
+        "legs": 50236,
+        "share_weighted_cents": -0.4516689788887823,
+        "shares": "731865.993129",
+        "total_cents": "-330561.1658000000000000000000"
+      }
+    },
+    "three_day_equal_cents": -0.2732062111946272
+  },
+  "missing_payment_known_legs": {
+    "legs": 0,
+    "shares": "0",
+    "total_cents_lower": "0",
+    "total_cents_upper": "0"
+  },
+  "price_bins": {
+    "[.2,.4)": {
+      "all_legs": {
+        "event_equal_cents": 0.8314249917733912,
+        "events": 21,
+        "groups": 7975,
+        "legs": 16497,
+        "share_weighted_cents": 1.725548943887318,
+        "shares": "187909.123151",
+        "total_cents": "324246.3890000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 10.885659431755268,
+          "events": 6,
+          "groups": 1758,
+          "legs": 4169,
+          "share_weighted_cents": 5.28375045382329,
+          "shares": "47974.923270",
+          "total_cents": "253487.5226000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -8.104442702243867,
+          "events": 6,
+          "groups": 1332,
+          "legs": 2897,
+          "share_weighted_cents": -8.705800856867699,
+          "shares": "36250.026504",
+          "total_cents": "-315585.5118000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": 0.08584716113031314,
+          "events": 9,
+          "groups": 4885,
+          "legs": 9431,
+          "share_weighted_cents": 3.726165388764162,
+          "shares": "103684.173377",
+          "total_cents": "386344.3782000000000000000000"
+        }
+      },
+      "three_day_equal_cents": 0.9556879635472382
+    },
+    "[.4,.6)": {
+      "all_legs": {
+        "event_equal_cents": -0.7968520452251209,
+        "events": 28,
+        "groups": 9973,
+        "legs": 21367,
+        "share_weighted_cents": -0.7766346583624546,
+        "shares": "256514.809061",
+        "total_cents": "-199218.2911000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": -6.822451435451751,
+          "events": 8,
+          "groups": 1392,
+          "legs": 3216,
+          "share_weighted_cents": -6.559181157736819,
+          "shares": "39157.471569",
+          "total_cents": "-256840.9497000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": 2.277029661954467,
+          "events": 9,
+          "groups": 2352,
+          "legs": 5922,
+          "share_weighted_cents": -2.675947905285908,
+          "shares": "75579.047522",
+          "total_cents": "-202245.5939000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": 1.0704079327018565,
+          "events": 11,
+          "groups": 6229,
+          "legs": 12229,
+          "share_weighted_cents": 1.8329199241646066,
+          "shares": "141778.289970",
+          "total_cents": "259868.2525000000000000000000"
+        }
+      },
+      "three_day_equal_cents": -1.1583379469318091
+    },
+    "[.6,.8)": {
+      "all_legs": {
+        "event_equal_cents": -3.10804710394112,
+        "events": 20,
+        "groups": 6528,
+        "legs": 14194,
+        "share_weighted_cents": -1.6706184269167703,
+        "shares": "164874.042308",
+        "total_cents": "-275441.6132000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": -3.7431605661231475,
+          "events": 4,
+          "groups": 434,
+          "legs": 920,
+          "share_weighted_cents": 0.35783684344786393,
+          "shares": "8545.115619",
+          "total_cents": "3057.757200000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -3.6209760078881756,
+          "events": 7,
+          "groups": 1883,
+          "legs": 4245,
+          "share_weighted_cents": -5.132338089844885,
+          "shares": "48471.108186",
+          "total_cents": "-248770.1148000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -2.426829751012509,
+          "events": 9,
+          "groups": 4211,
+          "legs": 9029,
+          "share_weighted_cents": -0.27563375574087934,
+          "shares": "107857.818503",
+          "total_cents": "-29729.25560000000000000000000"
+        }
+      },
+      "three_day_equal_cents": -3.263655441674611
+    },
+    "[.8,1]": {
+      "all_legs": {
+        "event_equal_cents": -4.541179983249329,
+        "events": 17,
+        "groups": 12464,
+        "legs": 23036,
+        "share_weighted_cents": -2.340731039907611,
+        "shares": "532440.762929",
+        "total_cents": "-1246300.620700000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": -0.744772318166268,
+          "events": 3,
+          "groups": 1270,
+          "legs": 2302,
+          "share_weighted_cents": -0.37877209768496845,
+          "shares": "40462.039294",
+          "total_cents": "-15325.89150000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -1.2825204284154337,
+          "events": 6,
+          "groups": 4856,
+          "legs": 8476,
+          "share_weighted_cents": -0.5632515486292005,
+          "shares": "249929.996895",
+          "total_cents": "-140773.4578000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -8.408827523780896,
+          "events": 8,
+          "groups": 6338,
+          "legs": 12258,
+          "share_weighted_cents": -4.504057038775729,
+          "shares": "242048.726740",
+          "total_cents": "-1090201.271400000000000000000"
+        }
+      },
+      "three_day_equal_cents": -3.478706756787533
+    },
+    "[0,.2)": {
+      "all_legs": {
+        "event_equal_cents": 1.2847648192583905,
+        "events": 16,
+        "groups": 9917,
+        "legs": 19135,
+        "share_weighted_cents": 0.7958234339550029,
+        "shares": "364087.436908",
+        "total_cents": "289749.3143000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 1.0648603788657867,
+          "events": 5,
+          "groups": 2427,
+          "legs": 4739,
+          "share_weighted_cents": 0.9048421513324834,
+          "shares": "83289.734667",
+          "total_cents": "75364.06270000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": 0.4155593999205593,
+          "events": 5,
+          "groups": 3705,
+          "legs": 7107,
+          "share_weighted_cents": 0.49361168977063774,
+          "shares": "144300.717702",
+          "total_cents": "71228.52110000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": 2.192356369033753,
+          "events": 6,
+          "groups": 3785,
+          "legs": 7289,
+          "share_weighted_cents": 1.0487904255430431,
+          "shares": "136496.984539",
+          "total_cents": "143156.7305000000000000000000"
+        }
+      },
+      "three_day_equal_cents": 1.224258715940033
+    }
+  },
+  "private_rows_sha256": "faf296c9d7094b069ba516cf5c327e929dd4f735760c154518dbe996088aecd2",
+  "resources": {
+    "cpu_seconds": 3.875659,
+    "input_cache_bytes": 111314096,
+    "max_rss_platform_units": 624852992,
+    "network_requests": 0,
+    "raw_hour_reads": 0,
+    "wall_seconds": 3.9041784170549363
+  },
+  "script_sha256": "cfe05821bbc9655db3c0162d08a5bcb9fcb6da84e8222c3e05c1a1b817d08b64",
+  "sensitivity": {
+    "drop_largest_absolute_primary_contribution_event": {
+      "all_legs": {
+        "event_equal_cents": -0.5737317767457152,
+        "events": 30,
+        "groups": 43413,
+        "legs": 87914,
+        "share_weighted_cents": -1.2328924605941913,
+        "shares": "1420769.431225",
+        "total_cents": "-1751655.920000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 0.17815643131704031,
+          "events": 8,
+          "groups": 7179,
+          "legs": 15346,
+          "share_weighted_cents": 0.2722631186543076,
+          "shares": "219429.284419",
+          "total_cents": "59742.50130000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -0.9156373363376674,
+          "events": 11,
+          "groups": 14067,
+          "legs": 28647,
+          "share_weighted_cents": -1.5078441291757243,
+          "shares": "554530.896809",
+          "total_cents": "-836146.1572000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -0.7786540048357669,
+          "events": 11,
+          "groups": 22167,
+          "legs": 43921,
+          "share_weighted_cents": -1.5077896058297302,
+          "shares": "646809.249997",
+          "total_cents": "-975252.2641000000000000000000"
+        }
+      },
+      "removed_ordinal": 20,
+      "three_day_equal_cents": -0.5053783032854646
+    },
+    "drop_largest_absolute_total_cents_event": {
+      "all_legs": {
+        "event_equal_cents": -0.5737317767457152,
+        "events": 30,
+        "groups": 43413,
+        "legs": 87914,
+        "share_weighted_cents": -1.2328924605941913,
+        "shares": "1420769.431225",
+        "total_cents": "-1751655.920000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 0.17815643131704031,
+          "events": 8,
+          "groups": 7179,
+          "legs": 15346,
+          "share_weighted_cents": 0.2722631186543076,
+          "shares": "219429.284419",
+          "total_cents": "59742.50130000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -0.9156373363376674,
+          "events": 11,
+          "groups": 14067,
+          "legs": 28647,
+          "share_weighted_cents": -1.5078441291757243,
+          "shares": "554530.896809",
+          "total_cents": "-836146.1572000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -0.7786540048357669,
+          "events": 11,
+          "groups": 22167,
+          "legs": 43921,
+          "share_weighted_cents": -1.5077896058297302,
+          "shares": "646809.249997",
+          "total_cents": "-975252.2641000000000000000000"
+        }
+      },
+      "removed_ordinal": 20,
+      "three_day_equal_cents": -0.5053783032854646
+    },
+    "drop_largest_shares_event": {
+      "all_legs": {
+        "event_equal_cents": -0.21756507642534106,
+        "events": 30,
+        "groups": 44586,
+        "legs": 90382,
+        "share_weighted_cents": -0.4391649701803537,
+        "shares": "1338680.843462",
+        "total_cents": "-587901.7327000000000000000000"
+      },
+      "days": {
+        "2026-07-28": {
+          "event_equal_cents": 0.17815643131704031,
+          "events": 8,
+          "groups": 7179,
+          "legs": 15346,
+          "share_weighted_cents": 0.2722631186543076,
+          "shares": "219429.284419",
+          "total_cents": "59742.50130000000000000000000"
+        },
+        "2026-07-29": {
+          "event_equal_cents": -0.6966551000537502,
+          "events": 10,
+          "groups": 12161,
+          "legs": 24800,
+          "share_weighted_cents": -0.8185206060836887,
+          "shares": "387385.565914",
+          "total_cents": "-317083.0682000000000000000000"
+        },
+        "2026-07-30": {
+          "event_equal_cents": -0.08213772856325438,
+          "events": 12,
+          "groups": 25246,
+          "legs": 50236,
+          "share_weighted_cents": -0.4516689788887823,
+          "shares": "731865.993129",
+          "total_cents": "-330561.1658000000000000000000"
+        }
+      },
+      "removed_ordinal": 11,
+      "three_day_equal_cents": -0.2002121324333214
+    }
+  },
+  "status": "COMPLETE_MEASURABLE_SUBSET"
+}
