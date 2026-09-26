@@ -1,6 +1,6 @@
 # Polymarket settlement value and external BTC study
 
-P1 is complete for the measurable subset. P2 source acceptance is complete with two semantic blockers; conditional model fitting is not permitted. Weather/Sports feasibility is still being assembled for the complete overnight deliverable.
+P1 is complete for the measurable subset. P2 source acceptance is complete with two semantic blockers; conditional model fitting is not permitted. Weather/Sports bounded feasibility and executable research proposals are complete; see [the feasibility report](POLYMARKET_WEATHER_SPORTS_FEASIBILITY.md). The batch is complete with evidenced data gates.
 
 ## P1: gross value relative to settlement
 
@@ -50,3 +50,16 @@ Original A remains `STOP / DATA_GATED`; old quantity expansion remains stopped. 
 仅作诊断，若同时假定 `bid1_px`/`ask1_px` 是有效顶部、`ts_recv` 是 Unix 毫秒历史接收时间，再按“锚点前最新原始行、年龄不超过 1,000 ms、最新无效不回捞、同接收时刻不同顶部判冲突”的固定规则连接原 1,942 个价格与 CTF 标签合格事件，则主锚点联合覆盖为：训练 811/812（99.88%）、校准 279/279（100%）、07-31 285/285（100%）、08-01 281/281（100%）、08-02 283/285（99.30%）。5 秒时移覆盖也均超过 80%。这些数值明确标为 `CONDITIONAL_ONLY`，不能解除两个来源语义门槛。
 
 因此没有拟合 Eprice/Eexternal，也没有计算主 gain、Brier 或 5 秒敏感性。结论是具体来源语义阻塞，不是“外部 BTC 无信号”。S(s) 不是官方 strike，BTCUSDT 未被当作结算 BTC/USD，赢家仍只来自原 CTF 标签。冻结日期、1,942 分母、变量、C 候选、阈值与模型均未修改。四个 pytest 合成测试通过，覆盖未来报价、过期报价、最新无效不回捞、同接收时刻顶部冲突及冻结配置。
+
+
+## Batch closeout and next judgment
+
+All authorized executable work is complete. P1 is a retrospective measurement on 31/32 events; P2 is an accepted source-semantic stop, so E models and the five-second prediction comparison remain **not fitted / not scored**, not negative results. Weather reaches 0/2 complete examples and Sports 0/2; their separate rule, clock, source and quote layers and proposed studies are in the linked report. More elapsed time cannot substitute for missing historical provenance. The three original A/quantity/final boundaries remain intact.
+
+At most one follow-up candidate is retained: a prospective Weather provenance pilot using the existing station/contract mapping and forecast code, with immutable forecast model/run/publication-or-actual-receipt evidence plus contemporaneous quote capture. Weather has 12/12 contract definitions and 2/2 retrievable predecision quote records, whereas Sports lacks the bounded quote join; this is source-readiness prioritization, not predictive-performance selection. A new complete multi-date cohort and development-based precision planning would still be required before the proposed M1/C comparison. This batch does not start collection or fitting and makes no novelty claim. P2 is not rescued with alternative fields or models; Weather is not rescued by treating forecast initialization as publication.
+
+Known source-response bytes total 3,008,060,123, including 2,780,996,950 bytes from four CLOB objects, 224,233,100 external BTC bytes, Weather 567,742 bytes, Sports 2,258,514 successful bytes and 3,817 bytes from its failed schedule response. Shared objects are charged once. CLOB scanning measured 2567.407 CPU seconds (0.713169 core-hours) and 2643.892 wall seconds. P1 measured 3.876 CPU seconds and 3.904 wall seconds. Full helper/setup/browser CPU, some earlier retries and the batch-wide peak memory were not metered; they remain unknown. Remote compute jobs, GPU and paid calls were zero. One authorized server was verified reachable and idle, but no remote job was needed. Local disk reserve remained above 10 GiB.
+
+The fixed start was 2026-09-26 03:28:30 UTC and deadline 13:28:30 UTC. Elapsed time through this package was 61.67 minutes; final Git/Advisor closeout follows this timestamp and is separate from instrumented compute. There are 25 distinct focused tests (P1 11, P2 4, quote selection 10), all passed. The completion receipt distinguishes measured resources from unknown quantities.
+
+Advisor accepted exact P1/P2 stage SHA `a883a0872e8e6effc8df65b6e38341b81c43fe20` through static code/test-definition review and public aggregate arithmetic. It did not independently rerun private-data analysis or tests. No required P1/P2 rerun was identified. Final-package review is recorded separately from this stage acceptance.

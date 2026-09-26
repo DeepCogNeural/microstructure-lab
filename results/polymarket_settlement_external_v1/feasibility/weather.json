@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "workstream": "W_weather_connection_feasibility",
+  "status": "REVISE_DATA_GATED",
+  "frozen_sample": {
+    "cities": ["Miami", "NYC"],
+    "target_dates_inclusive": ["2026-07-28", "2026-08-02"],
+    "city_days": 12,
+    "binary_markets": 132,
+    "connection_examples": 2,
+    "decision_utc": "2026-07-27T16:00:00Z"
+  },
+  "coverage": {
+    "contracts_complete_city_days": 12,
+    "field_level_contract_station_run_joins": 2,
+    "historical_publication_receipts": 0,
+    "historical_predecision_direct_bbo_examples": 2,
+    "freshness_proved_examples": 0,
+    "strict_valid_direct_bbo_tokens_per_example": 22,
+    "end_to_end_examples_qualified": 0
+  },
+  "fixed_quote_hours_utc": ["2026-07-27T15:00:00Z", "2026-07-27T16:00:00Z"],
+  "quote_result": {
+    "miami_age_ms_min": 1901036,
+    "miami_age_ms_max": 1903548,
+    "nyc_age_ms_min": 1898434,
+    "nyc_age_ms_max": 1920469,
+    "target_messages_in_16z_package": 0,
+    "sizes_or_depth_verified": false,
+    "snapshot_status": "diagnostic_unvalidated",
+    "freshness_conclusion": "not_established"
+  },
+  "source_hashes_sha256": {
+    "selection_manifest": "99de60386abe6beceff94983dbdccb027fe786a4b7965fe7427aff8d5db3047f",
+    "gamma_12_sorted_hash_list_digest": "ab4f7731b51ad294ae58e457312d127e1a372941b93dcffc95603f98db986494",
+    "openmeteo_4_sorted_hash_list_digest": "f7ee6a6203d4e44ac7399a2369a0c9179aeb5e4f20c805bebdc3611fd82fa508",
+    "shared_normalized_quote_aggregate": "bb5fbac4746037a43c067485abb29b00e1e5b06fac15645257a46ec66ae85a2e"
+  },
+  "resource_aggregate": {
+    "recovered_source_requests": 16,
+    "recovered_gamma_requests": 12,
+    "recovered_openmeteo_requests": 4,
+    "recovered_source_response_bytes": 567742,
+    "recovered_manifest_and_derived_bytes": 54310,
+    "recovered_total_bytes_before_handoff": 622052,
+    "earlier_helper_request_elapsed_seconds": null,
+    "earlier_helper_retry_count": null,
+    "new_source_requests_in_recovery_pass": 0,
+    "model_fits": 0,
+    "model_scores": 0,
+    "gpu_seconds": 0,
+    "paid_requests": 0,
+    "live_writes": 0
+  },
+  "shared_quote_resources": "Referenced only; counted once in coordinator aggregate.",
+  "repo_heads_read_only": {
+    "polymarket_weather": "92b8ba9a2291553ea4a58534e1b8b3ba8e71a80b",
+    "polymarket_ob_lp": "8fed65ddcadde03f5b92cd25c736630d2d9a5e8d"
+  }
+}

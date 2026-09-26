@@ -1,0 +1,62 @@
+{
+  "status": "COMPLETE_WITH_EVIDENCED_DATA_GATES",
+  "t0_utc": "2026-09-26T03:28:30Z",
+  "deadline_utc": "2026-09-26T13:28:30Z",
+  "packaged_utc": "2026-09-26T04:30:10.171504+00:00",
+  "elapsed_seconds_to_package": 3700.171504,
+  "control_sha": "596cfaeb802a18a67bb019a966b123a71298ac64",
+  "resources": {
+    "p1_new_source_requests": 0,
+    "p1_cached_input_bytes": 111314096,
+    "p1_measured_cpu_seconds": 3.875659,
+    "p1_measured_wall_seconds": 3.904178,
+    "p1_peak_process_rss_bytes": 624852992,
+    "p2_successful_requests": 21,
+    "p2_downloaded_bytes": 224233100,
+    "p2_recovery_failed_dns_attempts": 3,
+    "p2_final_gate_pass_wall_seconds": 1.4655642081052065,
+    "p2_total_cpu_seconds": null,
+    "weather_successful_response_bytes": 567742,
+    "weather_recovered_successful_requests": 16,
+    "sports_successful_response_bytes": 2258514,
+    "sports_attempts": 12,
+    "sports_failed_response_bytes": 3817,
+    "clob_downloaded_bytes_including_retry_bytes": 2780996950,
+    "clob_requests_including_retries": 4,
+    "clob_unique_compressed_bytes": 2780996950,
+    "clob_rows": 53335838,
+    "clob_measured_cpu_seconds": 2567.407417,
+    "clob_measured_wall_seconds": 2643.89233495784,
+    "known_source_response_bytes": 3008060123,
+    "known_successful_source_requests": 52,
+    "notes": "Source object/response bytes only; documentation browsing, overhead, earlier uninstrumented retries and helper CPU not fully metered. Null is unknown, not zero. Four CLOB objects shared, not charged twice to W/S. P2 qualifying read reused cached files.",
+    "remote_compute_jobs": 0,
+    "gpu_seconds": 0,
+    "paid_requests": 0,
+    "total_batch_cpu_seconds": null,
+    "total_peak_rss_bytes": null,
+    "known_source_attempts_lower_bound": 56,
+    "known_failed_source_attempts": 4
+  },
+  "tests": {
+    "p1": 11,
+    "p2": 4,
+    "quote_selector": 10,
+    "total_distinct": 25,
+    "quote_test_sha256": "fb59cb5d21ef417cd9f3662f74bb90526ea27a277972c51cd6e12faa29bba47b",
+    "quote_extractor_sha256": "118a733164942126df0e6034f537b0de2c88ed52f72198416f2ad5d9747da54f"
+  },
+  "boundaries": {
+    "a": "STOP / DATA_GATED",
+    "quantity": "STOP_QUANTITY_INCREMENT",
+    "final_opened": false,
+    "w_s_models_fit": false,
+    "live_trades": 0
+  },
+  "advisor_stage": {
+    "sha": "a883a0872e8e6effc8df65b6e38341b81c43fe20",
+    "verdict": "ACCEPT_P1_MEASUREMENT_AND_P2_SOURCE_GATE",
+    "required_edits": [],
+    "scope": "static code/test definitions and public aggregate arithmetic; no private-data or test rerun"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": "sports_feasibility_public_v1",
+  "scope": {
+    "league": "WNBA",
+    "window_start_utc": "2026-07-27T00:00:00Z",
+    "window_end_utc": "2026-08-02T23:59:59.999999Z",
+    "candidate_order": "official scheduled start UTC, then private provider game ID",
+    "candidate_cap": 20,
+    "candidate_count": 6,
+    "connection_attempt_denominator": 2,
+    "substitution_on_failure": false
+  },
+  "provider_coverage": {
+    "object_count": 3,
+    "object_bytes": 46682,
+    "row_count": 861,
+    "games_with_explicit_halftime": 5,
+    "games_with_terminal_row": 5,
+    "odds_fields_observed": false
+  },
+  "attempted_connections": {
+    "count": 2,
+    "official_schedule_identity_connected": 2,
+    "provider_identity_connected": 2,
+    "full_game_binary_moneyline_contract_connected": 2,
+    "rules_connected": 2,
+    "settlement_connected": 2,
+    "explicit_halftime_decision_state_connected": 1,
+    "decision_time_quote_connected": 0,
+    "end_to_end_connected": 0,
+    "quote_pending": 0,
+    "failed_no_explicit_halftime": 1,
+    "failed_no_quote_in_bounded_hours": 1
+  },
+  "clock_contract": {
+    "decision_definition": "first collector receipt of explicit HT state plus 30 seconds",
+    "provider_clocks_separate": [
+      "official scheduled start",
+      "provider event update",
+      "collector receipt"
+    ],
+    "clob_mapping": {
+      "outer_timestamp": "collector receive time",
+      "outer_message_type": "provenance only; may be feed_message",
+      "content_message_event_type": "filter price_change",
+      "content_message_timestamp": "source event time",
+      "price_change_array": "expand before exact-token filter"
+    },
+    "no_inference_from": [
+      "Q2",
+      "Q3",
+      "terminal state"
+    ]
+  },
+  "quote_status": {
+    "status": "NO_EXACT_TOKEN_RECORD_IN_BOUNDED_HOURS",
+    "decision_time_utc": "2026-08-01T18:02:44.027000Z",
+    "tokens_required": 2,
+    "selection": "latest expanded price_change per exact token at or before decision time; do not backfill an earlier valid row",
+    "validity": "strict finite 0 < bid < ask < 1; inclusive arithmetic check retained separately",
+    "private_identifiers_published": false,
+    "hours_utc": [
+      "2026-08-01T17:00:00Z",
+      "2026-08-01T18:00:00Z"
+    ],
+    "source_rows_scanned": 18780091,
+    "source_target_lines": 0,
+    "strict_valid_direct_bbo_tokens": 0,
+    "age_ms": null,
+    "snapshot_status": "diagnostic_unvalidated",
+    "scope_note": "No records in these two selected hours; not a claim of no historical quotes anywhere. Same fixed example and decision."
+  },
+  "research_plan": {
+    "prediction_target": "final WNBA game winner at first received explicit halftime-end state plus 30 seconds",
+    "question": "Does signed halftime score differential improve held-out final-win probability after conditioning on the simultaneous Polymarket moneyline probability?",
+    "baseline": "training-fold logistic recalibration of the simultaneous two-token moneyline probability",
+    "increment": "same baseline plus signed halftime score differential only",
+    "unit": "one game",
+    "split": "forward by complete game date",
+    "primary_metric": "held-out date-equal log loss difference LL(M0)-LL(M1)",
+    "secondary_metrics": [
+      "Brier score",
+      "reliability"
+    ],
+    "pilot_model_fit": false,
+    "novelty_status": "unknown_without_systematic_literature_review",
+    "closest_prior_work": [
+      "DOI 10.3233/JSA-180231",
+      "arXiv 2204.11777"
+    ]
+  },
+  "resource_aggregate_before_shared_clob_read": {
+    "network_attempts": 12,
+    "network_attempt_breakdown": {
+      "provider_objects": 3,
+      "polymarket_metadata": 2,
+      "official_wnba_pages": 6,
+      "failed_official_schedule_endpoint": 1
+    },
+    "known_successful_response_bytes": 2258514,
+    "known_successful_response_bytes_breakdown": {
+      "provider_objects": 46682,
+      "polymarket_metadata": 216131,
+      "official_wnba_pages": 1995701
+    },
+    "failed_response_bytes_excluded": 3817,
+    "elapsed_request_seconds": null,
+    "cpu_seconds": null,
+    "elapsed_and_cpu_note": "not instrumented; unknown",
+    "compute": "local CPU only",
+    "remote_server_used": false,
+    "gpu_used": false,
+    "paid_source_used": false
+  },
+  "evidence": {
+    "provider_object_sha256": [
+      "1463e8221bb0d46f8dad116fa4b9d73abc42ca0b07ec32ac09951e325f9586cc",
+      "fb7100938901af90cf700a45ef17d8868e094c2b3f2e3282a3e578d79a743d4e",
+      "418fd4e1e93077e1b7e976398c3d9bf7707f55388da5d60fae5d6b85e8357168"
+    ],
+    "provider_download_receipt_sha256": "51e9f5d41387845fa85a194e466820addd4815d8bc7e10daa95f92c0afa87eba",
+    "candidate_aggregate_sha256": "7ca01928cc544460a5e3821b0310348d1dcfbca2f66a257117bfa8a1b7a364cb",
+    "polymarket_metadata_sha256": [
+      "1e56ab8daafce15d5746bac15519db0c7ede1762048846ae48412bce403828ef",
+      "41a8ce1aac0a98a281d489baa338c1b7e817bd5afdfb195d7bc95165ca2670a0"
+    ],
+    "official_wnba_page_sha256": [
+      "ff3072a91fcd7685a2dd53cebbe9b34c555d454978a2e0d7b6e8488ca36a1e61",
+      "963ceee08bb11097c9794f15600a7ab12b0165bbef847377665668180321d572",
+      "4150b5ef8206a22c19fc32aa20d1aa462c4c5c698eda0d7926bfb2bc2ba9b4cd",
+      "3a13dd30508a69bc6a1e4e3899abf527c56c55c35321523bd7b199f215f67046",
+      "d910a23ceb710d74b8edf6cb75e4d73f968081acbd6d69bd2abf0e9d37ed4c6f",
+      "bf4118e9d0081f702c75ba4f38e583548bbb4bcc26e932887cd7fb380176d37b"
+    ],
+    "initial_selection_sha256": "6eaf87e1ca80738b9958d2c473c99e6b331c8db93b37a4ca525592966668aed4",
+    "native_field_clarification_sha256": "fdeee85f44b3daef142b5c29795aa0db7ec7cf4340fad3ac1f6540d0d2002d42",
+    "selection_change_after_clarification": false,
+    "final_quote_aggregate_sha256": "7188fd870adc9f3d0f3832b2fb9a72d3cf956c0423d628835d6ad89484629954"
+  },
+  "privacy": {
+    "raw_rows_published": false,
+    "token_ids_published": false,
+    "market_or_condition_ids_published": false,
+    "provider_game_ids_published": false,
+    "row_level_prices_or_labels_published": false
+  },
+  "verdict": "DATA_GATED_NO_BOUNDED_QUOTE_JOIN",
+  "shared_quote_resources": "Counted once in coordinator receipt; not duplicated in this slice."
+}

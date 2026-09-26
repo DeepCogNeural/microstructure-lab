@@ -1,0 +1,144 @@
+{
+  "selection_manifest_sha256": "90a22e82144625b2e1619bce18338c1a7f793f8d821807212ee6579046e5345f",
+  "private_quote_sha256": "acf75778708490411bb0c21caccfe280024aa95c7d543a89ec8cd1ecf5cdf31b",
+  "summary": [
+    {
+      "category": "weather",
+      "example": "Miami",
+      "kind": "direct_bbo",
+      "tokens": 22,
+      "status_counts": {
+        "valid": 22
+      },
+      "inclusive_arithmetic_status_counts": {
+        "valid": 22
+      },
+      "age_ms_min": 1901036.0,
+      "age_ms_max": 1903548.0
+    },
+    {
+      "category": "weather",
+      "example": "Miami",
+      "kind": "snapshot_top",
+      "tokens": 22,
+      "status_counts": {
+        "diagnostic_unvalidated": 13,
+        "no_record_before_decision_in_selected_hours": 9
+      },
+      "inclusive_arithmetic_status_counts": {
+        "no_record_before_decision_in_selected_hours": 9,
+        "valid": 13
+      },
+      "age_ms_min": 2020717.0,
+      "age_ms_max": 3401733.0
+    },
+    {
+      "category": "weather",
+      "example": "NYC",
+      "kind": "direct_bbo",
+      "tokens": 22,
+      "status_counts": {
+        "valid": 22
+      },
+      "inclusive_arithmetic_status_counts": {
+        "valid": 22
+      },
+      "age_ms_min": 1898434.0,
+      "age_ms_max": 1920469.0
+    },
+    {
+      "category": "weather",
+      "example": "NYC",
+      "kind": "snapshot_top",
+      "tokens": 22,
+      "status_counts": {
+        "diagnostic_unvalidated": 14,
+        "no_record_before_decision_in_selected_hours": 8
+      },
+      "inclusive_arithmetic_status_counts": {
+        "no_record_before_decision_in_selected_hours": 8,
+        "valid": 14
+      },
+      "age_ms_min": 2551822.0,
+      "age_ms_max": 3407047.0
+    },
+    {
+      "category": "sports",
+      "example": "second_preselected",
+      "kind": "direct_bbo",
+      "tokens": 2,
+      "status_counts": {
+        "no_record_before_decision_in_selected_hours": 2
+      },
+      "age_ms_min": null,
+      "age_ms_max": null
+    },
+    {
+      "category": "sports",
+      "example": "second_preselected",
+      "kind": "snapshot_top",
+      "tokens": 2,
+      "status_counts": {
+        "no_record_before_decision_in_selected_hours": 2
+      },
+      "age_ms_min": null,
+      "age_ms_max": null
+    }
+  ],
+  "sources": [
+    {
+      "path": "raw/2026-07-27/1500.jsonl.zst",
+      "expected_bytes": 1007049730,
+      "attempts": 1,
+      "downloaded_bytes": 1007049730,
+      "sha256": "78c019ebdfe31c6d916964b89a420f09c4259990969ecb08cbfc62308785ebb2",
+      "lines": 19590254,
+      "selected_lines": 60403,
+      "wall_seconds": 1132.5670818339568,
+      "cpu_seconds": 1104.42905
+    },
+    {
+      "path": "raw/2026-07-27/1600.jsonl.zst",
+      "expected_bytes": 776606548,
+      "attempts": 1,
+      "downloaded_bytes": 776606548,
+      "sha256": "394753e7b564e89d04c6da3fb0e87d819830f2d804e67efc84ed8907fcf26a21",
+      "lines": 14965493,
+      "selected_lines": 0,
+      "wall_seconds": 866.6845340409782,
+      "cpu_seconds": 844.703442
+    },
+    {
+      "path": "raw/2026-08-01/1800.jsonl.zst",
+      "expected_bytes": 524386988,
+      "attempts": 1,
+      "downloaded_bytes": 524386988,
+      "sha256": "d65a8a69c051c1e8c55d49e5f9b6f496d669df7254a6b1769fb6c6f48a638276",
+      "lines": 9804553,
+      "selected_lines": 0,
+      "wall_seconds": 573.1622168750037,
+      "cpu_seconds": 558.28603
+    },
+    {
+      "path": "raw/2026-08-01/1700.jsonl.zst",
+      "expected_bytes": 472953684,
+      "attempts": 1,
+      "downloaded_bytes": 472953684,
+      "sha256": "948aa7d1e10d22c41695a65d4423b890795f61fd07b4be47da13cf46e14d0f8a",
+      "lines": 8975538,
+      "selected_lines": 0,
+      "wall_seconds": 71.47295829188079,
+      "cpu_seconds": 59.988895
+    }
+  ],
+  "wall_seconds": 2643.89233495784,
+  "note": "No freshness threshold imposed; ages descriptive. Outer timestamp is receive clock, not true match time. Latest invalid never replaced by older valid.",
+  "original_private_quote_sha256": "84613fe9bcce3ce4e92ed8954393cbddfb012eca967720600209f7e9754fb643",
+  "runtime_extractor_sha256": "e2c376189aa15904b10d65ca95f40e16f1eb2407aaa1ce37d205c609b3810ec5",
+  "public_extractor_sha256": "118a733164942126df0e6034f537b0de2c88ed52f72198416f2ad5d9747da54f",
+  "normalization_note": "Before quote results inspection, static review clarified strict direct-BBO validity 0<bid<ask<1. Original inclusive arithmetic counts retained. Latest boundary/locked not backfilled. Snapshot tops were not validated against all raw levels and are diagnostic_unvalidated; never count as connection. Only extracted small records reclassified; zero raw rescans.",
+  "lookback_manifest_sha256": "236d3f4d6b2c68db805d94e852eabf63a06d1b7961ef997f20ddec02a1979360",
+  "initial_three_hours_aggregate_sha256": "bb5fbac4746037a43c067485abb29b00e1e5b06fac15645257a46ec66ae85a2e",
+  "lookback_private_quote_sha256": "b18755e30c17bcfff1fc67406fdc53f6ee2f882a0f178518504d0a2bba6e2acf",
+  "lookback_note": "Same second Sports example and fixed decision. Initial 18 UTC full hour had zero exact-token messages; adjacent17 UTC is fourth permitted distinct hour, preregistered before reading. Original absence remains in initial aggregate. Only these new small results merged; no raw rescan. wall_seconds is sum of timed extraction passes."
+}

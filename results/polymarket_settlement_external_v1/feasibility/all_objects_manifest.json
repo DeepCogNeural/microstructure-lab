@@ -1,0 +1,37 @@
+{
+  "frozen_before_clob_read": true,
+  "hours": [
+    "2026-07-27T15:00:00Z",
+    "2026-07-27T16:00:00Z",
+    "2026-08-01T18:00:00Z"
+  ],
+  "objects": [
+    {
+      "path": "raw/2026-07-27/1500.jsonl.zst",
+      "bytes": 1007049730
+    },
+    {
+      "path": "raw/2026-07-27/1600.jsonl.zst",
+      "bytes": 776606548
+    },
+    {
+      "path": "raw/2026-08-01/1800.jsonl.zst",
+      "bytes": 524386988
+    },
+    {
+      "path": "raw/2026-08-01/1700.jsonl.zst",
+      "bytes": 472953684
+    }
+  ],
+  "manifest_sha256": "db969fce2d2bf554743fbe486e6537066b826326771c4de48ec41f4b2019e109",
+  "weather_selection_sha256": "4906e41ef63022f1e626ef021eef92f14a5aed2a4125c34a07520ef7b775eb16",
+  "sports_selection_rule": "Only second preselected game with first explicit HT receipt 2026-08-01T18:02:14.027Z; decision +30s. First example no HT, remains missing.",
+  "protected_final_check": "All hours inside explicitly authorized exposed development week; PM0 final August 24 belongs to other source; no reserved-final conflict found in protocol/manifest search.",
+  "policy": "latest received record at or before fixed decision; report validity/conflict and age, no new freshness/model gate; direct BBO and snapshot independently",
+  "purpose": "two fixed weather examples and one constructible sports example",
+  "clob_hour_count": 3,
+  "clob_hour_limit": 4,
+  "sports_selection_sha256": "6eaf87e1ca80738b9958d2c473c99e6b331c8db93b37a4ca525592966668aed4",
+  "private_targets_sha256": "e3c99a87d2ec378b5a591cfd448d37dc53bb8f0614fff616b332f16e648722ce",
+  "note": "Derived union of original3-hour and preregistered fourth-hour manifests for reproduction; original freezes retained."
+}
