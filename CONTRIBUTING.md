@@ -1,6 +1,6 @@
 # Public contribution and privacy policy
 
-This is a public research repository. Every commit must be safe to publish.
+This is a public research repository. Every commit must be safe to publish. All branches in this repository are public. Unfinished experiments and internal research plans belong in a separate private repository; publish only reviewed, completed artifacts, never private development history.
 
 ## Hard privacy gate
 

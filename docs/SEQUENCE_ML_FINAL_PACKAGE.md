@@ -1,6 +1,6 @@
 # Final WSELOB sequence-ML research package
 
-Status: **formal historical program complete; `PENDING_INDEPENDENT_CONFIRMATION`**. The current reviewer control requires WSE only. Polymarket waits for genuinely fresh chronological data. No résumé/PDF, LLM Track or Exp06 work is part of this package.
+Status: **formal historical program complete; `PENDING_INDEPENDENT_CONFIRMATION`**. This completed package covers historical WSE research only; it does not establish independent confirmation or current-market trading performance.
 
 ## Research answer
 
