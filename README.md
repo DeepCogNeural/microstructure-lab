@@ -38,7 +38,7 @@ The original confirmation has separate [exposure audit](docs/LATER_PARTITIONS_UN
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[dev,ml,data,xgb]"
+pip install -e ".[dev,ml,data,xgb,sequence]"
 python -m pytest -q
 cloblab demo --offline --out /tmp/microstructure-demo --rows 120
 # Recreate the new tables and five figures from committed aggregates:
