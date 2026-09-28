@@ -39,4 +39,10 @@ def test_no_state_carries_between_predictions():
     with torch.no_grad():
         separate = torch.stack([model(x[i:i+1])[0] for i in range(2)])
         together = model(x)
-    assert torch.equal(separate, together)
+        first = model(x[:1]).clone()
+        model(x[1:])
+        repeated = model(x[:1])
+    # Identical calls must stay identical even after an unrelated prediction.
+    assert torch.equal(first, repeated)
+    # Different batch sizes can change float32 accumulation order.
+    torch.testing.assert_close(separate, together, rtol=1e-6, atol=1e-7)
