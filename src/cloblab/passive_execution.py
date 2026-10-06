@@ -3,6 +3,10 @@
 Vectorized independent virtual orders join after their placement message. All
 D removals and same-price M reductions are assumed executions in this scenario.
 No execution is inferred from Y, repricing, or aggregate depth alone.
+
+"tick" is the running minimum adjacent-level price gap seen so far that day
+(across both sides of the ten visible levels), not the exchange tick table.
+Passive paths use it as the adverse-move threshold.
 """
 import numpy as np
 

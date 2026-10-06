@@ -6,7 +6,7 @@ Audit date: 2026-09-21. Baseline: `bb28882c1d043a757447ff0f9d8883d812616d38`.
 
 The operator confirmed on 2026-09-21, after being informed of the provenance gaps, that these 15 partitions had not been used for scientific analysis. The confirmation was supplied before any new outcomes were opened. Together with the documented exclusion from published scientific tasks, this supports accepting all 15 partitions as scientifically untouched on the basis of operator attestation. Historical non-exposure is not independently established by a complete technical access ledger; exclusion from the scientific cache alone would not have been sufficient.
 
-This audit inspected documentation, code, history, date/task metadata, counts and hashes. It did not load later-partition raw records, Parquet values or row-level predictions; fit a model; compute later labels, correlations, markouts or queue outcomes; or select partitions using outcomes. Existing published earlier-period results were read for context. No confirmation protocol or results have been created. Following the operator confirmation, the user explicitly requested recording the decision and returning, so this turn stops after the audit.
+This audit inspected documentation, code, history, date/task metadata, counts and hashes. It did not load later-partition raw records, Parquet values or row-level predictions; fit a model; compute later labels, correlations, markouts or queue outcomes; or select partitions using outcomes. Existing published earlier-period results were read for context. No confirmation protocol or results had been created at this stage.
 
 ## Exact proposed partitions
 
@@ -71,7 +71,7 @@ Crucially, preparation was not label-free. `src/cloblab/scale_cache.py::prepare_
 
 ## Search coverage and receipts
 
-Read the README, limitations, methodology, execution and queue reports, scale report and C++ finalization specification. Inspected source configuration, preparation/runner code, native benchmark domain, execution/transfer/queue task selection, source registry, preparation inventory, original task manifest and downstream run manifests. The two requested application-context documents were consulted locally; their private content is not reproduced here.
+Read the README, limitations, methodology, execution and queue reports, scale report and C++ finalization specification. Inspected source configuration, preparation/runner code, native benchmark domain, execution/transfer/queue task selection, source registry, preparation inventory, original task manifest and downstream run manifests.
 
 Fetched origin; the baseline matched origin/main. Searched all 23 branch-reachable revisions for tail dates/engineering-tail references in configs, scripts, source, docs and results, then expanded to 67 revisions reachable through local reflogs. Tail-date matches were limited to engineering coverage/preparation/report/completion documentation. Relevant chronology includes the archived preparation implementation, `dab9079` benchmark publication, `0c58424` execution/transfer implementation, `cbf13df` transfer completion, `2ff81ff` queue implementation, `942fd5b` queue publication, and `3a62939` / `723bed3` native implementation/publication. Date-string searches cannot rule out wildcard/full-year/default-range access.
 

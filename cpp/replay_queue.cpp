@@ -4,6 +4,13 @@
 #include <limits>
 #include <map>
 #include <stdexcept>
+// Replay output columns, out.values[k] (names exported by bindings.cpp):
+//  0 bid          1 ask          2 bid_size     3 ask_size
+//  4 bid_orders   5 ask_orders   6 tick (running minimum adjacent-level gap
+//                                  seen so far that day, not the exchange tick table)
+//  7 old_side     8 old_price    9 old_quantity 10 old_entered
+// 11 new_side    12 new_price   13 new_quantity 14 new_entered
+// 15 execution (quantity removed by D, or same-price M reduction)
 namespace rq {
 using Key=std::pair<I,I>;
 using Rank=std::tuple<I,I,Key>;
@@ -45,6 +52,7 @@ Replay replay(const I* rows,std::size_t n,I start,I end,bool reset){
    }
    if(action=='D'){orders.erase(key);out.values[15][i]=old.quantity;}
    else{
+    // Source encodes this side code as 5; mapped to 2, as in the Python reference (wselob.OrderBook).
     if(side==5)side=2;if(side==-1&&has)side=old.side;
     double price=(price_raw==-1&&has)?old.price:static_cast<double>(price_raw)/std::pow(10.0,scale);
     if(quantity==-1&&has)quantity=old.quantity;

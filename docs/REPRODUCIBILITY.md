@@ -14,7 +14,7 @@ The optional C++20 build, backend selection and full-domain parity/performance r
 ```bash
 python3 -m venv .venv
 . .venv/bin/activate
-pip install -e ".[dev,ml,data,xgb]"
+pip install -e ".[dev,ml,data,xgb,sequence]"
 ```
 
 ## Tests
@@ -23,15 +23,16 @@ pip install -e ".[dev,ml,data,xgb]"
 python -m pytest -q
 ```
 
-The tests cover:
+The tests (`tests/`) cover:
 
-- no-lookahead recent trade features;
-- markout label alignment;
-- walk-forward split ordering;
-- label-time purge before each test fold;
-- L2 sequence-gap rejection;
-- crossed-book and negative-size rejection;
-- visible-depth cost reporting.
+- WSELOB replay, queue semantics and later-period confirmation: `test_wselob.py`, `test_queue_execution.py`, `test_later_confirmation.py`;
+- licensed-experiment and scale pipeline: `test_licensed_experiment.py`, `test_scale_pipeline.py`, `test_data_artifacts.py`;
+- features, labels, splits, replay and costs: `test_features_labels_splits.py`, `test_l2_replay_and_costs.py`, `test_advanced_features.py`;
+- execution robustness and research audit: `test_execution_robustness.py`, `test_research_audit.py`;
+- tree models: `test_tree_model.py`, `test_tree_evaluation.py`;
+- sequence ML: `test_sequence_ml.py`, `test_sequence_model.py`, `test_sequence_transformer.py`, `test_sequence_ml_fq4_gate.py`, `test_q3_diagnostics.py`;
+- native C++20 backend parity: `test_native.py`;
+- engineering scaffold: `test_collectors.py`, `test_coinbase_normalize.py`.
 
 ## Offline Demo
 
@@ -52,7 +53,9 @@ Expected report files:
 cloblab schema --out data/schema.md
 ```
 
-## Publicly Accessible Data Capture
+## Engineering scaffold (not part of the WSE study)
+
+### Publicly accessible data capture
 
 ```bash
 cloblab collect-coinbase --symbols BTC-USD ETH-USD --seconds 30 --out data/raw/coinbase/messages.jsonl

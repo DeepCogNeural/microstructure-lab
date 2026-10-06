@@ -10,7 +10,7 @@
 
 The narrow confirmation replicated positive prediction ranking and the XGBoost advantage, the negative primary aggressive spread-crossing conclusion, and lower conditional fill probability in stronger signal tails. Average five-message post-fill midpoint markouts remained adverse, but stronger-tail adverse-selection ordering did not consistently replicate. Three shared dates are not broad temporal evidence, and the queue outputs remain conditional diagnostics.
 
-The project is scientifically mature for application/portfolio purposes within these limits. Additional model-zoo comparisons or tuning on the same inspected WSELOB sample are low priority. No new research task is scheduled here; further confirmation should await genuinely new independent data, with provenance and a protocol established before outcome inspection.
+The project is complete within its stated limits. Additional model-zoo comparisons or tuning on the same inspected WSELOB sample are low priority. No new research task is scheduled here; further confirmation should await genuinely new independent data, with provenance and a protocol established before outcome inspection.
 
 ## Archived execution-aware plan
 

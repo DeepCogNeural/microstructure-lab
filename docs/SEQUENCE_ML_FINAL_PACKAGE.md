@@ -14,7 +14,15 @@ The [five-minute brief](SEQUENCE_ML_FINAL_RESEARCH_BRIEF.md) states the design a
 
 ## Reproducibility and cost
 
-`results/sequence_ml_final_v1/figures/` contains four publication-ready figures: matched-history/context comparison; monthly fixed-versus-updated comparison; complete stock and preset activity-state decomposition; and ranking/visible-crossing cost plus coverage. `cost_table.csv` records 7.912 allocated GPU-hours across FQ2/FQ3/FQ4/Q8/Q10 and 1.264 allocated CPU core-hours for Q11, with the small FQ3 CPU diagnostic wall allocation separately identified. Allocation is not utilization.
+`results/sequence_ml_final_v1/figures/` contains four final figures: matched-history/context comparison; monthly fixed-versus-updated comparison; complete stock and preset activity-state decomposition; and ranking/visible-crossing cost plus coverage. `cost_table.csv` records 7.912 allocated GPU-hours across FQ2/FQ3/FQ4/Q8/Q10 and 1.264 allocated CPU core-hours for Q11, with the small FQ3 CPU diagnostic wall allocation separately identified. Allocation is not utilization.
+
+![Matched-history and context comparison](../results/sequence_ml_final_v1/figures/01_history_and_sample_scale.png)
+
+![Monthly fixed versus updated comparison](../results/sequence_ml_final_v1/figures/02_time_and_update.png)
+
+![Stock and preset activity-state decomposition](../results/sequence_ml_final_v1/figures/03_stock_and_state.png)
+
+![Ranking and visible-crossing cost with coverage](../results/sequence_ml_final_v1/figures/04_prediction_and_visible_execution.png)
 
 From the scientific task branch and public aggregate receipts, `python3 scripts/recompute_sequence_ml_final.py --out /tmp/wse-recompute.json` reruns all six formal aggregators and requires byte-for-byte equality. `python3 scripts/render_sequence_ml_final_brief.py --out /tmp/wse-brief.md` and `python3 scripts/render_sequence_ml_final.py --out /tmp/wse-package` regenerate the brief, four figures and cost table. `python3 scripts/verify_sequence_ml_final.py --manifest-out /tmp/wse-scientific-manifest.json` independently verifies receipt/parent/source/model hashes and writes a fresh manifest. The committed `recomputation.json` records six byte-identical aggregate reruns; `scientific_manifest.json` inventories 65 run receipts, 215 model hashes, source/partition hashes and all output hashes. Original licensed WSE rows, row predictions, model weights and scheduler logs remain private.
 

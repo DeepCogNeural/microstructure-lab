@@ -8,7 +8,7 @@ The development cache retains causal feature partitions but not most original sn
 
 For each stock/day/mode/arm/delay report common opportunities, selected opportunities, coverage, gross midpoint move, entry and exit half spreads, visible crossed markout, and undefined reasons. Aggregate equal stock/day with a separate pooled descriptive view; preserve all negative and null results. The reported crossing identity must hold numerically for every eligible selected row. Also report the baseline/GRU both-selected subset within each mode, without replacing the main selected-population comparison. Delay d>0 changes the observed entry quote and midpoint; the exit stays fixed at t+20.
 
-This remains a research diagnostic on already exposed 2017 dates. It is not realized PnL or proof of fills. The old FQ3 zero-delay result remains published and is not overwritten. Freeze this protocol only after Q8/Q10 checkpoints and latest reviewer-control readback, before computing Q11 outcomes.
+This remains a research diagnostic on already exposed 2017 dates. It is not realized PnL or proof of fills. The old FQ3 zero-delay result remains published and is not overwritten. Freeze this protocol only after Q8/Q10 checkpoints and independent readback, before computing Q11 outcomes.
 
 ## Parent result identity
 

@@ -3,6 +3,10 @@
 replay_day returns event arrays and dense ten-level snapshots (NaN when invalid).
 queue_paths returns the existing passive_paths field schema. No backend setting
 changes the scientific experiment. Input arrays must not mutate during calls.
+
+"tick" is the running minimum adjacent-level price gap seen so far that day
+(across both sides of the ten visible levels), not the exchange tick table.
+Passive paths use it as the adverse-move threshold.
 """
 from importlib import import_module
 import numpy as np

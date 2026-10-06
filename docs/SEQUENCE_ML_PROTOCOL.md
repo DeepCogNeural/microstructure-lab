@@ -18,4 +18,4 @@ Training curves, parameter/sample counts, actual CPU wall and core-hours, infere
 
 ## Exposure and boundaries
 
-The source, cached hashes, earlier scientific use and Q1 test receipt are recorded in `docs/SEQUENCE_ML_EXPOSURE.md`. Old headline IC numbers are not subtracted from this study because shared endpoint eligibility differs. Raw data, row-level predictions and trained models remain private. Public artifacts are source code, aggregate counts/scores/curves, manifests and scientific limitations. The local task branch is `codex/quant-ai-ml-20260922`; historical public results remain unchanged.
+The source, cached hashes, earlier scientific use and Q1 test receipt are recorded in `docs/SEQUENCE_ML_EXPOSURE.md`. Old headline IC numbers are not subtracted from this study because shared endpoint eligibility differs. Raw data, row-level predictions and trained models remain private. Public artifacts are source code, aggregate counts/scores/curves, manifests and scientific limitations. Historical public results remain unchanged.

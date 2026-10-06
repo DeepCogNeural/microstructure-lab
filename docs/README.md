@@ -1,6 +1,6 @@
 # Documentation
 
-Start with the [signal and execution audit](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) for the complete explanation of controls, feature increments, visible costs and event time. The historical reports below preserve the original experiments.
+Start with the README's [result-in-one-screen section](../README.md#result-in-one-screen) and the [formal sequence-ML package](SEQUENCE_ML_FINAL_PACKAGE.md); the [signal and execution audit](SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md) explains the earlier studies. The historical reports below preserve the original experiments.
 
 ## Current research and engineering
 
