@@ -24,7 +24,7 @@ DEFAULT_FEATURES = ["top_imbalance", "depth_imbalance", "spread_bps", "recent_tr
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Crypto market microstructure lab")
+    parser = argparse.ArgumentParser(description="Market microstructure lab")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     sample = subparsers.add_parser("make-sample", help="Run deterministic sample pipeline")

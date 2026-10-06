@@ -254,7 +254,7 @@ Report:
 - avoid cherry-picking a small subset that exaggerates native speedup;
 - repeat enough times to detect gross timing noise, but do not build a large benchmarking framework;
 - report the median of a small fixed number of repeated timings if repetitions are used;
-- do not tune implementation or benchmark selection based on the desired resume number.
+- do not tune implementation or benchmark selection based on a desired speedup number.
 
 ---
 

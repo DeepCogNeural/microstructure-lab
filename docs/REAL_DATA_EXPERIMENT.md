@@ -8,7 +8,7 @@ see [license and selection evidence](WSELOB_LICENSE.md). FI-2010 was the first
 candidate but unresolved normalization and stock-boundary semantics prevent
 using it for this economic-markout experiment.
 
-Use this checklist before promoting any empirical result to the README or a resume.
+Use this checklist before promoting any empirical result to the README.
 
 ## Data
 
@@ -86,4 +86,4 @@ not realized execution or strategy PnL.
 
 ## Claim gate
 
-A result is resume-ready only if it is produced from real captured data, out of sample, leakage-checked, and clearly labeled with the exact metric/horizon. Do not convert a midpoint-markout diagnostic into a realized-PnL or live-alpha claim.
+A result is ready for the README only if it is produced from real captured data, out of sample, leakage-checked, and clearly labeled with the exact metric/horizon. Do not convert a midpoint-markout diagnostic into a realized-PnL or live-alpha claim.

@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0
+
+Dates are given where the linked documents record them.
+
+- WSELOB-2017 five-stock study: 85.8M order messages from five 2017 Warsaw Stock Exchange equities replayed into ten-level books; Linear/XGBoost midpoint forecasts over four fixed months (HistGradientBoosting on June only) ([report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md)).
+- Execution-aware robustness: paired block evidence, spread/latency cells and stock-transfer tasks ([report](docs/EXECUTION_AWARE_ROBUSTNESS_REPORT.md)).
+- Queue-aware passive diagnostics: 822 conditional virtual-order cells with identification limits ([report](docs/QUEUE_AWARE_EXECUTION_REPORT.md)).
+- C++20/pybind11 replay and queue kernels with byte-exact Python parity, completed 2026-09-14 ([report](docs/CXX20_REPLAY_QUEUE_REPORT.md)).
+- Preregistered later-period check on December 27–29, 2017, protocol dated 2026-09-21 ([report](docs/LATER_PARTITIONS_CONFIRMATION_REPORT.md)).
+- Post-inspection signal and execution research audit, 2026-09-22 ([report](docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md)).
+- Formal retrospective sequence-ML package (FQ2–FQ4, Q8, Q10, Q11), FQ2 dated 2026-09-23 ([package](docs/SEQUENCE_ML_FINAL_PACKAGE.md)).
+- Computational-environment record and README "Read this first" summary ([environment](docs/COMPUTATIONAL_ENVIRONMENT.md)).
+
 ## 0.1.0
 
 - Added offline deterministic market-microstructure demo.

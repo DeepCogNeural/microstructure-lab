@@ -371,7 +371,7 @@ results/wselob_queue_execution_v1/
   run_manifest.json
 ```
 
-Recommended recruiter-readable figures:
+Recommended figures:
 
 1. fill probability vs prediction decile;
 2. post-fill adverse selection vs prediction decile;

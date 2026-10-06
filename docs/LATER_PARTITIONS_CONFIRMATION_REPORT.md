@@ -217,15 +217,11 @@ The previous study averaged stock/month blocks from four monthly expanding folds
 - Filled samples differ across model directions; no causal execution advantage follows. Tail post-fill heterogeneity and the non-monotonic passive spread/latency result remain visible.
 - Undefined metrics stay undefined. The 10-message Linear threshold headline and threshold-selected control markouts are not silently imputed or averaged over fewer stocks.
 
-## Application-facing verdict
+## Verdict
 
-**UPGRADE SUPPORTED** — narrowly: the project now has a preregistered later-period check supporting its prediction-versus-execution research arc. This does not support stronger profitability, independence, live-execution or broad-replication wording.
+Narrowly supported: the project now has a preregistered later-period check supporting its prediction-versus-execution research arc. This does not support stronger profitability, independence, live-execution or broad-replication wording.
 
-Candidate resume bullet (proposal only; no resume edited):
-
-> Validated frozen Linear/XGBoost signals on a preregistered later period across five equities (three shared dates): XGBoost IC 0.274 vs. Linear 0.262, while fixed-threshold crossed-book markouts remained negative and conditional queue diagnostics exposed fill/adverse-selection trade-offs.
-
-Interview interpretation: I froze both models before a later three-day period rather than retuning on the answer. The midpoint ranking persisted, but paying the visible spread still produced negative selected markouts, so I would not interpret the IC improvement as tradable profit. Passive orders faced lower conditional fill probability in stronger signal tails and adverse average post-fill price movement. The better predictor also did not consistently deliver better passive-price diagnostics, which changes how I would prioritize execution research. I would next seek a materially longer untouched period and execution-identified data before making production or profitability claims.
+Interpretation: I froze both models before a later three-day period rather than retuning on the answer. The midpoint ranking persisted, but paying the visible spread still produced negative selected markouts, so I would not interpret the IC improvement as tradable profit. Passive orders faced lower conditional fill probability in stronger signal tails and adverse average post-fill price movement. The better predictor also did not consistently deliver better passive-price diagnostics, which changes how I would prioritize execution research. I would next seek a materially longer untouched period and execution-identified data before making production or profitability claims.
 
 ## Reproduction and validation record
 

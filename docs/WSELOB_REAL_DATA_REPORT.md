@@ -169,6 +169,4 @@ Validation: full pytest **25 passed**, one existing pandas deprecation warning;
 [implementation CI passed](https://github.com/DeepCogNeural/microstructure-lab/actions/runs/34802089276).
 The real-data preparation and complete model run both exited successfully.
 
-This closes the requested implementation/empirical work, not a new external
-review. Do not merge to main or treat a numeric resume claim as reviewed until
-the requested reviewer has assessed these exact results.
+This preliminary single-stock study is superseded by the five-stock study.

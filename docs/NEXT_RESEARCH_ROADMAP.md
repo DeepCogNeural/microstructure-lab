@@ -207,7 +207,7 @@ All existing tests must remain green.
 
 ## Public figures
 
-Keep visualization minimal and recruiter-readable:
+Keep visualization minimal and readable:
 
 1. **Linear vs XGBoost paired IC delta by stock/month**;
 2. **crossed-book markout by prediction decile**, latency 0/1/5;

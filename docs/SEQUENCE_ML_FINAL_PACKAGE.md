@@ -1,6 +1,6 @@
 # Final WSELOB sequence-ML research package
 
-Status: **formal historical program complete; `PENDING_INDEPENDENT_CONFIRMATION`**. This completed package covers historical WSE research only; it does not establish independent confirmation or current-market trading performance.
+Status: **formal historical program complete; retrospective**. All evaluation dates and stocks were exposed to the research process, so these results are not independently confirmed. This completed package covers historical WSE research only; it does not establish current-market trading performance.
 
 ## Research answer
 
@@ -20,4 +20,4 @@ From the scientific task branch and public aggregate receipts, `python3 scripts/
 
 ## Claim boundary
 
-All June/September/November observations and all five stocks were previously exposed to the research process. Date-block intervals condition on fitted models and historical dates. The Q5 source/access audit qualified zero genuinely new WSE original-event h20 final days. The supported claim is a reproducible **retrospective research method and result**, including the failed Transformer and negative visible execution. Independent generalization or profitable execution requires new qualified data and a separately frozen confirmation protocol. Résumé/PDF editing remains a separate reviewer decision.
+All June/September/November observations and all five stocks were previously exposed to the research process. Date-block intervals condition on fitted models and historical dates. The Q5 source/access audit qualified zero genuinely new WSE original-event h20 final days. The supported claim is a reproducible **retrospective research method and result**, including the failed Transformer and negative visible execution. Independent generalization or profitable execution requires new qualified data and a separately frozen confirmation protocol.

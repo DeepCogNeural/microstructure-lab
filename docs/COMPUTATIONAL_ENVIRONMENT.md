@@ -24,7 +24,7 @@ The Q10 and Q11 task receipts do not contain a `software` field. Their software 
 | C++20 replay/queue benchmark | desktop-class x86-64 workstation; kernel timings are same-host ratios, not absolute throughput | host not recorded |
 | Full-year data preparation | desktop-class x86-64 workstation | host not recorded |
 
-The GPU memory need was small. Peak framework GPU allocation for one FQ2 200k GRU seed was 133,847,040 bytes, and for one Q8 context-128 GRU seed was 306,550,272 bytes (`costs.*.gpu_peak_allocated_bytes` in `results/sequence_ml_fq2_v1/fq2_200000_KGHM_a1.json` and `results/sequence_ml_q8_v1/q8_context128_KGHM.json`).
+Peak framework GPU memory allocation across the formal stages was under 0.4 GB, so results do not depend on a large-memory accelerator. The largest `gpu_peak_allocated_bytes` over all 165 recorded GRU/Transformer fits is 306,970,624 bytes (Q10, `results/sequence_ml_q10_v1/q10_transfer_PKNORLEN.json`); the largest framework reservation, `gpu_peak_reserved_bytes`, is 400,556,032 bytes (Q8 and Q10 context-128 fits).
 
 ## What "allocated" means
 

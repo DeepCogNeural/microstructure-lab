@@ -1,8 +1,14 @@
 # Market Microstructure Lab
 
+![CI](https://github.com/DeepCogNeural/microstructure-lab/actions/workflows/ci.yml/badge.svg)
+
 ## Read this first
 
 **Question:** Can an order-book forecast survive the cost of acting on it?
+
+![Gross midpoint move versus visible entry and exit half-spreads](results/wselob_research_audit_v1/visible_costs.png)
+
+*Gross midpoint move vs entry/exit half-spreads at zero delay; crossed markout is negative in both periods. Equal-weight stock/period means.*
 
 **Data:** [WSELOB-2017](https://data.mendeley.com/datasets/3g4mhdp899/1), five Warsaw Stock Exchange equities, 2017. 85,846,918 order messages are replayed into ten-level books, giving 56,887,949 feature rows. The feed holds order messages only and does not uniquely identify executions.
 
@@ -16,7 +22,7 @@
 | Q11 zero-delay cost split, Q10 GRU: gross move, entry half-spread, exit half-spread → crossed | pooled selected (83,363 opportunities) | +1.649, 4.296, 4.908 → −7.556 bp |
 | Passive virtual orders, original XGBoost study, zero latency, 20-message life: fill probability; 5-message post-fill midpoint change | equal stock/month block | 2.3365%; −0.3335 bp |
 
-**Limits:** retrospective only; all evaluation dates and all five stocks were already exposed to the research process, so independent confirmation is pending. Crossing results are quote arithmetic, not fills or PnL; passive fills are conditional scenarios with a zero identified lower bound. One venue, one year, five stocks; no fees, impact or inventory.
+**Limits:** retrospective only; all evaluation dates and all five stocks were already exposed to the research process, so these results are not independently confirmed. Crossing results are quote arithmetic, not fills or PnL; passive fills are conditional scenarios with a zero identified lower bound. One venue, one year, five stocks; no fees, impact or inventory.
 
 **Go deeper:** [final package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) · [limitations](docs/LIMITATIONS.md) · [computational environment](docs/COMPUTATIONAL_ENVIRONMENT.md). Reproduce the committed aggregates as in [Reproduce](#reproduce):
 
@@ -53,7 +59,7 @@ IC is Spearman rank correlation, not a return. The later confirmation consists o
 | Why does positive midpoint prediction fail the fixed crossing rule? | [Gross movement and visible spread costs](results/wselob_research_audit_v1/visible_costs.png) |
 | How do prediction strength, conditional fills and post-fill value relate? | [Conditional execution](results/wselob_research_audit_v1/conditional_execution.png) |
 
-The separate [formal historical sequence-ML package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) adds matched-context, strict source-only stock-transfer and fixed visible-crossing checks. Its retrospective ranking gains did not survive visible spreads; independent confirmation of this sequence-ML study remains pending.
+The separate [formal historical sequence-ML package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) adds matched-context, strict source-only stock-transfer and fixed visible-crossing checks. Its ranking gains did not survive visible spreads. The study is retrospective; all evaluation dates and stocks were exposed to the research process, so these results are not independently confirmed.
 
 Read the **[signal and execution diagnostics report](docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md)** for the completed explanatory audit. It preserves negative results and undefined metrics; it is not another unseen confirmation. Twenty messages span variable event seconds, not a fixed millisecond horizon. Passive spread diagnostics and conditional fills are not realized returns.
 
@@ -77,7 +83,7 @@ The offline demo is **synthetic**. It does not reproduce the licensed study. Lic
 
 ## Publication scope
 
-This public repository presents completed WSE research and its bounded retrospective sequence-ML package. Ongoing experiments and internal research planning are maintained separately. The historical sequence-ML results are retrospective; independent confirmation remains pending and no current-market alpha is claimed.
+This public repository presents completed WSE research and its bounded retrospective sequence-ML package. Ongoing experiments and internal research planning are maintained separately. The historical sequence-ML results are retrospective; all evaluation dates and stocks were exposed to the research process, so these results are not independently confirmed; no current-market alpha is claimed.
 
 ## Data and current status
 
