@@ -1,5 +1,31 @@
 # Market Microstructure Lab
 
+## Read this first
+
+**Question:** Can an order-book forecast survive the cost of acting on it?
+
+**Data:** [WSELOB-2017](https://data.mendeley.com/datasets/3g4mhdp899/1), five Warsaw Stock Exchange equities, 2017. 85,846,918 order messages are replayed into ten-level books, giving 56,887,949 feature rows. The feed holds order messages only and does not uniquely identify executions.
+
+**Headline numbers** from the [formal sequence-ML package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) (Q10/Q11 cohort: 315 stock/day cells, 615,488 common opportunities). This cohort differs from the "At a glance" study below. XGBoost here is the history XGBoost baseline; GRU is the mean of three seeds.
+
+| Result | Weighting | Value |
+| --- | --- | --- |
+| Q10 source-only ranking IC, GRU vs XGBoost | equal stock/day | 0.318343 vs 0.291751 (+0.026592) |
+| Q11 visible crossing, Q10 GRU, entry delay 0/1/5 messages | equal stock/day | −7.354 / −7.819 / −8.568 bp |
+| Q11 visible crossing, Q10 XGBoost, entry delay 0/1/5 messages | equal stock/day | −6.781 / −7.332 / −8.012 bp |
+| Q11 zero-delay cost split, Q10 GRU: gross move, entry half-spread, exit half-spread → crossed | pooled selected (83,363 opportunities) | +1.649, 4.296, 4.908 → −7.556 bp |
+| Passive virtual orders, original XGBoost study, zero latency, 20-message life: fill probability; 5-message post-fill midpoint change | equal stock/month block | 2.3365%; −0.3335 bp |
+
+**Limits:** retrospective only; all evaluation dates and all five stocks were already exposed to the research process, so independent confirmation is pending. Crossing results are quote arithmetic, not fills or PnL; passive fills are conditional scenarios with a zero identified lower bound. One venue, one year, five stocks; no fees, impact or inventory.
+
+**Go deeper:** [final package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) · [limitations](docs/LIMITATIONS.md) · [computational environment](docs/COMPUTATIONAL_ENVIRONMENT.md). Reproduce the committed aggregates as in [Reproduce](#reproduce):
+
+```bash
+pip install -e ".[dev,ml,data,xgb,sequence]"
+python scripts/render_research_audit.py
+python scripts/verify_research_audit.py --old-hashes results/wselob_research_audit_v1/old_result_hashes.json
+```
+
 **Can an order-book forecast survive the cost of acting on it?** This reproducible research engine reconstructs 85.8M order messages from five **2017 Warsaw Stock Exchange equities**, compares causal midpoint forecasts, then tests visible crossing costs and conditional queue behavior.
 
 **Prediction → validation → monetization test → execution friction → later-period confirmation.** A subsequent explanatory audit examines controls, feature increments and event timing on the already inspected sample.

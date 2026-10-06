@@ -15,7 +15,8 @@ The completed [post-inspection audit protocol](RESEARCH_AUDIT_PROTOCOL.md) defin
 5. [Methodology](METHODOLOGY.md): causal features, exact message horizons and chronological evaluation.
 6. [Architecture](ARCHITECTURE.md): replay, partitioned cache, resumable tasks and aggregate publication.
 7. [Reproducibility](REPRODUCIBILITY.md): synthetic quickstart versus licensed-data reproduction.
-8. [Data sources](DATA_SOURCES.md), [terms](DATA_TERMS.md), [WSELOB license](WSELOB_LICENSE.md) and [limitations](LIMITATIONS.md).
+8. [Computational environment](COMPUTATIONAL_ENVIRONMENT.md): recorded software, hardware class and allocated resources per stage.
+9. [Data sources](DATA_SOURCES.md), [terms](DATA_TERMS.md), [WSELOB license](WSELOB_LICENSE.md) and [limitations](LIMITATIONS.md).
 
 The completed [preregistered later-period confirmation](LATER_PARTITIONS_CONFIRMATION_REPORT.md) adds a narrow three-date check of prediction, aggressive crossing and conditional queue findings. Read its [pre-confirmation audit](LATER_PARTITIONS_UNTOUCHED_AUDIT.md) and [frozen protocol](LATER_PARTITIONS_CONFIRMATION_PROTOCOL.md) as historical stage records: their pre-execution wording describes those stages, not the current completion status. The final report distinguishes replicated findings from heterogeneous stronger-tail post-fill contrasts.
 
