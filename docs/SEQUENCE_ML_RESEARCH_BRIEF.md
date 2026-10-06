@@ -20,8 +20,6 @@ The Transformer gate met five of six conditions but failed training adequacy: tw
 
 Q2 took **400.41 s** and Q3 updates **1,040.09 s** total local CPU wall time; GPU use was **0 hours**. The [per-arm cost table](../results/sequence_ml_v1/cost_table.csv) separates fitting and inference. Actual CPU core-hours were not measured. Raw data, model weights, and row predictions remain outside Git; public aggregate receipts and their hashes are in the [scientific manifest](../results/sequence_ml_v1/q6_scientific_manifest.json). CPU-only aggregate recomputation reproduced the original Q2 and Q3 summary hashes exactly; figures were regenerated from those aggregates. Figure 4 and Q3 diagnostics additionally read the public per-stock aggregate execution receipts.
 
-## Claim boundary for application review
-
-**Résumé-safe after separate reviewer approval:** “Built a causal, leakage-checked order-book sequence benchmark across five equities; compared linear, boosted-tree and three-seed GRU models on matched original-event endpoints; published reproducible aggregate diagnostics showing a modest retrospective GRU IC advantage and negative visible-quote crossing results.” State the historical sample and negative execution result together if numerical detail is used. This brief does **not** edit or authorize an automatic résumé/PDF update.
+## Claim boundary
 
 **Requires independent confirmation:** predictive generalization to new dates or markets; a robust GRU advantage beyond this exposed sample; viable trading edge, fill quality or live PnL; any Transformer or LLM result. A qualified new source needs provenance, lawful access, original-event/schema compatibility, and a frozen adaptation/dev/final protocol before its outcomes are inspected.

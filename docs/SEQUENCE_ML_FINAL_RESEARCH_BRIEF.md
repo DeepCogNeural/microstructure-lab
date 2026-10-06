@@ -1,6 +1,6 @@
 # Final WSELOB sequence-ML research brief
 
-**Status:** formal historical research complete; independent confirmation **pending**. The 2017 WSE stocks and months used here were researcher-exposed. This brief does not claim unseen-stock or future-period generalization, actual fills or trading profit. The old Q2/Q3/Q6 20k/15-epoch work remains archived as a pilot; FQ2–FQ4, Q8, Q10 and Q11 are the final bounded retrospective record.
+**Status:** formal historical research complete; retrospective; all evaluation dates and stocks were exposed to the research process, so these results are not independently confirmed. The 2017 WSE stocks and months used here were researcher-exposed. This brief does not claim unseen-stock or future-period generalization, actual fills or trading profit. The old Q2/Q3/Q6 20k/15-epoch work remains archived as a pilot; FQ2–FQ4, Q8, Q10 and Q11 are the final bounded retrospective record.
 
 ## Question and design
 
@@ -41,4 +41,4 @@ The both-selected subset is published separately. The prior FQ3 zero-delay histo
 
 FQ2/FQ3/FQ4/Q8/Q10 used **7.912 allocated GPU-hours** total; Q11 used **1.264 allocated CPU core-hours**. These are scheduler allocations, not utilization. `results/sequence_ml_final_v1/` contains four figures, a cost table, public run/model/source/data hashes and an aggregate recomputation manifest. Licensed raw records, row predictions, weights and private scheduler logs stay outside Git.
 
-The Q5 source audit found no legally usable, genuinely uninspected WSE original-event h20 cohort. Therefore `PENDING_INDEPENDENT_CONFIRMATION` remains the final boundary. A résumé-safe method description would require separate editing authorization; no résumé or PDF was changed by this research run. An independent performance or profit claim requires qualified new data and its own frozen protocol.
+The Q5 source audit found no legally usable, genuinely uninspected WSE original-event h20 cohort. Therefore the results remain retrospective; all evaluation dates and stocks were exposed to the research process, so these results are not independently confirmed. An independent performance or profit claim requires qualified new data and its own frozen protocol.

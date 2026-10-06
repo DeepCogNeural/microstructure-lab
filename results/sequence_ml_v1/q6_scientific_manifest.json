@@ -173,7 +173,7 @@
       "04_prediction_vs_crossing.png": "50588c8645b3d935f572892270360d3f2d35039f875643efea9839544763750f"
     },
     "render_manifest": "1e45d3cdd4a34ef5c60ff95d7e16254d034bc1f362ea0dd60728f4d6c6ee1afe",
-    "research_brief": "9d48af8e23f7c7966322a6adf63ec8a3bab6583aba6718c3ede45a7d6d069fbc"
+    "research_brief": "ec70dce8d1bb27f7c97082de157bb2c4e75f45997108eca47e4956b841d03deb"
   },
   "recomputation": "Q2 and Q3 CPU aggregate scripts reran locally; before/after summary SHA-256 matched. No model refit or new final outcomes in Q6.",
   "run_receipt_sha256": {

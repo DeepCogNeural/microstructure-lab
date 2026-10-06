@@ -1628,7 +1628,7 @@
     "PZU": "4ca8f7c136c940d71b271cc427d641c3881857e01b43555792d484d9eb2f4b8c"
   },
   "output_sha256": {
-    "brief": "895da530f5280f7b695cf7fccf96535c768226a763a906ad0fb89a357adeec6d",
+    "brief": "81777e1594f15bac86b70571562b23c61bc28e0efbc02887842f0b139c741353",
     "cost_table": "325aee8524222ec951f6bac735cc508c0463102e83a3e2d4efc14e9b067381bd",
     "figures": {
       "01_history_and_sample_scale.png": "209556c17ff8d8946ffe1eb2c278fb03a07e1b02532eec0a1bd1757d0256d038",
@@ -1636,7 +1636,7 @@
       "03_stock_and_state.png": "d658b47d1afc67079c51317e09385252a9405eaf6b39c07eed86ee8a50a917b5",
       "04_prediction_and_visible_execution.png": "c3817f80b11e39c64f642d5584c090b39358d1b4e3ba778f414ccc96e27dae7d"
     },
-    "index": "5ed4194914ee668da43d40e7590054d70fbf48cacf967b907bd88c4cf02004af",
+    "index": "dcaec1ab75080488df6729e3e091bce77811ee4dab08405d0deb4ebbba1557d5",
     "recomputation": "d2416a822e90b4309aa3669c2de4d71b0b5f9055e4908856ee10f7a722aad4ee",
     "render_manifest": "97801b2767a321d697a8b2c2cd93ce8406d94dc65933624cc152b6e79e0d63da"
   },

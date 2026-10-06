@@ -32,7 +32,9 @@ python scripts/render_research_audit.py
 python scripts/verify_research_audit.py --old-hashes results/wselob_research_audit_v1/old_result_hashes.json
 ```
 
-**Can an order-book forecast survive the cost of acting on it?** This reproducible research engine reconstructs 85.8M order messages from five **2017 Warsaw Stock Exchange equities**, compares causal midpoint forecasts, then tests visible crossing costs and conditional queue behavior.
+## Research arc
+
+This reproducible research engine reconstructs 85.8M order messages from five **2017 Warsaw Stock Exchange equities**, compares causal midpoint forecasts, then tests visible crossing costs and conditional queue behavior.
 
 **Prediction → validation → monetization test → execution friction → later-period confirmation.** A subsequent explanatory audit examines controls, feature increments and event timing on the already inspected sample.
 

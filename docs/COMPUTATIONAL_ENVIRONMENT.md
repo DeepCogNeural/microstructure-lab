@@ -72,6 +72,8 @@ The derived store is larger than the source. It is not compression. It is a part
 
 ## C++20 benchmark threading
 
+C++20 kernels are single-threaded; the benchmark ran day partitions as bounded parallel shards, and the reported 8.984× / 3.571× are per-kernel wall-time ratios on the same host.
+
 - The C++ replay and queue kernels are single-threaded. `cpp/replay_queue.cpp` contains no thread, OpenMP or async code. `cpp/bindings.cpp` releases the Python GIL during each native call.
 - Each timing is the median of three sums of per-day kernel wall times (`results/cxx20_replay_queue_v1/benchmark_summary.csv`). Days ran in bounded parallel shards (`--shard N --shards K` in `scripts/benchmark_native.py`). The shard count is not recorded in public files.
 - Replay: Python 4192.595 s versus native 466.656 s over 85,846,918 messages, an 8.984× ratio. Queue: Python 5.099 s versus native 1.428 s over 7,889,736 virtual orders, a 3.571× ratio (`docs/CXX20_REPLAY_QUEUE_REPORT.md`).
