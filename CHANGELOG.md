@@ -2,6 +2,9 @@
 
 ## 0.2.0
 
+- Added optional polars engine (`cloblab.polars_cache`, `cloblab cache-summary --engine {pandas,polars}`) for feature-cache partition summaries, with pandas as the default reference and parity tests on a synthetic multi-partition fixture; no scientific definitions or results changed.
+- Added `docs/TECH_STACK.md`; removed the unused `duckdb` dependency.
+
 Dates are given where the linked documents record them.
 
 - WSELOB-2017 five-stock study: 85.8M order messages from five 2017 Warsaw Stock Exchange equities replayed into ten-level books; Linear/XGBoost midpoint forecasts over four fixed months (HistGradientBoosting on June only) ([report](docs/XGBOOST_SCALE_ENGINEERING_REPORT.md)).

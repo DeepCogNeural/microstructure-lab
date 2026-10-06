@@ -32,7 +32,7 @@ Terms:
 
 **Limits:** retrospective only; all evaluation dates and all five stocks were already exposed to the research process, so these results are not independently confirmed. Crossing results are quote arithmetic, not fills or PnL. One venue, one year, five stocks; no fees, impact or inventory.
 
-**Go deeper:** [final package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) · [limitations](docs/LIMITATIONS.md) · [computational environment](docs/COMPUTATIONAL_ENVIRONMENT.md) · [reproduce](#reproduce).
+**Go deeper:** [final package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) · [limitations](docs/LIMITATIONS.md) · [computational environment](docs/COMPUTATIONAL_ENVIRONMENT.md) · [technology stack](docs/TECH_STACK.md) · [reproduce](#reproduce).
 
 ## Research arc
 
@@ -74,6 +74,8 @@ python scripts/render_research_audit.py
 python scripts/verify_research_audit.py \
   --old-hashes results/wselob_research_audit_v1/old_result_hashes.json
 ```
+
+Optional polars engine: `cloblab cache-summary --engine polars` scans the symbol/day Parquet feature cache lazily and must match the pandas reference on the same per-partition counts and microprice identity check (parity-tested; install with the `polars` extra).
 
 The offline demo is **synthetic**. It does not reproduce the licensed study. Licensed preparation and actual plan/run/resume/aggregate commands are in [reproducibility](docs/REPRODUCIBILITY.md) and the [audit report](docs/SIGNAL_EXECUTION_DIAGNOSTICS_REPORT.md#reproduce-from-the-licensed-inputs). Raw events, row predictions and models remain private. Native speed ratios reuse the unchanged, verified core and measure kernels rather than end-to-end or live latency.
 
