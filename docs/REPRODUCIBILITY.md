@@ -17,6 +17,8 @@ python3 -m venv .venv
 pip install -e ".[dev,ml,data,xgb,sequence]"
 ```
 
+Add the `polars` extra (`pip install -e ".[dev,polars]"`) to enable the optional polars engine for `cloblab cache-summary`; its parity tests skip without it.
+
 ## Tests
 
 ```bash

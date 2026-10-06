@@ -51,6 +51,12 @@ def main(argv: list[str] | None = None) -> int:
     schema = subparsers.add_parser("schema", help="Print or write schema markdown")
     schema.add_argument("--out", help="optional output markdown path")
 
+    cache_summary = subparsers.add_parser("cache-summary", help="Summarize feature-cache partitions")
+    cache_summary.add_argument("--root", required=True, help="cache root with symbol=*/day=* folders")
+    cache_summary.add_argument("--manifest", help="manifest JSON (default: <root>/manifest.json)")
+    cache_summary.add_argument("--engine", choices=["pandas", "polars"], default="pandas")
+    cache_summary.add_argument("--out", help="optional output CSV path")
+
     args = parser.parse_args(argv)
     if args.command in {"make-sample", "demo"}:
         paths = run_sample_pipeline(
@@ -80,6 +86,17 @@ def main(argv: list[str] | None = None) -> int:
             print(output)
         else:
             print(text)
+        return 0
+    if args.command == "cache-summary":
+        from cloblab.polars_cache import summarize_partitions
+
+        manifest_path = Path(args.manifest) if args.manifest else Path(args.root) / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        summary = summarize_partitions(args.root, manifest["partitions"], engine=args.engine)
+        if args.out:
+            print(write_csv(summary, args.out))
+        else:
+            print(summary.to_csv(index=False), end="")
         return 0
     raise ValueError(f"unknown command: {args.command}")
 
