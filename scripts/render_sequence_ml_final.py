@@ -1,55 +1,60 @@
 """Render the final WSE historical research package from public aggregate receipts."""
 from __future__ import annotations
-import argparse,csv,hashlib,json
+import argparse,csv,hashlib,json,textwrap
 from pathlib import Path
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib import pyplot as plt
 import numpy as np
+from matplotlib.offsetbox import AnchoredOffsetbox, DrawingArea, HPacker, TextArea
+from matplotlib.patches import Rectangle
+import figure_style as style
 
-BLUE='#3855a6';ORANGE='#c96b26';GRAY='#707784';SLATE='#3a3f4b';LIGHT_SLATE='#9aa3b2'
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(p):return json.loads(Path(p).read_text())
 def save(fig,p):
-    fig.savefig(p,dpi=190,bbox_inches='tight',facecolor='white',metadata={'Software': None})
+    fig.savefig(p,dpi=300,facecolor='white',metadata={'Software': None})
     plt.close(fig)
 def value_label(value,kind):
-    spec={'delta':'+.4f','ic':'.3f','bp':'+.2f','coverage':'.1f'}[kind]
-    return format(value,spec).replace('-', '−')+('%' if kind=='coverage' else '')
-def style(ax,title,ylabel,kind='delta',label_shift=0):
-    ax.set_title(title,loc='left',fontsize=11,weight='bold',pad=12)
-    ax.set_ylabel(ylabel,color=SLATE)
-    ax.spines[['top','right','left']].set_visible(False)
-    ax.spines['bottom'].set_color('#e6e8ec')
-    ax.tick_params(axis='both',colors=SLATE,labelsize=9)
-    ax.tick_params(axis='y',length=0)
-    ax.set_axisbelow(True)
-    ax.grid(axis='y',color='#e6e8ec',linewidth=.8)
-    ax.axhline(0,color=GRAY,lw=.9,zorder=3)
-    for container in ax.containers:
-        if not isinstance(container,matplotlib.container.BarContainer):
-            continue
+    if kind in ('delta','bp'):
+        return style.fmt_signed(value,4 if kind=='delta' else 2)
+    return format(value,'.3f' if kind=='ic' else '.1f')+('%' if kind=='coverage' else '')
+def panel(ax,title,ylabel,kind='delta',letter='a',vertical=False):
+    ax.set_title(title,loc='left',fontsize=8,pad=14)
+    ax.set_ylabel(ylabel,fontsize=8)
+    ax.tick_params(axis='x',top=False)
+    ax.axhline(0,color=style.ZERO,lw=.5,zorder=3)
+    style.panel_label(ax,letter)
+    containers=[c for c in ax.containers if isinstance(c,matplotlib.container.BarContainer)]
+    for arm,container in enumerate(containers):
         for bar in container:
             value=bar.get_height()
-            color=bar.get_facecolor()
-            if color==matplotlib.colors.to_rgba(LIGHT_SLATE):
-                color='#5b6372'
-            dx=label_shift if color=='#5b6372' else -label_shift
+            inside=kind=='bp'  # dense negative bars: label inside the bar end, in white
+            offset=(-3 if value>=0 else 3) if inside else (2 if value>=0 else -2)
             ax.annotate(value_label(value,kind),
                         (bar.get_x()+bar.get_width()/2,value),
-                        xytext=(dx,4 if value>=0 else -4),textcoords='offset points',
-                        ha='center',va='bottom' if value>=0 else 'top',fontsize=8,color=color)
+                        xytext=(0,offset),textcoords='offset points',
+                        ha='center',va=('top' if value>=0 else 'bottom') if inside else ('bottom' if value>=0 else 'top'),
+                        fontsize=7 if (vertical or inside) else 8,
+                        rotation=90 if vertical else 0,color='white' if inside else style.NET)
     lo,hi=ax.get_ylim()
     span=hi-lo
-    ax.set_ylim(lo-.12*span if lo<0 else 0,hi+.32*span)
-def legend(ax):
-    ax.legend(loc='upper left',ncol=2,frameon=False,fontsize=9,
-              handlelength=1.2,columnspacing=1.2,borderaxespad=.2)
-def header(fig,title,*,bottom=.19,top=.83,hspace=.42):
-    for ax in fig.axes:
-        ax.xaxis.label.set_color(SLATE)
-    fig.suptitle(title,x=.01,y=.98,ha='left',fontsize=12.5,weight='bold')
-    fig.subplots_adjust(left=.075,right=.985,bottom=bottom,top=top,wspace=.30,hspace=hspace)
+    ax.set_ylim(lo-(.06 if kind=='bp' else .45 if vertical else .30)*span if lo<0 else 0,hi+(.45 if vertical else .18)*span)
+def header(fig,title,*,bottom=.25,top=.70,hspace=.70,stock=False):
+    fig.text(.035,.965,title,ha='left',va='top',fontsize=10,weight='bold')
+    entries=[]
+    pairs=[('Q8 within-stock',style.CATEGORY_A),('Q10 source-only 4→1',style.CATEGORY_B)] if stock else [
+        ('XGBoost baseline (B1)',style.BASELINE),('GRU (S0)',style.MODEL)]
+    for label,color in pairs:
+        square=DrawingArea(6,6,0,0)
+        square.add_artist(Rectangle((0,0),6,6,facecolor=color,edgecolor='none'))
+        entries.append(HPacker(children=[square,TextArea(label,textprops={'color':color,'size':8})],
+                               align='center',pad=0,sep=4))
+    fig.add_artist(AnchoredOffsetbox(loc='upper left',child=HPacker(children=entries,align='center',pad=0,sep=22),
+                                    frameon=False,bbox_to_anchor=(.035,.865),bbox_transform=fig.transFigure,borderpad=0,pad=0))
+    fig.subplots_adjust(left=.095,right=.975,bottom=bottom,top=top,wspace=.38,hspace=hspace)
+def footer(fig,text):
+    fig.text(.035,.09,textwrap.fill(text,108),ha='left',va='top',fontsize=8,color=style.MUTED,linespacing=1.4)
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--out',type=Path,default=Path('results/sequence_ml_final_v1'));a=ap.parse_args()
     if a.out.exists():raise ValueError('preserve existing final package')
@@ -66,69 +71,70 @@ def main():
         raise ValueError('ranking IC undefined; final package requires explicit review')
     if d['Q11']['common_opportunities']<=0:raise ValueError('no common execution opportunities')
     a.out.mkdir(parents=True);figs=a.out/'figures';figs.mkdir();made=[]
+    style.apply()
     # Figure 1: two distinct historical cohorts, separated rather than pooled.
-    fig,axes=plt.subplots(1,2,figsize=(11.5,4.6))
+    fig,axes=plt.subplots(1,2,figsize=(style.WIDTH_DOUBLE,3.6))
     sizes=(50000,100000,200000);q2=d['FQ2']
     delta=[q2['levels'][str(n)]['full_denominator_result']['paired_vs_B1']['S0_seed_mean']['mean_delta_ic'] for n in sizes]
     ci=[q2['levels'][str(n)]['full_denominator_result']['paired_vs_B1']['S0_seed_mean']['ci95_block5'] for n in sizes]
-    axes[0].errorbar(range(3),delta,yerr=[[v-c[0] for v,c in zip(delta,ci)],[c[1]-v for v,c in zip(delta,ci)]],fmt='o-',color=SLATE,capsize=4,markersize=6)
+    axes[0].errorbar(range(3),delta,yerr=[[v-c[0] for v,c in zip(delta,ci)],[c[1]-v for v,c in zip(delta,ci)]],fmt='o-',color=style.DIFF,capsize=3,markersize=4,lw=1.2)
     axes[0].set_xticks(range(3),['50k','100k','200k']);axes[0].set_xlabel('Training endpoints per stock')
-    style(axes[0],'A. FQ2: context32 sample scaling','S0−B1 equal-cell IC')
+    panel(axes[0],'FQ2: context32 sample scaling','S0−B1 equal-cell IC')
     for i,(value,interval) in enumerate(zip(delta,ci)):
         axes[0].annotate(value_label(value,'delta'),(i,interval[1]),
-                         xytext=(0,5),textcoords='offset points',ha='center',fontsize=8,color=SLATE)
+                         xytext=(0,5),textcoords='offset points',ha='center',fontsize=8,color=style.DIFF)
     axes[0].margins(x=.16)
     contexts=(8,32,128);q8=d['Q8'];b=[q8['evaluation'][str(c)]['full_denominator_result']['mean_ic']['B1_history_xgboost'] for c in contexts]
     s=[q8['evaluation'][str(c)]['full_denominator_result']['S0_seed_mean_ic'] for c in contexts]
-    x=np.arange(3);axes[1].bar(x-.17,b,.34,label='B1 · history XGBoost',color=BLUE);axes[1].bar(x+.17,s,.34,label='S0 · GRU, mean of seed ICs',color=ORANGE)
-    axes[1].set_xticks(x,[str(c) for c in contexts]);axes[1].set_xlabel('History states');legend(axes[1])
-    style(axes[1],'B. Q8: common 128-eligible rows','Equal-cell retrospective IC','ic')
+    x=np.arange(3);axes[1].bar(x-.17,b,.34,label='B1 · history XGBoost',color=style.BASELINE);axes[1].bar(x+.17,s,.34,label='S0 · GRU, mean of seed ICs',color=style.MODEL)
+    axes[1].set_xticks(x,[str(c) for c in contexts]);axes[1].set_xlabel('History states')
+    panel(axes[1],'Q8: common 128-eligible rows','Equal-cell retrospective IC','ic',letter='b')
     header(fig,'Figure 1 · Matched-history and context comparison')
-    fig.text(.01,.025,'Both panels use exposed 2017 dates; Q8 eligibility differs from FQ2 and is never pooled with it.',fontsize=8.5,color=GRAY)
+    footer(fig,'Both panels use exposed 2017 dates; Q8 eligibility differs from FQ2 and is never pooled with it.')
     p=figs/'01_history_and_sample_scale.png';save(fig,p);made.append(p)
     # Figure 2: fixed versus updated monthly IC; temporal composition changes with refit.
     months=('2017-06','2017-09','2017-11');q3=d['FQ3'];time=q3['time_fixed_vs_updated'];x=np.arange(3)
     b=[time[m]['B1_history_xgboost']['updated_minus_fixed_ic'] for m in months]
     s=[np.mean([time[m][f'S0_history_gru_seed{seed}']['updated_minus_fixed_ic'] for seed in (7,17,29)]) for m in months]
-    fig,ax=plt.subplots(figsize=(11.5,4.2));ax.bar(x-.18,b,.36,color=BLUE,label='B1 · history XGBoost');ax.bar(x+.18,s,.36,color=ORANGE,label='S0 · GRU, three-seed mean')
-    ax.set_xticks(x,['June','September','November']);legend(ax)
-    style(ax,'FQ3: updated minus fixed model on exposed months','Equal-cell IC difference')
+    fig,ax=plt.subplots(figsize=(style.WIDTH_DOUBLE,3.2));ax.bar(x-.17,b,.34,color=style.BASELINE,label='B1 · history XGBoost');ax.bar(x+.17,s,.34,color=style.MODEL,label='S0 · GRU, three-seed mean')
+    ax.set_xticks(x,['June','September','November'])
+    panel(ax,'FQ3: updated minus fixed model on exposed months','Equal-cell IC difference')
     header(fig,'Figure 2 · Monthly fixed versus updated comparison')
-    fig.text(.01,.025,'Refits add newer training information and change calendar conditions together; this is not a causal decay estimate.',fontsize=8.5,color=GRAY)
+    footer(fig,'Refits add newer training information and change calendar conditions together; this is not a causal decay estimate.')
     p=figs/'02_time_and_update.png';save(fig,p);made.append(p)
     # Figure 3: all five stock effects for within-stock versus strict source-only fits, plus frozen state split.
     syms=d['Q10']['symbols'];within=q8['evaluation']['128']['full_denominator_result']['S0_seed_mean_vs_B1']['stock_delta_ic']
     transfer=d['Q10']['full_denominator_result']['S0_seed_mean_vs_B1']['stock_delta_ic'];state=q3['state']
-    fig,axes=plt.subplots(1,2,figsize=(11.5,4.6),gridspec_kw={'width_ratios':[1.65,1]});x=np.arange(len(syms))
-    axes[0].bar(x-.18,[within[s] for s in syms],.36,color=SLATE,label='Q8 within-stock')
-    axes[0].bar(x+.18,[transfer[s] for s in syms],.36,color=LIGHT_SLATE,label='Q10 source-only 4→1')
-    axes[0].set_xticks(x,syms);legend(axes[0])
-    style(axes[0],'A. Five stocks, complete denominator','S0 seed IC mean − B1 IC',label_shift=5)
+    fig,axes=plt.subplots(1,2,figsize=(style.WIDTH_DOUBLE,3.6),gridspec_kw={'width_ratios':[1.65,1]});x=np.arange(len(syms))
+    axes[0].bar(x-.17,[within[s] for s in syms],.34,color=style.CATEGORY_A,label='Q8 within-stock')
+    axes[0].bar(x+.17,[transfer[s] for s in syms],.34,color=style.CATEGORY_B,label='Q10 source-only 4→1')
+    axes[0].set_xticks(x,syms)
+    panel(axes[0],'Five stocks, complete denominator','S0 seed IC mean − B1 IC',vertical=True)
     keys=('high_activity','low_activity');vals=[state[k]['paired_delta_ic']['full_denominator_mean'] for k in keys]
-    axes[1].bar(['High prior\nactivity','Low prior\nactivity'],vals,color=SLATE)
-    style(axes[1],'B. FQ3 fixed prior-state split','IC of mean S0 prediction − B1')
-    header(fig,'Figure 3 · Stock and preset activity-state decomposition')
-    fig.text(.01,.025,'Stock panel uses the Q8 common cohort; state panel uses the separate FQ2/FQ3 cohort and a different seed estimand.',fontsize=8.5,color=GRAY)
+    axes[1].bar(['High prior\nactivity','Low prior\nactivity'],vals,color=style.DIFF)
+    panel(axes[1],'FQ3 fixed prior-state split','IC of mean S0 prediction − B1',letter='b')
+    header(fig,'Figure 3 · Stock and preset activity-state decomposition',stock=True)
+    footer(fig,'Stock panel uses the Q8 common cohort; state panel uses the separate FQ2/FQ3 cohort and a different seed estimand.')
     p=figs/'03_stock_and_state.png';save(fig,p);made.append(p)
     # Figure 4: selected visible crossing at fixed t+20 exit, including coverage and both research populations.
     q11=d['Q11'];modes=('Q8_within_stock','Q10_source_only_transfer');arms=('B1_history_xgboost','S0_seed_mean');delays=(0,1,5)
-    fig,axes=plt.subplots(2,2,figsize=(11.5,7.6),sharex='col')
+    fig,axes=plt.subplots(2,2,figsize=(style.WIDTH_DOUBLE,5.6),sharex='col')
     for row,mode in enumerate(modes):
         label='Within-stock Q8' if row==0 else 'Source-only Q10'
-        for arm,shift,color in ((arms[0],-.18,BLUE),(arms[1],.18,ORANGE)):
+        for arm,shift,color in ((arms[0],-.17,style.BASELINE),(arms[1],.17,style.MODEL)):
             cells=[q11['execution'][mode][arm][str(delay)] for delay in delays]
             mark=[cell['pooled_selected_crossed_bps_descriptive'] for cell in cells]
             coverage=[100*cell['selected_sum_across_cells']/cell['common_opportunities_sum_across_cells'] if cell['common_opportunities_sum_across_cells'] else np.nan for cell in cells]
             if any(v is None for v in mark):raise ValueError('no selected opportunities for a finalist')
-            axes[row,0].bar(np.arange(3)+shift,mark,.36,color=color,label='B1 · history XGBoost' if arm==arms[0] else 'S0 · GRU, seed mean')
-            axes[row,1].bar(np.arange(3)+shift,coverage,.36,color=color,label='B1 · history XGBoost' if arm==arms[0] else 'S0 · GRU, seed mean')
+            axes[row,0].bar(np.arange(3)+shift,mark,.34,color=color,label='B1 · history XGBoost' if arm==arms[0] else 'S0 · GRU, seed mean')
+            axes[row,1].bar(np.arange(3)+shift,coverage,.34,color=color,label='B1 · history XGBoost' if arm==arms[0] else 'S0 · GRU, seed mean')
         axes[row,0].set_xticks(range(3),['0','1','5'])
         axes[row,1].set_xticks(range(3),['0','1','5'])
-        style(axes[row,0],('A. ' if row==0 else 'C. ')+label+': visible crossing','Pooled selected crossed bp','bp')
-        style(axes[row,1],('B. ' if row==0 else 'D. ')+label+': selection coverage','Selected / common, %','coverage')
-    legend(axes[0,0]);axes[1,0].set_xlabel('Entry delay, original messages');axes[1,1].set_xlabel('Entry delay, original messages')
-    header(fig,'Figure 4 · Ranking and visible-crossing cost with coverage',bottom=.12,top=.89,hspace=.48)
-    fig.text(.01,.025,'One share at visible quotes, fixed t+20 exit; selected sets differ by arm. No fills, fees, queue, impact, inventory or realized PnL.',fontsize=8.5,color=GRAY)
+        panel(axes[row,0],label+': visible crossing','Pooled selected crossed bp','bp',letter='a' if row==0 else 'c')
+        panel(axes[row,1],label+': selection coverage','Selected / common, %','coverage',letter='b' if row==0 else 'd')
+    axes[1,0].set_xlabel('Entry delay, original messages');axes[1,1].set_xlabel('Entry delay, original messages')
+    header(fig,'Figure 4 · Ranking and visible-crossing cost with coverage',bottom=.18,top=.78,hspace=.70)
+    footer(fig,'One share at visible quotes, fixed t+20 exit; selected sets differ by arm. No fills, fees, queue, impact, inventory or realized PnL.')
     p=figs/'04_prediction_and_visible_execution.png';save(fig,p);made.append(p)
     # Allocation table: scheduler time is not GPU/CPU utilization.
     alloc={s:read(f'results/sequence_ml_{s.lower()}_v1/{s.lower()}_gpu_allocation.json') for s in ('FQ2','FQ3','FQ4','Q8','Q10')}

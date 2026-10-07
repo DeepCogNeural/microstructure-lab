@@ -1631,14 +1631,14 @@
     "brief": "81777e1594f15bac86b70571562b23c61bc28e0efbc02887842f0b139c741353",
     "cost_table": "325aee8524222ec951f6bac735cc508c0463102e83a3e2d4efc14e9b067381bd",
     "figures": {
-      "01_history_and_sample_scale.png": "b9a30360e90314e9b301f14aabd52391df60e556cc9184431fc84bcdabfa3c43",
-      "02_time_and_update.png": "1175406364e9e73d3cefdcd310b7089e79813e061e64e098dca0591b79359a23",
-      "03_stock_and_state.png": "074438e0a64d23bbd80e035d1bdee13ecb4a1044383905d85e31052d0f86f889",
-      "04_prediction_and_visible_execution.png": "73150db7cce6f5e5924d8ed0583bd27806e55e3c64a6a643e903f64a172e7e14"
+      "01_history_and_sample_scale.png": "a79f0192ed0ab0720f7bdfc06065681ce426f44ce4bd83346d6dfdfa7aec5152",
+      "02_time_and_update.png": "4abaa913346ba2e14adbd27f5aedad852b7b59ef9415c6dcb8df507807659d51",
+      "03_stock_and_state.png": "6eaf7d04902e45cc38e7962f8eb01d1fe746aa57a37261b66c1aab613d010915",
+      "04_prediction_and_visible_execution.png": "c6d7f4c31145f841c9588af5b00cd704d896e18f1c81fd04e30a8b9ed8771fde"
     },
-    "index": "ba03b87faae2755c600132e64656f931576fa2050ac4767fab207e0428e4e697",
+    "index": "892bc0b82ca52e9290e12cec6150c91f5857e53bdb8e0a7a2d995cce2ee45ca5",
     "recomputation": "d2416a822e90b4309aa3669c2de4d71b0b5f9055e4908856ee10f7a722aad4ee",
-    "render_manifest": "d51f7fd26c90dc8c28ca2a7756a6acedf024f73b5d5b7816d69b92509395ff18"
+    "render_manifest": "3024aaef5bf54b8c77de52f348091939e16291b86f864e2beab3b9f63c662fa7"
   },
   "package_parent_commit": "14d81427abf994b3bd07036c5d2ace65a6c32aaa",
   "private_prediction_sha256_from_receipts_not_public_arrays": {

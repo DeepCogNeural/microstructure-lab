@@ -2,6 +2,8 @@
 
 ![CI](https://github.com/DeepCogNeural/microstructure-lab/actions/workflows/ci.yml/badge.svg)
 
+**Contents:** [Result](#result-in-one-screen) · [Research arc](#research-arc) · [Data validity](#data-validity-rules) · [Reproduce](#reproduce) · [Earlier studies](#history-earlier-studies-on-the-same-data) · [Data and status](#data-and-current-status) · [Final package](docs/SEQUENCE_ML_FINAL_PACKAGE.md) · [All docs](docs/README.md)
+
 ## Result in one screen
 
 **Question:** Can an order-book forecast survive the cost of acting on it?
@@ -60,8 +62,8 @@ python3 -m venv .venv
 pip install -e ".[dev,ml,data,xgb,sequence]"
 python scripts/render_edge_vs_cost.py
 # Verifies receipt/parent/source/model hashes and writes a fresh manifest.
-# Note: this script currently refuses to run unless the checkout is on the
-# archived scientific task branch; see the final package.
+# On a public clone it prints a note that the original scientific task
+# branch differs; the scientific checks are unchanged.
 python scripts/verify_sequence_ml_final.py --manifest-out /tmp/wse-scientific-manifest.json
 ```
 

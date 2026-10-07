@@ -5,6 +5,7 @@
 - Added optional polars engine (`cloblab.polars_cache`, `cloblab cache-summary --engine {pandas,polars}`) for feature-cache partition summaries, with pandas as the default reference and parity tests on a synthetic multi-partition fixture; no scientific definitions or results changed.
 - Added `docs/TECH_STACK.md`; removed the unused `duckdb` dependency.
 - Restyled the four final sequence-ML figures (model colors shared with the README headline figure, direct value labels, panel letters) and reorganized `docs/SEQUENCE_ML_FINAL_PACKAGE.md` with key terms and figure captions; plotted values, aggregates and the cost table are unchanged.
+- Added `scripts/figure_style.py`, one Nature-journal figure style (SciencePlots layout conventions, ggsci NPG colors, no LaTeX), and applied it to the README headline figure and the four final package figures; README gained a contents line. Plotted values are unchanged.
 
 Dates are given where the linked documents record them.
 

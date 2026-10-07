@@ -34,31 +34,31 @@ The [five-minute brief](SEQUENCE_ML_FINAL_RESEARCH_BRIEF.md) states the design a
 
 ## Figures
 
-`results/sequence_ml_final_v1/figures/` contains four final figures. Blue is B1 (history XGBoost) and orange is S0 (GRU) wherever the two models appear side by side, matching the README headline figure. Slate gray marks S0−B1 differences.
+`results/sequence_ml_final_v1/figures/` contains four final figures. All figures share one style with the README headline figure: navy is B1 (history XGBoost), red is S0 (GRU), and dark gray marks S0−B1 differences. In Figure 3, brown and taupe separate the Q8 and Q10 populations.
 
 ### Figure 1 · Matched-history and context comparison
 
 ![Matched-history and context comparison](../results/sequence_ml_final_v1/figures/01_history_and_sample_scale.png)
 
-*A: FQ2 sample scaling at context32 (S0−B1 IC with 95% five-day block intervals). B: Q8 B1 and S0 IC on the common 128-eligible rows, by history length. The two panels use different cohorts and are never pooled.*
+**a**, FQ2 sample scaling at context32 (S0−B1 IC with 95% five-day block intervals). **b**, Q8 B1 and S0 IC on the common 128-eligible rows, by history length. The two panels use different cohorts and are never pooled.
 
 ### Figure 2 · Monthly fixed versus updated comparison
 
 ![Monthly fixed versus updated comparison](../results/sequence_ml_final_v1/figures/02_time_and_update.png)
 
-*FQ3: IC of the updated (refit) model minus the fixed model, per exposed month.*
+FQ3: IC of the updated (refit) model minus the fixed model, per exposed month.
 
 ### Figure 3 · Stock and preset activity-state decomposition
 
 ![Stock and preset activity-state decomposition](../results/sequence_ml_final_v1/figures/03_stock_and_state.png)
 
-*A: S0−B1 IC for all five stocks, Q8 within-stock versus Q10 source-only. B: FQ3 fixed prior-state split (high versus low prior activity), measured as IC of the mean S0 prediction minus B1.*
+**a**, S0−B1 IC for all five stocks, Q8 within-stock versus Q10 source-only. **b**, FQ3 fixed prior-state split (high versus low prior activity), measured as IC of the mean S0 prediction minus B1.
 
 ### Figure 4 · Ranking and visible-crossing cost with coverage
 
 ![Ranking and visible-crossing cost with coverage](../results/sequence_ml_final_v1/figures/04_prediction_and_visible_execution.png)
 
-*Q11 visible crossing (left) and the share of common opportunities each arm selected (right). Bars are pooled over selected opportunities; the Research answer quotes equal stock/day means, so the two can differ.*
+**a**, **c**, Q11 visible crossing. **b**, **d**, share of common opportunities each arm selected. Bars are pooled over selected opportunities; the Research answer quotes equal stock/day means, so the two can differ.
 
 ## Reproducibility and cost
 
