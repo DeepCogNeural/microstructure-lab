@@ -145,7 +145,9 @@ These are row-weighted aggregates of within-fold assignments, not pooled
 prediction cutoffs. Aggregate monotonicity does not assert every individual
 day is monotonic or establish statistical significance.
 
-![Within-fold prediction quantiles](../results/wselob_pekao/prediction_quantile_markout.png)
+![Within-fold prediction quantiles](../results/wselob_pekao/figures_nature/prediction_quantile_markout.png)
+
+Original figures remain at their published paths as hashed receipts.
 
 ## Reproduction and artifacts
 

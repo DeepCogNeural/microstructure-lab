@@ -7,6 +7,9 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
+import figure_style as style
+from nature_legacy_layout import finish
 
 
 def markdown_table(frame, columns):
@@ -101,15 +104,19 @@ def render_report(root):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results", default="results/wselob_execution_robustness_v1")
+    parser.add_argument("--out-dir", type=Path)
     args = parser.parse_args()
     root = Path(args.results)
+    style.apply()
+    output = args.out_dir or root
+    output.mkdir(parents=True, exist_ok=True)
     paired = pd.read_csv(root/"paired_block_deltas.csv")
     horizons = sorted(paired.horizon.unique())
     fig, axes = plt.subplots(1, len(horizons), figsize=(11,3.7), constrained_layout=True)
     bound = max(abs(paired.delta_ic).max(), .001)
     for ax, horizon in zip(np.atleast_1d(axes), horizons):
         table = paired[paired.horizon==horizon].pivot(index="symbol",columns="month",values="delta_ic")
-        plot = ax.imshow(table, cmap="RdBu", vmin=-bound, vmax=bound, aspect="auto")
+        plot = ax.imshow(table, cmap=LinearSegmentedColormap.from_list("difference", ["white", style.DIFF]), vmin=-bound, vmax=bound, aspect="auto", alpha=.4)
         ax.set_xticks(range(len(table.columns)), [month[5:] for month in table.columns])
         ax.set_yticks(range(len(table.index)),table.index)
         ax.set_title(f"{horizon} messages")
@@ -118,10 +125,10 @@ def main():
             for x in range(len(table.columns)):
                 value = table.iloc[y,x]
                 ax.text(x,y,f"{value:+.3f}",ha="center",va="center",fontsize=8,
-                        color="white" if abs(value)>.65*bound else "black")
+                        color=style.NET)
     fig.colorbar(plot,ax=axes,label="XGBoost − Linear IC",shrink=.8)
     fig.suptitle("Paired stock/month uplift: same held-out blocks")
-    fig.savefig(root/"paired_ic_delta.png",dpi=160)
+    finish(fig,output/"paired_ic_delta.png")
     plt.close(fig)
 
     deciles = pd.read_csv(root/"prediction_deciles.csv")
@@ -130,10 +137,10 @@ def main():
     for col,horizon in enumerate(horizons):
         for row,(metric,label) in enumerate([("long_crossed_bps","Long: future bid − entry ask"),("short_crossed_bps","Short: entry bid − future ask")]):
             ax = axes[row,col]
-            for model,color in [("linear","#2563eb"),("xgboost","#d97706")]:
-                for latency,style in [(0,"-"),(1,"--"),(5,":")]:
+            for model,color in [("linear",style.LINEAR),("xgboost",style.BASELINE)]:
+                for latency,line_style in [(0,"-"),(1,"--"),(5,":")]:
                     part = deciles[(deciles.horizon==horizon)&(deciles.model==model)&(deciles.latency==latency)]
-                    ax.plot(part.decile,part[metric],linestyle=style,color=color,label=f"{model}, delay {latency}",linewidth=1.6)
+                    ax.plot(part.decile,part[metric],linestyle=line_style,color=color,label=f"{model}, delay {latency}",linewidth=1.2)
             ax.axhline(0,color="black",linewidth=.8)
             ax.set_title(f"{horizon} messages after entry")
             ax.set_xlabel("Within-block prediction decile")
@@ -142,7 +149,7 @@ def main():
     handles,labels = axes[0,0].get_legend_handles_labels()
     fig.legend(handles,labels,loc="outside lower center",ncol=3,fontsize=9)
     fig.suptitle("Visible crossed-book outcomes: equal-weight stock/month means\nHistorical quote diagnostics; not realized PnL")
-    fig.savefig(root/"crossed_markout_deciles.png",dpi=160)
+    finish(fig,output/"crossed_markout_deciles.png")
     plt.close(fig)
 
     transfer_path = root/"transfer_block_metrics.csv"
@@ -154,14 +161,15 @@ def main():
         upper=max(transfer.ic.max(),transfer.within_stock_ic.max())+.02
         ax.plot([lower,upper],[lower,upper],color="gray",linestyle="--",label="Equal IC")
         for symbol,part in transfer.groupby("symbol"):
-            ax.scatter(part.within_stock_ic,part.ic,label=symbol,s=45)
+            ax.scatter(part.within_stock_ic,part.ic,label=symbol,s=16,color=style.STOCKS[symbol])
         ax.set(xlabel="Within-stock XGBoost IC",ylabel="Other-four-stocks transfer IC",
                title="Leave-one-stock-out transfer: 20 messages",xlim=(lower,upper),ylim=(lower,upper))
         ax.legend(fontsize=9)
-        fig.savefig(root/"transfer_vs_within_stock.png",dpi=160)
+        finish(fig,output/"transfer_vs_within_stock.png")
         plt.close(fig)
 
-    render_report(root)
+    if args.out_dir is None:
+        render_report(root)
 
 
 if __name__ == "__main__":

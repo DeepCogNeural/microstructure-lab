@@ -9,12 +9,14 @@ from pathlib import Path
 import matplotlib
 matplotlib.use("Agg")
 from matplotlib import pyplot as plt
+import figure_style as style
+from nature_legacy_layout import finish
 import numpy as np
 
 
 ROOT = Path("results/sequence_ml_v1")
 FIGURES = ROOT / "figures"
-BLUE, TEAL, ORANGE = "#3855a6", "#087f72", "#c96b26"
+BLUE, TEAL, ORANGE = style.BASELINE, style.MODEL, style.COST
 
 
 def sha(path):
@@ -24,18 +26,17 @@ def sha(path):
 def save(fig, name):
     FIGURES.mkdir(parents=True, exist_ok=True)
     path = FIGURES / name
-    fig.savefig(path, dpi=180, bbox_inches="tight", facecolor="white")
+    finish(fig, path)
     plt.close(fig)
     return path
 
 
 def header(ax, title):
-    ax.set_title(title, loc="left", fontsize=12, fontweight="bold", pad=12)
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.grid(axis="y", alpha=.2)
+    ax.set_title(title, loc="left", pad=14)
 
 
 def main():
+    style.apply()
     q2_path, q3_path = ROOT/"q2_summary.json", ROOT/"q3_summary.json"
     q2, q3 = json.loads(q2_path.read_text()), json.loads(q3_path.read_text())
     outputs = []
@@ -46,7 +47,7 @@ def main():
     values = [q2["evaluation_mean_ic"][k] for k in keys]
     values.append(float(np.mean([q2["evaluation_mean_ic"][f"S0_history_gru_seed{s}"] for s in (7,17,29)])))
     fig, ax = plt.subplots(figsize=(8, 4.5))
-    bars = ax.bar(names, values, color=["#aab5c9", "#7187b9", "#98c5bf", BLUE, TEAL])
+    bars = ax.bar(names, values, color=[style.LINEAR, BLUE, style.LINEAR, BLUE, TEAL])
     for bar, val in zip(bars, values):
         ax.text(bar.get_x()+bar.get_width()/2, val+.002, f"{val:.3f}", ha="center", fontsize=9)
     ax.set_ylim(0, max(values)*1.16)
@@ -63,11 +64,11 @@ def main():
     g_fixed = [np.mean([q3["time_fixed_vs_updated"][m][f"S0_history_gru_seed{s}"]["fixed_ic"] for s in (7,17,29)]) for m in months]
     g_update = [np.mean([q3["time_fixed_vs_updated"][m][f"S0_history_gru_seed{s}"]["updated_ic"] for s in (7,17,29)]) for m in months]
     fig, ax = plt.subplots(figsize=(8, 4.7))
-    for series, color, style, label in ((b_fixed, BLUE, "-", "B* fixed"),
+    for series, color, line_style, label in ((b_fixed, BLUE, "-", "B* fixed"),
                                         (b_update, BLUE, "--", "B* updated"),
                                         (g_fixed, TEAL, "-", "GRU fixed"),
                                         (g_update, TEAL, "--", "GRU updated")):
-        ax.plot(x, series, linestyle=style, marker="o", color=color, linewidth=2, label=label)
+        ax.plot(x, series, linestyle=line_style, marker="o", color=color, linewidth=1.2, label=label)
     ax.set_xticks(x, ["Jun", "Sep", "Nov"])
     ax.set_ylabel("Equal stock/day Spearman IC")
     ax.legend(ncol=2, frameon=False)
@@ -83,11 +84,11 @@ def main():
     state_vals = [states["high_activity"]["paired_delta_ic"]["full_denominator_mean"],
                   states["low_activity"]["paired_delta_ic"]["full_denominator_mean"]]
     fig, axes = plt.subplots(1, 2, figsize=(10, 4.5), gridspec_kw={"width_ratios": [1.6, 1]})
-    axes[0].bar(symbols, changes, color=[TEAL if v >= 0 else ORANGE for v in changes])
+    axes[0].bar(symbols, changes, color=style.DIFF)
     axes[0].axhline(0, color="#444", linewidth=.8)
     axes[0].set_ylabel("GRU seed-mean − B* IC")
     header(axes[0], "Across all five stocks")
-    axes[1].bar(["High past\nactivity", "Low past\nactivity"], state_vals, color=[TEAL, "#6caaa0"])
+    axes[1].bar(["High past\nactivity", "Low past\nactivity"], state_vals, color=style.DIFF)
     axes[1].set_ylabel("GRU prediction-mean − B* IC")
     header(axes[1], "One frozen state split")
     fig.suptitle("3  Historical heterogeneity: PZU is negative", x=.02, ha="left", fontsize=13, fontweight="bold")
@@ -115,15 +116,21 @@ def main():
     models = list(components)
     x = np.arange(2)
     width = .19
-    for j, (key, label, color, sign) in enumerate((("gross_midpoint_bps", "Gross mid", TEAL, 1),
-                                                    ("entry_half_spread_bps", "Entry half-spread", "#d3a356", -1),
-                                                    ("exit_half_spread_bps", "Exit half-spread", ORANGE, -1),
-                                                    ("crossed_bps", "Visible crossed", BLUE, 1))):
-        ax.bar(x+(j-1.5)*width, [components[m][key]*sign for m in models], width=width, label=label, color=color)
+    # Each model keeps its own color family: main color for gross, light tint for costs, gray for net.
+    family = [[style.BASELINE, style.BASELINE_LIGHT, style.BASELINE_LIGHT, style.NET],
+              [style.MODEL, style.MODEL_LIGHT, style.MODEL_LIGHT, style.NET]]
+    for j, (key, label, sign) in enumerate((("gross_midpoint_bps", "Gross mid", 1),
+                                            ("entry_half_spread_bps", "Entry half-spread", -1),
+                                            ("exit_half_spread_bps", "Exit half-spread", -1),
+                                            ("crossed_bps", "Visible crossed", 1))):
+        ax.bar(x+(j-1.5)*width, [components[m][key]*sign for m in models], width=width, color=[family[i][j] for i in range(2)], edgecolor="white", linewidth=.6)
     ax.axhline(0, color="#444", linewidth=.8)
-    ax.set_xticks(x, labels)
+    ax.set_xticks([i+(j-1.5)*width for i in range(2) for j in range(4)],
+                  ["gross", "entry", "exit", "net"]*2)
+    ax.tick_params(axis="x", top=False)
+    for i, (name, color) in enumerate(zip(labels, (style.BASELINE, style.MODEL))):
+        ax.text(i, 1.02, name, transform=ax.get_xaxis_transform(), ha="center", va="bottom", color=color, fontsize=8, gid="model-heading")
     ax.set_ylabel("bp per selected opportunity")
-    ax.legend(frameon=False, fontsize=8)
     header(ax, "Prediction movement versus spread costs")
     cov.bar(labels, [100*components[m]["coverage"] for m in models], color=[BLUE, TEAL])
     cov.set_ylabel("Selected / common opportunities, %")

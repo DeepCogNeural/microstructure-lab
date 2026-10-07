@@ -133,7 +133,9 @@ All five primary stock blocks have defined five-message markout and spread means
 
 ### Stronger-signal tails
 
-![Conditional fill and post-fill curves](../results/wselob_later_confirmation_v1/passive_prediction_deciles.png)
+![Conditional fill and post-fill curves](../results/wselob_later_confirmation_v1/figures_nature/passive_prediction_deciles.png)
+
+Original figures remain at their published paths as hashed receipts.
 
 The figure uses strict five-stock means for each bin; an undefined contributor would leave a gap. It shows retain; reset aggregate values coincide. Full per-stock and daily prediction-bin curves are in `passive_deciles.csv`; queue-ahead curves are in `queue_deciles.csv`. Ties are preserved and duplicate quantile edges are dropped.
 

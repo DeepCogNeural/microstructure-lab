@@ -6,6 +6,7 @@
 - Added `docs/TECH_STACK.md`; removed the unused `duckdb` dependency.
 - Restyled the four final sequence-ML figures (model colors shared with the README headline figure, direct value labels, panel letters) and reorganized `docs/SEQUENCE_ML_FINAL_PACKAGE.md` with key terms and figure captions; plotted values, aggregates and the cost table are unchanged.
 - Added `scripts/figure_style.py`, one Nature-journal figure style (SciencePlots layout conventions, ggsci NPG colors, no LaTeX), and applied it to the README headline figure and the four final package figures; README gained a contents line. Plotted values are unchanged.
+- Moved the remaining 18 earlier-study figures to the same style. Figures listed in the research audit's `old_result_hashes.json` stay byte-identical as receipts; restyled copies live in `figures_nature/` beside them and the reports embed those. The sequence-ML pilot and research-audit figures were regenerated in place with only their figure and render-manifest hashes updated. Plotted values are unchanged.
 
 Dates are given where the linked documents record them.
 

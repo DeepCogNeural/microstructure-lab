@@ -18,6 +18,12 @@ CATEGORY_B = '#B09C85'  # non-model contrast, second group (NPG taupe)
 GAIN = '#4DBBD5'        # gross edge (NPG cyan)
 COST = '#F39B7F'        # half-spread costs (NPG salmon)
 NET = '#4D4D4D'         # net result
+LINEAR_LIGHT = '#AFE0EC'  # Linear secondary components (NPG cyan at 45% on white)
+LINEAR = '#4DBBD5'      # Linear model (NPG cyan)
+HISTGB = '#7E6148'      # HistGradientBoosting (NPG brown)
+STOCKS = {'KGHM': '#7E6148', 'PEKAO': '#B09C85', 'PKNORLEN': '#4DBBD5', 'PKOBP': '#8491B4', 'PZU': '#91D1C2'}
+COHORT_A = CATEGORY_A   # first cohort/period, e.g. Apr/Jun/Sep/Nov monthly
+COHORT_B = CATEGORY_B   # second cohort/period, e.g. Dec 27–29 later check
 WIDTH_DOUBLE = 7.2      # Nature double-column width, inches (183 mm)
 
 

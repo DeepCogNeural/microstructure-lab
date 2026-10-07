@@ -1,10 +1,10 @@
 {
   "figures": {
-    "conditional_execution.png": "6a4545df70b1adcc9e471123907389f549b814c43922a5391dd481b7ce71aee3",
-    "event_time.png": "4f31c898e179ba6f4a1f220c9c58a9c14142d1ea3446f66935858c3d07b6ce0c",
-    "shuffle_controls.png": "8818a9f1a05c1daa8f24a6edc28f9df0246e572cce21efdcf65ef0077f226816",
-    "signal_sources.png": "eeaea052ab378dccd1211fb130b6419ab40cbaa267946777f01eed234ec744f6",
-    "visible_costs.png": "827a0ecfd3096dc3fe91f921a41f748f658763729ae153152fe12bb6e4590004"
+    "conditional_execution.png": "e8241755ba248c6210e7a1692e3ad445b01057193edd17d7ec35029781a81aab",
+    "event_time.png": "c8161e80fcb801e52fecc283dd1cbf6a4f0dfe7dbd8a5bd61822c90acb236187",
+    "shuffle_controls.png": "e3f3f51fb99f8503838d01137d9fee50223d365b7d9b015b724042d426663145",
+    "signal_sources.png": "2faacf6cb73fcfa71aa77c7dcbeca5b06afc7529a0b9d99e1a3f51787c894b49",
+    "visible_costs.png": "81a7afc9a19652255896846cca296a59f20235fe0d2d806d63b75e8180a44c0f"
   },
   "input_csv_hashes": {
     "ablation_blocks.csv": "584fc0c1a6ed2366acc32ae86af294c1539df5d156e56aa50af6fa81eba4f0da",

@@ -6,6 +6,8 @@ import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import figure_style as style
+from nature_legacy_layout import finish
 from cloblab.research_audit import strict_stats
 from cloblab.scale_common import atomic_json,file_hash
 from cloblab.later_confirmation import clean
@@ -85,38 +87,40 @@ def main():
     for metric in ['fill_probability','mean_fill_time','markout_5','passive_price_markout_5_bps']:
      matched.append(dict(cohort=cohort,interpretation=interpretation,model='xgboost',group=label,metric=metric,**strict_stats(q[metric],5)))
  pd.DataFrame(matched).to_csv(out/'passive_matched_controls.csv',index=False)
- plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'figure.dpi':150})
+ style.apply()
  fig,ax=plt.subplots(figsize=(8.4,4.5))
- for model,color in [('linear','#326a9c'),('xgboost','#c86b2c')]:
+ for model,color in [('linear',style.LINEAR),('xgboost',style.BASELINE)]:
   s=af[(af.model==model)&(af.metric=='ic')].sort_values('feature_group');ax.plot(s.feature_group,s['mean'],marker='o',label=model,color=color)
- ax.set(xlabel='Frozen feature group (same eligible rows)',ylabel='Equal-weight stock/month Spearman IC',title='2017 WSE · 5 stocks × Apr/Jun/Sep/Nov · 20 messages');ax.legend();ax.grid(alpha=.2);fig.text(.5,.01,'F1: spread/top imbalance · F2: +microprice · F3: +OFI · F4: F2+depth · F5: all',ha='center',fontsize=8);fig.tight_layout(rect=(0,.04,1,1));fig.savefig(out/'signal_sources.png');plt.close(fig)
+ ax.set(xlabel='Frozen feature group (same eligible rows)',ylabel='Equal-weight stock/month Spearman IC',title='2017 WSE · 5 stocks × Apr/Jun/Sep/Nov · 20 messages');ax.legend();ax.grid(alpha=.2);fig.text(.5,.01,'F1: spread/top imbalance · F2: +microprice · F3: +OFI · F4: F2+depth · F5: all',ha='center',fontsize=8);fig.tight_layout(rect=(0,.04,1,1));finish(fig,out/'signal_sources.png');plt.close(fig)
  fig,axes=plt.subplots(1,2,figsize=(10,4.5),sharey=True)
  for ax,cohort,title in zip(axes,['monthly','later'],['Four fixed months','Dec 27–29 (3 shared dates)']):
   sub=ef[(ef.cohort==cohort)&(ef['mode']=='moving_exit')&(ef.horizon==20)&(ef.latency==0)].pivot(index='model',columns='metric',values='mean')
   x=np.arange(2);width=.2
-  for j,(metric,label,color) in enumerate([('gross_midpoint_bps','Gross midpoint','#326a9c'),('entry_half_spread_bps','Entry half-spread','#d6a13d'),('exit_half_spread_bps','Exit half-spread','#c86b2c'),('crossed_bps','Crossed markout','#923a3a')]):
+  family=[[style.LINEAR,style.LINEAR_LIGHT,style.LINEAR_LIGHT,style.NET],[style.BASELINE,style.BASELINE_LIGHT,style.BASELINE_LIGHT,style.NET]]  # per-model color family
+  for j,(metric,label) in enumerate([('gross_midpoint_bps','Gross midpoint'),('entry_half_spread_bps','Entry half-spread'),('exit_half_spread_bps','Exit half-spread'),('crossed_bps','Crossed markout')]):
    y=sub.reindex(['linear','xgboost'])[metric].to_numpy();y=-y if 'half_spread' in metric else y
-   ax.bar(x+(j-1.5)*width,y,width,label=label,color=color)
-  ax.axhline(0,color='black',lw=.7);ax.set_xticks(x,['Linear','XGBoost']);ax.set_title(title)
- axes[0].set_ylabel('bp, equal-weight stock/period means');axes[1].legend(fontsize=8);fig.suptitle('2017 WSE · 20 messages, zero delay, strict |prediction| > 1 bp');fig.tight_layout();fig.savefig(out/'visible_costs.png');plt.close(fig)
+   ax.bar(x+(j-1.5)*.245,y,.22,color=[family[i][j] for i in range(2)],edgecolor='white',linewidth=.6)
+  ax.axhline(0,color='black',lw=.7);ax.set_xticks([i+(j-1.5)*.245 for i in range(2) for j in range(4)],['gross','entry','exit','net']*2);ax.tick_params(axis='x',top=False);ax.set_title(title)
+  for i,(name,color) in enumerate(zip(['Linear','XGBoost'],[style.LINEAR,style.BASELINE])):ax.text(i,1.02,name,transform=ax.get_xaxis_transform(),ha='center',va='bottom',color=color,fontsize=8,gid='model-heading')
+ axes[0].set_ylabel('bp, equal-weight stock/period means');fig.suptitle('2017 WSE · 20 messages, zero delay, strict |prediction| > 1 bp');fig.tight_layout();finish(fig,out/'visible_costs.png');plt.close(fig)
  old=pd.read_csv('results/wselob_queue_execution_v1/block_fill_by_prediction_decile.csv');later=pd.read_csv('results/wselob_later_confirmation_v1/passive_deciles.csv')
  fig,axes=plt.subplots(1,3,figsize=(12,4.5))
  for cohort,data,n,bincol in [('monthly',old,20,'decile'),('later',later,5,'bin')]:
   s=data[(data.model=='xgboost')&data.control_seed.isna()&(data.horizon==20)&(data.latency==0)&(data.interpretation=='retain')]
   if 'day' in s:s=s[s.day=='all']
   for ax,metric,label,scale in zip(axes,['fill_probability','markout_5','spread_5'],['Conditional fill (%)','Post-fill midpoint (bp)','Passive price → midpoint (bp)'],[100,1,.5]):
-   summary=summarize(s,[bincol],metric,n);ax.plot(summary[bincol],summary['mean']*scale,marker='o',label='Apr/Jun/Sep/Nov' if cohort=='monthly' else 'Dec 27–29 (3 dates)');ax.set(xlabel='Prediction decile',ylabel=label);ax.axhline(0,color='gray',lw=.7)
- axes[0].legend(fontsize=8);fig.suptitle('2017 WSE · XGBoost · 20-message lifetime · five-message post-fill outcomes');fig.text(.5,.01,'Zero delay · retain priority · equal stock/period means · conditional diagnostics, not actual fills or profit',ha='center',fontsize=9);fig.tight_layout(rect=(0,.05,1,1));fig.savefig(out/'conditional_execution.png');plt.close(fig)
+   summary=summarize(s,[bincol],metric,n);ax.plot(summary[bincol],summary['mean']*scale,marker='o',color=style.COHORT_A if cohort=='monthly' else style.COHORT_B,label='Apr/Jun/Sep/Nov' if cohort=='monthly' else 'Dec 27–29 (3 dates)');ax.set(xlabel='Prediction decile',ylabel=label);ax.axhline(0,color='gray',lw=.7)
+ axes[0].legend(fontsize=8);fig.suptitle('2017 WSE · XGBoost · 20-message lifetime · five-message post-fill outcomes');fig.text(.5,.01,'Zero delay · retain priority · equal stock/period means · conditional diagnostics, not actual fills or profit',ha='center',fontsize=9);fig.tight_layout(rect=(0,.05,1,1));finish(fig,out/'conditional_execution.png');plt.close(fig)
  fig,axes=plt.subplots(1,3,figsize=(11,4),sharey=True)
  for ax,scope in zip(axes,['own_june','transfer_june','later']):
   for j,method in enumerate(['S0','S1']):
    sub=control[(control.scope==scope)&(control.shuffle==method)]
    for k,metric in enumerate(['ic','daily_ic']):
-    v=summarize(sub,['seed'],metric,5)['mean'];ax.scatter(np.full(len(v),j+(k-.5)*.18),v,label=['Block IC','Daily IC'][k] if j==0 else None,marker=['o','x'][k],color=['#326a9c','#c86b2c'][k])
+    v=summarize(sub,['seed'],metric,5)['mean'];ax.scatter(np.full(len(v),j+(k-.5)*.18),v,label=['Block IC','Daily IC'][k] if j==0 else None,marker=['o','x'][k],color=[style.CATEGORY_A,style.CATEGORY_B][k])
   ax.axhline(0,color='gray',lw=.6);ax.set_xticks([0,1],['S0: within day','S1: across days']);ax.set_title({'own_june':'Own-stock June','transfer_june':'Held-out-stock June','later':'Dec 27–29'}[scope])
- axes[0].set_ylabel('Five-stock mean IC per shuffle seed');axes[0].legend();fig.suptitle('2017 WSE · five frozen seeds; sensitivity, not a p-value distribution');fig.tight_layout();fig.savefig(out/'shuffle_controls.png');plt.close(fig)
+ axes[0].set_ylabel('Five-stock mean IC per shuffle seed');axes[0].legend();fig.suptitle('2017 WSE · five frozen seeds; sensitivity, not a p-value distribution');fig.tight_layout();finish(fig,out/'shuffle_controls.png');plt.close(fig)
  fig,ax=plt.subplots(figsize=(9,4.5));s=tm[(tm.day=='all')&(tm.offset_events==20)].copy();s['label']=s.symbol+' / '+s.period.replace({'later':'Dec 27–29'})
- x=np.arange(len(s));ax.plot(x,s.p50,'o',label='median');ax.vlines(x,s.p10,s.p90,color='#326a9c',alpha=.6,label='p10–p90');ax.set_xticks(x,s.label,rotation=90,fontsize=7);ax.set_yscale('log');ax.set_ylim(s.p10.min()/1.4,s.p90.max()*1.4);ax.set_ylabel('Elapsed event seconds (log scale)');ax.set_title('2017 WSE · exactly 20 original messages within valid segments');ax.legend();fig.tight_layout();fig.savefig(out/'event_time.png');plt.close(fig)
+ x=np.arange(len(s));ax.plot(x,s.p50,'o',color=style.DIFF,label='median');ax.vlines(x,s.p10,s.p90,color=style.DIFF,alpha=.18,label='p10–p90');ax.set_xticks(x,s.label,rotation=90,fontsize=7);ax.set_yscale('log');ax.set_ylim(s.p10.min()/1.4,s.p90.max()*1.4);ax.set_ylabel('Elapsed event seconds (log scale)');ax.set_title('2017 WSE · exactly 20 original messages within valid segments');ax.legend();fig.tight_layout();finish(fig,out/'event_time.png');plt.close(fig)
  atomic_json(out/'render_manifest.json',clean(dict(source='aggregate CSVs only',figures={p.name:file_hash(p) for p in out.glob('*.png')},input_csv_hashes={p.name:file_hash(p) for p in out.glob('*.csv')})))
 
 if __name__=='__main__':main()

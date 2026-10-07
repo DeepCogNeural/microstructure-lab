@@ -59,13 +59,15 @@ All headline means weight stock/month blocks equally. Tables expose eligible dec
 
 ## Figures
 
-![Fill probability](../results/wselob_queue_execution_v1/fill_prediction_decile.png)
+![Fill probability](../results/wselob_queue_execution_v1/figures_nature/fill_prediction_decile.png)
 
-![Post-fill midpoint movement](../results/wselob_queue_execution_v1/adverse_prediction_decile.png)
+Original figures remain at their published paths as hashed receipts.
 
-![Fill versus adverse race](../results/wselob_queue_execution_v1/race_queue_decile.png)
+![Post-fill midpoint movement](../results/wselob_queue_execution_v1/figures_nature/adverse_prediction_decile.png)
 
-![Model comparison](../results/wselob_queue_execution_v1/model_comparison.png)
+![Fill versus adverse race](../results/wselob_queue_execution_v1/figures_nature/race_queue_decile.png)
+
+![Model comparison](../results/wselob_queue_execution_v1/figures_nature/model_comparison.png)
 
 ## Reproduction and provenance
 

@@ -39,7 +39,9 @@ All leave-one-stock and leave-one-month mean deltas remain positive. The minimum
 
 Per-stock, per-month, individual paired blocks, and every leave-one-out value are in [paired_model_robustness.csv](../results/wselob_execution_robustness_v1/paired_model_robustness.csv) and [paired_block_deltas.csv](../results/wselob_execution_robustness_v1/paired_block_deltas.csv).
 
-![Paired IC deltas](../results/wselob_execution_robustness_v1/paired_ic_delta.png)
+![Paired IC deltas](../results/wselob_execution_robustness_v1/figures_nature/paired_ic_delta.png)
+
+Original figures remain at their published paths as hashed receipts.
 
 ## Crossed-book outcomes
 
@@ -94,7 +96,7 @@ XGBoost's larger midpoint IC does not make it a universal winner under crossing.
 
 Deciles use within-block prediction quantiles with equal predictions kept together. Full expected ordering requires all nine adjacent long differences to be nonnegative and all nine short differences nonpositive. It holds in 0/20 primary blocks for every horizon and latency. This strict measure does not imply there is no local relation between prediction and outcome. The full curves show the spread-dependent shape.
 
-![Crossed-book deciles](../results/wselob_execution_robustness_v1/crossed_markout_deciles.png)
+![Crossed-book deciles](../results/wselob_execution_robustness_v1/figures_nature/crossed_markout_deciles.png)
 
 Absolute latency changes are in [latency_summary.csv](../results/wselob_execution_robustness_v1/latency_summary.csv); paired Linear/XGBoost differences on identical eligible rows are in [paired_execution_differences.csv](../results/wselob_execution_robustness_v1/paired_execution_differences.csv).
 
@@ -157,7 +159,7 @@ Phase 3 completed 20 primary tasks and five June shuffled-label controls at the 
 | by_month | 2017-09 | NA | 5 | 0.279793 | 0.279306 | 0.000487 | 4 |
 | by_month | 2017-11 | NA | 5 | 0.239200 | 0.238976 | 0.000224 | 3 |
 
-![Transfer versus within-stock IC](../results/wselob_execution_robustness_v1/transfer_vs_within_stock.png)
+![Transfer versus within-stock IC](../results/wselob_execution_robustness_v1/figures_nature/transfer_vs_within_stock.png)
 
 Transfer is a midpoint prediction diagnostic. It does not overturn the negative crossed-book results above. Primary and shuffled transfer denominators are separate; the control comparison is descriptive.
 
