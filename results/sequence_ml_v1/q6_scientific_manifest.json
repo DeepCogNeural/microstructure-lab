@@ -7,7 +7,7 @@
     "q4_gate.json": "4c7de1178c192af420d9502c4740bbdeed622dd9fcdbc2d6cf409100222cf1d6",
     "q5_data_gate.json": "7308e670336337b09490183be3748d13240c9b5742de4d12f0666add9c3805c9"
   },
-  "branch": "codex/quant-ai-ml-20260922",
+  "branch": "internal",
   "data": {
     "cache_source_hash": "7919375bb0b82faba250a0e1adc1c18704a494fa766591f39b5f93e9220d8ebb",
     "q2_config_sha256": "0c7fcf3fdce7e861df5033148046b1512f8891251e5741a63de8189aaaa3ba17",

@@ -18,7 +18,7 @@
     "Q11": "ecc18266bd2d0019b0fa174d95ec66592d1a1d615248918e39b7a216f81751b3",
     "Q8": "294f4a692dfb156ae832e7cdce1e7368ca481c1950cfa8430f4381e1a8aa8529"
   },
-  "branch": "codex/quant-ai-ml-20260922",
+  "branch": "internal",
   "evaluation_partition_hashes_from_Q11_receipts": {
     "KGHM": {
       "2017-06-01": {
